@@ -19,7 +19,7 @@ const ProductDetailInfo = (props) => {
                 </div>
                 <Flex gap="large">
                     <span className="pro-sale">{sale.toLocaleString()}</span>
-                    <del style={{margin: 'auto 0'}}>{price.toLocaleString()}</del>
+                    <del className="pro-price" style={{margin: 'auto 0'}}>{price.toLocaleString()}</del>
                     {(discount !== 0) && <span className="pro-discount">-{discount}%</span>}
                 </Flex>
                 <div>

@@ -12,8 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-h2 {
+.product-detail h2 {
   font-size: 1.6rem;
+  padding: 1rem 0 0 1rem;
 }
 
 .product-detail {
@@ -23,23 +24,33 @@ h2 {
 
 .product-detail-img img {
   width: 100%;
+  margin: 5%;
 }
 .product-detail-general > div {
   margin: 5%;
 }
-.product-detail-general .pro-sale {
+.product-detail .pro-sale {
   font-size: 1.5rem;
   color: red;
   font-weight: bold;
+  align-items: center;
 }
-.product-detail-general .pro-discount {
+
+.product-detail .pro-sale::after, .pro-price::after {
+  content: 'đ';
+  font-size: 0.8em;
+  text-decoration: underline;
+  margin-left: 3px;
+}
+
+.product-detail .pro-discount {
   border: 0.5px red solid;
   border-radius: 5px;
   color: red;
   font-size: 12px;
   padding: 1%;
 }
-.buy-now-btn {
+.product-detail .buy-now-btn {
   background-color: red;
   color: white;
   padding: 1%;
@@ -50,3 +61,10 @@ h2 {
   font-size: 1.2rem;
   line-height: 2rem;
 }
+
+.product-detail .relative-products img {
+  width: 20%;
+  margin: 5%;
+}
+
+/* .product-detail .relative-products h3 {} */

@@ -3,7 +3,7 @@ import { Table, Button } from 'antd';
 
 const ProductDetailSpecifications = (props) => {
 
-    const initialTableSize = 9;
+    const initialTableSize = 6;
     const [expandedTable, setExpandedTable] = useState(false);
     const [tableSize, setTableSize] = useState(initialTableSize);
       
