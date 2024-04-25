@@ -1,0 +1,28 @@
+/* index.css */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #1890ff;
+  text-decoration: none;
+}
+
+.Menu {
+  border-right: none;
+}
+
+
+.ant-menu-item,
+.ant-menu-submenu-title {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.ant-menu-item:hover,
+.ant-menu-submenu-title:hover {
+  background-color: #e6f7ff;
+  color: #1890ff;
+}
