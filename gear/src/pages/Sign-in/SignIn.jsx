@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Form, Input, message } from 'antd';
-import { WrapperContainer } from './style';
+import { Button, Form,message } from 'antd';
+import { StyleContainer, StyleLeftCon, StyleRightCon, StyleInput, StyleInputPassword } from './style';
 import { Link, useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
@@ -23,8 +23,10 @@ const SignIn = () => {
             const data = await response.json();
             if (data.status === 'OK') {
                 message.success('Login success');
-                localStorage.setItem('accessToken', data.access_token);
-                localStorage.setItem('refreshToken', data.refresh_token);
+                // localStorage.setItem('accessToken', data.access_token);
+                // localStorage.setItem('refreshToken', data.refresh_token);
+                const { _id } = data.data; // Lấy _id từ dữ liệu trả về
+                localStorage.setItem('userID', _id);
                 history.push('/');
             } else {
                 if (data.status === 'ERR') {
@@ -42,13 +44,15 @@ const SignIn = () => {
     };
 
     return (
-        <WrapperContainer>
-            <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Đăng nhập</h1>
-            <Form
-                form={form}
-                labelCol={{ span: 9 }}
-                wrapperCol={{ span: 15 }}
-            >
+        <StyleContainer>
+            <StyleLeftCon>
+            <img src='https://i.pinimg.com/564x/64/c3/6b/64c36b10d3e8904e6a23fc59ed3ca060.jpg' alt='gear'
+        style={{width:'300px', height:'300px', borderRadius: '50%'}}/>
+        <h2 style={{textAlign:'center'}}>Chào mừng đến với GearShop, Chất lượng tốt, giá thành tốt, ưu đãi cực vui</h2>
+            </StyleLeftCon>
+            <StyleRightCon>
+            <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1A93FF' }}>Đăng nhập</h1>
+            <Form form={form}>
                 <Form.Item
                     label="Tên tài khoản"
                     name="username"
@@ -58,8 +62,10 @@ const SignIn = () => {
                             message: 'Vui lòng nhập tên tài khoản!',
                         },
                     ]}
+                    labelCol={{ span: 8 }}
+            wrapperCol={{ span: 16 }}
                 >
-                    <Input />
+                    <StyleInput />
                 </Form.Item>
 
                 <Form.Item
@@ -71,19 +77,23 @@ const SignIn = () => {
                             message: 'Vui lòng nhập mật khẩu!',
                         },
                     ]}
+                    labelCol={{ span: 8 }}
+            wrapperCol={{ span: 16 }}
                 >
-                    <Input.Password />
+                    <StyleInputPassword />
                 </Form.Item>
 
-                <Form.Item wrapperCol={{ offset: 9, span: 15 }}>
+                <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
                     <Button type="primary" onClick={handleSignIn} loading={loading}>
                         Đăng nhập
                     </Button>
                 </Form.Item>
 
-                <p>Chưa có tài khoản? <Link to="/Register">Đăng ký</Link></p>
+                <p style={{textAlign: 'center'}}>Chưa có tài khoản? <Link to="/Register">Đăng ký</Link></p>
             </Form>
-        </WrapperContainer>
+        </StyleRightCon>
+        </StyleContainer>
+        
     );
 };
 

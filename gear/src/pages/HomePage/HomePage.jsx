@@ -45,7 +45,7 @@ const HomePage = () => {
     }
 
     return(
-        <div id="container" style={{background: '#fff', padding: '0 120px', height: 'fit-content', width: 'fit-content', margin: 'auto auto'}}>
+        <div id="container" style={{background: '#fff', padding: '0 7%', height: 'fit-content', width: 'fit-content', margin: 'auto auto'}}>
             <div style={{paddingTop: '24px', marginLeft: '20px'}}>
                 <FilterPriceComponent />
             </div>

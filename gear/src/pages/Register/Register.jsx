@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { Button, Form, message} from 'antd';
-import { WrapperContainer, StyleInput, StyleInputPassword} from './style';
+import { StyleInput, StyleInputPassword, StyleContainer, StyleLeftCon, StyleRightCon} from './style';
 import { Link } from 'react-router-dom';
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -55,9 +55,14 @@ const Register = () => {
         }
       };    
   return (
-    <div>
-      <h1 style={{display:'flex', alignItems: 'center', justifyContent:'center'}}>Đăng nhập</h1>
-      <WrapperContainer>
+    <StyleContainer>
+      <StyleLeftCon>
+        <img src='https://i.pinimg.com/564x/64/c3/6b/64c36b10d3e8904e6a23fc59ed3ca060.jpg' alt='gear'
+        style={{width:'300px', height:'300px', borderRadius: '50%'}}/>
+        <h2 style={{textAlign:'center'}}>Chào mừng đến với GearShop, Chất lượng tốt, giá thành tốt, ưu đãi cực vui</h2>
+      </StyleLeftCon>
+      <StyleRightCon>
+      <h3 style={{display:'flex', alignItems: 'center', justifyContent:'center'}}>Đăng ký</h3>
       <Form>
         <Form.Item
             label="Tên tài khoản"
@@ -68,8 +73,8 @@ const Register = () => {
                 message: 'Please input your username!',
                 },
             ]}
-            labelCol={{ span: 12 }}
-            wrapperCol={{ span: 12 }}>
+            labelCol={{ span: 8 }}
+            wrapperCol={{ span: 16 }}>
         <StyleInput name="username" value={formData.username} onChange={handleChange}/>
         </Form.Item>
 
@@ -82,8 +87,8 @@ const Register = () => {
                 message: 'Please input your email!',
                 },
             ]}
-            labelCol={{ span: 12 }}
-            wrapperCol={{ span: 12 }}>
+            labelCol={{ span: 8 }}
+            wrapperCol={{ span: 16 }}>
         <StyleInput name="email" value={formData.email} onChange={handleChange}/>
         </Form.Item>
         
@@ -96,8 +101,8 @@ const Register = () => {
                 message: 'Please input your phone!',
                 },
             ]}
-            labelCol={{ span: 12 }}
-            wrapperCol={{ span: 12 }}>
+            labelCol={{ span: 8 }}
+            wrapperCol={{ span: 16 }}>
         <StyleInput name="phone" value={formData.phone} onChange={handleChange}/>
         </Form.Item>
 
@@ -110,8 +115,8 @@ const Register = () => {
                 message: 'Please input your address!',
                 },
             ]}
-            labelCol={{ span: 12 }}
-            wrapperCol={{ span: 12 }}>
+            labelCol={{ span: 8 }}
+            wrapperCol={{ span: 16 }}>
         <StyleInput name="address" value={formData.address} onChange={handleChange} />
         </Form.Item>
 
@@ -124,8 +129,8 @@ const Register = () => {
                 message: 'Please input your password!',
             },
             ]}
-            labelCol={{ span: 12 }}
-            wrapperCol={{ span: 12 }}>
+            labelCol={{ span: 8 }}
+            wrapperCol={{ span: 16 }}>
         <StyleInputPassword name="password" value={formData.password} onChange={handleChange}/>
         </Form.Item>
 
@@ -138,18 +143,19 @@ const Register = () => {
                 message: 'Please input your confirm pasword!',
                 },
             ]}
-            labelCol={{ span: 12 }}
-            wrapperCol={{ span: 12}}>
+            labelCol={{ span: 8 }}
+            wrapperCol={{ span: 16}}>
         <StyleInputPassword name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} />
         </Form.Item>
 
         <Form.Item wrapperCol={{offset: 8,span: 16,}}>
             <div onClick={handleSubmit}><Button type="primary" htmlType="submit">Đăng ký</Button></div>
         </Form.Item>
-        <p>Đã có tài khoản? <Link to="/SignIn">Đăng nhập</Link></p>
+        <p style={{textAlign: 'center'}}>Đã có tài khoản? <Link to="/SignIn">Đăng nhập</Link></p>
     </Form>
-    </WrapperContainer> 
-    </div>
+    </StyleRightCon>
+    </StyleContainer>
+    
     
   )
 }

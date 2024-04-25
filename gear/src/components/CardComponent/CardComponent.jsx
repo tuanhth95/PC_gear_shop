@@ -1,6 +1,6 @@
 import React from 'react';
 //import {Button } from 'antd';
-import { WrapperCard, DiscountTag, ButtonShow } from './style';
+import { WrapperCard, DiscountTag, ButtonShow, StyleNameProduct, StylePrice, StylePriceDiscount } from './style';
 
 const CardComponent = ({ countInStock, description, img, name, price, discount, type, id }) => {
   const discountPrice = discount ? price - discount/100 * price : price;
@@ -13,19 +13,19 @@ const CardComponent = ({ countInStock, description, img, name, price, discount, 
       <img
         alt={name}
         src={img}
-        style={{ width: '100%', objectFit: 'cover', height: '200px' }}
+        style={{ width: '100%', objectFit: 'cover', height: '50%' }}
       />
       <div>
-      <h3 style={{ margin: '12px 0', fontWeight: '600' }}>{name}</h3>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <p style={{ fontWeight: '600', color: 'red', margin: '4px 0', marginRight: '10px', fontSize: '16px' }}>
+      <StyleNameProduct>{name}</StyleNameProduct>
+        <div style={{ display: 'flex', flexDirection: 'row',  alignItems: 'center' }}>
+          <StylePriceDiscount>
             {formattedPrice}
-          </p>
+          </StylePriceDiscount>
           {discountPercentage && <DiscountTag>{discountPercentage}</DiscountTag>}
           {originalPrice && (
-            <p style={{ textDecoration: 'line-through', color: '#a9a9a9', margin: '4px 12px', fontSize: '14px' }}>
+            <StylePrice>
               {originalPrice}
-            </p>
+            </StylePrice>
           )}
         </div>
         {/* <div style={{ color: countInStock > 0 ? 'green' : 'red' , fontSize: '14px'}}>
