@@ -12,7 +12,7 @@ const CartPage = () => {
   const [datas, setDatas] = useState([]);
 
   const fetchApi = async (temp) => {
-    let response = await axios.get(`${process.env.REACT_APP_API_URL}?all=true`, temp);
+    let response = await axios.get(`${process.env.REACT_APP_API_CART}?all=true`, temp);
     console.log("response.data: ",response.data.data);
     setDatas(response.data.data);
     setQuantity(datas.length);
@@ -21,7 +21,7 @@ const CartPage = () => {
 
   const {status, data, error} = useQuery({queryKey: ['get-api'], queryFn: fetchApi, retry:2, retryDelay: 500})
   const mutation = useMutation({mutationKey : ['mutation-put'],mutationFn: (change) => {
-    return axios.put(`${process.env.REACT_APP_API_URL}/${change.id}?sl=${change.sl}`)
+    return axios.put(`${process.env.REACT_APP_API_CART}/${change.id}?sl=${change.sl}`)
   }, onSuccess: (data) => { 
     let temp = datas.filter(e => e.productID === data.data.data.productID)[0];
     let newData = datas;
@@ -30,7 +30,7 @@ const CartPage = () => {
     setDatas(newData);
   }})
   const mutationDelete = useMutation({mutationKey: ['mutation-delete'], mutationFn: (id) => {
-    return axios.delete(`${process.env.REACT_APP_API_URL}/${id}`)
+    return axios.delete(`${process.env.REACT_APP_API_CART}/${id}`)
   }, 
   onSuccess:(data) => {
     console.log("data return: ",data.data.data.id);

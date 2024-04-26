@@ -11,7 +11,6 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const queryClient = new QueryClient();
-//console.log('dotenv: ', process.env.REACT_APP_API_URL);
 root.render(
   // <React.StrictMode>
   <QueryClientProvider client={queryClient}>
