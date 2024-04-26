@@ -10,7 +10,3 @@ export const getAllProduct = async (search, priceRange, limit) => {
     const res = await axios.get(queryString);
     return res.data;
 };
-
-
-
-

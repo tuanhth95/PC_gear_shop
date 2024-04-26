@@ -23,3 +23,5 @@ export const productSlice = createSlice({
 export const { searchProduct, setSearchPriceRange, setLimit } = productSlice.actions;
 
 export default productSlice.reducer;
+
+
