@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Flex } from 'antd';
 import { ProductDetailPart } from './style';
-import Info from '../../components/ProductDetail/Info';
-import Specifications from '../../components/ProductDetail/Specifications';
-import Others from '../../components/ProductDetail/Others';
+import Info from '../../components/ProductDetail/Info/Info';
+import Specifications from '../../components/ProductDetail/Specifications/Specifications';
+import Others from '../../components/ProductDetail/Others/Others';
 import axios from 'axios';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 

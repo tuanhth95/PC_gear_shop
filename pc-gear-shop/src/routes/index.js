@@ -6,6 +6,9 @@ import Register from "../pages/Register/Register";
 import Review from "../pages/Review/Review";
 import CategoryPage from "../pages/CategoryPage/CategoryPage";
 import ProductDetailPage from "../pages/ProductDetailPage/ProductDetailPage";
+import UserInfor from '../pages/UserInfor/UserInfor';
+import OrderHis from '../pages/OrderHis/OrderHis';
+import OrderDetail from '../pages/OrderDetail/OrderDetail';
 export const routes = [
   {
     path: "/",
@@ -41,5 +44,17 @@ export const routes = [
   {
     path: "/ProductDetail",
     page: ProductDetailPage,
+  },
+  {
+    path: "/UserInfor",
+    page: UserInfor,
+  },
+  {
+    path: "/OrderHis",
+    page: OrderHis,
+  },
+  {
+    path: "/OrderDetail",
+    page: OrderDetail,
   },
 ];

@@ -1,7 +1,7 @@
 const userService = require('../services/userService')
 const User = require("../models/UserModels");
 const JwtService = require('../services/JwtService');
-const creatUser = async(req, res)=>{
+const createUser = async(req, res)=>{
     try{
         const {username, email, phone, address, password, confirmPassword} = req.body;
         const reg = /^\w+([-+.']\w+)*@\w+([-.]\w)*\.\w+([-.]\w+)*$/
@@ -86,9 +86,28 @@ const updateUser = async (req, res) => {
     }
 }
 
+const getDetailsUser = async (req, res) => {
+    try {
+        const userId = req.params.id
+        if (!userId) {
+            return res.status(200).json({
+                status: 'ERR',
+                message: 'The userId is required'
+            })
+        }
+        const response = await userService.getDetailsUser(userId)
+        return res.status(200).json(response)
+    } catch (e) {
+        return res.status(404).json({
+            message: e
+        })
+    }
+}
+
 module.exports = {
-    creatUser,
+    createUser,
     loginUser,
     getAllUsers,
-    updateUser
+    updateUser,
+    getDetailsUser
 }
