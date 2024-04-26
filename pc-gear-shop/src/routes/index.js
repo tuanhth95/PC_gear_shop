@@ -4,6 +4,7 @@ import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import SignIn from "../pages/Sign-in/SignIn";
 import Register from "../pages/Register/Register";
 import Review from "../pages/Review/Review";
+import CategoryPage from "../pages/CategoryPage/CategoryPage";
 export const routes = [
   {
     path: "/",
@@ -31,5 +32,9 @@ export const routes = [
   {
     path: "/Review",
     page: Review,
+  },
+  {
+    path: "/Category",
+    page: CategoryPage,
   },
 ];
