@@ -3,6 +3,7 @@ import CartPage from "../pages/CartPage/CartPage";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import SignIn from "../pages/Sign-in/SignIn";
 import Register from "../pages/Register/Register";
+import Review from "../pages/Review/Review";
 export const routes = [
   {
     path: "/",
@@ -26,5 +27,9 @@ export const routes = [
   {
     path: "/Register",
     page: Register,
+  },
+  {
+    path: "/Review",
+    page: Review,
   },
 ];
