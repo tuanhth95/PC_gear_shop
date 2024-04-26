@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {routes} from './routes'; 
 import DefaultComponent from './components/DefaultComponent/DefaultComponent';
 import { useQuery } from '@tanstack/react-query';
+import HeaderSearchComponent from './components/HeaderSearchComponent/HeaderSearchComponent';
 
 function App() {
   // useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
   return (
     <div>
       <Router>
+      <HeaderSearchComponent />
         <Routes>
           {routes.map((route) => {
             const Page = route.page;

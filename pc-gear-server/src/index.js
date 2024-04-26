@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 const cors = require('cors');
 const bodyParser = require("body-parser");
+const morgan = require('morgan');
+const cookieParser = require('cookie-parser')
 dotenv.config();
 
 const app = express();
@@ -16,6 +18,8 @@ const corsOptions ={
 }
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
+app.use(morgan('dev'));
+app.use(cookieParser());
 routes(app);
 
 mongoose
