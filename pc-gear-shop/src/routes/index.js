@@ -5,6 +5,7 @@ import SignIn from "../pages/Sign-in/SignIn";
 import Register from "../pages/Register/Register";
 import Review from "../pages/Review/Review";
 import CategoryPage from "../pages/CategoryPage/CategoryPage";
+import ProductDetailPage from "../pages/ProductDetailPage/ProductDetailPage";
 export const routes = [
   {
     path: "/",
@@ -36,5 +37,9 @@ export const routes = [
   {
     path: "/Category",
     page: CategoryPage,
+  },
+  {
+    path: "/ProductDetail",
+    page: ProductDetailPage,
   },
 ];
