@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Flex } from 'antd';
-import { ProductDetailPart } from './style';
+import { ProductDetailContainer, ProductDetailPart } from './style';
 import Info from '../../components/ProductDetail/Info/Info';
 import Specifications from '../../components/ProductDetail/Specifications/Specifications';
 import Others from '../../components/ProductDetail/Others/Others';
@@ -17,7 +17,7 @@ function ProductDetailPage() {
   
   const fetchProductDetailAPI = async () => {
     const res = await axios.get(`http://localhost:3001/api/product_detail/${productId}`)
-      // console.log(res.data)
+      console.log(res.data)
       return res.data
   }
   
@@ -78,7 +78,7 @@ function ProductDetailPage() {
   }, [relativeProducts])
 
   return (
-    <div className="product-detail">
+    <ProductDetailContainer className="product-detail">
       <div>
         <ProductDetailPart>
           { generalInfo && <Info data={generalInfo}/> }
@@ -96,7 +96,7 @@ function ProductDetailPage() {
           </ProductDetailPart>
         </div>
       </Flex>
-    </div>
+    </ProductDetailContainer>
   );
 }
 

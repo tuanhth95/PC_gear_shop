@@ -1,5 +1,6 @@
 import React from 'react'
 import { Flex } from 'antd'
+import { OtherProductDiscount, OtherProductImg, OtherProductPrice, OtherProductSale } from './style';
 
 const Others = (props) => {
 
@@ -13,13 +14,13 @@ const Others = (props) => {
                 firstThreeElements.map((item, index) => {
                     return (
                         <Flex key={index} gap='small'>
-                            <img src={item.img} alt={item.name} />
+                            <OtherProductImg src={item.img} alt={item.name} />
                             <div>
-                                <h4>{item.name}</h4>
-                                <Flex gap='large'>
-                                    <span style={{fontSize: '1rem'}} className="pro-sale">{item.price.toLocaleString()}</span>
-                                    {(item.discount !== 0) && <span className="pro-discount">-{item.discount}%</span>}
-                                </Flex>
+                                <h3>{item.name}</h3>
+                                <OtherProductPrice gap='large'>
+                                    <OtherProductSale className="pro-sale">{item.price.toLocaleString()}</OtherProductSale>
+                                    {(item.discount !== 0) && <OtherProductDiscount className="pro-discount">-{item.discount}%</OtherProductDiscount>}
+                                </OtherProductPrice>
                                 
                             </div>
                             

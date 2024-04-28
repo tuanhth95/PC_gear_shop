@@ -1,5 +1,6 @@
 import React from 'react';
 import { Flex, Row, Col } from 'antd';
+import { ProductDetailBtn, ProductDetailImg, ProductDiscount, ProductName, ProductSale } from './style';
 
 const Info = (props) => {
 
@@ -10,22 +11,22 @@ const Info = (props) => {
     return (
         <Row justify="space-between">
             <Col span={8} className="product-detail-img">
-                <img src={props.data.img} alt={props.data.name} />
+                <ProductDetailImg src={props.data.img} alt={props.data.name} />
             </Col>
             <div style={{background: '#ECECEC', width: '1px'}}></div>
             <Col span={15} className="product-detail-general">
-                <div>
+                <ProductName>
                     <h2>{props.data.name}</h2>
-                </div>
+                </ProductName>
                 <Flex gap="large">
-                    <span className="pro-sale">{sale.toLocaleString()}</span>
+                    <ProductSale className="pro-sale">{sale.toLocaleString()}</ProductSale>
                     <del className="pro-price" style={{margin: 'auto 0'}}>{price.toLocaleString()}</del>
-                    {(discount !== 0) && <span className="pro-discount">-{discount}%</span>}
+                    {(discount !== 0) && <ProductDiscount className="pro-discount">-{discount}%</ProductDiscount>}
                 </Flex>
                 <div>
-                <button type="submit" className="buy-now-btn">
+                <ProductDetailBtn type="submit" className="buy-now-btn">
                     MUA NGAY
-                </button>
+                </ProductDetailBtn>
                 </div>
                 <div></div>
             </Col>
