@@ -9,6 +9,7 @@ import ProductDetailPage from "../pages/ProductDetailPage/ProductDetailPage";
 import UserInfor from '../pages/UserInfor/UserInfor';
 import OrderHis from '../pages/OrderHis/OrderHis';
 import OrderDetail from '../pages/OrderDetail/OrderDetail';
+import ForgotPassword from '../pages/ForgotPassword/ForgotPassword'
 export const routes = [
   {
     path: "/",
@@ -57,4 +58,8 @@ export const routes = [
     path: "/OrderDetail",
     page: OrderDetail,
   },
+  {
+    path: '/ForgotPassword',
+    page: ForgotPassword
+  }
 ];
