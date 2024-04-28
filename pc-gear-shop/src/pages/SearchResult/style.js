@@ -1,18 +1,10 @@
-import {Row} from 'antd';
 import styled from "styled-components";
-import ButtonComponent from "../../components/ButtonComponent/ButtonComponent";
+import ButtonComponent from "../../components/ButtonComponent/ButtonComponent"
 
-export const WrapperHeader = styled(Row)`
-    padding: 10px 120px;
-    background-color: rgb(26,147,255);
-`
 export const WrapperButtonMore = styled(ButtonComponent)`
     &:hover{
         color: #fff;
         background: rgb(13,92,182);
-        span{
-            color: #fff;
-        }
     }
     color: rgb(11, 116, 229);
     width: 100%;

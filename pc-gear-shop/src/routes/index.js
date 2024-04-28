@@ -9,6 +9,8 @@ import ProductDetailPage from "../pages/ProductDetailPage/ProductDetailPage";
 import UserInfor from '../pages/UserInfor/UserInfor';
 import OrderHis from '../pages/OrderHis/OrderHis';
 import OrderDetail from '../pages/OrderDetail/OrderDetail';
+import SearchResult from '../pages/SearchResult/SearchResult'
+
 export const routes = [
   {
     path: "/",
@@ -57,4 +59,9 @@ export const routes = [
     path: "/OrderDetail",
     page: OrderDetail,
   },
+  {
+    path: '/search',
+    page: SearchResult,
+    // isShowHeader: true,
+  }
 ];
