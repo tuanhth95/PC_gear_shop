@@ -83,10 +83,10 @@ const getAllOrder = () => {
 const getAllUserOrder = (userInfo) => {
     return new Promise(async (resolve, reject) => {
         try {
-            const orderDetail = await OrderDetail.find({
+            const orderDetails = await OrderDetail.find({
                 userInfo : userInfo
             })
-            if (orderDetail === null) {
+            if (orderDetails.length === 0) {
                 resolve({
                     status: 'ERR',
                     message: 'The order is not defined'
@@ -96,7 +96,7 @@ const getAllUserOrder = (userInfo) => {
             resolve({
                 status: 'OK',
                 message: 'SUCESSS',
-                data: orderDetail
+                data: orderDetails
             })
         } catch (e) {
             // console.log('e', e)
