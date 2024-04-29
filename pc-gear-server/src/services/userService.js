@@ -22,7 +22,8 @@ const createUser = (newUser) =>{
                 phone, 
                 address, 
                 password: hash, 
-                confirmPassword
+                confirmPassword,
+                avatar
             })
             await result.save();
 
@@ -152,11 +153,23 @@ const getDetailsUser = (id) => {
         }
     })
 }
-
+const updateUserAvatar = async (userId, avatarUrl) => {
+    try {
+      const user = await User.findByIdAndUpdate(
+        userId,
+        { avatar: avatarUrl },
+        { new: true }
+      );
+      return user;
+    } catch (error) {
+      throw new Error('Error updating user avatar');
+    }
+  };
 module.exports = {
     createUser,
     loginUser,
     getAllUser,
     updateUser,
-    getDetailsUser
+    getDetailsUser,
+    updateUserAvatar
 }
