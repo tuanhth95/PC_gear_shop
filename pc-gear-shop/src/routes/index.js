@@ -6,6 +6,7 @@ import Register from "../pages/Register/Register";
 import Review from "../pages/Review/Review";
 import CategoryPage from "../pages/CategoryPage/CategoryPage";
 import ProductDetailPage from "../pages/ProductDetailPage/ProductDetailPage";
+import UserPage from '../pages/UserPage/UserPage';
 
 export const routes = [
   {
@@ -43,6 +44,9 @@ export const routes = [
     path: "/ProductDetail",
     page: ProductDetailPage,
   },
-  
+  {
+    path: "/UserPage",
+    page: UserPage,
+  },
   
 ];
