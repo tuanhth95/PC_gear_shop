@@ -55,7 +55,7 @@ export const routes = [
   },
   
   {
-    path: '/search',
+    path: '/search-results',
     page: SearchResult,
     // isShowHeader: true,
   },

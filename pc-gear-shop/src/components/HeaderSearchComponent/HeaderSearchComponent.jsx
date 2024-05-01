@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Input, Col } from 'antd';
-import { searchProduct as searchProductAction } from '../../redux/slices/productSlice'; // Correct the path if necessary
+import { searchProduct as searchProductAction } from '../../redux/slides/productSlice'; // Correct the path if necessary
 import { WrapperHeader } from './style';
 
 const HeaderSearchComponent = () => {
@@ -17,7 +17,7 @@ const HeaderSearchComponent = () => {
     const onSearch = (value) => {
         if (!value.trim()) return; 
         dispatch(searchProductAction(value));
-        navigate(`/search?query=${encodeURIComponent(value)}`); 
+        navigate(`/search-results?query=${encodeURIComponent(value)}`); 
     };
 
     return (
