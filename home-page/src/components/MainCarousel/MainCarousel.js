@@ -44,10 +44,20 @@ const settings = {
     prevArrow: <SamplePrevArrow />
   }
   
-  const MainCarousel = () => {
+  const MainCarousel = (props) => {
     return (
         <Carousel arrows {...settings} autoplaySpeed='5000'>
-            <div>
+          {
+            props.data.map((slide, index) => {
+              return (
+                <div key={index}>
+                  <Slide src={slide.img} alt={slide.name} />
+                </div>
+              )
+            })
+          }
+          
+            {/* <div>
               <Slide src="https://laptopxachtayshop.com/uploads/2024/01/xps.jpg" alt="" />
             </div>
             <div>
@@ -58,7 +68,7 @@ const settings = {
             </div>
             <div>
               <Slide src="https://laptopxachtayshop.com/uploads/2024/03/helios.jpg" alt="" />
-            </div>
+            </div> */}
         </Carousel>
     )
   }

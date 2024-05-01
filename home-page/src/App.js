@@ -7,6 +7,8 @@ import MainCarousel from './components/MainCarousel/MainCarousel';
 import ProductsSlider from './components/ProductsSlider/ProductsSlider'
 
 function App() {
+
+  const [slides, setSlides] = useState()
   
   const [laptopList, setLaptopList] = useState()
   const [gamingList, setGamingList] = useState()
@@ -20,8 +22,19 @@ function App() {
       // console.log( typeof res.data.data)
       return res.data
   }
+
+  const fetchAllSlidesHome = async () => {
+    const response = await axios.get('http://localhost:3001/api/main_carousel/get-slides')
+    return response.data
+  }
   
   const { data: allProductsHome} = useQuery({ queryKey: ['allProductsHome'],  queryFn: fetchAllProductsHome });
+
+  const { data: allSlidesHome } = useQuery(
+    { 
+      queryKey: ['allSlidesHome'], 
+      queryFn: fetchAllSlidesHome,
+    });
 
   useEffect(() => {
     if (allProductsHome) {
@@ -46,9 +59,15 @@ function App() {
     }
   }, [allProductsHome])
 
+  useEffect(() => {
+    if (allSlidesHome) {
+      setSlides(allSlidesHome.data)
+    }
+  }, [allSlidesHome])
+
   return (
     <div className="home-page" style={{margin: '0 5%'}}>
-      <MainCarousel />
+      { slides && <MainCarousel data={slides} /> } 
       {
         laptopList && (
           <GroupedProducts>
