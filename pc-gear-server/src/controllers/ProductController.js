@@ -26,9 +26,9 @@ const createProduct = async (req, res) => {
 
 const getAllProduct = async(req, res) => {
     try {
-        const { limit = 10 , page = 0 , filter='', minPrice=0, maxPrice=100000000 } = req.query;
+        const { limit = 10 , page = 0 , filter='', minPrice=0, maxPrice=100000000 , sort = '', producer = ''} = req.query;
         const skip = limit * page;
-        const response = await ProductService.getAllProduct(Number(limit), Number(skip), filter, Number(minPrice), Number(maxPrice));
+        const response = await ProductService.getAllProduct(Number(limit), Number(skip), filter, Number(minPrice), Number(maxPrice), sort, producer);
         return res.status(200).json(response);
     } catch(e) {
         return res.status(500).json({

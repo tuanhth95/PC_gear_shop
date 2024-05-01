@@ -7,6 +7,10 @@ import Review from "../pages/Review/Review";
 import CategoryPage from "../pages/CategoryPage/CategoryPage";
 import ProductDetailPage from "../pages/ProductDetailPage/ProductDetailPage";
 import UserPage from '../pages/UserPage/UserPage';
+import UserInfor from '../pages/UserInfor/UserInfor';
+import OrderHis from '../pages/OrderHis/OrderHis';
+import OrderDetail from '../pages/OrderDetail/OrderDetail';
+import SearchResult from '../pages/SearchResult/SearchResult'
 
 export const routes = [
   {
@@ -49,4 +53,9 @@ export const routes = [
     page: UserPage,
   },
   
+  {
+    path: '/search',
+    page: SearchResult,
+    // isShowHeader: true,
+  }
 ];

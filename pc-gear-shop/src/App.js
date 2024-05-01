@@ -5,6 +5,8 @@ import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import MainCarousel from './components/MainCarousel/MainCarousel';
 import ProductsSlider from './components/ProductsSlider/ProductsSlider'
+import HeaderSearchComponent from './components/HeaderSearchComponent/HeaderSearchComponent';
+import Layout from './components/Layout/Layout'
 
 function App() {
 
