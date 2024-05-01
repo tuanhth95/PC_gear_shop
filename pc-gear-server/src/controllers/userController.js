@@ -33,8 +33,8 @@ const createUser = async(req, res)=>{
 }
 const loginUser = async (req, res) => {
     try {
-        const { username, password } = req.body
-        if (!username || !password) {
+        const { email, password } = req.body
+        if (!email || !password) {
             return res.status(400).json({
                 status: 'ERR',
                 message: 'The input is required'

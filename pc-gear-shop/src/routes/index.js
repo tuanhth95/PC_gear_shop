@@ -11,6 +11,7 @@ import UserInfor from '../pages/UserInfor/UserInfor';
 import OrderHis from '../pages/OrderHis/OrderHis';
 import OrderDetail from '../pages/OrderDetail/OrderDetail';
 import SearchResult from '../pages/SearchResult/SearchResult'
+import ForgotPassword from '../pages/ForgotPassword/ForgotPassword'
 
 export const routes = [
   {
@@ -57,5 +58,17 @@ export const routes = [
     path: '/search',
     page: SearchResult,
     // isShowHeader: true,
+  },
+  {
+    path: "/OrderHis",
+    page: OrderHis,
+  },
+  {
+    path: "/OrderDetail",
+    page: OrderDetail,
+  },
+  {
+    path: '/ForgotPassword',
+    page: ForgotPassword
   }
 ];
