@@ -4,10 +4,14 @@ import "antd/dist/reset.css"; // or 'antd/dist/antd.less'
 import { Layout } from "antd";
 import Sidebar from "./components/Sidebar";
 import SubCategoryList from "./components/SubCategoryList";
+import AppHeader from "./components/AppHeader";
+import AppFooter from './components/AppFooter';
+import "./index.css";
 
-const { Content, Sider } = Layout;
+const { Content, Header  } = Layout;
 
 const App = () => {
+  const [visible, setVisible] = useState(false);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [subCategories, setSubCategories] = useState([]);
@@ -27,37 +31,22 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    if (selectedCategory) {
-      const category = categories.find((c) => c.name === selectedCategory);
-      setSubCategories(category ? category.subCategories : []);
-    }
+    // Khi danh mục được chọn thay đổi, cập nhật danh sách các danh mục con
+    const category = categories.find(c => c.name === selectedCategory);
+    setSubCategories(category ? category.subCategories : []);
   }, [selectedCategory, categories]);
 
   return (
     <Layout style={{ minHeight: "100vh" }}>
-      <Sider width={200} className="site-layout-background">
-        <Sidebar
-          categories={categories}
-          onCategoryChange={setSelectedCategory}
-        />
-      </Sider>
-      <Layout style={{ padding: "0 24px 24px" }}>
-        <Content
-          className="site-layout-background"
-          style={{
-            padding: 24,
-            margin: 0,
-            minHeight: 280,
-          }}
-        >
-          {/* Chỉ hiển thị SubCategoryList nếu có subCategories */}
-          {subCategories.length > 0 && (
-            <SubCategoryList subCategories={subCategories} />
-          )}
-        </Content>
-      </Layout>
+      <AppHeader categories={categories} />
+      <Content style={{ padding: '0 50px', marginTop: 64 }}>
+        <div style={{ background: '#fff', padding: 24, minHeight: 380 }}>
+          {/* Nếu một danh mục được chọn, hiển thị danh sách các danh mục con */}
+          {selectedCategory && <SubCategoryList subCategories={subCategories} />}
+        </div>
+      </Content>
+      <AppFooter />
     </Layout>
   );
 };
-
 export default App;

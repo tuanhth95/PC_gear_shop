@@ -7,6 +7,8 @@ const bodyParser = require("body-parser");
 // Import các routes
 const categoriesRouter = require("./routes/categoryRoute.jsx");
 
+const productRouter = require('./routes/ProductRouter.js');
+
 // Khởi tạo app Express
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -17,6 +19,8 @@ app.use(bodyParser.json()); // Xử lý các JSON request
 
 // Định nghĩa các route
 app.use("/api/categories", categoriesRouter);
+
+app.use('/api/products', productRouter);
 
 // Kết nối tới MongoDB
 mongoose

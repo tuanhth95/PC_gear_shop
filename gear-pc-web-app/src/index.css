@@ -26,3 +26,36 @@ a {
   background-color: #e6f7ff;
   color: #1890ff;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #1890ff; 
+  padding: 0 20px;
+}
+
+.header .logo {
+  width: 120px; 
+  height: 31px; 
+  background: rgba(255, 255, 255, 0.2);
+  margin-right: 24px; 
+}
+
+/* Style cho input tìm kiếm */
+.ant-input-affix-wrapper > input.ant-input {
+  border: none;
+  outline: none;
+}
+
+/* Đặt lại style cho menu item khi hover và active */
+.ant-menu-dark .ant-menu-item:hover, .ant-menu-dark .ant-menu-item-active {
+  background-color: transparent;
+}
+
+/* Style cho các icons và text trên header */
+.ant-menu-dark .ant-menu-item, .ant-menu-dark .ant-menu-submenu-title {
+  color: #fff;
+  margin-right: 20px; /* Khoảng cách giữa các menu items */
+}
+
+
