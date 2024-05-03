@@ -20,6 +20,7 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(cookieParser());
+app.use(express.urlencoded({ extended: true }));
 routes(app);
 
 mongoose
