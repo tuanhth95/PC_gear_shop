@@ -1,21 +1,22 @@
-const Review = require('../models/ReviewModel');
+const Review = require('../models/Review');
 const mongoose = require('mongoose');
-
 
 const getAllReviews = async () => {
   return await Review.find({});
 };
 
 const getReviewsByProductID = async (productID) => {
-  return await Review.find({ productID: productID });
+  return await Review.find({"product.id": productID});
 };
 
-const createReview = async (req, res) => {
-  const { userID, productID } = req.params;
-  const { rate, contentReview } = req.body;
+const createReview = async (reviewData) => {
+  const { rate, contentReview, user, product } = reviewData;
 
   if (!rate || !contentReview) {
     return { status: 400, data: { message: 'Vui lòng điền đủ thông tin.' } };
+  }
+  if (!user || !product) {
+    return { status: 400, data: { message: 'Không tìm thấy người dùng và sản phẩm.' } };
   }
 
   try {
@@ -23,8 +24,8 @@ const createReview = async (req, res) => {
       rate: Number(rate),
       date: Date.now(), 
       contentReview,
-      userID,
-      productID
+      user,
+      product
     });
 
     await review.save();
@@ -48,48 +49,9 @@ const deleteReview = async (reviewID) => {
   return { status: 200, data: { message: 'Đánh giá được xóa thành công', deletedReview } };
 };
 
-// const getReplyByID = async (reviewID) => {
-//   return await Review.findById(reviewID);
-// };
-
-const createReplyReview = async (userID, reviewID, content) => {
-  if (!content) {
-    return { status: 400, data: { message: 'Vui lòng điền đủ thông tin.' } };
-  }
-
-  try {
-    const review = await Review.findById(reviewID);
-
-    if (!review) {
-      return { status: 404, data: { message: 'Không tìm thấy đánh giá.' } };
-    }
-
-    const newReply = {
-      content,
-      userID, 
-      date: Date.now()
-    };
-
-    review.replies.push(newReply);
-
-    await review.save();
-
-    return { status: 201, data: { message: 'Phản hồi đã được thêm', reply: newReply } };
-  } catch (error) {
-    console.error('Lỗi tạo phản hồi:', error);
-    return { status: 500, data: { message: 'Đã xảy ra lỗi khi tạo phản hồi.' } };
-  }
-};
-const deleteReply = async (replyID) => {
- 
-};
-
 module.exports = {
   getAllReviews,
   getReviewsByProductID,
   createReview,
-  deleteReview,
-  // getReplyByID,
-  createReplyReview,
-  deleteReply
+  deleteReview
 };

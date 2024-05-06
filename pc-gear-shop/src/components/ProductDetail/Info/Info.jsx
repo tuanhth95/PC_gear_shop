@@ -1,27 +1,12 @@
 import React from 'react';
 import { Flex, Row, Col } from 'antd';
 import { ProductDetailBtn, ProductDetailImg, ProductDiscount, ProductName, ProductSale } from './style';
-import { useSelector, useDispatch } from 'react-redux';
-import { Navigate, useLocation, useNavigate } from 'react-router-dom';
-import { addCartProduct } from '../../../redux/slices/cartSlide';
+
 const Info = (props) => {
-    const location = useLocation()
+
     const price = props.data.price
     const discount = props.data.discount
     const sale = price * (1 - (discount/100))
-    const user = useSelector((state) => state.user)
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
-
-    const handleBuyNow = () => {
-        console.log('user id: ', user?.id)
-        if(!user?.id){
-            navigate('/signin', {state: location?.pathname});
-        }
-        else{
-            dispatch(addCartProduct(props.data));
-        }
-    }
 
     return (
         <Row justify="space-between">
@@ -39,7 +24,7 @@ const Info = (props) => {
                     {(discount !== 0) && <ProductDiscount className="pro-discount">-{discount}%</ProductDiscount>}
                 </Flex>
                 <div>
-                <ProductDetailBtn type="submit" className="buy-now-btn" onClick={() => handleBuyNow()}>
+                <ProductDetailBtn type="submit" className="buy-now-btn">
                     MUA NGAY
                 </ProductDetailBtn>
                 </div>

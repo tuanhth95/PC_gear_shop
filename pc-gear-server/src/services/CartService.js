@@ -2,7 +2,7 @@ const Cart = require('../models/CartModel')
 
 const getItems = (req) => {
   return new Promise(async (resolve, reject) =>{
-    //console.log("get Item: ", req.query.all);
+    console.log("get Item: ", req.query.all);
     const all = req.query.all;
     try {
       const res = await Cart.find();

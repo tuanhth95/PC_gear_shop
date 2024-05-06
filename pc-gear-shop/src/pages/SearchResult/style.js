@@ -1,4 +1,3 @@
-import {Row} from 'antd';
 import styled from "styled-components";
 import ButtonComponent from "../../components/ButtonComponent/ButtonComponent"
 
@@ -10,6 +9,18 @@ export const WrapperButtonMore = styled(ButtonComponent)`
     color: rgb(11, 116, 229);
     width: 100%;
 `
+
+export const WrapperDiv = styled.div`
+  background: #fff;
+  padding: 0 120px;
+  height: fit-content;
+  width: fit-content;
+  margin: auto auto;
+
+  @media (max-width: 768px) {
+    padding: 0 15px;
+  }
+`;
 
 export const WrapperProducts = styled.div`
   display: grid;
@@ -42,4 +53,5 @@ export const WrapperProducts = styled.div`
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 
-`;
+`
+

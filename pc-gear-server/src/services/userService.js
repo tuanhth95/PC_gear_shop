@@ -14,19 +14,19 @@ const createUser = (newUser) =>{
                     message: 'The email is already'
                 })
             }
-            
-            const hashPass = bcrypt.hashSync(password, 10)
+            const hash = bcrypt.hashSync(password, 10)
+
             const result = new User({
                 username,
                 email, 
                 phone, 
                 address, 
-                password: hashPass, 
-            });
-            console.log(result);
-            const res = await result.save();
+                password: hash, 
+                confirmPassword
+            })
+            await result.save();
 
-            if(res){
+            if(result){
                 resolve({
                     status: 'OK',
                     message: 'SUCCESS',
@@ -41,10 +41,10 @@ const createUser = (newUser) =>{
 }
 const loginUser = (userLogin) => {
     return new Promise(async (resolve, reject) => {
-        const { email , password } = userLogin
+        const { username, password } = userLogin
         try {
             const checkUser = await User.findOne({
-                email: email});
+                username: username});
             if (checkUser === null) {
                 resolve({
                     status: 'ERR',
@@ -59,28 +59,27 @@ const loginUser = (userLogin) => {
                     message: 'The password or user is incorrect'
                 })
             }
-            const access_token = await genneralAccessToken({
-                id: checkUser.id,
-                //isAdmin: checkUser.isAdmin
-                //_id: id
-            })
-            console.log('access_token', access_token);
-            const refresh_token = await genneralRefreshToken({
-                id: checkUser._id,
-                //isAdmin: checkUser.isAdmin
-                //_id: id
-            })
-            checkUser.access_token = access_token;
-            checkUser.refresh_token = refresh_token;
-            checkUser.save();
+            // const access_token = await genneralAccessToken({
+            //     //id: checkUser._id,
+            //     //isAdmin: checkUser.isAdmin
+            //     _id: id
+            // })
+
+            // const refresh_token = await genneralRefreshToken({
+            //     // id: checkUser._id,
+            //     //isAdmin: checkUser.isAdmin
+            //     _id: id
+            // })
             resolve({
                 status: 'OK',
                 message: 'SUCCESS',
-                //access_token: access_token,
-                //refresh_token: refresh_token,
+                //access_token,
+                //refresh_token,
                 data: checkUser
             })
-            
+            //checkUser.access_token = access_token;
+            //checkUser.refresh_token = refresh_token;
+            //checkUser.save();
 
         } catch (e) {
             reject(e)
@@ -153,23 +152,11 @@ const getDetailsUser = (id) => {
         }
     })
 }
-const updateUserAvatar = async (userId, avatarUrl) => {
-    try {
-      const user = await User.findByIdAndUpdate(
-        userId,
-        { avatar: avatarUrl },
-        { new: true }
-      );
-      return user;
-    } catch (error) {
-      throw new Error('Error updating user avatar');
-    }
-  };
+
 module.exports = {
     createUser,
     loginUser,
     getAllUser,
     updateUser,
-    getDetailsUser,
-    updateUserAvatar
+    getDetailsUser
 }

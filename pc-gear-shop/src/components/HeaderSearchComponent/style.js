@@ -1,12 +1,18 @@
 import {Row} from 'antd';
-import {Link} from 'react-router-dom';
 import styled from "styled-components";
 import ButtonComponent from "../../components/ButtonComponent/ButtonComponent";
 
 export const WrapperHeader = styled(Row)`
-    padding: 10px 120px;
+    box-sizing: border-box;  
+    padding: 10px 15px;
     background-color: rgb(26,147,255);
-`
+    width: 100%;
+
+    @media (max-width: 480px) {
+    padding: 10px 0;
+  }
+`;
+
 export const WrapperButtonMore = styled(ButtonComponent)`
     &:hover{
         color: #fff;
@@ -17,16 +23,6 @@ export const WrapperButtonMore = styled(ButtonComponent)`
     }
     color: rgb(11, 116, 229);
     width: 100%;
-`
-export const WrapperTextHeader = styled(Link)`
-    font-size: 18px;
-    color: #fff;
-    font-weight: bold;
-    text-align: left;
-    &:hover {
-        font-size: 18px;
-        color: #fff;
-    }
 `
 
 export const WrapperProducts = styled.div`
@@ -61,23 +57,3 @@ export const WrapperProducts = styled.div`
   }
 
 `;
-export const WrapperHeaderAccount = styled.div`
-    display: flex;
-    align-items: center;
-    color: #fff;
-    gap: 10px;
-    max-width: 200px;
-`
-
-export const WrapperTextHeaderSmall = styled.span`
-    font-size: 12px;
-    color: #fff;
-    white-space: nowrap;
-`
-
-export const WrapperContentPopup = styled.p`
-    cursor: pointer;
-    &:hover {
-        color: rgb(26, 148, 255);
-    }
-`

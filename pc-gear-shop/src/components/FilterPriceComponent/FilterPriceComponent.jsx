@@ -11,14 +11,14 @@ const pricePresets = [
     { label: '5 - 10 triệu', value: [5000000, 10000000] },
     { label: '10 - 20 triệu', value: [10000000, 20000000] },
     { label: '20 - 30 triệu', value: [20000000, 30000000] },
-    { label: 'Trên 30 triệu', value: [30000000, 100000000] },
+    { label: 'Trên 30 triệu', value: [30000000, 1000000000] },
 ];
 
 const FilterPriceComponent = () => {
     const dispatch = useDispatch();
     const location = useLocation();
     const navigate = useNavigate();
-    const [tempPriceRange, setTempPriceRange] = useState([0, 100000000]);  
+    const [tempPriceRange, setTempPriceRange] = useState([0, 1000000000]);  
     const [dropdownVisible, setDropdownVisible] = useState(false);
 
     const applyFilters = () => {
@@ -35,9 +35,9 @@ const FilterPriceComponent = () => {
     };
 
     const resetFilters = () => {
-        setTempPriceRange([0, 100000000]);
+        setTempPriceRange([0, 1000000000]);
         navigate('?', { replace: true });
-        dispatch(setSearchPriceRange([0, 100000000]));
+        dispatch(setSearchPriceRange([0, 1000000000]));
     };
 
     return (
@@ -83,7 +83,7 @@ const menu = (tempPriceRange, setTempPriceRange, handlePresetSelect, resetFilter
             range
             step={500000}
             min={0}
-            max={100000000}
+            max={1000000000}
             onChange={setTempPriceRange}
             value={tempPriceRange}
             style={{ marginTop: '10px' }}

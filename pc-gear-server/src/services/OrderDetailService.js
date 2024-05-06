@@ -4,46 +4,32 @@ const User = require("../models/UserModels")
 const bcrypt = require("bcrypt")
 
 
-const createOrderDetail = (newOrderDetail) =>{
-    const {orderItems,fullname : fullName,address,phone,paymentMethod,itemsPrice,shippingPrice,totalPrice,userId,isPaid,isDelivered} = newOrderDetail
-        // orderItems.map((item) => {
+const creatOrderDetail = (newOrderDetail) =>{
+    const {orderItems,shippingAddress,paymentMethod,itemsPrice,shippingPrice,totalPrice,userInfo,isPaid,isDelivered} = newOrderDetail
 
-        // })
-        console.log(newOrderDetail.paymentMethod);
-        console.log(paymentMethod);
         return new Promise (async(resolve, reject) => {
 
         try{
             
             const creatOrderDetail = await OrderDetail.create({
-                orderItems: orderItems,
-                shippingAddress: {
-                    fullName: fullName,
-                    address,
-                    phone,
-                },
+                orderItems,
+                shippingAddress,
                 paymentMethod,
                 itemsPrice,
                 shippingPrice,
                 totalPrice,
-                userInfo: userId,
+                userInfo,
                 isPaid,
                 isDelivered
             })
             if(creatOrderDetail){
-                console.log("if true: ", creatOrderDetail)
                 resolve({
                     status: 'OK',
                     message: 'SUCCESS',
                     data: creatOrderDetail
                 })
             }
-            console.log("if not true: ", creatOrderDetail)
-            resolve({
-                status: 'OK',
-                message: 'ERROR',
-                data: creatOrderDetail
-            })
+            resolve({})
             
         }catch(e){
             reject(e)
@@ -97,10 +83,10 @@ const getAllOrder = () => {
 const getAllUserOrder = (userInfo) => {
     return new Promise(async (resolve, reject) => {
         try {
-            const orderDetails = await OrderDetail.find({
+            const orderDetail = await OrderDetail.find({
                 userInfo : userInfo
             })
-            if (orderDetails.length === 0) {
+            if (orderDetail === null) {
                 resolve({
                     status: 'ERR',
                     message: 'The order is not defined'
@@ -110,7 +96,7 @@ const getAllUserOrder = (userInfo) => {
             resolve({
                 status: 'OK',
                 message: 'SUCESSS',
-                data: orderDetails
+                data: orderDetail
             })
         } catch (e) {
             // console.log('e', e)
@@ -119,7 +105,7 @@ const getAllUserOrder = (userInfo) => {
     })
 }
 module.exports = {
-    createOrderDetail,
+    creatOrderDetail,
     getOrderDetails,
     getAllOrder,
     getAllUserOrder

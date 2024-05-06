@@ -3,11 +3,13 @@ import CartPage from "../pages/CartPage/CartPage";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import SignIn from "../pages/Sign-in/SignIn";
 import Register from "../pages/Register/Register";
+import Review from "../pages/Review/Review";
 import CategoryPage from "../pages/CategoryPage/CategoryPage";
 import ProductDetailPage from "../pages/ProductDetailPage/ProductDetailPage";
-import UserPage from '../pages/UserPage/UserPage';
+import UserInfor from '../pages/UserInfor/UserInfor';
+import OrderHis from '../pages/OrderHis/OrderHis';
+import OrderDetail from '../pages/OrderDetail/OrderDetail';
 import SearchResult from '../pages/SearchResult/SearchResult'
-import ForgotPassword from '../pages/ForgotPassword/ForgotPassword'
 
 export const routes = [
   {
@@ -34,25 +36,32 @@ export const routes = [
     page: Register,
   },
   {
+    path: "/Review",
+    page: Review,
+  },
+  {
     path: "/Category",
     page: CategoryPage,
   },
   {
-    path: "/ProductDetail/:id",
+    path: "/ProductDetail",
     page: ProductDetailPage,
-    isShowHeader: true,
   },
   {
-    path: "/UserPage",
-    page: UserPage,
+    path: "/UserInfor",
+    page: UserInfor,
   },
   {
-    path: '/ForgotPassword',
-    page: ForgotPassword
+    path: "/OrderHis",
+    page: OrderHis,
   },
   {
-    path: '/search-results',
+    path: "/OrderDetail",
+    page: OrderDetail,
+  },
+  {
+    path: '/search',
     page: SearchResult,
-    isShowHeader: true,
-  },
+    // isShowHeader: true,
+  }
 ];
