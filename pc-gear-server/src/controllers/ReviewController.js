@@ -1,43 +1,6 @@
 const Review = require('../models/ReviewModel');
 const reviewService = require('../services/reviewService');
 
-const dataProduct = [
-  {
-    id: 1,
-    image: "https://hoanghapccdn.com/media/product/2906_cpu_intel_core_i9_12900k_1.jpg",
-    name: "CPU Intel Core i9-12900K",
-    price: "7.490.000",
-    quantity: 100,
-  },
-  {
-    id: 2,
-    image: "https://nguyencongpc.vn/media/product/25654-250-4906-1.jpg",
-    name: "CPU Intel Core i9-12900K",
-    price: "7.490.000",
-    quantity: 100,
-  },
-  {
-    id: 3,
-    image: "https://cdn.tgdd.vn/hoi-dap/1424201/ram-ddr5-la-gi-hieu-suat-cai-tien-ra-sao-co-nen-nang-cap-1.jpeg",
-    name: "CPU Intel Core i9-12900K",
-    price: "7.490.000",
-    quantity: 100,
-  },
-];
-
-const dataUser = [
-  {
-    id: 1,
-    image: "https://th.bing.com/th/id/OIP.G37tgeQqSNt7v2oPfj9ltQHaE7?rs=1&pid=ImgDetMain",
-    name: "Trinh",
-  },
-  {
-    id: 2,
-    image: "https://th.bing.com/th/id/OIP.hwJevYbZh-ebZyLC74Pj9gHaEh?rs=1&pid=ImgDetMain",
-    name: "Minh",
-  }
-];
-
 const getReview = async (req, res) => {
   try {
     const reviews = await reviewService.getAllReviews();

@@ -60,6 +60,7 @@ export const WrapperProducts = styled.div`
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 
+<<<<<<< HEAD
 `;
 export const WrapperHeaderAccount = styled.div`
     display: flex;
@@ -80,4 +81,6 @@ export const WrapperContentPopup = styled.p`
     &:hover {
         color: rgb(26, 148, 255);
     }
+=======
+>>>>>>> origin/Tien
 `

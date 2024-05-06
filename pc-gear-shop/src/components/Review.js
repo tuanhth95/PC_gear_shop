@@ -69,9 +69,6 @@ export default function Review({productID}) {
       .catch((err) => { console.log(err) })
   }
 
-  
-
-
   const [visibleCount, setVisibleCount] = useState(3); 
 
   const handleShowMore = () => {

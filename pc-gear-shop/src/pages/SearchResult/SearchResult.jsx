@@ -7,70 +7,87 @@ import * as ProductService from '../../services/ProductService';
 import CardComponent from '../../components/CardComponent/CardComponent';
 import { WrapperProducts, WrapperButtonMore } from './style';
 import FilterPriceComponent from '../../components/FilterPriceComponent/FilterPriceComponent';
+import SortComponent from '../../components/SortComponent/SortComponent';
+import FilterProducerComponent from '../../components/FilterProducerComponent/FilterProducerComponent';  // Assuming this is the correct path
 
 const SearchResult = () => {
     const location = useLocation();
     const dispatch = useDispatch();
     const searchParams = new URLSearchParams(location.search);
-    const query = searchParams.get('query'); 
-    const searchProduct = useSelector(state => state?.product?.search);
-    const searchPrice = useSelector(state => state?.product?.searchPriceRange);
+    const query = searchParams.get('query') || '';
+    const producer = useSelector(state => state.product.selectedProducer); 
+    const initialSort = searchParams.get('sort') || '';
+    const minPrice = searchParams.get('minPrice') || '0';
+    const maxPrice = searchParams.get('maxPrice') || '100000000';
+
     const [limit, setLimit] = useState(10);
+    const [sort, setSort] = useState(initialSort);
+    const [priceRange, setPriceRange] = useState([minPrice, maxPrice]);
 
     useEffect(() => {
-        dispatch(searchProductAction(query)); 
+        dispatch(searchProductAction(query));
     }, [query, dispatch]);
 
+    useEffect(() => {
+        if (initialSort !== sort || priceRange[0] !== minPrice || priceRange[1] !== maxPrice) {
+            setSort(initialSort);
+            setPriceRange([minPrice, maxPrice]);
+        }
+    }, [initialSort, minPrice, maxPrice, sort, priceRange]);
+
     const { isLoading, data: products, error } = useQuery({
-        queryKey: ['products', searchProduct, searchPrice, limit],
-        queryFn: () => ProductService.getAllProduct(searchProduct, searchPrice, limit),
+        queryKey: ['products', query, priceRange, limit, sort, producer],
+        queryFn: () => ProductService.getAllProduct(query, priceRange, limit, sort, producer),
         retry: 3,
         retryDelay: 1000
     });
 
-    if (isLoading) return <div>Loading...</div>;
+    if (isLoading) return <div></div>;
     if (error) return <div>Error fetching products: {error.message}</div>;
 
     const renderSearchResultCount = () => {
-        if (searchProduct === "") {
+        if (!query && !producer) {
             return null;
         }
-        if (products?.data?.length > 0) {
-            return (
-                <div style={{ margin: '20px 0', fontSize: '1.75rem', color: '#161617', marginLeft: '20px' }}>
-                    Kết quả tìm kiếm cho <strong>"{searchProduct}":</strong>
-                </div>
-            );
-        } else if (products?.data?.length === 0) {
-            return <div style={{ margin: '20px 0', fontSize: '1.75rem', marginLeft: '20px' }}>Không tìm thấy sản phẩm.</div>;
-        }
-        return null;
+        return products?.data?.length > 0 ? (
+            <div style={{ margin: '20px 0', fontSize: '16px', color: '#161617', marginLeft: '20px' }}>
+                {(query !== '') && (<>Kết quả tìm kiếm cho <strong>"{query}"</strong>:</>)}
+            </div>
+        ) : (
+            <div style={{ margin: '20px 0', fontSize: '20px', marginLeft: '20px' }}>Không tìm thấy sản phẩm.</div>
+        );
     };
 
     return (
-        <div>
         <div id="container" style={{background: '#fff', padding: '0 120px', height: 'fit-content', width: 'fit-content', margin: 'auto auto'}}>
-                 <div style={{paddingTop: '24px', marginLeft: '20px'}}>
-                     {products?.data?.length > 0 && <FilterPriceComponent />}
-                    </div>
-                {renderSearchResultCount()}
-                <WrapperProducts>
-                    {products?.data?.map(product => (
-                        <CardComponent key={product.id} {...product} />
-                    ))}
-                </WrapperProducts>
-                {products?.data?.length >= 10 && ( 
-                    <div style={{width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '10px'}}>
-                        <WrapperButtonMore
-                            textButton="Xem thêm"
-                            type="outline"
-                            onClick={()=> setLimit(prev =>prev + 10)}
-                            styleButton={{border: '1px solid rgb(11,116,229)', width: '120px', height: '38px', borderRadius: '4px'}}
-                            styleTextButton={{fontWeight: '500', color: 'rgb(11,116,229)'}}
-                        />
-                    </div>
+            {renderSearchResultCount()}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '0px auto', marginTop: '20px', maxWidth: '1240px' }}>
+                {products?.data?.length > 0 && (
+                <>
+                <div style={{ display: 'flex', gap: '10px' }}> 
+                    <FilterPriceComponent />
+                    <FilterProducerComponent />
+                </div>
+                    <SortComponent />
+                </>
                 )}
-        </div>
+            </div>
+            <WrapperProducts>
+                {products?.data?.map(product => (
+                    <CardComponent key={product.id} {...product} />
+                ))}
+            </WrapperProducts>
+            {products?.data?.length >= 10 && (
+                <div style = {{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                    <WrapperButtonMore
+                    textButton="Xem thêm"
+                    type="outline"
+                    onClick={() => setLimit(prev => prev + 10)}
+                    styleButton={{ border: '1px solid rgb(11,116,229)', width: '120px', height: '38px', borderRadius: '4px' }}
+                    styleTextButton={{ fontWeight: '500', color: 'rgb(11,116,229)' }}
+                />
+                </div>
+            )}
         </div>
     );
 };

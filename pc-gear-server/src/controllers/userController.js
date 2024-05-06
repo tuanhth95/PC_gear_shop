@@ -24,7 +24,6 @@ const createUser = async(req, res)=>{
                 message: 'The password is not match confirmPassword'
             })
         }
-
         const resp = await userService.createUser(req.body);
         return res.status(200).json(resp);   
     }catch(e){

@@ -2,13 +2,12 @@ const OrderDetailService = require('../services/OrderDetailService')
 const OrderDetail = require("../models/OrderDetailModels")
 
 const creatOrderDetail = async(req,res)=>{
-    console.log("createOrder id rec: ", req.params.id)
-    console.log("createOrder data rec: ", req.body.paymentMethod);
-    userid = req.params.id;
-    const result = await OrderDetailService.createOrderDetail({userId:userid, ...req.body})
-    return res.status(200).json(result)
     try{
-        
+        console.log("createOrder id rec: ", req.params.id)
+        console.log("createOrder data rec: ", req.body.paymentMethod);
+        userid = req.params.id;
+        const result = await OrderDetailService.createOrderDetail({userId:userid, ...req.body})
+        return res.status(200).json(result)
     }
     catch(e){
         return res.status(404).json({

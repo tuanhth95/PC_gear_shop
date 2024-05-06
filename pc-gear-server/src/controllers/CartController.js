@@ -1,26 +1,5 @@
 const CartService = require('../services/CartService')
 
-const datas = [
-  {
-    id : '001',
-    image: "https://hoanghapccdn.com/media/product/2906_cpu_intel_core_i9_12900k_1.jpg",
-    name: "CPU Intel Core i9-12900K",
-    price: "7.490.000",
-  },
-  {
-    id : '002',
-    image: "https://nguyencongpc.vn/media/product/25654-250-4906-1.jpg",
-    name: "CPU Intel Core i9-12900K",
-    price: "7.490.000",
-  },
-  {
-    id : '003',
-    image: "https://cdn.tgdd.vn/hoi-dap/1424201/ram-ddr5-la-gi-hieu-suat-cai-tien-ra-sao-co-nen-nang-cap-1.jpeg",
-    name: "CPU Intel Core i9-12900K",
-    price: "7.490.000",
-  },
-];
-
 const getItems = async (req, res) => {
   const response = await CartService.getItems(req);
   let data_t = JSON.parse(JSON.stringify(response.data));

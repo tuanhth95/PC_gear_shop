@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -50,3 +51,66 @@ code {
     border: 2px solid #FF4D4F;
   }
 }
+=======
+/* index.css */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #1890ff;
+  text-decoration: none;
+}
+
+.Menu {
+  border-right: none;
+}
+
+
+.ant-menu-item,
+.ant-menu-submenu-title {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.ant-menu-item:hover,
+.ant-menu-submenu-title:hover {
+  background-color: #e6f7ff;
+  color: #1890ff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #1890ff; 
+  padding: 0 20px;
+}
+
+.header .logo {
+  width: 120px; 
+  height: 31px; 
+  background: rgba(255, 255, 255, 0.2);
+  margin-right: 24px; 
+}
+
+/* Style cho input tìm kiếm */
+.ant-input-affix-wrapper > input.ant-input {
+  border: none;
+  outline: none;
+}
+
+/* Đặt lại style cho menu item khi hover và active */
+.ant-menu-dark .ant-menu-item:hover, .ant-menu-dark .ant-menu-item-active {
+  background-color: transparent;
+}
+
+/* Style cho các icons và text trên header */
+.ant-menu-dark .ant-menu-item, .ant-menu-dark .ant-menu-submenu-title {
+  color: #fff;
+  margin-right: 20px; /* Khoảng cách giữa các menu items */
+}
+
+
+>>>>>>> origin/Tien
