@@ -1,16 +1,88 @@
 const Review = require('../models/ReviewModel');
 const reviewService = require('../services/reviewService');
 
+const dataProduct = [
+  {
+    id: 1,
+    image: "https://hoanghapccdn.com/media/product/2906_cpu_intel_core_i9_12900k_1.jpg",
+    name: "CPU Intel Core i9-12900K",
+    price: "7.490.000",
+    quantity: 100,
+  },
+  {
+    id: 2,
+    image: "https://nguyencongpc.vn/media/product/25654-250-4906-1.jpg",
+    name: "CPU Intel Core i9-12900K",
+    price: "7.490.000",
+    quantity: 100,
+  },
+  {
+    id: 3,
+    image: "https://cdn.tgdd.vn/hoi-dap/1424201/ram-ddr5-la-gi-hieu-suat-cai-tien-ra-sao-co-nen-nang-cap-1.jpeg",
+    name: "CPU Intel Core i9-12900K",
+    price: "7.490.000",
+    quantity: 100,
+  },
+  {
+    id: 4,
+    image: "https://product.hstatic.net/200000722513/product/aptop-msi-summit-e14-evo-a12m-211vn-1_5fc0898020c44422b37c9293db1c3edb_d48b2ea8b32449e09f359198932f6f25_grande.png",
+    name: "Laptop MSI Summit E14 Evo A12M 211VN",
+    price: "25990000",
+    quantity: 100,
+  },
+];
+
+const dataUser = [
+  {
+    id: 1,
+    image: "https://th.bing.com/th/id/OIP.G37tgeQqSNt7v2oPfj9ltQHaE7?rs=1&pid=ImgDetMain",
+    name: "Trinh",
+  },
+  {
+    id: 2,
+    image: "https://th.bing.com/th/id/OIP.hwJevYbZh-ebZyLC74Pj9gHaEh?rs=1&pid=ImgDetMain",
+    name: "Minh",
+  }
+];
+
 const getReview = async (req, res) => {
   try {
     const reviews = await reviewService.getAllReviews();
-    res.json(reviews);
+    
+    const userMap = new Map(dataUser.map(user => [user.id, user]));
+    const productMap = new Map(dataProduct.map(product => [product.id, product]));
+    
+    const reviewsWithDetails = await Promise.all(reviews.map(async (review) => {
+      const user = userMap.get(review.userID) || {}; 
+      const product = productMap.get(review.productID) || {}; 
+      const replies = await Promise.all(review.replies.map(async (reply) => {
+        const replyUser = userMap.get(reply.userID) || {}; 
+        return {
+          _id: reply._id,
+          content: reply.content,
+          date: reply.date,
+          userImageReply: replyUser.image || null,
+          userNameReply: replyUser.name || null
+        };
+      }));
+
+      return {
+        _id: review._id,
+        date: review.date,
+        userName: user.name || null,
+        productName: product.name || null,
+        rate: review.rate || null,
+        contentReview: review.contentReview || null,
+        replies
+      };
+    }));
+
+    res.json(reviewsWithDetails);
   } catch (error) {
-    console.error('Lỗi', error);
-    res.status(500).json({ error: 'Lỗi' });
+    console.error('Error fetching reviews:', error);
+    res.status(500).json({ error: 'Failed to fetch reviews' });
   }
 };
-
 const getReviewByProductID = async (req, res) => {
   try {
     const productID = req.params.productID;
@@ -20,11 +92,22 @@ const getReviewByProductID = async (req, res) => {
       return res.status(404).send('Không tìm thấy đánh giá cho sản phẩm này.');
     }
     const userMap = new Map(dataUser.map(user => [user.id, user]));
+    const productMap = new Map(dataProduct.map(product => [product.id, product]));
     
     const updatedReviews = await Promise.all(reviews.map(async (review) => {
       // const user = dataUser.find(item => item.id === review.userID);
       const user = userMap.get(review.userID);
+      const product = productMap.get(review.productID);
       if (user) {
+        // const updatedReplies = await Promise.all(review.replies.map(async (reply) => {
+        //   // const replyUser = dataUser.find(item => item.id === reply.userID);
+        //   const replyUser = userMap.get(reply.userID);
+        //   return {
+        //     ...reply,
+        //     userImageReply: replyUser ? replyUser.image : null,
+        //     userNameReply: replyUser ? replyUser.name : null
+        //   };
+        // }));
         const replies = review.replies.map(reply => {
           const replyUser = userMap.get(reply.userID);
           return {
@@ -37,7 +120,8 @@ const getReviewByProductID = async (req, res) => {
           ...review,
           userImage: user.image,
           userName: user.name,
-          replies: replies
+          replies: replies,
+          productName: product.name,
         };
       }
       return review;
@@ -105,7 +189,19 @@ const createReplyReview = async (req, res) => {
   }
 };
 const deleteReply = async (req, res) => {
-  
+  try {
+    const { reviewID, replyID } = req.params; 
+    const result = await reviewService.deleteReply(reviewID, replyID);
+
+    if (!result.success) {
+      return res.status(404).json({ success: false, message: result.message });
+    }
+
+    return res.status(200).json({ success: true, message: result.message });
+  } catch (error) {
+    console.error('Lỗi xóa đánh giá con:', error);
+    return res.status(500).json({ success: false, message: 'Xuất hiện lỗi trong khi xóa đánh giá con' });
+  }
 };
 
 module.exports = {

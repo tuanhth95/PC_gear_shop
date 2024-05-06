@@ -6,12 +6,13 @@ import { Input } from 'antd';
 
 const { TextArea } = Input;
 
-export default function Review({productID}) {
+export default function Review() {
   // const [data, setData] = useState(dataReview);
   const textRef = useRef();
   const [rating, setRating] = useState(5);
   // const [productID, setProductID]= useState(1);
   // const [userID, setUserID]= useState(1);
+  const productID = 1;
   const userID = 2;
 
   const [data, setData] = useState([])
@@ -69,6 +70,9 @@ export default function Review({productID}) {
       .catch((err) => { console.log(err) })
   }
 
+  
+
+
   const [visibleCount, setVisibleCount] = useState(3); 
 
   const handleShowMore = () => {
@@ -114,7 +118,21 @@ export default function Review({productID}) {
       })
       .catch((err) => { console.log(err) });
   };
+  // const averageRating = Math.ceil(data.reduce((total, review) => total + review._doc.rate, 0) / data.length);
 
+const averageRating = parseFloat((data.reduce((total, review) => total + review._doc.rate, 0)/ data.length).toFixed(1));
+function roundRating(averageRating) {
+  const decimalPart = averageRating - Math.floor(averageRating);
+  if (decimalPart > 0) {
+      if (decimalPart > 0.5) {
+          return Math.ceil(averageRating);
+      } else {
+          return Math.floor(averageRating) + 0.5;
+      }
+  }
+  return 0;
+}
+let roundedRating = roundRating(averageRating);
 
   return (
     <div style={{marginLeft: 'auto', marginRight: 'auto', width: '800px'}}>
@@ -122,6 +140,13 @@ export default function Review({productID}) {
               <h3 style={{textAlign:'center'}}> Đánh giá sản phẩm </h3>
               {latestData && latestData.length ? (
               <div>
+                <h5 style={{fontSize: '25px'}}>
+                  Tổng quan:    
+                  <span style={{marginLeft: '10px'}}>{averageRating}</span>
+                  <Rate value={roundedRating} style={{marginLeft: '10px'}} allowHalf={true} disabled />
+                  ({data.length} đánh giá)
+                </h5>
+                
                 {latestData.map((review, index) => (
                   <Card className='listReview' style={{ padding: '10px', marginBottom: '5px' }} key={index}>
                     <div className='infoReview' style={{ display: 'flex', verticalAlign: 'middle', justifyContent: 'space-between' }}>
