@@ -48,14 +48,13 @@ const getAllOrders = async (req, res) => {
 const getAllUserOrder = async (req, res) => {
     try {
         const userInfo = req.params.userInfo
-        
         if (!userInfo) {
-            return res.status(400).json({
+            return res.status(200).json({
                 status: 'ERR',
                 message: 'The userInfo is required'
             })
         }
-        const response = await OrderDetailService.getAllUserOrder(userInfo)
+        const response = await OrderService.getAllUserOrder(userInfo)
         return res.status(200).json(response)
     } catch (e) {
         // console.log(e)

@@ -5,7 +5,7 @@ import { searchProduct as searchProductAction } from '../../redux/slices/product
 import { useQuery } from '@tanstack/react-query';
 import * as ProductService from '../../services/ProductService';
 import CardComponent from '../../components/CardComponent/CardComponent';
-import { WrapperProducts, WrapperButtonMore } from './style';
+import { WrapperProducts, WrapperButtonMore, Container, WrapperDiv } from './style';
 import FilterPriceComponent from '../../components/FilterPriceComponent/FilterPriceComponent';
 import SortComponent from '../../components/SortComponent/SortComponent';
 import FilterProducerComponent from '../../components/FilterProducerComponent/FilterProducerComponent';  // Assuming this is the correct path
@@ -18,7 +18,7 @@ const SearchResult = () => {
     const producer = useSelector(state => state.product.selectedProducer); 
     const initialSort = searchParams.get('sort') || '';
     const minPrice = searchParams.get('minPrice') || '0';
-    const maxPrice = searchParams.get('maxPrice') || '100000000';
+    const maxPrice = searchParams.get('maxPrice') || '1000000000';
 
     const [limit, setLimit] = useState(10);
     const [sort, setSort] = useState(initialSort);
@@ -59,7 +59,7 @@ const SearchResult = () => {
     };
 
     return (
-        <div id="container" style={{background: '#fff', padding: '0 120px', height: 'fit-content', width: 'fit-content', margin: 'auto auto'}}>
+        <WrapperDiv>
             {renderSearchResultCount()}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '0px auto', marginTop: '20px', maxWidth: '1240px' }}>
                 {products?.data?.length > 0 && (
@@ -88,7 +88,7 @@ const SearchResult = () => {
                 />
                 </div>
             )}
-        </div>
+        </WrapperDiv>
     );
 };
 

@@ -2,9 +2,7 @@ const userService = require('../services/userService')
 const User = require("../models/UserModels");
 const JwtService = require('../services/JwtService');
 const createUser = async(req, res)=>{
-    console.log("create user");
     try{
-        console.log(req.body);
         const {username, email, phone, address, password, confirmPassword} = req.body;
         const reg = /^\w+([-+.']\w+)*@\w+([-.]\w)*\.\w+([-.]\w+)*$/
         const isCheckEmail = reg.test(email)
@@ -34,8 +32,8 @@ const createUser = async(req, res)=>{
 }
 const loginUser = async (req, res) => {
     try {
-        const { email, password } = req.body
-        if (!email || !password) {
+        const { username, password } = req.body
+        if (!username || !password) {
             return res.status(400).json({
                 status: 'ERR',
                 message: 'The input is required'
@@ -69,7 +67,6 @@ const getAllUsers = async (req, res) => {
 const updateUser = async (req, res) => {
     try {
         const userId = req.params.id
-        console.log("update ", userId)
         const data = req.body
         if (!userId) {
             return res.status(200).json({
@@ -105,6 +102,7 @@ const getDetailsUser = async (req, res) => {
         })
     }
 }
+
 const updateUserAvatar = async (req, res, next) => {
     try {
       const { userId } = req.params;
@@ -115,6 +113,7 @@ const updateUserAvatar = async (req, res, next) => {
       res.status(500).json({ success: false, message: error.message });
     }
 };
+
 module.exports = {
     createUser,
     loginUser,

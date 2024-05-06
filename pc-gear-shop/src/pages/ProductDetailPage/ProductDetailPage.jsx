@@ -108,7 +108,6 @@ function ProductDetailPage() {
           </ProductDetailPart>
         </div>
       </Flex>
-      <Review productID={productDetail?.data?.id}></Review>
     </ProductDetailContainer>
   );
 }

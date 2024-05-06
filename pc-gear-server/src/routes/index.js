@@ -1,5 +1,4 @@
 const MainCarouselRouter = require('./MainCarouselRouter')
-const EmailRouter = require('./emailRouter')  
 const CartRouter = require('./CartRouter')
 const userRouter = require('./userRouter')
 const apiProduct = require('./ProductRouter')

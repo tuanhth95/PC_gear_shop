@@ -1,11 +1,12 @@
 const sharp = require('sharp');
-const Image = require('../models/ImgProduct');
-const fetch = require('node-fetch');
+const Image = require('../models/ImgProduct')
+const fetchPromise = import('node-fetch');
 
 async function uploadImage(newImg, id) {
   try {
+    const fetch = await fetchPromise;
     const { filename, url } = newImg;
-    const response = await fetch(url);
+    const response = await fetch.default(url);
     const buffer = await response.buffer();
     const imageData = buffer;
     const dataSize = buffer.byteLength;
