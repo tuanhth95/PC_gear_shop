@@ -80,8 +80,23 @@ const createReplyReview = async (userID, reviewID, content) => {
     return { status: 500, data: { message: 'Đã xảy ra lỗi khi tạo phản hồi.' } };
   }
 };
-const deleteReply = async (replyID) => {
- 
+const deleteReply = async (reviewID, replyID) => {
+  try {
+    const review = await Review.findOneAndUpdate(
+      { _id: reviewID, "replies._id": replyID },
+      { $pull: { replies: { _id: replyID } } },
+      { new: true }
+    );
+
+    if (!review) {
+      return { success: false, message: 'Đánh giá không được tìm thấy' };
+    }
+
+    return { success: true, message: 'Xóa đánh giá con thành công' };
+  } catch (error) {
+    console.error('Lỗi trong khi xóa:', error);
+    throw new Error('Xuất hiện lỗi trong khi xóa đánh giá con');
+  }
 };
 
 module.exports = {
