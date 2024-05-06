@@ -1,20 +1,4 @@
-// const ProductDetail = require('../models/ProductDetailModel')
-const mongoose = require('mongoose')
-const productDetailSchema = new mongoose.Schema({
-
-    id: {type: Number, required: true},
-    name: {type: String, required: true},
-    type: {type: String, required: true},
-    price: {type: Number, required: true},
-    discount: {type: Number},
-    img: {type: String, required: true},
-    description: {type: Object},
-}, {
-    collection: "product_detail",
-    timestamps: true
-})
-
-const ProductDetail = mongoose.model('ProductDetail', productDetailSchema)
+const ProductDetail = require('../models/ProductDetailModel')
 
 // const createProduct = (newProduct) => {
 //     return new Promise( async (resolve, reject) => {
@@ -43,28 +27,50 @@ const ProductDetail = mongoose.model('ProductDetail', productDetailSchema)
 //     })
 // }
 
-// const findProduct = (productId) => {
-//     return new Promise( async (resolve, reject) => {
-//         try {
-//             const foundProduct = await ProductDetail.findOne({id: productId})
-//             if (foundProduct) {
-//                 resolve({
-//                     status: 'OK',
-//                     message: 'Product found successfully',
-//                     data: foundProduct
-//                 })
-//             } else {
-//                 reject({
-//                     status: 'ERR',
-//                     message: 'Product not found'
-//                 })
-//             }
-//         } catch (e) {
-//             console.log(e)
-//             reject(e)
-//         }
-//     })
-// }
+const findProductById = (productId) => {
+    return new Promise( async (resolve, reject) => {
+        try {
+            const foundProduct = await ProductDetail.findOne({id: productId})
+            if (foundProduct) {
+                resolve({
+                    status: 'OK',
+                    message: 'Product found successfully',
+                    data: foundProduct
+                })
+            } else {
+                reject({
+                    status: 'ERR',
+                    message: 'Product not found'
+                })
+            }
+        } catch (e) {
+            console.log(e)
+            reject(e)
+        }
+    })
+}
+const findProductByType = (productId) => {
+    return new Promise( async (resolve, reject) => {
+        try {
+            const foundProduct = await ProductDetail.find({type: productId})
+            if (foundProduct) {
+                resolve({
+                    status: 'OK',
+                    message: 'Product found successfully',
+                    data: foundProduct
+                })
+            } else {
+                reject({
+                    status: 'ERR',
+                    message: 'Product not found'
+                })
+            }
+        } catch (e) {
+            console.log(e)
+            reject(e)
+        }
+    })
+}
 
 // const findProductsByType = (productType) => {
 //     return new Promise( async (resolve, reject) => {
@@ -93,7 +99,7 @@ const ProductDetail = mongoose.model('ProductDetail', productDetailSchema)
 const findProducts = () => {
         return new Promise( async (resolve, reject) => {
             try {
-                const foundProducts = await ProductDetail.find()
+                const foundProducts = await ProductDetail.find();
                 if (foundProducts) {
                     resolve({
                         status: 'OK',
@@ -115,7 +121,7 @@ const findProducts = () => {
 
 module.exports = {
     // createProduct,
-    // findProduct,
-    // findProductsByType,
+    findProductById,
+    findProductByType,
     findProducts
 }

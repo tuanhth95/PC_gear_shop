@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { searchProduct as searchProductAction } from '../../redux/slides/productSlice';
+import { searchProduct as searchProductAction } from '../../redux/slices/productSlice';
 import { useQuery } from '@tanstack/react-query';
-import * as ProductService from '../../../../FRONTEND_SEARCH/src/services/ProductService';
+import * as ProductService from '../../services/ProductService';
 import CardComponent from '../../components/CardComponent/CardComponent';
 import { WrapperProducts, WrapperButtonMore } from './style';
 import FilterPriceComponent from '../../components/FilterPriceComponent/FilterPriceComponent';
@@ -14,7 +14,7 @@ const SearchResult = () => {
     const searchParams = new URLSearchParams(location.search);
     const query = searchParams.get('query'); 
     const searchProduct = useSelector(state => state?.product?.search);
-    const searchPrice = useSelector(state => state.product.searchPriceRange);
+    const searchPrice = useSelector(state => state?.product?.searchPriceRange);
     const [limit, setLimit] = useState(10);
 
     useEffect(() => {

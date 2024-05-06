@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form, message, Checkbox } from 'antd';
 import { StyleContainer, StyleLeftCon, StyleRightCon, StyleInput, StyleInputPassword } from './style';
-import { Link, useNavigate } from 'react-router-dom';
-
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { updateUser } from '../../redux/slices/userSlide';
+import { useSelector, useDispatch } from 'react-redux';
 const SignIn = () => {
+    const location = useLocation();
     const [loading, setLoading] = useState(false);
     const [rememberMe, setRememberMe] = useState(false);
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const [form] = Form.useForm();
+    const user = useSelector((state) => state.user)
     const [check, setCheck] = useState(false);
     useEffect(() => {
         // Xóa trạng thái lỗi email khi người dùng thay đổi giá trị email
@@ -43,7 +47,12 @@ const SignIn = () => {
                     localStorage.removeItem('rememberMe');
                     localStorage.removeItem('email'); // Xóa thông tin đăng nhập nếu không được chọn
                 }
-                navigate('/HomePage');
+                dispatch(updateUser(data))
+                console.log(location?.state)
+                if(location?.state){
+                    navigate(location?.state);
+                }
+                else navigate('/')
             } else {
                 if (data.status === 'ERR' && data.message === 'The password or user is incorrect') {
                     setCheck(true);

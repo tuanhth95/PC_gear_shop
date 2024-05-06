@@ -33,50 +33,55 @@ const createProduct = (newProductData) => {
 }
 
 const getAllProduct = async (limit, page, filter, minPrice, maxPrice, sort, producer) => {
-    try {
-        let match = {};
-        if (filter) {
-            match[filter[0]] = {'$regex': filter[1], '$options': 'i'};
-        }
-        if (producer) {
-            match['description.producer'] = producer;
-        }
-
-        let pipeline = [
-            { $match: match },
-            {
-                $addFields: {
-                    effectivePrice: {
-                        $cond: {
-                            if: { $gt: ["$discount", 0] },
-                            then: { $multiply: ["$price", { $subtract: [1, { $divide: ["$discount", 100] }] }] },
-                            else: "$price"
-                        }
+    console.log("limit: ", limit);
+    let match = {};
+    if (filter) {
+        match[filter[0]] = {'$regex': filter[1], '$options': 'i'};
+    }
+    if (producer) {
+        match['description.producer'] = producer;
+    }
+    //"$price", { $subtract: [1, { $divide: ["$discount", 100] }] }
+    console.log("match: ", match);
+    let pipeline = [
+        { $match: match },
+        {
+            $addFields: {
+                effectivePrice: {
+                    $cond: {
+                        if: { $gt: ["$discount", 0] },
+                        then: { $multiply: [ {$toInt:"$price"}, { $subtract: [1, { $divide: ["$discount", 100] }] }]},
+                        else: "$price"
                     }
                 }
-            },
-            { $match: { effectivePrice: { $gte: Number(minPrice), $lte: Number(maxPrice) } } }
-        ];
+            }
+        },
+        { $match: { effectivePrice: { $gte: Number(minPrice), $lte: Number(maxPrice) } } }
+    ];
+    if (sort) {
+        const sortField = sort.startsWith('-') ? sort.slice(1) : sort;
+        const sortOrder = sort.startsWith('-') ? -1 : 1;
+        pipeline.push({ $sort: { [sortField]: sortOrder } });
+    }
+    pipeline.push({ $skip: page * limit }, { $limit: limit });
+    console.log("pipeline: ", pipeline);
+    const products = await Product.aggregate(pipeline);
+    console.log("product: ", products)
+    const totalProduct = await Product.countDocuments(match);
+    console.log("totalProduct: ", totalProduct)
+    const ret = {
+        status: 'OK',
+        message: 'Success',
+        data: products,
+        total: totalProduct,
+        pageCurrent: Number(page) + 1,
+        totalPage: Math.ceil(totalProduct / limit)
+    };
 
-        if (sort) {
-            const sortField = sort.startsWith('-') ? sort.slice(1) : sort;
-            const sortOrder = sort.startsWith('-') ? -1 : 1;
-            pipeline.push({ $sort: { [sortField]: sortOrder } });
-        }
+    console.log("service received: ", ret);
 
-        pipeline.push({ $skip: page * limit }, { $limit: limit });
-
-        const products = await Product.aggregate(pipeline);
-        const totalProduct = await Product.countDocuments(match);
-
-        return {
-            status: 'OK',
-            message: 'Success',
-            data: products,
-            total: totalProduct,
-            pageCurrent: Number(page) + 1,
-            totalPage: Math.ceil(totalProduct / limit)
-        };
+    return ret
+    try {
     } catch (e) {
         throw new Error(e.message || 'Internal Server Error');
     }

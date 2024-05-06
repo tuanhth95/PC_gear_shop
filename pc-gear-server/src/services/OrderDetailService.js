@@ -4,32 +4,46 @@ const User = require("../models/UserModels")
 const bcrypt = require("bcrypt")
 
 
-const creatOrderDetail = (newOrderDetail) =>{
-    const {orderItems,shippingAddress,paymentMethod,itemsPrice,shippingPrice,totalPrice,userInfo,isPaid,isDelivered} = newOrderDetail
+const createOrderDetail = (newOrderDetail) =>{
+    const {orderItems,fullname : fullName,address,phone,paymentMethod,itemsPrice,shippingPrice,totalPrice,userId,isPaid,isDelivered} = newOrderDetail
+        // orderItems.map((item) => {
 
+        // })
+        console.log(newOrderDetail.paymentMethod);
+        console.log(paymentMethod);
         return new Promise (async(resolve, reject) => {
 
         try{
             
             const creatOrderDetail = await OrderDetail.create({
-                orderItems,
-                shippingAddress,
+                orderItems: orderItems,
+                shippingAddress: {
+                    fullName: fullName,
+                    address,
+                    phone,
+                },
                 paymentMethod,
                 itemsPrice,
                 shippingPrice,
                 totalPrice,
-                userInfo,
+                userInfo: userId,
                 isPaid,
                 isDelivered
             })
             if(creatOrderDetail){
+                console.log("if true: ", creatOrderDetail)
                 resolve({
                     status: 'OK',
                     message: 'SUCCESS',
                     data: creatOrderDetail
                 })
             }
-            resolve({})
+            console.log("if not true: ", creatOrderDetail)
+            resolve({
+                status: 'OK',
+                message: 'ERROR',
+                data: creatOrderDetail
+            })
             
         }catch(e){
             reject(e)
@@ -105,7 +119,7 @@ const getAllUserOrder = (userInfo) => {
     })
 }
 module.exports = {
-    creatOrderDetail,
+    createOrderDetail,
     getOrderDetails,
     getAllOrder,
     getAllUserOrder

@@ -18,22 +18,41 @@ const ProductDetailService = require('../services/ProductDetailService')
 //     }
 // }
 
-// const findProduct = async (req, res) => {
-//     try {
-//         const productId = req.params.id
-//         // console.log('productId', productId)
-//         if(!productId) {
-//             return res.status(200).json({
-//                 status: 'ERR',
-//                 message: 'The productId is required'
-//             })
-//         }
-//         const foundProduct = await ProductDetailService.findProduct(productId)
-//         return res.status(200).json(foundProduct)
-//     } catch (e) {
-//         return res.status(404).json({message: e})
-//     }
-// }
+const findProductById = async (req, res) => {
+    try {
+        const productId = req.params.id
+        // console.log('productId', productId)
+        if(!productId) {
+            return res.status(200).json({
+                status: 'ERR',
+                message: 'The productId is required'
+            })
+        }
+        const foundProduct = await ProductDetailService.findProductById(productId)
+        return res.status(200).json(foundProduct)
+    } catch (e) {
+        return res.status(404).json({message: e})
+    }
+}
+
+const findProductByType = async (req, res) => {
+    try {
+        const productId = req.params.id.replace('-', ' ')
+        console.log("product id: ", productId);
+        // console.log('productId', productId)
+        if(!productId) {
+            return res.status(200).json({
+                status: 'ERR',
+                message: 'The productId is required'
+            })
+        }
+        const foundProduct = await ProductDetailService.findProductByType(productId)
+        console.log("find product by type: ", foundProduct);
+        return res.status(200).json(foundProduct)
+    } catch (e) {
+        return res.status(404).json({message: e})
+    }
+}
 
 // const findProductsByType = async (req, res) => {
 //     try {
@@ -71,7 +90,8 @@ const findProducts = async (req, res) => {
 
 module.exports = {
     // createProduct,
-    // findProduct,
+    findProductById,
     // findProductsByType,
-    findProducts
+    findProducts,
+    findProductByType
 }

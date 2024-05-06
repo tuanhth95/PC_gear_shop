@@ -1,13 +1,18 @@
 import React from 'react';
 import {Button } from 'antd';
 import { WrapperCard, DiscountTag, ButtonShow } from './style';
+import { useNavigate } from 'react-router-dom';
+import { convertPrice } from '../../utils';
 
 const CardComponent = ({ countInStock, description, img, name, price, discount, type, id }) => {
+  const navigate = useNavigate()
   const discountPrice = discount ? price - discount/100 * price : price;
   const formattedPrice = discountPrice.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })
   const originalPrice = discount !== 0 ? price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }) : null;
   const discountPercentage = discount ? `-${discount}%` : null;
-
+  const handleViewProduct = () => {
+    navigate(`/ProductDetail/${id}`);
+  }
   return (
     <WrapperCard hoverable style={{ borderRadius: '4px', overflow: 'hidden' }}>
       <img
@@ -19,19 +24,19 @@ const CardComponent = ({ countInStock, description, img, name, price, discount, 
         <h3 style={{ margin: '12px 0', fontWeight: '600' }}>{name}</h3>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <p style={{ fontWeight: '600', color: 'red', margin: '4px 0', marginRight: '10px', fontSize: '16px' }}>
-            {formattedPrice}
+            {convertPrice(formattedPrice)}
           </p>
           {discountPercentage && <DiscountTag>{discountPercentage}</DiscountTag>}
           {originalPrice && (
             <p style={{ textDecoration: 'line-through', color: '#a9a9a9', margin: '4px 12px', fontSize: '14px' }}>
-              {originalPrice}
+              {convertPrice(originalPrice) }
             </p>
           )}
         </div>
         {/* <div style={{ color: countInStock > 0 ? 'green' : 'red' , fontSize: '14px'}}>
           {countInStock > 0 ? 'Còn hàng' : 'Hết hàng'}
         </div> */}
-        <ButtonShow type="primary" danger>Xem sản phẩm</ButtonShow>
+        <ButtonShow type="primary" danger onClick={() => handleViewProduct()}>Xem sản phẩm</ButtonShow>
       </div>
     </WrapperCard>
   );

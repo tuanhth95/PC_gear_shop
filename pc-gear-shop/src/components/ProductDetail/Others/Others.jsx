@@ -3,7 +3,7 @@ import { Flex } from 'antd'
 import { OtherProductDiscount, OtherProductImg, OtherProductPrice, OtherProductSale } from './style';
 
 const Others = (props) => {
-
+    //console.log("props in Others: ", props);
     const firstThreeElements = props.data.slice(0, 3);
 
     return (

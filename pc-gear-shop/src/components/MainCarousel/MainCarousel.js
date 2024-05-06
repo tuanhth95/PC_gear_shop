@@ -46,7 +46,7 @@ const settings = {
   
   const MainCarousel = (props) => {
     return (
-        <Carousel arrows {...settings} autoplaySpeed='5000'>
+        <Carousel arrows {...settings} autoSpeed='5000'>
           {
             props.data.map((slide, index) => {
               return (

@@ -6,17 +6,18 @@ import Specifications from '../../components/ProductDetail/Specifications/Specif
 import Others from '../../components/ProductDetail/Others/Others';
 import axios from 'axios';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useLocation, useParams } from 'react-router-dom';
+import Review from '../../components/Review';
 
 function ProductDetailPage() {
-  
-  const productId = 36
-
+  const params = useParams();
+  const productId = params.id;
   const [generalInfo, setGeneralInfo] = useState()
   const [specifications, setSpecifications] = useState()
   const [otherProducts, setOthersProducts] = useState()
   
   const fetchProductDetailAPI = async () => {
-    const res = await axios.get(`http://localhost:3001/api/product_detail/${productId}`)
+    const res = await axios.get(`http://localhost:3001/api/product_detail/find_product_by_type/${productId}`)
       console.log(res.data)
       return res.data
   }
@@ -24,7 +25,7 @@ function ProductDetailPage() {
   
   const fetchOtherProductsAPI = async () => {
     // const api1Result = await fetchProductDetailAPI();
-    const response = await axios.get(`http://localhost:3001/api/product_detail/find_product_by_type/${productDetail.data.type}`)
+    const response = await axios.get(`http://localhost:3001/api/product_detail/find_product_by_type_type/${productDetail.data.type.replace(' ', '-')}`)
     return response.data
   }
   
@@ -37,27 +38,10 @@ function ProductDetailPage() {
       queryFn: fetchOtherProductsAPI,
       enabled: !!productDetail
     });
-  // console.log(relativeProducts);
-  // const query = useQuery({ queryKey: ['todos'], queryFn: fetchProductDetailAPI })
-  // const query = useQuery({ queryKey: ['todos'], queryFn: fetchOtherProductsAPI })
-
-  // useEffect(() => {
-  //   if (query.data) {
-  //     setGeneralInfo({
-  //       id: query.data.data.id,
-  //       name: query.data.data.name,
-  //       type: query.data.data.type,
-  //       price: query.data.data.price,
-  //       discount: query.data.data.discount,
-  //       img: query.data.data.img
-  //     })
-  //     setSpecifications(query.data.data.description)
-  //   }
-  // }, [query.data])
 
   useEffect(() => {
     if (productDetail) {
-      // console.log(productDetail.data)
+      console.log(productDetail.data)
       setGeneralInfo({
         id: productDetail.data.id,
         name: productDetail.data.name,
@@ -96,6 +80,7 @@ function ProductDetailPage() {
           </ProductDetailPart>
         </div>
       </Flex>
+      <Review productID={productDetail?.data?.id}></Review>
     </ProductDetailContainer>
   );
 }

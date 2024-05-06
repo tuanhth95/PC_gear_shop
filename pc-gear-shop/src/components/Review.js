@@ -6,13 +6,12 @@ import { Input } from 'antd';
 
 const { TextArea } = Input;
 
-export default function Review() {
+export default function Review({productID}) {
   // const [data, setData] = useState(dataReview);
   const textRef = useRef();
   const [rating, setRating] = useState(5);
   // const [productID, setProductID]= useState(1);
   // const [userID, setUserID]= useState(1);
-  const productID = 1;
   const userID = 2;
 
   const [data, setData] = useState([])

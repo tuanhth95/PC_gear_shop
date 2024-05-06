@@ -2,7 +2,9 @@ const userService = require('../services/userService')
 const User = require("../models/UserModels");
 const JwtService = require('../services/JwtService');
 const createUser = async(req, res)=>{
+    console.log("create user");
     try{
+        console.log(req.body);
         const {username, email, phone, address, password, confirmPassword} = req.body;
         const reg = /^\w+([-+.']\w+)*@\w+([-.]\w)*\.\w+([-.]\w+)*$/
         const isCheckEmail = reg.test(email)
@@ -22,7 +24,7 @@ const createUser = async(req, res)=>{
                 message: 'The password is not match confirmPassword'
             })
         }
-        
+
         const resp = await userService.createUser(req.body);
         return res.status(200).json(resp);   
     }catch(e){
@@ -68,6 +70,7 @@ const getAllUsers = async (req, res) => {
 const updateUser = async (req, res) => {
     try {
         const userId = req.params.id
+        console.log("update ", userId)
         const data = req.body
         if (!userId) {
             return res.status(200).json({

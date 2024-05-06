@@ -14,20 +14,19 @@ const createUser = (newUser) =>{
                     message: 'The email is already'
                 })
             }
-            const hash = bcrypt.hashSync(password, 10)
-
+            
+            const hashPass = bcrypt.hashSync(password, 10)
             const result = new User({
                 username,
                 email, 
                 phone, 
                 address, 
-                password: hash, 
-                confirmPassword,
-                avatar
-            })
-            await result.save();
+                password: hashPass, 
+            });
+            console.log(result);
+            const res = await result.save();
 
-            if(result){
+            if(res){
                 resolve({
                     status: 'OK',
                     message: 'SUCCESS',

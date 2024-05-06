@@ -7,6 +7,7 @@ export const getAllProduct = async (search, priceRange, limit) => {
         queryString += `filter=name&filter=${lowerCaseSearch}&`;
     }
     queryString += `minPrice=${priceRange[0]}&maxPrice=${priceRange[1]}`;
+    console.log("query search: ", queryString);
     const res = await axios.get(queryString);
     return res.data;
 };
