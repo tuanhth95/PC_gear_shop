@@ -1,6 +1,4 @@
-const ProductDetailRouter = require('./ProductDetailRouter')
 const MainCarouselRouter = require('./MainCarouselRouter')
-const OrderDetailRouter = require('./OrderDetailRouter')
 const EmailRouter = require('./emailRouter')  
 const CartRouter = require('./CartRouter')
 const userRouter = require('./userRouter')
@@ -12,6 +10,7 @@ const OrderDetailRouter = require('./OrderDetailRouter')
 const sendEmail = require('./emailRouter')
 const ImgProduct = require('./ImgRouter')
 const Carousel = require('./CarouselRouter')
+
 const routes = (app) => {
   app.use('/cart', CartRouter)
   app.use('/api/user', userRouter)
@@ -23,5 +22,8 @@ const routes = (app) => {
   app.use('/api/user', sendEmail)
   app.use('/api/img', ImgProduct)
   app.use('/api/carousel', Carousel)
+  app.use('/api/main_carousel', MainCarouselRouter)
+  
 }
+
 module.exports = routes

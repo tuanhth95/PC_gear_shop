@@ -3,10 +3,14 @@ const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const routes = require('./routes')
 const bodyParser = require("body-parser");
+const morgan = require('morgan');
+const cookieParser = require('cookie-parser')
 const cors = require('cors')
 
 dotenv.config()
 
+const app = express()
+const port = process.env.PORT || 3001
 const corsOptions ={
     origin:'http://localhost:3000', 
     credentials:true,            //access-control-allow-credentials:true
