@@ -32,14 +32,16 @@ const createUser = async(req, res)=>{
 }
 const loginUser = async (req, res) => {
     try {
-        const { username, password } = req.body
-        if (!username || !password) {
+        const { email, password } = req.body
+        //console.log("infomation: ",req.body)
+        if (!email || !password) {
             return res.status(400).json({
                 status: 'ERR',
                 message: 'The input is required'
             })
         }
         const result = await userService.loginUser(req.body)
+        //console.log("login result: ", result);
         //const { refresh_token, ...newReponse } = result
         // res.cookie('refresh_token', refresh_token, {
         //     httpOnly: true,

@@ -80,8 +80,6 @@ const loginUser = (userLogin) => {
                 //refresh_token: refresh_token,
                 data: checkUser
             })
-            
-
         } catch (e) {
             reject(e)
         }

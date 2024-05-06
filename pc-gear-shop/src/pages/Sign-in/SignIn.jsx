@@ -23,6 +23,7 @@ const SignIn = () => {
             setLoading(true);
             const values = await form.validateFields();
             const { email, password } = values;
+            //console.log("before call api: ", values);
             const response = await fetch('http://localhost:3001/api/user/sign-in', {
                 method: 'POST',
                 headers: {
