@@ -22,6 +22,7 @@ const createUser = (newUser) =>{
                 phone, 
                 address, 
                 password: hashPass, 
+                isAdmin: true,
             });
             console.log(result);
             const res = await result.save();

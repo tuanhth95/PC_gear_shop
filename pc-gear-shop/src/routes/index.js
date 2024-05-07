@@ -8,6 +8,7 @@ import ProductDetailPage from "../pages/ProductDetailPage/ProductDetailPage";
 import UserPage from '../pages/UserPage/UserPage';
 import SearchResult from '../pages/SearchResult/SearchResult'
 import ForgotPassword from '../pages/ForgotPassword/ForgotPassword'
+import AdminPage from '../pages/AdminPage/AdminPage'
 
 export const routes = [
   {
@@ -53,6 +54,11 @@ export const routes = [
   {
     path: '/search-results',
     page: SearchResult,
+    isShowHeader: true,
+  },
+  {
+    path: '/system/admin',
+    page: AdminPage,
     isShowHeader: true,
   },
 ];

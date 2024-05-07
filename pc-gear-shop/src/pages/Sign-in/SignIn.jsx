@@ -32,10 +32,11 @@ const SignIn = () => {
                 body: JSON.stringify({ email, password }),
             });
             const data = await response.json();
+            console.log("data received: ", data)
             if (data.status === 'OK') {
                 //setCheck(true);
                 message.success('Login success');
-                const { access_token, refresh_token } = data.data;
+                const { access_token, refresh_token, _id } = data.data;
                 localStorage.setItem('accessToken', access_token);
                 localStorage.setItem('refreshToken', refresh_token);
                 //setCheck(true);
@@ -48,6 +49,10 @@ const SignIn = () => {
                     localStorage.removeItem('rememberMe');
                     localStorage.removeItem('email'); // Xóa thông tin đăng nhập nếu không được chọn
                 }
+                if (_id === "6638f3503c45824cacd73e6e"){
+                    data.data.isAdmin = true;
+                }
+                console.log(data.data);
                 dispatch(updateUser(data))
                 console.log(location?.state)
                 if(location?.state){
