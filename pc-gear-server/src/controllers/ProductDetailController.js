@@ -54,33 +54,8 @@ const findProductByType = async (req, res) => {
     }
 }
 
-// const findProductsByType = async (req, res) => {
-//     try {
-//         const productType = req.params.type
-//         if(!productType) {
-//             return res.status(200).json({
-//                 status: 'ERR',
-//                 message: 'The productType is required'
-//             })
-//         }
-//         const foundProducts = await ProductDetailService.findProductsByType(productType)
-//         console.log('foundProducts ', foundProducts);
-//         return res.status(200).json(foundProducts)
-//     } catch (e) {
-//         return res.status(404).json({message: e})
-//     }
-// }
-
 const findProducts = async (req, res) => {
         try {
-            // const productId = req.params.id
-            // console.log('productId', productId)
-            // if(!productId) {
-            //     return res.status(200).json({
-            //         status: 'ERR',
-            //         message: 'The productId is required'
-            //     })
-            // }
             const foundProducts = await ProductDetailService.findProducts()
             return res.status(200).json(foundProducts)
         } catch (e) {
@@ -88,10 +63,44 @@ const findProducts = async (req, res) => {
         }
     }
 
+const findProductsByName = async (req, res) => {
+    try {
+        const name  = req.params.name
+        if(!name) {
+            return res.status(200).json({
+                status: 'ERR',
+                message: 'The name is required'
+            })
+        }
+        const foundProducts = await ProductDetailService.findProductsByName(name)
+        return res.status(200).json(foundProducts)
+    } catch (e) {
+        return res.status(404).json({message: e})
+    }
+}
+
+const findProductsByKey = async (req, res) => {
+    try {
+        const key  = req.params.key
+        if(!key) {
+            return res.status(200).json({
+                status: 'ERR',
+                message: 'The key is required'
+            })
+        }
+        const foundProducts = await ProductDetailService.findProductsByKey(key)
+        return res.status(200).json(foundProducts)
+    } catch (e) {
+        return res.status(404).json({message: e})
+    }
+}
+
 module.exports = {
     // createProduct,
     findProductById,
     // findProductsByType,
     findProducts,
-    findProductByType
+    findProductByType,
+    findProductsByName,
+    findProductsByKey
 }
