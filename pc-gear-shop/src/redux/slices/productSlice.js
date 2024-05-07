@@ -4,7 +4,7 @@ export const productSlice = createSlice({
     name: 'product',
     initialState: {
         search: '',
-        searchPriceRange: [0,100000000],
+        searchPriceRange: [0,1000000000],
         limit: 0,
         selectedProducer: '', 
     },

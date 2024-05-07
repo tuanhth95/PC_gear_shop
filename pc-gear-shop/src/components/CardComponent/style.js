@@ -1,20 +1,12 @@
 import { Card } from "antd";
 import { Button } from "antd";
 import styled from "styled-components";
-
-export const WrapperCardStyle = styled(Card)`
-    width: 200px;
-    & img {
-        height: 200px;
-        width: 200px;
-    },
-    position: relative;
-    background-color: ${props => props.disabled ? '#ccc' : '#fff'};
-    cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'}
-`
+import ButtonComponent from "../ButtonComponent/ButtonComponent";
 
 export const WrapperCard = styled(Card)`
-    padding: 8px 8px;
+    && {
+        padding: 0px 0px; 
+    }
 `
 
 export const StyleNameProduct = styled.div`
@@ -69,8 +61,14 @@ export const DiscountTag = styled.div`
 `;
 
 export const ButtonShow = styled(Button)`
+&:hover {
+    color: #fff;
+    background-color: rgb(26, 147, 255);
+    border-color: rgb(26, 147, 255);
+}
     display: block;      
-    margin-left: auto;   
-    margin-right: auto;
-    margin-top: 10px;
-`
+    margin-top: 8px;
+    color: rgb(26, 147, 255);
+    background-color: #fff;
+    border-color: rgb(26, 147, 255);
+`;

@@ -1,6 +1,6 @@
 const sharp = require('sharp');
 const Carousel = require('../models/Carousel');
-const fetch = require('node-fetch');
+const fetch = import('node-fetch');
 
 async function uploadCarousel(newCarousel, id) {
   try {

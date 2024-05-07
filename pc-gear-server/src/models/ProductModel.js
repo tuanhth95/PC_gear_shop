@@ -4,7 +4,7 @@ const productSchema = new mongoose.Schema(
     {
         id: {type: Number, required: true},
         name: {type: String, required: true, unique: true},
-        img: {type: String, required: true},
+        img: {type: String},
         type: {type: String, required: true},
         price: {type: Number, required: true},
         // countInStock: {type: Number, required: true}, 
@@ -19,3 +19,4 @@ const productSchema = new mongoose.Schema(
 const Product = mongoose.model('Product', productSchema);
 
 module.exports = Product;
+
