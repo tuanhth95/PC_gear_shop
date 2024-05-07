@@ -1,26 +1,32 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Avatar, Button, Card, Rate} from 'antd';
+import { Avatar, Button, Card, Modal, Rate} from 'antd';
 import axios from 'axios'
 
 import { Input } from 'antd';
+import { useSelector } from 'react-redux';
 
 const { TextArea } = Input;
 
-export default function Review() {
+export default function Review({productId}) {
+  const user = useSelector((state) => state.user);
   // const [data, setData] = useState(dataReview);
   const textRef = useRef();
   const [rating, setRating] = useState(5);
   // const [productID, setProductID]= useState(1);
   // const [userID, setUserID]= useState(1);
-  const productID = 1;
-  const userID = 2;
+  // const productID = 1;
+  // const userID = 2;
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  useEffect(() => {
+    setIsLoggedIn(user.isLoggedIn); // Set the isLoggedIn state when user changes
+  }, [user]);
 
   const [data, setData] = useState([])
 
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/api/review/product/${productID}`); 
+        const response = await axios.get(`http://localhost:3001/api/review/product/${productId}`); 
         const reviewsWithUserInfo = response.data.map(review => {
           return {
             ...review,
@@ -41,7 +47,7 @@ export default function Review() {
     };
   
     fetchReviews();
-  }, [productID]);
+  }, [productId]);
 
 
   const formatDate= (date) =>{
@@ -53,14 +59,18 @@ export default function Review() {
     return `${day}-${month}-${year}`;
   }
 
-
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const handleCreateReview = () => {
+    if (!isLoggedIn) {
+      setShowLoginModal(true);
+      return;
+    }
     const body = {
       rate: rating,
       contentReview: textRef.current.value
     }
 
-    axios.post(`http://localhost:3001/api/review/create-review/${productID}/${userID}`, body)
+    axios.post(`http://localhost:3001/api/review/create-review/${productId}/${user._id}`, body)
       .then((res) => {
         console.log('Đăng đánh giá thành công');
         window.location.reload();
@@ -69,6 +79,13 @@ export default function Review() {
       })
       .catch((err) => { console.log(err) })
   }
+  const handleLogin = () => {
+    window.location.href = '/signin';
+  };
+
+  const handleCloseModal = () => {
+    setShowLoginModal(false);
+  };
 
   
 
@@ -90,11 +107,15 @@ export default function Review() {
 
   const textReplyRef = useRef();
   const handleReply = (reviewId) => {
+    if (!isLoggedIn) {
+      setShowLoginModal(true);
+      return;
+    }
     const body = {
       content: textReplyRef.current.value,
     };
   
-    axios.post(`http://localhost:3001/api/review/${reviewId}/${userID}/reply`, body)
+    axios.post(`http://localhost:3001/api/review/${reviewId}/${user._id}/reply`, body)
       .then((res) => {
         console.log('Gửi phản hồi thành công');
         const updatedData = data.map(review => {
@@ -135,7 +156,7 @@ function roundRating(averageRating) {
 let roundedRating = roundRating(averageRating);
 
   return (
-    <div style={{marginLeft: 'auto', marginRight: 'auto', width: '800px'}}>
+    <div style={{marginLeft: 'auto', marginRight: 'auto', width: '900px'}}>
          <div className='review' style={{marginTop:'2rem', marginBottom:'1rem', textAlign:'justify'}}>
               <h3 style={{textAlign:'center'}}> Đánh giá sản phẩm </h3>
               {latestData && latestData.length ? (
@@ -222,7 +243,22 @@ let roundedRating = roundRating(averageRating);
               Đăng đánh giá
             </Button>
            
-         </div>     
+         </div>   
+         <Modal
+            title="Yêu cầu đăng nhập"
+            visible={showLoginModal}
+            onCancel={handleCloseModal}
+            footer={[
+              <Button key="cancel" onClick={handleCloseModal}>
+                OK
+              </Button>,
+              <Button key="login" type="primary" onClick={handleLogin}>
+                Đăng nhập
+              </Button>
+            ]}
+          >
+            Bạn cần đăng nhập để tiếp tục
+          </Modal>  
         
     </div>
   )
