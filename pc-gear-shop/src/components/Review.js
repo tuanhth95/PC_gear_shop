@@ -1,25 +1,42 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Avatar, Button, Card, Modal, Rate} from 'antd';
 import axios from 'axios'
-
+import Loading from "../components/LoadingComponent/Loading";
 import { Input } from 'antd';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateUser} from "../redux/slices/userSlide";
+import * as UserService from "../services/UserService";
 
 const { TextArea } = Input;
 
-export default function Review({productId}) {
+const Review = ({productId}) =>{
+  // const dispatch = useDispatch();
+  // // const [userData, setUserData] = useState(null);
+
   const user = useSelector((state) => state.user);
-  // const [data, setData] = useState(dataReview);
-  const textRef = useRef();
-  const [rating, setRating] = useState(5);
-  // const [productID, setProductID]= useState(1);
-  // const [userID, setUserID]= useState(1);
-  // const productID = 1;
-  // const userID = 2;
+  const [userId, setUserId] = useState("");
+  const [loading, setLoading] = useState(false);
+
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
-    setIsLoggedIn(user.isLoggedIn); // Set the isLoggedIn state when user changes
-  }, [user]);
+    console.log("User:", user);
+    setUserId(prevUserId => {
+      console.log(prevUserId); 
+      return user?.id; 
+    });
+  }, [user?.id, user]);
+    // const userId = localStorage.getItem('userID');
+
+  const textRef = useRef();
+  const [rating, setRating] = useState(5);
+ 
+
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // useEffect(() => {
+  //   setIsLoggedIn(userId);
+  // }, [userId]);
 
   const [data, setData] = useState([])
 
@@ -30,12 +47,12 @@ export default function Review({productId}) {
         const reviewsWithUserInfo = response.data.map(review => {
           return {
             ...review,
-            userImage: review.userImage, 
+            userAvatar: review.userAvatar, 
             userName: review.userName,
             replies: review.replies.map(reply => ({
               ...reply,
               userNameReply: reply.userNameReply,
-              userImageReply: reply.userImageReply
+              userAvatarReply: reply.userAvatarReply
             })),
 
           };
@@ -47,7 +64,7 @@ export default function Review({productId}) {
     };
   
     fetchReviews();
-  }, [productId]);
+  }, [productId, data]);
 
 
   const formatDate= (date) =>{
@@ -61,21 +78,30 @@ export default function Review({productId}) {
 
   const [showLoginModal, setShowLoginModal] = useState(false);
   const handleCreateReview = () => {
-    if (!isLoggedIn) {
+
+    if (!userId) {
       setShowLoginModal(true);
       return;
-    }
+    } 
     const body = {
       rate: rating,
       contentReview: textRef.current.value
     }
 
-    axios.post(`http://localhost:3001/api/review/create-review/${productId}/${user._id}`, body)
+    axios.post(`http://localhost:3001/api/review/create-review/${productId}/${userId}`, body)
       .then((res) => {
         console.log('Đăng đánh giá thành công');
-        window.location.reload();
-        setData([res.data.review, ...data]);
-        textRef.current.value = '';
+        if (res.data) {
+          const newReview = res.data.review;
+          setData([newReview, ...data]); // Thêm đánh giá mới vào đầu mảng data
+          textRef.current.value = ''; // Xóa nội dung trong ô nhập liệu
+          fetchReviews();
+        }
+        // window.location.reload();
+        // setLoading(true);
+        // setData([res.data.review, ...data]);
+        // window.location.reload();
+        // setLoading(true);
       })
       .catch((err) => { console.log(err) })
   }
@@ -106,52 +132,65 @@ export default function Review({productId}) {
   
 
   const textReplyRef = useRef();
+  
+
   const handleReply = (reviewId) => {
-    if (!isLoggedIn) {
+    if (!userId) {
       setShowLoginModal(true);
       return;
-    }
+    } 
+    // setUserId(user.data._id);
     const body = {
       content: textReplyRef.current.value,
     };
+    
+    // const userIdFromStorage = localStorage.getItem('userId')
+    // console.log(userIdFromStorage);
+    // console.log(reviewId);
+    // console.log(textReplyRef.current.value);
   
-    axios.post(`http://localhost:3001/api/review/${reviewId}/${user._id}/reply`, body)
+    axios.post(`http://localhost:3001/api/review/${reviewId}/${userId}/reply`, body)
       .then((res) => {
         console.log('Gửi phản hồi thành công');
-        const updatedData = data.map(review => {
-          if (review._id === reviewId) {
-            return {
-              ...review,
-              _doc: {
-                ...review._doc,
-                replies: [...review._doc.replies, {
-                  ...res.data.reply,
-                }]
-              }
-            };
-          }
-          return review;
-        });
-        window.location.reload();
-        setData(updatedData);
-        setReply(false);
-        textRef.current.value = '';
+        if (res.data && res.data.reply) {
+          const newReply = res.data.reply;
+  
+          const updatedData = data.map(review => {
+            if (review._id === reviewId) {
+              return {
+                ...review,
+                replies: [...review.replies, newReply]
+              };
+            }
+            return review;
+          });
+          // window.location.reload();
+          // setLoading(true);
+          setData(updatedData);
+  
+          setReply(false);
+          textReplyRef.current.value = '';
+        } else {
+          console.error('Không có dữ liệu phản hồi mới từ API');
+        }
       })
-      .catch((err) => { console.log(err) });
+      .catch((error) => {
+        console.error('Lỗi khi gửi phản hồi:', error);
+      });
   };
   // const averageRating = Math.ceil(data.reduce((total, review) => total + review._doc.rate, 0) / data.length);
 
-const averageRating = parseFloat((data.reduce((total, review) => total + review._doc.rate, 0)/ data.length).toFixed(1));
+const averageRating = parseFloat((data.reduce((total, review) => total + review.rate, 0)/ data.length).toFixed(1));
 function roundRating(averageRating) {
   const decimalPart = averageRating - Math.floor(averageRating);
-  if (decimalPart > 0) {
-      if (decimalPart > 0.5) {
+  if (decimalPart >= 0.25) {
+      if (decimalPart >= 0.75) {
           return Math.ceil(averageRating);
       } else {
           return Math.floor(averageRating) + 0.5;
       }
   }
-  return 0;
+  return Math.floor(averageRating);
 }
 let roundedRating = roundRating(averageRating);
 
@@ -172,42 +211,42 @@ let roundedRating = roundRating(averageRating);
                   <Card className='listReview' style={{ padding: '10px', marginBottom: '5px' }} key={index}>
                     <div className='infoReview' style={{ display: 'flex', verticalAlign: 'middle', justifyContent: 'space-between' }}>
                       <div style={{ display: 'flex', marginTop: 'auto', marginBottom: 'auto', verticalAlign: 'middle' }}>
-                        <Avatar src={review.userImage} alt={review.userName} style={{ verticalAlign: 'middle', marginRight: '10px' }} />
+                        <Avatar src={review.userAvatar} alt={review.userName} style={{ verticalAlign: 'middle', marginRight: '10px' }} />
                         <p style={{ fontFamily: 'cursive', fontWeight: 'bold' }}>{review.userName}</p>
                       </div>
-                      <p>{formatDate(review._doc.date)}</p>
+                      <p>{formatDate(review.date)}</p>
                     </div>
                     <div>
-                      <Rate defaultValue={review._doc.rate} disabled />
+                      <Rate defaultValue={review.rate} disabled />
                     </div>
                     <div>
-                      {review._doc.contentReview}
+                      {review.contentReview}
                     </div>
                     
                     {review.replies && review.replies.map((reply, replyIndex) => (
                       <div key={replyIndex} style={{ marginLeft: '20px', padding: 'inherit' }}>
                         <div style={{ display: 'flex', verticalAlign: 'middle', justifyContent: 'space-between', marginBottom: '0px'}}>
                           <div style={{ display: 'flex', marginTop: 'auto', marginBottom: 'auto', verticalAlign: 'middle' }}>
-                            <Avatar src={reply.userImageReply} alt={reply.userNameReply} style={{ verticalAlign: 'middle', marginRight: '10px' }} />
+                            <Avatar src={reply.userAvatarReply} alt={reply.userNameReply} style={{ verticalAlign: 'middle', marginRight: '10px' }} />
                             <p style={{ fontFamily: 'cursive', fontWeight: 'bold' }}>{reply.userNameReply}</p>
                           </div>
                           {/* <p style={{ fontWeight: 'bold' }}>{reply.userNameReply}</p> */}
-                          <p>{formatDate(reply._doc.date)}</p>
+                          <p>{formatDate(reply.date)}</p>
                         </div>
-                        <p style={{}}>{reply._doc.content}</p>
+                        <p style={{}}>{reply.content}</p>
                         
                       </div>
                     ))}
                     {!reply && (
-                        <Button onClick={() => {setReplyTo(review._doc._id); setReply(true)}} style={{float:'right'}}>Trả lời</Button>
+                        <Button onClick={() => {setReplyTo(review._id); setReply(true)}} style={{float:'right'}}>Trả lời</Button>
                         
                     )}
-                    {reply && replyTo === review._doc._id && (
+                    {reply && replyTo === review._id && (
                       <div>
                         <TextArea rows={2} ref={textReplyRef} placeholder="Nhập phản hồi của bạn" onChange={(e) => { textReplyRef.current.value = e.target.value; }}/>
                         <div style={{display: 'table', marginLeft: 'auto', marginRight: 'auto',marginTop: '5px', }}>
                           <Button style={{backgroundColor: '#1A93FF', marginRight: '5px'}} 
-                          onClick={() => handleReply(review._doc._id)} >Gửi</Button>
+                          onClick={() => handleReply(review._id)} >Gửi</Button>
                           <Button onClick={() => setReply(false)} style={{float:'right'}}>Đóng</Button>
                         </div>
                       </div>
@@ -263,3 +302,4 @@ let roundedRating = roundRating(averageRating);
     </div>
   )
 }
+export default Review

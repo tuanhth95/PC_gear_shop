@@ -5,11 +5,11 @@ const reviewSchema = new mongoose.Schema(
         rate: {type: Number, required: true, min: 1, max:5},
         date: {type: Date, default: Date.now},
         contentReview: {type: String, required: true},
-        userID: {type: Number, required: true},
+        userID: {type: String, required: true},
         productID: {type: Number, required: true},
         replies: [{
             content: {type: String, required: true},
-            userID: {type: Number, required: true},
+            userID: {type: String, required: true},
             date: {type: Date, default: Date.now}
         }]
         // user: {

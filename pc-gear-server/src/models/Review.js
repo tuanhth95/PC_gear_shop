@@ -8,18 +8,8 @@ const reviewSchema = new mongoose.Schema(
         rate: {type: Number, required: true, min: 1, max:5},
         date: {type: Date, default: Date.now},
         contentReview: {type: String, required: true},
-        user: {
-            id: { type: Number, required: true },
-            image: { type: String, required: true },
-            name: { type: String, required: true }
-        },
-        product: {
-            id: { type: Number, required: true },
-            name: { type: String, required: true },
-            image: { type: String, required: true },
-            price: { type: Number, required: true },
-            quantity: { type: Number, required: true }
-        },
+        userID: { type: Number, required: true },
+        productID: { type: Number, required: true }, 
         // user: {
         //     type: mongoose.Schema.Types.ObjectId,
         //     ref: 'User',
