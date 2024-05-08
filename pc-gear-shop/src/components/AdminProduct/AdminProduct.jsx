@@ -3,7 +3,7 @@ import { WrapperHeader, WrapperUploadFile } from "./style";
 import { Button, Form, Select, Space } from 'antd'
 import { PlusOutlined, DeleteOutlined, EditOutlined, SearchOutlined } from '@ant-design/icons'
 import InputComponent from "../InputComponent/InputComponent";
-import { useMutationHooks } from "../../hooks/useMutationHook";
+import { useMutationHook } from "../../hooks/useMutationHook";
 import Loading from "../LoadingComponent/Loading";
 import * as message from '../Message/Message'
 import { useQuery } from "@tanstack/react-query";
@@ -40,7 +40,7 @@ const AdminProduct = () =>
     const [stateProductDetails, setStateProductDetails] = useState(initial())
     const [form] = Form.useForm();
 
-    const mutation = useMutationHooks(
+    const mutation = useMutationHook(
         (data) => {
           const {      
           id,
@@ -63,7 +63,7 @@ const AdminProduct = () =>
         }
     )
 
-    const mutationUpdate = useMutationHooks(
+    const mutationUpdate = useMutationHook(
         (data) => {
           const { _id,
             token,
@@ -76,7 +76,7 @@ const AdminProduct = () =>
         },
       )
 
-    const mutationDeleted = useMutationHooks(
+    const mutationDeleted = useMutationHook(
         (data) => {
           const { id,
             token,
@@ -88,7 +88,7 @@ const AdminProduct = () =>
         },
       )
 
-    const mutationDeletedMany = useMutationHooks(
+    const mutationDeletedMany = useMutationHook(
         (data) => {
           const { token, ...ids
           } = data
@@ -589,7 +589,7 @@ const AdminProduct = () =>
   
 
 return(
-      <div style={{margin: '20px 100px'}}>
+      <div style={{margin: '20px 20px'}}>
         <div>
             <WrapperHeader>Quản lý sản phẩm</WrapperHeader>
             <div style={{marginTop: '10px'}}>

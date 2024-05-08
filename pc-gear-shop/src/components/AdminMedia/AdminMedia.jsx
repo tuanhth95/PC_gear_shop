@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Table, Button, Modal, Input, Tabs, Select } from 'antd';
 const { TabPane } = Tabs;
 
-const Media = () => {
+const AdminMedia = () => {
   const [images, setImages] = useState([]);
   const [searchText, setSearchText] = useState('');
   const [searchColumn, setSearchColumn] = useState('filename');
@@ -385,4 +385,4 @@ const Media = () => {
   );
 };
 
-export default Media;
+export default AdminMedia;

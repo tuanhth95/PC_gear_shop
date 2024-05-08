@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Table, Button, Modal, Input, Tabs, Select } from 'antd';
 const { TabPane } = Tabs;
 
-const Carousel = () => {
+const AdminCarousel = () => {
   const [images, setImages] = useState([]);
   const [searchText, setSearchText] = useState('');
   const [searchColumn, setSearchColumn] = useState('filename');
@@ -383,4 +383,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default AdminCarousel;

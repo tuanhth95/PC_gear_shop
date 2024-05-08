@@ -308,7 +308,7 @@ const AdminReview = () => {
 
   
   return (
-    <div>
+    <div style={{margin: '20px 20px'}}>
       <WrapperHeader>Quản lý đánh giá</WrapperHeader>
       <Table
         columns={columns}

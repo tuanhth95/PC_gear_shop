@@ -5,16 +5,6 @@ const createUser = (newUser) =>{
     return new Promise (async(resolve, reject) => {
         const {username, email, phone, address, password, confirmPassword} = newUser
         try{
-            const checkUser = await User.findOne({
-                email: email
-            })
-            if (checkUser !== null) {
-                resolve({
-                    status: 'ERR',
-                    message: 'The email is already'
-                })
-            }
-            
             const hashPass = bcrypt.hashSync(password, 10)
             const result = new User({
                 username,
@@ -22,9 +12,8 @@ const createUser = (newUser) =>{
                 phone, 
                 address, 
                 password: hashPass, 
-                isAdmin: true,
             });
-            console.log(result);
+            //console.log(result);
             const res = await result.save();
 
             if(res){
@@ -40,52 +29,52 @@ const createUser = (newUser) =>{
         }
     })
 }
-const loginUser = (userLogin) => {
-    return new Promise(async (resolve, reject) => {
-        const { email , password } = userLogin
-        try {
-            const checkUser = await User.findOne({
-                email: email});
-            if (checkUser === null) {
-                resolve({
-                    status: 'ERR',
-                    message: 'The user is not defined'
-                })
-            }
-            const comparePassword = bcrypt.compareSync(password, checkUser.password)
-            console.log('comparePassword', comparePassword)
-            if (!comparePassword) {
-                resolve({
-                    status: 'ERR',
-                    message: 'The password or user is incorrect'
-                })
-            }
-            const access_token = await genneralAccessToken({
-                id: checkUser.id,
-                //isAdmin: checkUser.isAdmin
-                //_id: id
-            })
-            console.log('access_token', access_token);
-            const refresh_token = await genneralRefreshToken({
-                id: checkUser._id,
-                //isAdmin: checkUser.isAdmin
-                //_id: id
-            })
-            checkUser.access_token = access_token;
-            checkUser.refresh_token = refresh_token;
-            checkUser.save();
-            resolve({
-                status: 'OK',
-                message: 'SUCCESS',
-                //access_token: access_token,
-                //refresh_token: refresh_token,
-                data: checkUser
-            })
-        } catch (e) {
-            reject(e)
+const loginUser = async (userLogin) => {
+    try {
+        const { email, password } = userLogin;
+        const checkUser = await User.findOne({ $or: [{ email: email }, { username: email }] });
+
+        if (!checkUser) {
+            return {
+                status: 'ERR',
+                message: 'The user is not defined'
+            };
         }
-    })
-}
+
+        const comparePassword = bcrypt.compareSync(password, checkUser.password);
+
+        if (!comparePassword) {
+            return {
+                status: 'ERR',
+                message: 'The password or user is incorrect'
+            };
+        }
+
+        const issuedAt = new Date();
+        const access_token = await genneralAccessToken({
+            id: checkUser._id,
+            issuedAt: issuedAt.getTime()
+        });
+
+        const refresh_token = await genneralRefreshToken({
+            id: checkUser._id,
+            issuedAt: issuedAt.getTime()
+        });
+
+        checkUser.access_token = access_token;
+        checkUser.refresh_token = refresh_token;
+        checkUser.createTokenAt = issuedAt;
+        await checkUser.save();
+
+        return {
+            status: 'OK',
+            message: 'SUCCESS',
+            data: checkUser
+        };
+    } catch (e) {
+        throw e;
+    }
+};
 
 const getAllUser = () => {
     return new Promise(async (resolve, reject) => {

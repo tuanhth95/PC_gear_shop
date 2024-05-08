@@ -1,20 +1,56 @@
-import React, { useState } from "react";
-import { Layout, Menu, Dropdown, Button, Input } from "antd";
+import React, { useState, useEffect } from "react";
+import { Layout, Menu, Dropdown, Button, Input, Popover, Badge } from "antd";
 import {
   MenuOutlined,
   ShoppingCartOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
 import { searchProduct as searchProductAction } from "../../redux/slices/productSlice";
-
+import { resetUser } from "../../redux/slices/userSlide";
+import * as UserService from '../../services/UserService';
+import axios from "axios";
+import "./style.css"
+import { WrapperContentPopup } from "./style";
+import { FaUserCircle } from "react-icons/fa"
 const { Header } = Layout;
 
-const AppHeader = ({ categories }) => {
+const AppHeader = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation()
   const [search, setSearch] = useState("");
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [subCategories, setSubCategories] = useState([]);
+  const [avatar, setAvatar] = useState("");
+  const [userName, setUserName] = useState("");
+  const [isOpenPopup, setIsOpenPopup] = useState("");
+  const [loading, setLoading] = useState(false);
+  const user = useSelector((state) => state.user);
+  const order = useSelector((state) => state.cart);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/categories`);
+        console.log("category data: ", response.data);
+        setCategories(response.data);
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
+    fetchCategories();
+  }, []);
+  useEffect(() => {
+    if(user?.id){
+      setLoading(true);
+      setUserName(user?.name);
+      setAvatar(user?.avatar);
+      setLoading(false)
+    }
+  },[user?.name, user?.avatar])
 
   const onChange = (e) => {
     setSearch(e.target.value);
@@ -23,19 +59,38 @@ const AppHeader = ({ categories }) => {
   const onSearch = (value) => {
     if (!value.trim()) return;
     dispatch(searchProductAction(value));
-    navigate(`/search?query=${encodeURIComponent(value)}`);
+    navigate(`/search-results?query=${encodeURIComponent(value)}`);
   };
 
   // Navigate to cart page
   const goToCart = () => {
-    navigate("/cart");
+    navigate("/cart", {state:location.pathname});
+  };
+
+  const handleNavigateLogin = () => {
+    console.log(location)
+    navigate("/signin", {state:location.pathname});
+  };
+
+  const handleClickNavigate = (type) => {
+    if (type === "UserPage") {
+      navigate("/UserPage");
+    } else if (type === "admin") {
+      navigate("/system/admin");
+    } else if (type === "my-order") {
+      navigate("/my-order", {
+        state: {
+          id: user?.id,
+          token: user?.access_token,
+        },
+      });
+    } else {
+      handleLogout();
+    }
+    setIsOpenPopup(false);
   };
 
   // Navigate to sign-in page
-  const goToSignIn = () => {
-    navigate("/SignIn"); // Ensure the path is correct as per your routing configuration
-  };
-
   const categoryMenu = (
     <Menu>
       {categories.map((category) => (
@@ -49,7 +104,31 @@ const AppHeader = ({ categories }) => {
       ))}
     </Menu>
   );
-
+  const content = (
+    <div>
+      <WrapperContentPopup onClick={() => handleClickNavigate("UserPage")}>
+        Thông tin người dùng
+      </WrapperContentPopup>
+      {user?.isAdmin && (
+        <WrapperContentPopup onClick={() => handleClickNavigate("admin")}>
+          Quản lí hệ thống
+        </WrapperContentPopup>
+      )}
+      {/* <WrapperContentPopup onClick={() => handleClickNavigate(`my-order`)}>
+        Đơn hàng của tôi
+      </WrapperContentPopup> */}
+      <WrapperContentPopup onClick={() => handleClickNavigate()}>
+        Đăng xuất
+      </WrapperContentPopup>
+    </div>
+  );
+  const handleLogout = async () => {
+    setLoading(true)
+    //await UserService.logoutUser()
+    dispatch(resetUser())
+    setLoading(false)
+    navigate("/");
+  }
   return (
     <Header
       className="header"
@@ -57,11 +136,12 @@ const AppHeader = ({ categories }) => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
+        gap: "16px"
       }}
     >
-      <div className="logo"> </div>
+      <div className="logo" onClick={() => {navigate('/')}}></div>
       <Dropdown overlay={categoryMenu} trigger={["click"]} style={{ flex: 1 }}>
-        <Button>
+        <Button style={{display:"flex", alignItems:"center"}}>
           <MenuOutlined />
           Danh mục
         </Button>
@@ -79,23 +159,53 @@ const AppHeader = ({ categories }) => {
           flex: 1,
           display: "flex",
           justifyContent: "flex-end",
-          gap: "16px",
+          alignItems:"center",
+          gap: "48px",
         }}
       >
-        <Button
-          icon={<ShoppingCartOutlined />}
-          onClick={goToCart}
-          style={{ fontSize: "16px", padding: "0 12px" }}
-        >
-          Giỏ hàng
-        </Button>
-        <Button
-          onClick={goToSignIn}
-          style={{ fontSize: "16px", padding: "0 12px" }}
-        >
-          <UserOutlined />
+        <Badge count={order?.orderItems?.length} size="small">
+          <ShoppingCartOutlined style={{ fontSize: "36px", color:"#fff" }}  onClick={goToCart}/>
+        </Badge>
+        {user?.access_token ?
+          <>
+          <Popover content={content} trigger="click" open={isOpenPopup}>
+            <div
+              style={{
+                cursor: "pointer",
+                maxWidth: 150,
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                display: "flex"
+              }}
+              onClick={() => setIsOpenPopup((prev) => !prev)}
+            >
+              <div style={{ width: "36px", height: "36px", objectFit: "cover", marginRight:"16px", borderRadius:"50%"}}>{user?.avatar ? <img src={user?.avatar} alt="" /> : <FaUserCircle style={{width:"inherit", height:"inherit", color:"#fff"}}/>}</div>
+              <span style={{color: "#fff"}}>{userName?.length ? userName : user?.email}</span>
+            </div>
+          </Popover>
+        </>
+        :
+        <div
+        style={{
+          cursor: "pointer",
+          maxWidth: 150,
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          padding: "8px 16px",
+          backgroundColor: "#fff",
+          maxHeight: 36,
+          borderRadius: "8px",
+          display:"flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        onClick={handleNavigateLogin}
+      >
+        <span style={{color: "#000"}}>
           Đăng nhập
-        </Button>
+        </span>
+      </div>
+        }
       </div>
     </Header>
   );

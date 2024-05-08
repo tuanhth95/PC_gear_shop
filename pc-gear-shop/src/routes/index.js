@@ -46,6 +46,7 @@ export const routes = [
   {
     path: "/UserPage",
     page: UserPage,
+    isShowHeader: true,
   },
   {
     path: '/ForgotPassword',

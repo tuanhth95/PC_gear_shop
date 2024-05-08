@@ -4,6 +4,20 @@ const JwtService = require('../services/JwtService');
 const createUser = async(req, res)=>{
     try{
         const {username, email, phone, address, password, confirmPassword} = req.body;
+        const existingUsername = await User.findOne({ username });
+        if (existingUsername) {
+            return res.status(200).json({
+                status: 'ERR',
+                message: 'The username is already'
+            });
+        }
+        const existingEmail = await User.findOne({ email });
+        if (existingEmail) {
+            return res.status(200).json({
+                status: 'ERR',
+                message: 'The email is already'
+            });
+        }
         const reg = /^\w+([-+.']\w+)*@\w+([-.]\w)*\.\w+([-.]\w+)*$/
         const isCheckEmail = reg.test(email)
         if(!username || !email || !phone || !address || !password || !confirmPassword){

@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema(
         avatar: { type: String },
         access_token: {type: String},
         refresh_token: {type: String},
-        isAdmin: {type: Boolean},
+        createTokenAt: {type: Date}
     },
     {
         timestamps: true

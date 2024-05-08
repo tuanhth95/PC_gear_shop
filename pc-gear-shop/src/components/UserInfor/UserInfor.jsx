@@ -11,10 +11,6 @@ const UserInfo = () => {
     avatar: '', // Thêm trường avatar vào state
   });
 
-  useEffect(() => {
-    fetchUserData();
-  }, []);
-
   const fetchUserData = async () => {
     try {
       const userId = localStorage.getItem('userID');
@@ -30,6 +26,11 @@ const UserInfo = () => {
       console.error(error);
     }
   };
+
+  useEffect(() => {
+    fetchUserData();
+  }, []);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -91,23 +92,23 @@ const UserInfo = () => {
             onChange={handleAvatarChange}
             showUploadList={false}
           >
-            <Avatar src={userData.avatar} size={120} />
+            <Avatar src={userData?.avatar} size={120} />
           </Upload>
 
           <Form.Item label="Tên tài khoản" labelCol={{ span: 12 }} wrapperCol={{ span: 12 }}>
-            <StyleInput name="username" value={userData.username} onChange={handleChange} />
+            <StyleInput name="username" value={userData?.username} onChange={handleChange} />
           </Form.Item>
 
           <Form.Item label="Email" labelCol={{ span: 12 }} wrapperCol={{ span: 12 }}>
-            <StyleInput name="email" value={userData.email} onChange={handleChange} />
+            <StyleInput name="email" value={userData?.email} onChange={handleChange} />
           </Form.Item>
 
           <Form.Item label="Số điện thoại" labelCol={{ span: 12 }} wrapperCol={{ span: 12 }}>
-            <StyleInput name="phone" value={userData.phone} onChange={handleChange} />
+            <StyleInput name="phone" value={userData?.phone} onChange={handleChange} />
           </Form.Item>
 
           <Form.Item label="Địa chỉ" labelCol={{ span: 12 }} wrapperCol={{ span: 12 }}>
-            <StyleInput name="address" value={userData.address} onChange={handleChange} />
+            <StyleInput name="address" value={userData?.address} onChange={handleChange} />
           </Form.Item>
 
           <Form.Item wrapperCol={{ offset: 8, span: 16 }}>

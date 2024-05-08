@@ -15,6 +15,7 @@ const Register = () => {
       const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{8,}$/;
       const [validatePass, setvalidatePass] = useState(true);
       const [emailExistError, setEmailExistError] = useState(true); 
+      const [usernameExistError, setUsernameExistError] = useState(true);
       const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -33,6 +34,9 @@ const Register = () => {
         if (!passwordRegex.test(formData.password)) {
           //message.error('Mật khẩu phải chứa ít nhất 8 kí tự bao gồm kí tự hoa, kí tự thường, chữ số và kí tự đặc biệt');
           setvalidatePass(false);
+          setUsernameExistError(true); 
+          setEmailExistError(true);
+          setPasswordMatch(true);
           return;
         }
         try {
@@ -46,10 +50,21 @@ const Register = () => {
           const data = await response.json();
           //console.log(data); 
           if (response.ok) {
-            if (data.status === 'ERR' && data.message === 'The email is already') {
-                setEmailExistError(false); 
+            if (data.status === 'ERR' && data.message === 'The username is already') {
+                setUsernameExistError(false); 
+                setEmailExistError(true);
+                setPasswordMatch(true);
+                setvalidatePass(true);
+            }else if (data.status === 'ERR' && data.message === 'The email is already'){
+                setEmailExistError(false);
+                setUsernameExistError(true); 
+                setPasswordMatch(true);
+                setvalidatePass(true);
             }else if(data.status === 'ERR' && data.message === 'The password is not match confirmPassword'){
               setPasswordMatch(false);
+              setEmailExistError(true);
+                setUsernameExistError(true); 
+                setvalidatePass(true);
             } else {
             //message.success('Đăng ký thành công');
             setFormData({
@@ -93,6 +108,7 @@ const Register = () => {
             labelCol={{ span: 7 }}
             wrapperCol={{ span: 17 }}>
         <StyleInput name="username" value={formData.username} onChange={handleChange}/>
+        {!usernameExistError && <p style={{ color: 'red', margin: '5px 0 0 0' }}>tài khoản đã tồn tại</p>}
         </Form.Item>
 
         <Form.Item
@@ -135,7 +151,7 @@ const Register = () => {
             ]}
             labelCol={{ span: 7 }}
             wrapperCol={{ span: 17 }}>
-        <StyleInput name="address" value={formData.address} onChange={handleChange} />
+            <StyleInput name="address" value={formData.address} onChange={handleChange} />
         </Form.Item>
 
         <Form.Item

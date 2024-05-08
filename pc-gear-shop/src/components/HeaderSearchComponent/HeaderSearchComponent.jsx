@@ -96,7 +96,7 @@ const HeaderSearchComponent = () => {
 
   return (
     <WrapperHeader>
-      <Col span={6}></Col>
+      <Col span={6}> </Col>
       <Col span={12}>
         <Input.Search
           placeholder="Bạn cần tìm gì?"

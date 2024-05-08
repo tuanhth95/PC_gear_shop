@@ -9,8 +9,8 @@ import {
 
 const { Footer } = Layout;
 
-const AppFooter = () => (
-  <Footer style={{ background: "#f0f2f5", padding: "20px 50px" }}>
+const AppFooter = (props) => (
+  <Footer style={{ background: "#f0f2f5", padding: "20px 50px", ...props.style}}>
     <div
       className="footer-grid"
       style={{

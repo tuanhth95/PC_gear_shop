@@ -5,11 +5,10 @@ import AppHeader from "../AppHeader/AppHeader";
 
 const Layout = ({ children }) => {
     return (
-        <div>
-            {/* <AppHeader/> */}
-            <HeaderSearchComponent />
+        <div style={{position:"relative"}}>
+            <AppHeader/>
             <div>{children}</div>
-            <AppFooter />
+            <AppFooter style={{position:"relative"}}/>
         </div>
     );
 };
