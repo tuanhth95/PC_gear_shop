@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Flex } from "antd";
-import { ProductDetailContainer, ProductDetailPart } from "./style";
+import { FlexContainer, ProductDetailContainer, ProductDetailPart } from "./style";
 import Info from "../../components/ProductDetail/Info/Info";
 import Specifications from "../../components/ProductDetail/Specifications/Specifications";
 import Others from "../../components/ProductDetail/Others/Others";
 import axios from "axios";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Review from "../../components/Review";
 
@@ -22,7 +21,7 @@ function ProductDetailPage() {
     const res = await axios.get(
       `http://localhost:3001/api/product_detail/find_product_by_type/${productId}`
     );
-    console.log(res.data);
+    // console.log(res.data);
     return res.data;
   };
 
@@ -42,7 +41,7 @@ function ProductDetailPage() {
     window.location.reload();
   };
   useEffect(() => {
-    console.log("need reload: ",needReload);
+    // console.log("need reload: ",needReload);
     if(needReload){
       setNeedReload(false)
     }
@@ -67,7 +66,7 @@ function ProductDetailPage() {
 
   useEffect(() => {
     if (productDetail) {
-      console.log("detail: ",productDetail.data);
+      // console.log("detail: ",productDetail.data);
       setGeneralInfo({
         id: productDetail.data.id,
         name: productDetail.data.name,
@@ -75,6 +74,7 @@ function ProductDetailPage() {
         price: productDetail.data.price,
         discount: productDetail.data.discount,
         img: productDetail.data.img,
+        countInStock: productDetail.data.countInStock
       });
       setSpecifications(productDetail.data.description);
     }
@@ -82,8 +82,8 @@ function ProductDetailPage() {
 
   useEffect(() => {
     if (relativeProducts) {
-      console.log("relative: ",relativeProducts.data);
-      setOthersProducts(relativeProducts.data);
+      // console.log("relative: ",relativeProducts.data);
+      setOthersProducts(relativeProducts.data.filter(relativeProduct => relativeProduct.id !== productDetail.data.id));
     }
   }, [relativeProducts]);
 
@@ -94,20 +94,20 @@ function ProductDetailPage() {
           {generalInfo && <Info data={generalInfo} />}
         </ProductDetailPart>
       </div>
-      <Flex gap="middle" justify="space-between">
-        <div style={{ width: "60%" }}>
+      <FlexContainer>
+        <div style={{flex: '4'}}>
           <ProductDetailPart>
             {specifications && <Specifications data={specifications} />}
           </ProductDetailPart>
         </div>
-        <div style={{ width: "40%" }}>
+        <div style={{flex: '3'}}>
           <ProductDetailPart>
             {otherProducts && (
               <Others data={otherProducts} handleOther={handleOther} />
             )}
           </ProductDetailPart>
         </div>
-      </Flex>
+      </FlexContainer>
       <Review productId = {productDetail?.data?.id}></Review>
     </ProductDetailContainer>
   );

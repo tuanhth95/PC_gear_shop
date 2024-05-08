@@ -12,7 +12,8 @@ const SampleNextArrow = props => {
           ...style,
           color: 'grey',
           fontSize: '16px',
-          lineHeight: '1.5715'
+          lineHeight: '1.5715',
+          display: 'flex'
         }}
         onClick={onClick}
       >
@@ -30,7 +31,8 @@ const SamplePrevArrow = props => {
           ...style,
           color: 'grey',
           fontSize: '16px',
-          lineHeight: '1.5715'
+          lineHeight: '1.5715',
+          display: 'flex'
         }}
         onClick={onClick}
       >
@@ -46,7 +48,7 @@ const settings = {
 
 const ProductsSlider = (props) => {
     return (
-        <Carousel arrows {...settings} slidesToShow={4}>
+        <Carousel arrows {...settings} slidesToShow={5}>
         {
             props.data.map((product, index) => {
                 return (
