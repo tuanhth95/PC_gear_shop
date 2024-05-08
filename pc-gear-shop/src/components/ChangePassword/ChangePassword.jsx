@@ -3,6 +3,7 @@ import { Button, Form, message } from 'antd';
 import { WrapperContainer, StyleInputPassword} from './style';
 import bcrypt from 'bcryptjs';
 import { useSelector } from 'react-redux';
+import * as UserService from '../../services/UserService'
 
 const ChangePassword = () => {
   const [oldPassword, setOldPassword] = useState('');
@@ -19,7 +20,14 @@ const ChangePassword = () => {
     else if (name === 'newPassword') setNewPassword(value);
     else if (name === 'confirmNewPassword') setConfirmNewPassword(value);
   };
-  
+  const handleLogout = async () => {
+    try {
+      await UserService.logoutUser();
+      window.location.href = '/SignIn';
+    } catch (error) {
+      console.error('Lỗi khi đăng xuất:', error);
+    }
+  };
   
 
   const handleSubmit = async (e) => {
@@ -53,6 +61,7 @@ const ChangePassword = () => {
       setOldPassword('');
       setNewPassword('');
       setConfirmNewPassword('');
+      handleLogout();
     } catch (error) {
       //console.error(error);
       message.error('Đã xảy ra lỗi khi cập nhật mật khẩu.');
