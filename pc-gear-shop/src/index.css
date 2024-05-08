@@ -40,11 +40,11 @@ code {
 
 .ant-carousel .slick-prev, 
 .ant-carousel .slick-next {
-  text-align: center;
-  display: block;
-  border: 2px solid #fff;
+  border: 2px solid #ffffff4e;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
   border-radius: 100%;
-  padding: 0.8% 0.8% 1.1% 0.8%;
   &:hover {
     background-color: #FF4D4F;
     border: 2px solid #FF4D4F;

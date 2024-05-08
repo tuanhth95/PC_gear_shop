@@ -3,7 +3,7 @@ import { Table, Button } from 'antd';
 
 const Specifications = (props) => {
 
-    const initialTableSize = 6;
+    const initialTableSize = 8;
     const [expandedTable, setExpandedTable] = useState(false);
     const [tableSize, setTableSize] = useState(initialTableSize);
       
@@ -27,7 +27,7 @@ const Specifications = (props) => {
         //   title: 'info',
           className: 'info',
           dataIndex: 'info',
-        render: (text) => <pre>{text}</pre>,
+          render: (text) => <pre style={{whiteSpace: 'pre-wrap'}}>{text}</pre>,
 
         //   align: 'right',
         }

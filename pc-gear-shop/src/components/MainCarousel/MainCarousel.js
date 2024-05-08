@@ -12,7 +12,8 @@ const SampleNextArrow = props => {
         ...style,
         color: '#fff',
         fontSize: '16px',
-        lineHeight: '1.5715'
+        lineHeight: '1.5715',
+        display: 'flex'
       }}
       onClick={onClick}
     >
@@ -30,7 +31,8 @@ const SamplePrevArrow = props => {
         ...style,
         color: '#fff',
         fontSize: '16px',
-        lineHeight: '1.5715'
+        lineHeight: '1.5715',
+        display: 'flex'
       }}
       onClick={onClick}
     >
@@ -46,7 +48,7 @@ const settings = {
   
   const MainCarousel = (props) => {
     return (
-        <Carousel arrows {...settings} autoSpeed='5000'>
+        <Carousel arrows {...settings} autoplay>
           {
             props.data.map((slide, index) => {
               return (
@@ -56,19 +58,6 @@ const settings = {
               )
             })
           }
-          
-            {/* <div>
-              <Slide src="https://laptopxachtayshop.com/uploads/2024/01/xps.jpg" alt="" />
-            </div>
-            <div>
-              <Slide src="https://laptopxachtayshop.com/uploads/2024/01/banner-flash-sale.jpg" alt="" />
-            </div>
-            <div>
-              <Slide src="https://laptopxachtayshop.com/uploads/2024/04/y7000.jpg" alt="" />
-            </div>
-            <div>
-              <Slide src="https://laptopxachtayshop.com/uploads/2024/03/helios.jpg" alt="" />
-            </div> */}
         </Carousel>
     )
   }
