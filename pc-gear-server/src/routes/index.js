@@ -9,6 +9,7 @@ const OrderDetailRouter = require('./OrderDetailRouter')
 const sendEmail = require('./emailRouter')
 const ImgProduct = require('./ImgRouter')
 const Carousel = require('./CarouselRouter')
+const CollectionRouter = require('./CollectionRouter')
 
 const routes = (app) => {
   app.use('/cart', CartRouter)
@@ -22,7 +23,7 @@ const routes = (app) => {
   app.use('/api/img', ImgProduct)
   app.use('/api/carousel', Carousel)
   app.use('/api/main_carousel', MainCarouselRouter)
-  
+  app.use('/api/collection', CollectionRouter);
 }
 
 module.exports = routes

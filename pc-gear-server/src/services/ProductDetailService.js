@@ -119,9 +119,83 @@ const findProducts = () => {
         })
     }
 
+const findProductsByName = (name) => {
+    const arr = name.split(' ').filter(Boolean)
+    const regex = arr.map(keyword => `(?=.*${keyword})`).join('|');
+    return new Promise( async (resolve, reject) => {
+        try {
+            const foundProducts = await ProductDetail.find({ name: { $regex: regex, $options: 'i' } })
+                .then(products => {
+                    const data = products.filter(product => {
+                        const matchingWords = arr.filter(word => product.name.toLowerCase().includes(word.toLowerCase()));
+                        return matchingWords.length >= 2;
+                        })
+                    if(data.length > 0) return data
+                    return products
+                    })
+            if (foundProducts && foundProducts.length > 0) {
+                resolve({
+                    status: 'OK',
+                    message: 'Products found successfully',
+                    data: foundProducts,
+                    total: foundProducts.length
+                })
+                // console.log(foundProducts);
+            } else {
+                resolve({
+                    status: 'ERR',
+                    message: 'Product not found',
+                    data: []
+                })
+            }
+        } catch (e) {
+            console.log(e)
+            reject(e)
+        }
+    })
+}
+
+const findProductsByKey = (key) => {
+    const arr = key.split(' ').filter(Boolean)
+    const regex = arr.map(keyword => `(?=.*${keyword})`).join('|');
+    return new Promise( async (resolve, reject) => {
+        try {
+            const foundProducts = await ProductDetail.find({ name: { $regex: regex, $options: 'i' } })
+                .then(products => {
+                    const data = products.filter(product => {
+                        const matchingWords = arr.filter(word => product.name.toLowerCase().includes(word.toLowerCase()));
+                        return matchingWords.length >= 2;
+                        })
+                    if(data.length > 0) return data
+                    return products
+                    })
+            if (foundProducts && foundProducts.length > 0) {
+                resolve({
+                    status: 'OK',
+                    message: 'Products found successfully',
+                    data: foundProducts,
+                    total: foundProducts.length
+                })
+                // console.log(foundProducts);
+            } else {
+                resolve({
+                    status: 'ERR',
+                    message: 'Product not found',
+                    data: []
+                })
+            }
+        } catch (e) {
+            console.log(e)
+            reject(e)
+        }
+    })
+}
+
 module.exports = {
     // createProduct,
     findProductById,
     findProductByType,
-    findProducts
+    findProducts,
+    findProductsByName,
+    findProductsByKey
 }
