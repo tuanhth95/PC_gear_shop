@@ -137,7 +137,7 @@ const CategoryManager = () => {
           onFinish={handleFormSubmit}
           layout="vertical"
         >
-          <Form.Item label="Name" name="name" rules={[{ required: true, message: 'Please input the category name!' }]}>
+          <Form.Item label="Name" name="name" rules={[{ required: true, message: 'Nhập tên Danh mục!' }]}>
             <Input />
           </Form.Item>
           <Button type="primary" htmlType="submit">
@@ -151,10 +151,10 @@ const CategoryManager = () => {
           onFinish={handleSubFormSubmit}
           layout="vertical"
         >
-          <Form.Item label="Title" name="title" rules={[{ required: true, message: 'Please input the subcategory title!' }]}>
+          <Form.Item label="Title" name="title" rules={[{ required: true, message: 'Nhập tên Danh mục con!' }]}>
             <Input />
           </Form.Item>
-          <Form.Item label="Href" name="href" rules={[{ required: true, message: 'Please input the subcategory href!' }]}>
+          <Form.Item label="Href" name="href" rules={[{ required: true, message: 'Nhập tên link Danh mục con!' }]}>
             <Input />
           </Form.Item>
           <Button type="primary" htmlType="submit">
