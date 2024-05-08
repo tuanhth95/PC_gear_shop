@@ -76,7 +76,7 @@ const loginUser = async (userLogin) => {
     }
 };
 
-const getAllUser = () => {
+const getAllUsers = () => {
     return new Promise(async (resolve, reject) => {
         try {
             const allUser = await User.find()
@@ -141,23 +141,54 @@ const getDetailsUser = (id) => {
         }
     })
 }
-const updateUserAvatar = async (userId, avatarUrl) => {
-    try {
-      const user = await User.findByIdAndUpdate(
-        userId,
-        { avatar: avatarUrl },
-        { new: true }
-      );
-      return user;
-    } catch (error) {
-      throw new Error('Error updating user avatar');
-    }
-  };
+// const getDetailsUser = (access_token) => {
+//     return new Promise(async (resolve, reject) => {
+//         try {
+//             const user = await User.findOne({
+//                 access_token: access_token
+//             })
+//             if (user === null) {
+//                 resolve({
+//                     status: 'ERR',
+//                     message: 'The user is not defined'
+//                 })
+//             }
+//             resolve({
+//                 status: 'OK',
+//                 message: 'SUCCESS',
+//                 data: user
+//             })
+//         } catch (e) {
+//             reject(e)
+//         }
+//     })
+// }
+const deleteUser = (userId) => { 
+    return new Promise(async (resolve, reject) => {
+        try {
+            const checkUser = await User.findById(userId); 
+            if (!checkUser) { 
+                resolve({
+                    status: 'ERR',
+                    message: 'The user is not defined'
+                });
+            }
+
+            await User.findByIdAndDelete(userId); 
+            resolve({
+                status: 'OK',
+                message: 'Delete user success',
+            });
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
 module.exports = {
     createUser,
     loginUser,
-    getAllUser,
+    getAllUsers,
     updateUser,
     getDetailsUser,
-    updateUserAvatar
+    deleteUser
 }

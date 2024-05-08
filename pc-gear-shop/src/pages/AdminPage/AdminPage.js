@@ -8,6 +8,7 @@ import AdminProduct from "../../components/AdminProduct/AdminProduct";
 import AdminMedia from "../../components/AdminMedia/AdminMedia";
 import AdminCarousel from "../../components/AdminCarousel/AdminCarousel";
 import CustomizedContent from "./components/CustomizedContent";
+import AdminUser from "../../components/AdminUser/AdminUser";
 import { useQueries } from "@tanstack/react-query";
 
 const AdminPage = () => {
@@ -61,6 +62,8 @@ const AdminPage = () => {
         return <AdminMedia />;
       case "carousels":
         return <AdminCarousel />;
+      case "users":
+        return <AdminUser />;
       default:
         return null;
     }

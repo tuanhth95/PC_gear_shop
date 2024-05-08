@@ -56,8 +56,8 @@ export const getAllUser = async (access_token) => {
 // }
 
 export const logoutUser = async () => {
-    const res = await axios.post(`${process.env.REACT_APP_API_URL}/user/log-out`)
-    return res.data
+    localStorage.clear();
+    //return res.data
 }
 
 export const updateUser = async (id, data, access_token) => {

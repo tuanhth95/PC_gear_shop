@@ -119,22 +119,45 @@ const getDetailsUser = async (req, res) => {
     }
 }
 
-const updateUserAvatar = async (req, res, next) => {
+// const getDetailsUser = async (req, res) => {
+//     try {
+//         const access_token = req.params.access_token;
+//         if (!access_token) {
+//             return res.status(400).json({
+//                 status: 'ERR',
+//                 message: 'The access_token is required'
+//             });
+//         }
+//         const response = await userService.getDetailsUser(access_token);
+//         return res.status(200).json(response);
+//     } catch (error) {
+//         return res.status(404).json({
+//             message: error.message
+//         });
+//     }
+// };
+const deleteUser = async (req, res) => {
     try {
-      const { userId } = req.params;
-      const { avatarUrl } = req.body;
-      const user = await userService.updateUserAvatar(userId, avatarUrl);
-      res.status(200).json({ success: true, user });
-    } catch (error) {
-      res.status(500).json({ success: false, message: error.message });
+        const userId = req.params.id; 
+        if (!userId) {
+            return res.status(400).json({
+                status: 'ERR',
+                message: 'The userId is required'
+            });
+        }
+        const response = await userService.deleteUser(userId); 
+        return res.status(200).json(response);
+    } catch (e) {
+        return res.status(404).json({
+            message: e
+        });
     }
 };
-
 module.exports = {
     createUser,
     loginUser,
     getAllUsers,
     updateUser,
     getDetailsUser,
-    updateUserAvatar
+    deleteUser
 }

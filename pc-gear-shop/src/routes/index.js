@@ -9,6 +9,7 @@ import UserPage from '../pages/UserPage/UserPage';
 import SearchResult from '../pages/SearchResult/SearchResult'
 import ForgotPassword from '../pages/ForgotPassword/ForgotPassword'
 import AdminPage from '../pages/AdminPage/AdminPage'
+import AdminUser from '../components/AdminUser/AdminUser'
 
 export const routes = [
   {
@@ -61,5 +62,9 @@ export const routes = [
     path: '/system/admin',
     page: AdminPage,
     isShowHeader: true,
+  },
+  {
+    path: '/AdminUser',
+    page: AdminUser
   },
 ];

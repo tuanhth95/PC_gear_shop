@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Modal, Button, Row, Col, Space, List, Typography, Image } from 'antd';
-
+import { useSelector } from 'react-redux';
 const OrderHistory = () => {
   const [orderHistory, setOrderHistory] = useState([]);
   const [loading, setLoading] = useState(true);
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [selectedOrderId, setSelectedOrderId] = useState(null);
-
+  const userId = useSelector(state => state.user.id);
   const columns = [
     {
       title: 'ID',
@@ -55,12 +55,13 @@ const OrderHistory = () => {
 
   useEffect(() => {
     fetchOrderHistory();
-  }, []);
+  }, [userId]);
+
+  
 
   const fetchOrderHistory = async () => {
     try {
-      const userId = localStorage.getItem('userID');
-      //const userId = '662f5f46be6e46cd5d2f6a46'; // User ID
+      //await fetchUserId();
       const response = await fetch(`http://localhost:3001/api/OrderDetail/get-all-userOrder/${userId}`);
       const data = await response.json();
       setOrderHistory(data.data);
@@ -87,7 +88,7 @@ const OrderHistory = () => {
 
       <Modal
         title={`Chi tiết đơn hàng #${selectedOrderId}`}
-        visible={modalVisible}
+        open={modalVisible}
         onCancel={handleCloseModal}
         footer={null}
       >

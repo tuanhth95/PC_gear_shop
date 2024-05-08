@@ -54,7 +54,7 @@ const getAllUserOrder = async (req, res) => {
                 message: 'The userInfo is required'
             })
         }
-        const response = await OrderService.getAllUserOrder(userInfo)
+        const response = await OrderDetailService.getAllUserOrder(userInfo)
         return res.status(200).json(response)
     } catch (e) {
         // console.log(e)

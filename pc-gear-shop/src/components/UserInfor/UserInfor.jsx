@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Form, message, Upload, Avatar } from 'antd';
+import { Button, Form, message } from 'antd';
 import { WrapperContainer, StyleInput } from './style';
+import { useSelector } from 'react-redux';
 
 const UserInfo = () => {
   const [userData, setUserData] = useState({
@@ -8,12 +9,15 @@ const UserInfo = () => {
     email: '',
     phone: '',
     address: '',
-    avatar: '', // Thêm trường avatar vào state
   });
+  const userId = useSelector(state => state.user.id);
 
+  useEffect(() => {
+    fetchUserData();
+  }, [userId]);
+  
   const fetchUserData = async () => {
     try {
-      const userId = localStorage.getItem('userID');
       const response = await fetch(`http://localhost:3001/api/user/get-details/${userId}`, {
         method: 'GET',
         headers: {
@@ -22,15 +26,11 @@ const UserInfo = () => {
       });
       const data = await response.json();
       setUserData(data.data);
+
     } catch (error) {
       console.error(error);
     }
   };
-
-  useEffect(() => {
-    fetchUserData();
-  }, []);
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,20 +40,10 @@ const UserInfo = () => {
     });
   };
 
-  const handleAvatarChange = (info) => {
-    if (info.file.status === 'done') {
-      // Lưu đường dẫn của ảnh vào state
-      setUserData({
-        ...userData,
-        avatar: info.file.response.avatarUrl, // Đường dẫn avatar trả về từ backend
-      });
-    }
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const userId = localStorage.getItem('userID');
+      
       const response = await fetch(`http://localhost:3001/api/user/updateUser/${userId}`, {
         method: 'PUT',
         headers: {
@@ -62,15 +52,14 @@ const UserInfo = () => {
         body: JSON.stringify(userData),
       });
       const data = await response.json();
-
+  
       setUserData({
         username: '',
         email: '',
         phone: '',
         address: '',
-        avatar: '',
       });
-
+  
       message.success('Thông tin người dùng đã được cập nhật thành công');
       fetchUserData();
       console.log(data.data);
@@ -85,30 +74,20 @@ const UserInfo = () => {
       <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Thông tin người dùng</h1>
       <WrapperContainer>
         <Form onSubmit={handleSubmit}>
-          {/* Thêm Upload để chọn hoặc tải lên ảnh avatar */}
-          <Upload
-            name="avatar"
-            action="http://localhost:3001/api/user/uploadAvatar"
-            onChange={handleAvatarChange}
-            showUploadList={false}
-          >
-            <Avatar src={userData?.avatar} size={120} />
-          </Upload>
-
           <Form.Item label="Tên tài khoản" labelCol={{ span: 12 }} wrapperCol={{ span: 12 }}>
-            <StyleInput name="username" value={userData?.username} onChange={handleChange} />
+            <StyleInput name="username" value={userData.username} onChange={handleChange} />
           </Form.Item>
 
           <Form.Item label="Email" labelCol={{ span: 12 }} wrapperCol={{ span: 12 }}>
-            <StyleInput name="email" value={userData?.email} onChange={handleChange} />
+            <StyleInput name="email" value={userData.email} onChange={handleChange} />
           </Form.Item>
 
           <Form.Item label="Số điện thoại" labelCol={{ span: 12 }} wrapperCol={{ span: 12 }}>
-            <StyleInput name="phone" value={userData?.phone} onChange={handleChange} />
+            <StyleInput name="phone" value={userData.phone} onChange={handleChange} />
           </Form.Item>
 
           <Form.Item label="Địa chỉ" labelCol={{ span: 12 }} wrapperCol={{ span: 12 }}>
-            <StyleInput name="address" value={userData?.address} onChange={handleChange} />
+            <StyleInput name="address" value={userData.address} onChange={handleChange} />
           </Form.Item>
 
           <Form.Item wrapperCol={{ offset: 8, span: 16 }}>

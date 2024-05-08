@@ -2,18 +2,25 @@ import React, { useState } from 'react';
 import { Button, Form, message } from 'antd';
 import { WrapperContainer, StyleInputPassword} from './style';
 import bcrypt from 'bcryptjs';
+import { useSelector } from 'react-redux';
 
 const ChangePassword = () => {
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
+  const user = useSelector(state => state.user);
+  const userId = useSelector(state => state.user.id);
 
+  //console.log(user); 
+  console.log(userId);
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === 'oldPassword') setOldPassword(value);
     else if (name === 'newPassword') setNewPassword(value);
     else if (name === 'confirmNewPassword') setConfirmNewPassword(value);
   };
+  
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,25 +28,11 @@ const ChangePassword = () => {
       message.error('Mật khẩu mới và nhập lại mật khẩu mới không khớp.');
       return;
     }
-
+    
     try {
-      // Lấy dữ liệu user để kiểm tra mật khẩu cũ
-      //const userId = "662f5f52be6e46cd5d2f6a4f"; 
-      const userId = localStorage.getItem('userID');
-      const response = await fetch(`http://localhost:3001/api/user/get-details/${userId}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      const data = await response.json();
-      const user = data.data;
+       
 
-      // Kiểm tra mật khẩu cũ
-      if (!bcrypt.compareSync(oldPassword, user.password)) {
-        message.error('Mật khẩu cũ không đúng. Vui lòng nhập lại.');
-        return;
-      }
+      
       const hashedNewPassword = await bcrypt.hash(newPassword, 10); 
       // Cập nhật mật khẩu mới
       const updateUser = {
@@ -48,7 +41,7 @@ const ChangePassword = () => {
       };
 
       // Gửi request PUT để cập nhật mật khẩu mới
-      await fetch(`http://localhost:3001/api/user/updateUser/${userId}`, {
+       await fetch(`http://localhost:3001/api/user/updateUser/${userId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -61,7 +54,7 @@ const ChangePassword = () => {
       setNewPassword('');
       setConfirmNewPassword('');
     } catch (error) {
-      console.error(error);
+      //console.error(error);
       message.error('Đã xảy ra lỗi khi cập nhật mật khẩu.');
     }
   };
