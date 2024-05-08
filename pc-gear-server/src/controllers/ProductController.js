@@ -2,9 +2,9 @@ const ProductService = require('../services/ProductService')
 
 const createProduct = async (req, res) => {
     try{
-        const {id, name, img, type, price, countInStock, discount, description} = req.body
+        const {id, name, img, type, price, discount, description} = req.body
 
-        if(!id || !name || !img || !type || !price )
+        if(!id || !name || !type || !price )
         {
             return res.status(200).json({
                 status: 'ERR',
@@ -25,20 +25,57 @@ const createProduct = async (req, res) => {
 }
 
 const getAllProduct = async(req, res) => {
-    const { limit = 10 , page = 0 , filter='', minPrice=0, maxPrice=100000000 , sort = '', producer = '', query} = req.query;
-    const skip = limit * page;
-    console.log(req.query);
-    const response = await ProductService.getAllProduct(Number(limit), Number(skip), filter, Number(minPrice), Number(maxPrice), sort, producer);
-    console.log(response);
-    return res.status(200).json(response);
     try {
-        
+        const { limit = 1000 , page = 0 , filter='', minPrice=0, maxPrice=1000000000 , sort = '', producer = ''} = req.query;
+        const skip = limit * page;
+        const response = await ProductService.getAllProduct(Number(limit), Number(skip), filter, Number(minPrice), Number(maxPrice), sort, producer);
+        return res.status(200).json(response);
     } catch(e) {
         return res.status(500).json({
             message: e.message || 'Internal Server Error'
         });
     }
 };
+
+const updateProduct = async(req, res) => {
+    try{
+        const productId = req.params.id
+        const data = req.body
+
+        if(!productId)
+        {
+            return res.status(200).json({
+                status: 'ERR',
+                message: 'The productId is required'
+            })
+        }
+
+        const response = await ProductService.updateProduct(productId, data)
+        return res.status(200).json(response)
+    } catch(e){
+        return res.status(404).json({
+            message: e
+        })
+    }
+}
+
+const getDetailsProduct = async (req, res) => {
+    try {
+        const productId = req.params.id
+        if (!productId) {
+            return res.status(200).json({
+                status: 'ERR',
+                message: 'The productId is required'
+            })
+        }
+        const response = await ProductService.getDetailsProduct(productId)
+        return res.status(200).json(response)
+    } catch (e) {
+        return res.status(404).json({
+            message: e
+        })
+    }
+}
 
 
 const deleteProduct = async(req, res) => {
@@ -62,8 +99,53 @@ const deleteProduct = async(req, res) => {
     }
 }
 
+const deleteMany = async (req, res) => {
+    try {
+        const ids = req.body.ids
+        if (!ids) {
+            return res.status(200).json({
+                status: 'ERR',
+                message: 'The ids is required'
+            })
+        }
+        const response = await ProductService.deleteManyProduct(ids)
+        return res.status(200).json(response)
+    } catch (e) {
+        return res.status(404).json({
+            message: e
+        })
+    }
+}
+
+const getAllType = async (req, res) => {
+    try {
+        const response = await ProductService.getAllType()
+        return res.status(200).json(response)
+    } catch (e) {
+        return res.status(404).json({
+            message: e
+        })
+    }
+}
+
+const getAllProducer = async (req, res) => {
+    try {
+        const response = await ProductService.getAllProducer()
+        return res.status(200).json(response)
+    } catch (e) {
+        return res.status(404).json({
+            message: e
+        })
+    }
+}
+
 module.exports = {
     createProduct,
     getAllProduct,
-    deleteProduct
+    updateProduct,
+    getDetailsProduct,
+    deleteProduct,
+    deleteMany,
+    getAllType,
+    getAllProducer
 }

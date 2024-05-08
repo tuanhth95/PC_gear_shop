@@ -8,7 +8,7 @@ import CardComponent from '../../components/CardComponent/CardComponent';
 import { WrapperProducts, WrapperButtonMore, Container, WrapperDiv } from './style';
 import FilterPriceComponent from '../../components/FilterPriceComponent/FilterPriceComponent';
 import SortComponent from '../../components/SortComponent/SortComponent';
-import FilterProducerComponent from '../../components/FilterProducerComponent/FilterProducerComponent';  // Assuming this is the correct path
+import FilterProducerComponent from '../../components/FilterProducerComponent/FilterProducerComponent';  
 
 const SearchResult = () => {
     const location = useLocation();
@@ -42,6 +42,7 @@ const SearchResult = () => {
         retryDelay: 1000
     });
 
+    
     if (isLoading) return <div></div>;
     if (error) return <div>Error fetching products: {error.message}</div>;
 
