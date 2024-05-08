@@ -32,6 +32,7 @@ const AdminProduct = () =>
         type: '',
         price: '',
         discount: '',
+        countInStock: '',
         description: '',
         newType: ''
       })
@@ -49,6 +50,7 @@ const AdminProduct = () =>
           type,
           price,
           discount,
+          countInStock,
           description } = data
           const res = ProductService.createProduct({
             id,
@@ -57,6 +59,7 @@ const AdminProduct = () =>
             type,
             price,
             discount,
+            countInStock,
             description
           })
           return res
@@ -112,6 +115,7 @@ const AdminProduct = () =>
             name: res?.data?.name,
             price: res?.data?.price,
             description: res?.data?.description,
+            countInStock: res?.data?.countInStock,
             img: res?.data?.img,
             type: res?.data?.type,
             discount: res?.data?.discount
@@ -434,6 +438,7 @@ const AdminProduct = () =>
           type: '',
           price: '',
           discount: '',
+          countInStock: '',
           description: ''      })
         form.resetFields()
       };
@@ -456,6 +461,7 @@ const AdminProduct = () =>
             type: '',
             price: '',
             discount: '',
+            countInStock: '',
             description: ''
         })
         form.resetFields()
@@ -467,6 +473,7 @@ const AdminProduct = () =>
           name: stateProduct.name,
           price: stateProduct.price,
           description: stateProduct.description,
+          countInStock: stateProduct.countInStock,
           img: stateProduct.img,
           type: stateProduct.type === 'add_type' ? stateProduct.newType : stateProduct.type,
           discount: stateProduct.discount
@@ -673,6 +680,13 @@ return(
                 >
                 <InputComponent value={stateProduct.discount} onChange={handleOnchange} name="discount" />
                 </Form.Item>
+                <Form.Item
+                label="Hàng trong kho"
+                name="countInStock"
+                rules={[{ required: true, message: 'Vui lòng nhập số lượng sản phẩm!' }]}
+                >
+                <InputComponent value={stateProduct.countInStock} onChange={handleOnchange} name="countInStock" />
+                </Form.Item>
             <Form.Item label="Hình ảnh" name="img">
             <input
             type="file"
@@ -691,7 +705,7 @@ return(
             </Form>           
             {/* </Loading> */}
             </ModalComponent>
-            <DrawerComponent title='Chi tiết sản phẩm' isOpen={isOpenDrawer} onClose={() => setIsOpenDrawer(false)} width="75%">
+            <DrawerComponent title='Chi tiết sản phẩm' isOpen={isOpenDrawer} onClose={() => setIsOpenDrawer(false)} width="85%">
         {/* <Loading isLoading={isLoadingUpdate || isLoadingUpdated}> */}
 
           <Form
@@ -739,6 +753,13 @@ return(
             >
               <InputComponent value={stateProductDetails.discount} onChange={handleOnchangeDetails} name="discount" />
             </Form.Item>
+            <Form.Item
+                label="Hàng trong kho"
+                name="countInStock"
+                rules={[{ required: true, message: 'Vui lòng nhập số lượng sản phẩm!' }]}
+                >
+                <InputComponent value={stateProductDetails.countInStock} onChange={handleOnchange} name="countInStock" />
+                </Form.Item>
             <Form.Item label="Hình ảnh" name="img">
             <input
                 type="file"
