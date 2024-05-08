@@ -55,14 +55,14 @@ const SearchResult = () => {
                 {(query !== '') && (<>Kết quả tìm kiếm cho <strong>"{query}"</strong>:</>)}
             </div>
         ) : (
-            <div style={{ margin: '20px 0', fontSize: '20px', marginLeft: '20px' }}>Không tìm thấy sản phẩm.</div>
+            <div style={{ margin: '20px 0', fontSize: '20px', marginLeft: '24px' }}>Không tìm thấy sản phẩm.</div>
         );
     };
 
     return (
         <WrapperDiv>
             {renderSearchResultCount()}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '0px auto', marginTop: '20px', maxWidth: '1240px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '0px auto', paddingTop: '20px', maxWidth: '1240px' }}>
                 {products?.data?.length > 0 && (
                 <>
                 <div style={{ display: 'flex', gap: '10px' }}> 
