@@ -5,16 +5,11 @@ const bcrypt = require("bcrypt")
 
 
 const createOrderDetail = (newOrderDetail) =>{
-    const {orderItems,fullname : fullName,address,phone,paymentMethod,itemsPrice,shippingPrice,totalPrice,userId,isPaid,isDelivered} = newOrderDetail
-        // orderItems.map((item) => {
-
-        // })
+    const {orderItems,fullname : fullName,address,phone,paymentMethod,itemsPrice,shippingPrice,shipmentMethod,totalPrice,userId,isPaid,isDelivered} = newOrderDetail
         console.log(newOrderDetail.paymentMethod);
         console.log(paymentMethod);
         return new Promise (async(resolve, reject) => {
 
-        try{
-            
             const creatOrderDetail = await OrderDetail.create({
                 orderItems: orderItems,
                 shippingAddress: {
@@ -23,10 +18,10 @@ const createOrderDetail = (newOrderDetail) =>{
                     phone,
                 },
                 paymentMethod,
+                shipmentMethod,
                 itemsPrice,
                 shippingPrice,
                 totalPrice,
-                userInfo: userId,
                 isPaid,
                 isDelivered
             })
@@ -44,6 +39,7 @@ const createOrderDetail = (newOrderDetail) =>{
                 message: 'ERROR',
                 data: creatOrderDetail
             })
+        try{     
             
         }catch(e){
             reject(e)

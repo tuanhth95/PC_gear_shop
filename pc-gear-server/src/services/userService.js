@@ -11,6 +11,7 @@ const createUser = (newUser) =>{
                 email, 
                 phone, 
                 address, 
+                shippingAddress,
                 password: hashPass, 
             });
             //console.log(result);
@@ -184,11 +185,61 @@ const deleteUser = (userId) => {
         }
     });
 };
+const updateUserAvatar = async (userId, avatarUrl) => {
+    try {
+      const user = await User.findByIdAndUpdate(
+        userId,
+        { avatar: avatarUrl },
+        { new: true }
+      );
+      return user;
+    } catch (error) {
+      throw new Error('Error updating user avatar');
+    }
+  };
+const getShippingAddress = async (userId) => {
+    return new Promise( async (resolve, reject) => {
+        const result = await User.findById(userId);
+        if(result){
+            console.log('user service get shipping address: ',result.shippingAddress)
+            resolve({
+                status: 'OK',
+                message: 'SUCCESS',
+                data: result.shippingAddress
+            })
+        }
+        else{
+            reject()
+        }
+    })
+}
+const addShippingAddress = async (req) => {
+    const {userId, shippingAddress} = req.body
+    return new Promise(async (resolve, reject) => {
+        const result = await User.findById(userId);
+        result.shippingAddress.push(shippingAddress);
+        const res = await result.save();
+        if(res){
+            resolve({
+                status: 'OK',
+                message: 'Add shipping address success',
+            })
+        }
+        else{
+            reject({
+                status: 'Error',
+            })
+        }
+    })
+}
 module.exports = {
     createUser,
     loginUser,
     getAllUsers,
     updateUser,
     getDetailsUser,
-    deleteUser
+    deleteUser,
+    //updateUserAvatar,
+    getShippingAddress,
+    addShippingAddress
 }

@@ -49,7 +49,7 @@ const getAllProduct = async (limit, page, filter, minPrice, maxPrice, sort, prod
                     effectivePrice: {
                         $cond: {
                             if: { $gt: ["$discount", 0] },
-                            then: { $multiply: ["$price", { $subtract: [1, { $divide: ["$discount", 100] }] }] },
+                            then: { $multiply: [{$toInt:"$price"}, { $subtract: [1, { $divide: ["$discount", 100] }] }] },
                             else: "$price"
                         }
                     }

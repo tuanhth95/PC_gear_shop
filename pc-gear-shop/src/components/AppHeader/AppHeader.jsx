@@ -168,6 +168,7 @@ const AppHeader = () => {
         </Badge>
         {user?.access_token ?
           <>
+          {console.log("is admin? : ",user?.isAdmin)}
           <Popover content={content} trigger="click" open={isOpenPopup}>
             <div
               style={{

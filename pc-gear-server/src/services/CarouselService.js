@@ -1,11 +1,12 @@
 const sharp = require('sharp');
 const Carousel = require('../models/Carousel');
-const fetch = import('node-fetch');
+const fetchPromise = import('node-fetch');
 
 async function uploadCarousel(newCarousel, id) {
   try {
+    const fetch = await fetchPromise;
     const { filename, url } = newCarousel;
-    const response = await fetch(url);
+    const response = await fetch.default(url);
     const buffer = await response.buffer();
     const imageData = buffer;
     const dataSize = buffer.byteLength;

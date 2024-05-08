@@ -70,6 +70,24 @@ export const updateUser = async (id, data, access_token) => {
     return res.data
 }
 
+export const addShippingAddress = async (body) => {
+    console.log("add shipping address serviec: ", body);
+    const res = await axiosJWT.post(`${process.env.REACT_APP_API_URL}/user/shipping-address`,body,{
+        headers: {
+            token: `Bearer ${body.access_token}`,
+        }
+    });
+    return res.data;
+}
+export const getShippingAddress = async (body) => {
+    console.log("get shipping address serviec: ", body.userId);
+    const res = await axiosJWT.get(`${process.env.REACT_APP_API_URL}/user/shipping-address`,body.userId,{
+        headers: {
+            token: `Bearer ${body.access_token}`,
+        }
+    });
+    return res.data;
+}
 // export const deleteManyUser = async (data, access_token) => {
 //     const res = await axiosJWT.post(`${process.env.REACT_APP_API_URL}/user/delete-many`, data, {
 //         headers: {

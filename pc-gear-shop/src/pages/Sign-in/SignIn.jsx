@@ -32,7 +32,7 @@ const SignIn = () => {
                 body: JSON.stringify({ email, password }),
             });
             const data = await response.json();
-            console.log("data received: ", data)
+            // console.log("data received: ", data)
             if (data.status === 'OK') {
                 //setCheck(true);
                 message.success('Login success');
@@ -49,7 +49,7 @@ const SignIn = () => {
                     localStorage.removeItem('rememberMe');
                     localStorage.removeItem('email'); // Xóa thông tin đăng nhập nếu không được chọn
                 }
-                if (_id === "6638f3503c45824cacd73e6e"){
+                if (_id === "663acfd6617eb93a25db6bab"){
                     data.data.isAdmin = true;
                 }
                 console.log(data.data);

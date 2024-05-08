@@ -5,17 +5,19 @@ import {
   MinusOutlined,
   PlusOutlined,
   CheckCircleFilled,
+  InboxOutlined,
 } from "@ant-design/icons";
 import ButtonComponent from "../../components/ButtonComponent/ButtonComponent";
-import ModalComponent from "../../components/ModalComponent/ModalComponent";
-import Loading from "../../components/LoadingComponent/Loading";
-import InputComponent from "../../components/InputComponent/InputComponent";
+import {
+  ShippingAddress,
+  AddShippingAddress,
+} from "./component/ShippingAddress";
 import {
   increaseProductAmount,
   decreaseProductAmount,
   removeCartProduct,
 } from "../../redux/slices/cartSlide";
-import { updateUser } from "../../redux/slices/userSlide";
+import { resetUser, updateUser } from "../../redux/slices/userSlide";
 import * as UserService from "../../services/UserService";
 import { convertPrice } from "../../utils";
 import {
@@ -45,24 +47,22 @@ const CartPage = () => {
   const [listChecked, setListChecked] = useState([]);
   const [isOpenModalUpdateInfo, setIsOpenModalUpdateInfo] = useState(false);
   const [processState, setProcessState] = useState(0);
-  const [stateUserDetails, setStateUserDetails] = useState({
-    username: "",
-    phone: "",
-    address: "",
-    city: "",
-  });
+  const [getAtStore, setGetAtStore] = useState(false);
+  const [shipAddress, setShipAddress] = useState(-1);
+  const [shippingAddressNoneUser, setShippingAddressNoneUser] = useState({});
   const [paymentMethod, setPaymentMethod] = useState(1);
+  const [shipmentMethod, setShipmentMethod] = useState(1);
   const [orderSuccess, setOrderSuccess] = useState(false);
+  const [isOpenInputShipment, setIsOpenInputShipment] = useState(false);
   const navigate = useNavigate();
   const [form] = Form.useForm();
+  const dispatch = useDispatch();
 
   const mutationAddOrder = useMutationHook((data) => {
     const { token, ...rest } = data;
     const res = OrderService.createOrder({ ...rest }, token);
     return res;
   });
-
-  const dispatch = useDispatch();
 
   const onChange = (e) => {
     if (e.target.checked) {
@@ -90,11 +90,10 @@ const CartPage = () => {
   const handleDeleteOrder = (idProduct) => {
     dispatch(removeCartProduct({ idProduct }));
   };
-
   const handleRemoveAllOrder = () => {
     dispatch(removeCartProduct({ idProduct: -1 }));
+    setListChecked([]);
   };
-
   const handleOnchangeCheckAll = (e) => {
     if (e.target.checked) {
       let temp = [];
@@ -104,8 +103,17 @@ const CartPage = () => {
       setListChecked([]);
     }
   };
+  const onShipmentMethodChange = (e) => {
+    console.log("radio ship checked", e.target.value);
+    setShipmentMethod(e.target.value);
+    if (e.target.value == 4) {
+      setGetAtStore(true);
+    } else {
+      setGetAtStore(false);
+    }
+  };
   const onPaymentMethodChange = (e) => {
-    console.log("radio checked", e.target.value);
+    console.log("radio pay checked", e.target.value);
     setPaymentMethod(e.target.value);
   };
   useEffect(() => {
@@ -113,12 +121,6 @@ const CartPage = () => {
       const a = async () => {
         await delay(5000);
         setListChecked([]);
-        setStateUserDetails({
-          username: "",
-          phone: "",
-          address: "",
-          city: "",
-        });
         setProcessState(0);
         dispatch(removeCartProduct({ idProduct: -1 }));
         setOrderSuccess(false);
@@ -131,24 +133,17 @@ const CartPage = () => {
   }, [listChecked]);
 
   useEffect(() => {
-    // form.setFieldsValue(stateUserDetails)
-  }, [form, stateUserDetails]);
-
-  useEffect(() => {
     if (isOpenModalUpdateInfo) {
       console.log(user.name);
-      setStateUserDetails({
-        username: user?.name,
-        address: user?.address,
-        city: user?.city,
-        phone: user?.phone,
-      });
-      form.setFieldsValue(stateUserDetails);
     }
   }, [isOpenModalUpdateInfo]);
 
   const handleChangeAddress = () => {
-    setIsOpenModalUpdateInfo(true);
+    if (user?.id) {
+      setIsOpenModalUpdateInfo(true);
+    } else {
+      setIsOpenInputShipment(true);
+    }
   };
 
   const priceMemo = useMemo(() => {
@@ -185,48 +180,134 @@ const CartPage = () => {
     );
   }, [priceMemo, priceDiscountMemo, deliveryPriceMemo]);
 
+  const checkAndCreateOrder = () => {
+    console.log(user);
+    if (
+      user?.id &&
+      user?.access_token &&
+      cart?.orderItems.filter((item) => listChecked.includes(item.id)) &&
+      priceMemo
+    ) {
+      console.log("check pass(with user) ");
+      mutationAddOrder.mutate(
+        {
+          token: user?.access_token,
+          orderItems: cart?.orderItems.filter((item) =>
+            listChecked.includes(item.id)
+          ),
+          fullname: user?.shippingAddress[shipAddress].addressName,
+          address:
+            user?.shippingAddress[shipAddress].addressNumber +
+            ", " +
+            user?.shippingAddress[shipAddress].addressWard +
+            ", " +
+            user?.shippingAddress[shipAddress].addressDistrict +
+            ", " +
+            user?.shippingAddress[shipAddress].addressProvince,
+          phone: user?.shippingAddress[shipAddress].addressPhone,
+          city: user?.city,
+          paymentMethod:
+            paymentMethod == 1 ? "COD" : paymentMethod == 2 ? "Bank" : "Momo",
+          shipmentMethod:
+            shipmentMethod == 1
+              ? "standard"
+              : shipmentMethod == 2
+              ? "fast"
+              : shipmentMethod == 3
+              ? "inTPHCM"
+              : "store",
+          itemsPrice: priceMemo,
+          shippingPrice: deliveryPriceMemo,
+          totalPrice: totalPriceMemo,
+          user: user?.id,
+          email: user?.email,
+        },
+        {
+          onSuccess: (data) => {
+            setOrderSuccess(true);
+            setProcessState(2);
+          },
+        }
+      );
+    } else if (!user?.id) {
+      console.log("check pass(without user) ");
+      mutationAddOrder.mutate(
+        {
+          token: "none",
+          orderItems: cart?.orderItems.filter((item) =>
+            listChecked.includes(item.id)
+          ),
+          fullname: shippingAddressNoneUser?.addressName,
+          address:
+            shippingAddressNoneUser?.addressNumber +
+            ", " +
+            shippingAddressNoneUser?.addressWard +
+            ", " +
+            shippingAddressNoneUser?.addressDistrict +
+            ", " +
+            shippingAddressNoneUser?.addressProvince,
+          phone: shippingAddressNoneUser?.addressPhone,
+          paymentMethod:
+            paymentMethod == 1 ? "COD" : paymentMethod == 2 ? "Bank" : "Momo",
+          shipmentMethod:
+            shipmentMethod == 1
+              ? "standard"
+              : shipmentMethod == 2
+              ? "fast"
+              : shipmentMethod == 3
+              ? "inTPHCM"
+              : "store",
+          itemsPrice: priceMemo,
+          shippingPrice: deliveryPriceMemo,
+          totalPrice: totalPriceMemo,
+          user: "none",
+          email: "none",
+        },
+        {
+          onSuccess: (data) => {
+            setOrderSuccess(true);
+            setProcessState(2);
+            dispatch(resetUser());
+          },
+        }
+      );
+    } else message.error("thiếu thông tin");
+  };
   const handleAddCard = () => {
     if (listChecked.length == 0) {
       message.error("Vui lòng chọn sản phẩm");
-    } else if (!user?.phone || !user.address || !user.name || !user.city) {
-      setIsOpenModalUpdateInfo(true);
     } else if (processState == 1) {
-      if (
-        user?.access_token &&
-        cart?.orderItems.filter((item) => listChecked.includes(item.id)) &&
-        user?.name &&
-        user?.address &&
-        user?.phone &&
-        user?.city &&
-        priceMemo &&
-        user?.id
-      ) {
-        console.log("check pass ");
-        mutationAddOrder.mutate(
-          {
-            token: user?.access_token,
-            orderItems: cart?.orderItems.filter((item) =>
-              listChecked.includes(item.id)
-            ),
-            fullname: user?.name,
-            address: user?.address,
-            phone: user?.phone,
-            city: user?.city,
-            paymentMethod:
-              paymentMethod == 1 ? "COD" : paymentMethod == 2 ? "Bank" : "Momo",
-            itemsPrice: priceMemo,
-            shippingPrice: deliveryPriceMemo,
-            totalPrice: totalPriceMemo,
-            user: user?.id,
-            email: user?.email,
-          },
-          {
-            onSuccess: (data) => {
-              setOrderSuccess(true);
-              setProcessState(2);
-            },
-          }
-        );
+      console.log(
+        "state: ",
+        user?.id,
+        " - ",
+        shipmentMethod,
+        " - ",
+        shipAddress
+      );
+      if (!user?.id) {
+        // khong co user
+        if (shipmentMethod != 4) {
+          if (
+            !shippingAddressNoneUser?.addressName ||
+            !shippingAddressNoneUser?.addressNumber ||
+            !shippingAddressNoneUser?.addressPhone ||
+            !shippingAddressNoneUser?.addressWard ||
+            !shippingAddressNoneUser?.addressDistrict ||
+            !shippingAddressNoneUser?.addressProvince
+          )
+            handleChangeAddress();
+          else checkAndCreateOrder();
+        } else {
+          checkAndCreateOrder();
+        }
+      } else {
+        if (shipmentMethod != 4) {
+          if (shipAddress == -1) setIsOpenModalUpdateInfo(true);
+          else checkAndCreateOrder();
+        } else {
+          checkAndCreateOrder();
+        }
       }
     } else {
       setProcessState(1);
@@ -245,40 +326,12 @@ const CartPage = () => {
 
   const { isLoading = false, data } = mutationUpdate;
 
-  const handleCancleUpdate = () => {
-    setStateUserDetails({
-      username: "",
-      phone: "",
-      address: "",
-      city: "",
-    });
-    form.resetFields();
+  const handleUpdateShipAddress = (val) => {
+    console.log("index ship selected: ", val);
+    setShipAddress(val);
     setIsOpenModalUpdateInfo(false);
   };
 
-  const handleUpdateInforUser = () => {
-    const { username, address, city, phone } = stateUserDetails;
-    if (username && address && city && phone) {
-      console.log("update user: ", user?.id, " with data: ", stateUserDetails);
-      mutationUpdate.mutate(
-        { id: user?.id, token: user?.access_token, ...stateUserDetails },
-        {
-          onSuccess: () => {
-            dispatch(updateUser({ data: { username, address, city, phone } }));
-            console.log("before dispatch");
-            setIsOpenModalUpdateInfo(false);
-          },
-        }
-      );
-    }
-  };
-
-  const handleOnchangeDetails = (e) => {
-    setStateUserDetails({
-      ...stateUserDetails,
-      [e.target.name]: e.target.value,
-    });
-  };
   const itemsDelivery = [
     {
       title: "Giỏ hàng",
@@ -343,11 +396,23 @@ const CartPage = () => {
                         flexDirection: "column",
                         justifyContent: "center",
                         alignItems: "center",
-                        gap: "48px",
+                        gap: "24px",
                       }}
                     >
-              
-                      <span style={{ fontSize: "50px", fontWeight: "500", color: "#aaa"}}>
+                      <InboxOutlined
+                        style={{
+                          fontSize: "100px",
+                          fontWeight: "400",
+                          color: "#aaa",
+                        }}
+                      />
+                      <span
+                        style={{
+                          fontSize: "24px",
+                          fontWeight: "500",
+                          color: "#aaa",
+                        }}
+                      >
                         Chưa có sản phẩm trong giỏ hàng
                       </span>
                     </div>
@@ -479,6 +544,19 @@ const CartPage = () => {
                   background: "#fff",
                 }}
               >
+                <WrapperInfo>Lựa chọn phương thức giao hàng</WrapperInfo>
+                <Radio.Group
+                  onChange={onShipmentMethodChange}
+                  value={shipmentMethod}
+                  defaultValue={1}
+                >
+                  <Space direction="vertical">
+                    <Radio value={1}>Giao hàng tiêu chuẩn</Radio>
+                    <Radio value={2}>Giao hàng nhanh</Radio>
+                    <Radio value={3}>Ship now (Nội ô TP.HCM)</Radio>
+                    <Radio value={4}>Nhận tại cửa hàng</Radio>
+                  </Space>
+                </Radio.Group>
                 <WrapperInfo>Lựa chọn phương thức thanh toán</WrapperInfo>
                 <Radio.Group
                   onChange={onPaymentMethodChange}
@@ -524,15 +602,24 @@ const CartPage = () => {
               <WrapperInfo>
                 <div>
                   <span>Địa chỉ: </span>
-                  <span style={{ fontWeight: "bold" }}>
-                    {`${user?.address} ${user?.city}`}{" "}
-                  </span>
-                  <span
-                    onClick={handleChangeAddress}
-                    style={{ color: "#9255FD", cursor: "pointer" }}
-                  >
-                    Thay đổi
-                  </span>
+                  {processState == 0 ? (
+                    <></>
+                  ) : (
+                    <>
+                      <span style={{ fontWeight: "bold" }}>
+                        {`${user?.address} ${user?.city}`}{" "}
+                      </span>
+                      <span
+                        onClick={getAtStore ? () => {} : handleChangeAddress}
+                        style={{
+                          color: getAtStore ? "#aaa" : "#9255FD",
+                          cursor: "pointer",
+                        }}
+                      >
+                        Thay đổi
+                      </span>
+                    </>
+                  )}
                 </div>
               </WrapperInfo>
               <WrapperInfo>
@@ -648,71 +735,20 @@ const CartPage = () => {
           </WrapperRight>
         </div>
       </div>
-      <ModalComponent
+      <ShippingAddress
         title="Cập nhật thông tin giao hàng"
         open={isOpenModalUpdateInfo}
-        onCancel={handleCancleUpdate}
-        onOk={handleUpdateInforUser}
-      >
-        <Loading isLoading={isLoading}>
-          <Form
-            name="basic"
-            labelCol={{ span: 4 }}
-            wrapperCol={{ span: 20 }}
-            // onFinish={onUpdateUser}
-            autoComplete="on"
-            form={form}
-          >
-            <Form.Item
-              label="Name"
-              name="name"
-              rules={[{ required: true, message: "Please input your name!" }]}
-            >
-              <InputComponent
-                value={stateUserDetails["name"]}
-                onChange={handleOnchangeDetails}
-                name="name"
-              />
-            </Form.Item>
-            <Form.Item
-              label="City"
-              name="city"
-              rules={[{ required: true, message: "Please input your city!" }]}
-            >
-              <InputComponent
-                value={stateUserDetails["city"]}
-                onChange={handleOnchangeDetails}
-                name="city"
-              />
-            </Form.Item>
-            <Form.Item
-              label="Phone"
-              name="phone"
-              rules={[{ required: true, message: "Please input your  phone!" }]}
-            >
-              <InputComponent
-                value={stateUserDetails.phone}
-                onChange={handleOnchangeDetails}
-                name="phone"
-              />
-            </Form.Item>
-
-            <Form.Item
-              label="Adress"
-              name="address"
-              rules={[
-                { required: true, message: "Please input your  address!" },
-              ]}
-            >
-              <InputComponent
-                value={stateUserDetails.address}
-                onChange={handleOnchangeDetails}
-                name="address"
-              />
-            </Form.Item>
-          </Form>
-        </Loading>
-      </ModalComponent>
+        onOk={handleUpdateShipAddress}
+        onCancel={() => setIsOpenModalUpdateInfo(false)}
+        isLoading={isLoading}
+        form={form}
+      />
+      <AddShippingAddress
+        title={"Thêm địa chỉ giao hàng"}
+        isOpenAddAddress={isOpenInputShipment}
+        setIsOpenAddAddress={setIsOpenInputShipment}
+        setShippingAddressNoneUser={setShippingAddressNoneUser}
+      />
     </div>
   );
 };

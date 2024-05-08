@@ -153,11 +153,26 @@ const deleteUser = async (req, res) => {
         });
     }
 };
+const getShippingAddress = async(req, res, next) => {
+    const { userId } = req.body
+    const shippingAddress = await userService.getShippingAddress(userId)
+    res.status(200).json({success: true, shippingAddress})
+}
+const addShippingAddress = async(req, res) => {
+    if( req.body?.userId && req.body?.shippingAddress){
+        const result = await userService.addShippingAddress(req)
+        res.status(200).json({success: true, result: result})
+    }
+}
+
 module.exports = {
     createUser,
     loginUser,
     getAllUsers,
     updateUser,
     getDetailsUser,
-    deleteUser
+    deleteUser,
+    //updateUserAvatar,
+    getShippingAddress,
+    addShippingAddress
 }
