@@ -16,12 +16,7 @@ const Info = (props) => {
 
     const handleBuyNow = () => {
         console.log('user id: ', user?.id)
-        if(!user?.id){
-            navigate('/signin', {state: location?.pathname});
-        }
-        else{
-            dispatch(addCartProduct(props.data));
-        }
+        dispatch(addCartProduct(props.data));
     }
 
     const [quantity, setQuantity] = useState(1)

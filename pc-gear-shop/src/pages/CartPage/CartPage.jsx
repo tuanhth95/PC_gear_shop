@@ -65,6 +65,7 @@ const CartPage = () => {
   });
 
   const onChange = (e) => {
+    console.log("checked: ", e.target.checked, " - ", e.target.value)
     if (e.target.checked) {
       setListChecked([...listChecked, e.target.value]);
     } else {
@@ -72,6 +73,7 @@ const CartPage = () => {
       setListChecked(temp);
     }
   };
+  console.log("list checked: ", listChecked)
   const handleChangeCount = (type, idProduct, limited) => {
     if (type === "increase") {
       if (!limited) {
@@ -89,6 +91,7 @@ const CartPage = () => {
   };
   const handleDeleteOrder = (idProduct) => {
     dispatch(removeCartProduct({ idProduct }));
+    setListChecked(listChecked.filter((item) => item != idProduct))
   };
   const handleRemoveAllOrder = () => {
     dispatch(removeCartProduct({ idProduct: -1 }));
@@ -147,20 +150,26 @@ const CartPage = () => {
   };
 
   const priceMemo = useMemo(() => {
-    const result = cart?.orderItems?.reduce((total, cur) => {
-      if (listChecked.includes(cur?.id)) {
+    const result = cart.orderItems.reduce((total, cur) => {
+      //console.log("cur: ", cur)
+      if (listChecked.includes(cur.id)) {
         return total + cur.price * cur.amount;
       }
+      return total;
     }, 0);
+    //console.log("result: ", result)
     if (!result) return 0;
     return result;
   }, [cart, listChecked]);
 
   const priceDiscountMemo = useMemo(() => {
+    //console.log("use memo reduce: ", cart?.orderItems);
     const result = cart?.orderItems.reduce((total, cur) => {
+      //console.log("check condition: ", listChecked.includes(cur?.id));
       if (listChecked.includes(cur?.id)) {
         return total + (cur?.price * cur?.amount * cur?.discount) / 100;
       }
+      return total
     }, 0);
     if (!result) return 0;
     return result;
@@ -385,7 +394,7 @@ const CartPage = () => {
                   </div>
                 </WrapperStyleHeader>
                 <WrapperListOrder>
-                  {cart?.orderItems.length === 0 ? (
+                  {cart?.orderItems?.length === 0 ? (
                     <div
                       style={{
                         width: "100%",

@@ -28,25 +28,44 @@ const cartSlide = createSlice({
     deliveredAt: '',
   },
   reducers:{
+    resetCart:(state) => {
+      state.orderItems =  [];
+      state.shippingAddress = {};
+      state.paymentMethod =  '';
+      state.itemsPrice =  0;
+      state.shippingPrice =  0;
+      state.taxPrice =  0;
+      state.user =  '';
+      state.isPaid =  false;
+      state.paidAt =  '';
+      state.isDelivered  = false;
+      state.deliveredAt =  '';
+    },
     addCartProduct: (state, action) => {
       const product = action.payload
-      const productFind = state?.orderItems?.find((item) => item?.id === product.id)
+      const productFind = state.orderItems.find((item) => item?.id === product.id)
+      console.log("productFind: ", productFind);
       if(productFind){
         productFind.amount += 1;
       }
+      else if( !state.orderItems){
+        state.orderItems = [product]
+      }
       else{
         product.amount = 1;
-        state.orderItems.push(product);
+        state.orderItems = [...state.orderItems, product];
       }
       console.log(product);
-      console.log(state.orderItems)
+      console.log("cart product: ",state.orderItems.length)
     },
     removeCartProduct: (state, action) => {
       const {idProduct} = action.payload
+      console.log("before filter: ", state.orderItems)
       let productFilter = []
       if(idProduct != -1){
-        productFilter = state?.orderItems?.find((item) => item?.id != idProduct)
+        productFilter = state.orderItems.filter((item) => item?.id != idProduct)
       }
+      console.log("product filter: ", productFilter)
       state.orderItems = productFilter
     },
     increaseProductAmount: (state, action) => {
@@ -65,5 +84,5 @@ const cartSlide = createSlice({
     },
   }
 })
-export const { addCartProduct, removeCartProduct, increaseProductAmount, decreaseProductAmount } = cartSlide.actions
+export const { addCartProduct, removeCartProduct, increaseProductAmount, decreaseProductAmount, resetCart } = cartSlide.actions
 export default cartSlide.reducer

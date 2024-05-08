@@ -19,6 +19,28 @@ const Review = ({productId}) =>{
 
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const fetchReviews = async () => {
+    try {
+      const response = await axios.get(`http://localhost:3001/api/review/product/${productId}`); 
+      const reviewsWithUserInfo = response.data.map(review => {
+        return {
+          ...review,
+          userAvatar: review.userAvatar, 
+          userName: review.userName,
+          replies: review.replies.map(reply => ({
+            ...reply,
+            userNameReply: reply.userNameReply,
+            userAvatarReply: reply.userAvatarReply
+          })),
+
+        };
+      });
+      setData(reviewsWithUserInfo);
+    } catch (error) {
+      console.error('Error fetching reviews:', error);
+    }
+  };
   useEffect(() => {
     console.log("User:", user);
     setUserId(prevUserId => {
@@ -41,28 +63,6 @@ const Review = ({productId}) =>{
   const [data, setData] = useState([])
 
   useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        const response = await axios.get(`http://localhost:3001/api/review/product/${productId}`); 
-        const reviewsWithUserInfo = response.data.map(review => {
-          return {
-            ...review,
-            userAvatar: review.userAvatar, 
-            userName: review.userName,
-            replies: review.replies.map(reply => ({
-              ...reply,
-              userNameReply: reply.userNameReply,
-              userAvatarReply: reply.userAvatarReply
-            })),
-
-          };
-        });
-        setData(reviewsWithUserInfo);
-      } catch (error) {
-        console.error('Error fetching reviews:', error);
-      }
-    };
-  
     fetchReviews();
   }, [productId, data]);
 

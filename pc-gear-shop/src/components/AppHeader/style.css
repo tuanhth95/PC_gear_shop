@@ -31,14 +31,23 @@ a {
   display: flex;
   align-items: center;
   background-color: #1890ff; 
-  padding: 0 20px;
+  padding: 0px 20px;
+  height: fit-content;
 }
 
 .header .logo {
-  width: 120px; 
-  height: 31px; 
-  background: rgba(255, 255, 255, 0.2);
+  width: 220px; 
+  height: fit-content; 
+  /* background: rgba(255, 255, 255, 0.2); */
   margin-right: 24px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.header .logo img {
+  width: inherit;
+  height: auto;
 }
 
 /* Style cho input tìm kiếm */
