@@ -73,20 +73,20 @@ const UserInfo = () => {
     <div>
       <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Thông tin người dùng</h1>
       <WrapperContainer>
-        <Form onSubmit={handleSubmit}>
-          <Form.Item label="Tên tài khoản" labelCol={{ span: 12 }} wrapperCol={{ span: 12 }}>
+        <Form onSubmit={handleSubmit} name="basic" labelCol={{span: 8,}} wrapperCol={{span: 16,}} style={{maxWidth: 600,}} >
+          <Form.Item label="Tên tài khoản" >
             <StyleInput name="username" value={userData.username} onChange={handleChange} />
           </Form.Item>
 
-          <Form.Item label="Email" labelCol={{ span: 12 }} wrapperCol={{ span: 12 }}>
+          <Form.Item label="Email" >
             <StyleInput name="email" value={userData.email} onChange={handleChange} />
           </Form.Item>
 
-          <Form.Item label="Số điện thoại" labelCol={{ span: 12 }} wrapperCol={{ span: 12 }}>
+          <Form.Item label="Số điện thoại" >
             <StyleInput name="phone" value={userData.phone} onChange={handleChange} />
           </Form.Item>
 
-          <Form.Item label="Địa chỉ" labelCol={{ span: 12 }} wrapperCol={{ span: 12 }}>
+          <Form.Item label="Địa chỉ" >
             <StyleInput name="address" value={userData.address} onChange={handleChange} />
           </Form.Item>
 

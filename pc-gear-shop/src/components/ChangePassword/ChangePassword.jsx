@@ -72,20 +72,20 @@ const ChangePassword = () => {
     <div>
       <h1 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Chỉnh sửa mật khẩu</h1>
       <WrapperContainer>
-        <Form onSubmit={handleSubmit}>
-          <Form.Item label="Mật khẩu cũ">
+        <Form onSubmit={handleSubmit} name="basic" labelCol={{span: 8,}} wrapperCol={{span: 16,}} style={{maxWidth: 600,}}>
+          <Form.Item label="Mật khẩu cũ" >
             <StyleInputPassword type="password" name="oldPassword" value={oldPassword} onChange={handleChange} />
           </Form.Item>
 
-          <Form.Item label="Mật khẩu mới">
+          <Form.Item label="Mật khẩu mới" >
             <StyleInputPassword type="password" name="newPassword" value={newPassword} onChange={handleChange} />
           </Form.Item>
 
-          <Form.Item label="Nhập lại mật khẩu mới">
+          <Form.Item label="Nhập lại mật khẩu mới" >
             <StyleInputPassword type="password" name="confirmNewPassword" value={confirmNewPassword} onChange={handleChange} />
           </Form.Item>
 
-          <Form.Item>
+          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
             <div onClick={handleSubmit}><Button type="primary" htmlType="submit">Cập nhật mật khẩu</Button></div>
           </Form.Item>
         </Form>

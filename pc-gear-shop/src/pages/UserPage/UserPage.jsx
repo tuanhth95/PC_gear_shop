@@ -32,9 +32,9 @@ const UserPage = () => {
     return window.location.href = '/SignIn';
   }
   return (
-    <div style={{ maxWidth: 800, margin: '0 auto' }}>
+    <div style={{ width: '90%' , margin: '0 auto'}}>
       <Tabs activeKey={selectedTab} onChange={handleTabChange} type="card">
-        <TabPane tab="Thông tin người dùng" key="userInfo">
+        <TabPane tab="Thông tin người dùng" key="userInfo" >
           <UserInfo />
         </TabPane>
         <TabPane tab="Thay đổi mật khẩu" key="changePassword">
@@ -43,35 +43,12 @@ const UserPage = () => {
         <TabPane tab="Lịch sử đơn hàng" key="orderHistory">
           <OrderHis />
         </TabPane>
-        <TabPane>
+        {/* <TabPane>
           <Button type="primary" onClick={handleLogout}>Đăng xuất</Button>
-        </TabPane>
+        </TabPane> */}
       </Tabs>
     </div>
   );
 };
 
 export default UserPage;
-
-// import React from 'react';
-// import { useSelector } from 'react-redux';
-
-// const UserPage = () => {
-//   // Sử dụng useSelector để lấy dữ liệu user từ Redux store
-//   const user = useSelector(state => state.user);
-
-//   // Sử dụng dữ liệu user ở đây
-//   console.log(user);
-
-//   return (
-//     <div>
-//       {/* Hiển thị thông tin user */}
-//       <p>id: {user.id}</p>
-//       <p>Tên: {user.name}</p>
-//       <p>Email: {user.email}</p>
-//       {/* và các thông tin khác */}
-//     </div>
-//   );
-// };
-
-// export default UserPage;

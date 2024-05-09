@@ -51,7 +51,7 @@ const SearchResult = () => {
             return null;
         }
         return products?.data?.length > 0 ? (
-            <div style={{ margin: '20px 0', fontSize: '16px', color: '#161617', marginLeft: '20px' }}>
+            <div style={{ paddingTop: '20px', fontSize: '16px', color: '#161617', marginLeft: '20px' }}>
                 {(query !== '') && (<>Kết quả tìm kiếm cho <strong>"{query}"</strong>:</>)}
             </div>
         ) : (
@@ -71,7 +71,7 @@ const SearchResult = () => {
                 </div>
                     <SortComponent />
                 </>
-                )}
+                )} 
             </div>
             <WrapperProducts>
                 {products?.data?.map(product => (
@@ -84,7 +84,7 @@ const SearchResult = () => {
                     textButton="Xem thêm"
                     type="outline"
                     onClick={() => setLimit(prev => prev + 10)}
-                    styleButton={{ border: '1px solid rgb(11,116,229)', width: '120px', height: '38px', borderRadius: '4px' }}
+                    styleButton={{ border: '1px solid rgb(11,116,229)', width: '120px', height: '38px', borderRadius: '4px', marginBottom: '10px' }}
                     styleTextButton={{ fontWeight: '500', color: 'rgb(11,116,229)' }}
                 />
                 </div>

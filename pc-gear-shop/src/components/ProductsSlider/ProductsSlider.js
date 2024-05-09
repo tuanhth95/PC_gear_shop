@@ -42,13 +42,39 @@ const SamplePrevArrow = props => {
 }
 
 const settings = {
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1280,  
+      settings: {
+          slidesToShow: 4 
+      }
+  },
+      {
+          breakpoint: 1024,  
+          settings: {
+              slidesToShow: 3  
+          }
+      },
+      {
+          breakpoint: 600,   
+          settings: {
+              slidesToShow: 2  
+          }
+      },
+      {
+          breakpoint: 480,   
+          settings: {
+              slidesToShow: 1  
+          }
+      }
+  ]
 }
 
 const ProductsSlider = (props) => {
-    return (
-        <Carousel arrows {...settings} slidesToShow={5}>
+  return (
+      <Carousel arrows {...settings} slidesToShow={5}>
         {
             props.data.map((product, index) => {
                 return (

@@ -12,10 +12,10 @@ export const WrapperButtonMore = styled(ButtonComponent)`
 
 export const WrapperDiv = styled.div`
   background: #fff;
-  padding: 0 120px;
+  margin: 0 120px;
   height: fit-content;
   width: fit-content;
-  margin: auto auto;
+  // margin: auto auto;
 
   @media (max-width: 768px) {
     padding: 0 15px;

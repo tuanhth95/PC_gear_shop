@@ -52,7 +52,11 @@ export const GroupedProducts = styled.div`
     border-radius: 3px 3px 0 0;
 `
 
-export const GroupedProductsTitle = styled.h2`
+export const GroupedProductsTitle = styled.h4`
     padding: 1% 1%;
+    background-color: #1890FF;
+    color: white;
+    margin-top: 1%;
+    border-radius: 3px 3px 0 0;
 `
 

@@ -50,7 +50,7 @@ const Specifications = (props) => {
 
     return (
         <>
-        <h2>Thông tin sản phẩm</h2>
+        <h2 style={{fontSize: '24px', padding: '8px 16px'}}>Thông tin sản phẩm</h2>
         <div className="specifications-container">
             <Table
                 columns={columns}

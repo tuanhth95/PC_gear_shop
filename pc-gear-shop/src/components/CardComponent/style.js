@@ -51,12 +51,12 @@ export const CardContentWrapper = styled.div`
 
 export const DiscountTag = styled.div`
   position: absolute;
-  top: 4px;
-  right: 4px;
+  top: 6px;
+  right: 6px;
   background-color: red;
   color: white;
-  padding: 2px 6px;
-  font-size: 12px;
+  padding: 4px 8px;
+  font-size: 14px;
   border-radius: 3px;
 `;
 

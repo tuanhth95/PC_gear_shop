@@ -160,6 +160,7 @@ const AdminUser = () => {
       key: 'phone',
       ...getColumnSearchProps('phone'),
       sorter: (a, b) => a.phone - b.phone,
+      render: (phone) => phone.toString().replace(/(\d{4})(\d{3})(\d{3})/, '$1 $2 $3'),
 
     },
     {

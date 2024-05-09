@@ -22,7 +22,7 @@ export const getAllProduct = async (search, priceRange, limit, sort, producer) =
 
     if (producer) {
         queryString += `&producer=${encodeURIComponent(producer)}`;
-    }
+    } 
 
     const response = await axios.get(queryString);
     return response.data;

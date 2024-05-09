@@ -200,6 +200,11 @@ const AdminCarousel = () => {
     } catch (error) {
       console.error('Error adding new image:', error);
     }
+    finally {
+      setIsAddModalVisible(false);
+      setEditedUrl('');
+      setEditedFilename('');
+    }
   };
   
   const handleCancelAdd = () => {

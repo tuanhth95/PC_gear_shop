@@ -8,7 +8,7 @@ export const ProductDetailImg = styled.img`
 export const ProductSale = styled.span`
     font-weight: bold;
     color: #1A93FF;
-    font-size: 1.5rem;
+    font-size: 20px;
 
     @media (min-width: 375) {
         font-size: 16px;
@@ -57,6 +57,8 @@ export const ProductDetailBtn = styled.button`
 `
 export const ProductName = styled.h2`
     margin: 1rem 0;
+
+    font-size: 24px;
 
     @media (max-width: 375) {
         font-size: 16px;

@@ -129,6 +129,8 @@ const AppHeader = () => {
   const handleLogout = async () => {
     setLoading(true);
     //await UserService.logoutUser()
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
     dispatch(resetUser());
     dispatch(resetCart());
     setLoading(false);

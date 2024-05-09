@@ -9,7 +9,7 @@ const Others = (props) => {
     const handleOther = props.handleOther;
     return (
         <>
-            <h2>Sản phẩm tương tự</h2>
+            <h2 style={{fontSize: '24px', padding: '8px 16px'}}>Sản phẩm tương tự</h2>
             <Flex vertical='true' className='relative-products'>
             {
                 firstFourElements.map((item, index) => {
