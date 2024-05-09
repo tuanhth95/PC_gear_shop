@@ -227,3 +227,4 @@ let roundedRating = roundRating(averageRating);
     </div>
   )
 }
+export default Review;
