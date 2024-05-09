@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Collapse, Flex, Button, message, Popconfirm } from 'antd'
+import { Collapse, Flex, Button, message, Popconfirm, Divider } from 'antd'
 import { DeleteOutlined } from '@ant-design/icons'
 import * as CollectionService from '../../../services/CollectionService'
 import { useQuery } from '@tanstack/react-query'
@@ -97,7 +97,8 @@ const CollectionList = () => {
 
     return (
         <>
-        {(collections.length > 0) && <Collapse items={items} />}   
+        {(collections.length > 0) && <Collapse items={items} />}  
+        <Divider></Divider> 
         <ExportExcelComponent collections={collections.map(collection => ({
             ...collection,
             productList: JSON.stringify(collection.productList)

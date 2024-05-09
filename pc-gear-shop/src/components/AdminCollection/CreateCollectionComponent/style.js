@@ -14,7 +14,7 @@ export const CreateBtn = styled.button`
 `
 
 export const CreateCollection = styled.span`
-    font-size: 0.5rem;
+    font-size: 18px;
     margin: auto 2%;
     font-weight: bold;
 `

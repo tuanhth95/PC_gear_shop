@@ -10,6 +10,7 @@ import AdminCarousel from "../../components/AdminCarousel/AdminCarousel";
 import CustomizedContent from "./components/CustomizedContent";
 import AdminUser from "../../components/AdminUser/AdminUser";
 import { useQueries } from "@tanstack/react-query";
+import AdminCollectionPage from "../../components/AdminCollection/AdminCollectionComponent/AdminCollectionComponent";
 
 const AdminPage = () => {
   const [keySelected, setKeySelected] = useState("");
@@ -21,7 +22,7 @@ const AdminPage = () => {
     getItem("Carousel", "carousels",<DeliveredProcedureOutlined />),
     getItem("User - D.Quynh", "users",<UserOutlined />),
     getItem("Danh mục - tiến", "categories",<MenuOutlined />),
-    getItem("collection - như quỳnh", "collections",<GroupOutlined />),
+    getItem("Collection", "collections",<GroupOutlined />),
   ];
 
   const getAllReviews = async () => {
@@ -64,6 +65,8 @@ const AdminPage = () => {
         return <AdminCarousel />;
       case "users":
         return <AdminUser />;
+      case "collections": 
+        return <AdminCollectionPage />
       default:
         return null;
     }
