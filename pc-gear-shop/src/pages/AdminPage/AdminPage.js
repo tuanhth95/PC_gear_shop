@@ -11,6 +11,7 @@ import CustomizedContent from "./components/CustomizedContent";
 import AdminUser from "../../components/AdminUser/AdminUser";
 import { useQueries } from "@tanstack/react-query";
 import AdminCollectionPage from "../../components/AdminCollection/AdminCollectionComponent/AdminCollectionComponent";
+import CategoryManager from "../../components/CategoryManager/CategoryManager"
 
 const AdminPage = () => {
   const [keySelected, setKeySelected] = useState("");
@@ -20,8 +21,8 @@ const AdminPage = () => {
     getItem("Sản phẩm", "products", <ProductOutlined />),
     getItem("Media", "medias", <FileImageOutlined />),
     getItem("Carousel", "carousels",<DeliveredProcedureOutlined />),
-    getItem("User - D.Quynh", "users",<UserOutlined />),
-    getItem("Danh mục - tiến", "categories",<MenuOutlined />),
+    getItem("User", "users",<UserOutlined />),
+    getItem("Danh mục", "categories",<MenuOutlined />),
     getItem("Collection", "collections",<GroupOutlined />),
   ];
 
@@ -67,6 +68,8 @@ const AdminPage = () => {
         return <AdminUser />;
       case "collections": 
         return <AdminCollectionPage />
+      case "categories": 
+        return <CategoryManager/>
       default:
         return null;
     }

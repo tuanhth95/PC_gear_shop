@@ -17,7 +17,7 @@ const CategoryManager = () => {
   const fetchCategories = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('/api/categories');
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/categories`);
       setCategories(response.data);
       setLoading(false);
     } catch (error) {
@@ -28,7 +28,7 @@ const CategoryManager = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/api/categories/${id}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/categories/${id}`);
       fetchCategories();
     } catch (error) {
       console.error('Failed to delete category:', error);
@@ -37,7 +37,7 @@ const CategoryManager = () => {
 
   const handleDeleteSubCategory = async (categoryId, subId) => {
     try {
-      await axios.delete(`/api/categories/${categoryId}/subcategories/${subId}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/categories/${categoryId}/subcategories/${subId}`);
       fetchCategories();
     } catch (error) {
       console.error('Failed to delete subcategory:', error);
@@ -65,9 +65,9 @@ const CategoryManager = () => {
   const handleFormSubmit = async (values) => {
     try {
       if (editingCategory) {
-        await axios.put(`/api/categories/${editingCategory._id}`, values);
+        await axios.put(`${process.env.REACT_APP_API_URL}/categories/${editingCategory._id}`, values);
       } else {
-        await axios.post('/api/categories', values);
+        await axios.post(`${process.env.REACT_APP_API_URL}/categories`, values);
       }
       fetchCategories();
       setIsModalVisible(false);
@@ -80,9 +80,9 @@ const CategoryManager = () => {
   const handleSubFormSubmit = async (values) => {
     try {
       if (editingSubCategory) {
-        await axios.put(`/api/categories/${editingCategory._id}/subcategories/${editingSubCategory._id}`, values);
+        await axios.put(`${process.env.REACT_APP_API_URL}/categories/${editingCategory._id}/subcategories/${editingSubCategory._id}`, values);
       } else {
-        await axios.post(`/api/categories/${editingCategory._id}/subcategories`, values);
+        await axios.post(`${process.env.REACT_APP_API_URL}/categories/${editingCategory._id}/subcategories`, values);
       }
       fetchCategories();
       setIsSubModalVisible(false);
