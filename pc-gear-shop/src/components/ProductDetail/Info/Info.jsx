@@ -16,6 +16,7 @@ const Info = (props) => {
 
     const handleBuyNow = () => {
         console.log('user id: ', user?.id)
+        props.data.amount = quantity
         dispatch(addCartProduct(props.data));
     }
 

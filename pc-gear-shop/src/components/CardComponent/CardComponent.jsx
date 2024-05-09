@@ -3,11 +3,14 @@ import {Button } from 'antd';
 import { WrapperCard, DiscountTag, ButtonShow} from './style';
 import { useNavigate } from 'react-router-dom';
 import { convertPrice } from '../../utils';
+import { useDispatch } from 'react-redux';
+import { addCartProduct } from "../../redux/slices/cartSlide"
 import {
   ShoppingCartOutlined,
 } from "@ant-design/icons";
 
 const CardComponent = ({ countInStock, description, img, name, price, discount, type, id }) => {
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const discountPrice = discount ? price - discount/100 * price : price;
   const formattedPrice = discountPrice.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })
@@ -18,7 +21,9 @@ const CardComponent = ({ countInStock, description, img, name, price, discount, 
   }
 
   const handleAddToCart = () => {
-    
+    //console.log("user id: ", user?.id);
+    let amount=1;
+    dispatch(addCartProduct({img,name,price,discount,type,id,amount}));
   }
 
   return (

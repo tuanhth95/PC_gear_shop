@@ -46,13 +46,12 @@ const cartSlide = createSlice({
       const productFind = state.orderItems.find((item) => item?.id === product.id)
       console.log("productFind: ", productFind);
       if(productFind){
-        productFind.amount += 1;
+        productFind.amount += product.amount;
       }
       else if( !state.orderItems){
         state.orderItems = [product]
       }
       else{
-        product.amount = 1;
         state.orderItems = [...state.orderItems, product];
       }
       console.log(product);

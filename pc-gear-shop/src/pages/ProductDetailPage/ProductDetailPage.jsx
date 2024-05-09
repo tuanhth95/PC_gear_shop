@@ -108,7 +108,7 @@ function ProductDetailPage() {
           </ProductDetailPart>
         </div>
       </FlexContainer>
-      <Review productId = {productDetail?.data?.id}></Review>
+      <Review productId = {productId}></Review>
     </ProductDetailContainer>
   );
 }

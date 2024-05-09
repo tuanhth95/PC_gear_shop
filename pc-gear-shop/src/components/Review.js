@@ -47,7 +47,7 @@ const Review = ({productId}) =>{
       console.log(prevUserId); 
       return user?.id; 
     });
-  }, [user?.id, user]);
+  }, [user?.id]);
     // const userId = localStorage.getItem('userID');
 
   const textRef = useRef();

@@ -51,11 +51,13 @@ const dataUser = [
 const getReview = async (req, res) => {
   try {
     const reviews = await reviewService.getAllReviews();
+    console.log("getReview_reviews: ", reviews);
     // const users = await User.find();
     const products = await Product.find()
+    console.log("getReview_products: ", products);
     // const userMap = new Map(users.map(user => [user._id, user]));
     const productMap = new Map(products.map(product => [product.id, product]));
-    
+    console.log("getReview_productMap: ", productMap);
     const reviewsWithDetails = await Promise.all(reviews.map(async (review) => {
       // const user = userMap.get(review.userID) || {}; 
       const user = await userService.getDetailsUser(review.userID);
@@ -63,6 +65,7 @@ const getReview = async (req, res) => {
       
       const replies = await Promise.all(review.replies.map(async (reply) => {
         const replyUser = await userService.getDetailsUser(reply.userID);
+        console.log("getReview_replyUser: ", replyUser)
         return {
           _id: reply._id,
           content: reply.content,
