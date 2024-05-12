@@ -5,6 +5,10 @@ import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import MainCarousel from '../../components/MainCarousel/MainCarousel';
 import ProductsSlider from '../../components/ProductsSlider/ProductsSlider'
+import { Button, Modal } from 'antd';
+import ChatBox from '../../components/ChatBox/Chatbox';
+import {WechatOutlined} from '@ant-design/icons';
+
 
 const HomePage = () => {
   const [slides, setSlides] = useState();
@@ -14,6 +18,7 @@ const HomePage = () => {
   const [screenList, setScreenList] = useState();
   const [keyboardList, setKeyboardList] = useState();
   const [mouseList, setMouseList] = useState();
+  
 
   const fetchAllProductsHome = async () => {
     const res = await axios.get(
@@ -74,6 +79,15 @@ const HomePage = () => {
       setSlides(allSlidesHome.data);
     }
   }, [allSlidesHome]);
+  const [isChatBoxOpen, setChatBoxOpen] = useState(false);
+
+  const handleChatIconClick = () => {
+    setChatBoxOpen(!isChatBoxOpen);
+  };
+  const handleCloseChatBox = () => {
+    setChatBoxOpen(false);
+  };
+
 
   return (
     <div className="home-page" style={{ margin: "0 5%" }}>
@@ -114,6 +128,12 @@ const HomePage = () => {
           <ProductsSlider data={mouseList} />
         </GroupedProducts>
       )}
+      <div>
+        <Button onClick={handleChatIconClick} style={{ position: 'fixed', bottom: '60px', right: '20px' }}><WechatOutlined /></Button>
+        {isChatBoxOpen && (
+        <ChatBox onClose={handleCloseChatBox} />
+      )}
+    </div>
     </div>
   );
 };
