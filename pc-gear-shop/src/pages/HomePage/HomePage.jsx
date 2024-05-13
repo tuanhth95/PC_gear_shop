@@ -8,6 +8,7 @@ import ProductsSlider from '../../components/ProductsSlider/ProductsSlider'
 import { Button, Modal } from 'antd';
 import ChatBox from '../../components/ChatBox/Chatbox';
 import {WechatOutlined} from '@ant-design/icons';
+import "../../components/ChatBox/chatstyle.css"
 
 
 const HomePage = () => {
@@ -129,7 +130,23 @@ const HomePage = () => {
         </GroupedProducts>
       )}
       <div>
-        <Button onClick={handleChatIconClick} style={{ position: 'fixed', bottom: '60px', right: '20px' }}><WechatOutlined /></Button>
+      <Button
+        type="primary"
+        shape="circle"
+        size="large"
+        icon={<WechatOutlined />}
+        style={{
+          position: 'fixed',
+          bottom: '65px',
+          right: '11px',
+          padding: '5px',
+          transition: 'width 0.3s, height 0.3s, box-shadow 0.3s', 
+          width: isChatBoxOpen ? '46px' : '50px',
+          height: isChatBoxOpen ? '46px' : '50px',
+          boxShadow: isChatBoxOpen ? '0px 4px 8px rgba(30,144,255,0.8)' : 'none',
+        }}
+        onClick={handleChatIconClick}
+      />
         {isChatBoxOpen && (
         <ChatBox onClose={handleCloseChatBox} />
       )}

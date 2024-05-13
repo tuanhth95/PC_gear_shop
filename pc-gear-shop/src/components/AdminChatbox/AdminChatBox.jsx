@@ -90,7 +90,7 @@ export default function AdminChatBox() {
 
             <div className="conversation">
               {messages && messages.messages && messages.messages.map((m, index) => (
-                <div key={index} className={`message ${m.senderID === user.id ? 'my-message' : 'user-message'}`}>
+                <div key={index} className={`messageinAdmin ${m.senderID === user.id ? 'myMessage' : 'userMessage'}`}>
                   <p>{m.content}</p>
                   <p>{new Date(m.date).toLocaleString()}</p>
                 </div>

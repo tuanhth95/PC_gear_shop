@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './style.css';
+import './chatstyle.css';
 import { useSelector } from 'react-redux';
 import { updateUser} from "../../redux/slices/userSlide";
 import * as UserService from "../../services/UserService";
@@ -51,12 +51,18 @@ const ChatBox = ({onClose }) => {
         <button onClick={onClose} className="close-button">Đóng</button>
       </div>
       <div className="messages">
-      {data.messages && data.messages.map((message, index) => (
-        <div key={index} className={`message ${message.senderID === userID ? 'user-message' : 'admin-message'}`}>
-          <p>{message.content}</p>
-          <p>{new Date(message.date).toLocaleString()}</p>
-        </div>
-      ))}
+      {data ? (
+        <>
+            {data.messages && data.messages.map((message, index) => (
+              <div key={index} className={`message ${message.senderID === userID ? 'user-message' : 'admin-message'}`}>
+                <p>{message.content}</p>
+                <p>{new Date(message.date).toLocaleString()}</p>
+              </div>
+            ))}
+        </>
+      ) : (
+        <p><i>Lịch sử chat trống. Mời gửi tin nhắn</i></p>
+      )}
       </div>
       <div className="new-message">
         <input

@@ -38,13 +38,13 @@
     padding: 10px;
   }
   
-  .my-message {
+  .myMessage {
     background-color: white ; /* Màu nền cho tin nhắn của quản trị viên */
     color: #000; /* Màu chữ cho tin nhắn của quản trị viên */
     margin-left: 35px;
     
   }
-  .user-message {
+  .userMessage {
     background-color: #cce6ff; /* Màu nền cho tin nhắn của người dùng */
     color: #333; /* Màu chữ cho tin nhắn của người dùng */
     margin-right: 35px;
