@@ -1,0 +1,44 @@
+[{
+  "_id": {
+    "$oid": "6635b2643c10255c6816de88"
+  },
+  "filename": "slide2",
+  "data": "0.353 MB",
+  "contentType": "jpeg",
+  "size": "1500x671",
+  "url": "https://laptopxachtayshop.com/uploads/2024/01/banner-flash-sale.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663b044a874fb39179eade68"
+  },
+  "filename": "slide1",
+  "data": "0.277 MB",
+  "contentType": "jpeg",
+  "size": "1500x671",
+  "url": "https://laptopxachtayshop.com/uploads/2024/01/xps.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663b048c874fb39179eade6e"
+  },
+  "filename": "slide3",
+  "data": "0.418 MB",
+  "contentType": "jpeg",
+  "size": "1503x673",
+  "url": "https://laptopxachtayshop.com/uploads/2024/04/y7000.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663b04af874fb39179eade71"
+  },
+  "filename": "slide4",
+  "data": "0.252 MB",
+  "contentType": "jpeg",
+  "size": "1574x705",
+  "url": "https://laptopxachtayshop.com/uploads/2024/03/helios.jpg",
+  "__v": 0
+}]

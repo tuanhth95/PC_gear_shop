@@ -1,0 +1,1541 @@
+[{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda60"
+  },
+  "id": 1,
+  "name": "Laptop Dell Inspiron 15 N3530 I3U085W11BLU",
+  "type": "laptop",
+  "price": 14690000,
+  "discount": 12,
+  "img": "https://product.hstatic.net/200000722513/product/ava_450b62dbedc44663a3d7bf2bf0c735b3_grande.png",
+  "description": {
+    "Producer": "DELL",
+    "CPU": "Intel Core i3-1305U up to 5.0 GHz, 5 Cores 6 Threads, 10MB Cache",
+    "RAM": "8GB (1 x 8GB) DDR4 2666MHz (2x SO-DIMM socket, up to 16GB SDRAM)",
+    "HDD": "512GB SSD NVMe PCIe (1 Slot)",
+    "GPU": "Intel UHD Graphics",
+    "Screen": "15.6 Inch FHD (1920 x 1080),120Hz, Anti- Glare, WVA, LED-Backlit, Độ sáng 250 nit",
+    "Port": "1 x USB 3.2 Gen 1 Type-C® port\n1 x USB 3.2 Gen 1 Type-A ports (on systems configured with non Type-C®)\n1 USB 2.0 port\n1 headset (headphone and microphone combo) port\n1 HDMI 1.4 port",
+    "Keyboard": "Có phím số, không LED",
+    "Wireless": "WiFi 802.11ax (Wifi 6)",
+    "LAN": "10/100 Mbps",
+    "Bluetooth": "v5.2",
+    "Webcam": "HD Webcam",
+    "Audio": "Realtek ALC3204, âm thanh Realtek",
+    "Pin": "3-cell Li-ion, 41 Whr",
+    "OS": "Windows 11 Home SL + Office Home & Student 2021",
+    "Size": "358.5 x 235.56 x 16.96 mm - 18.99mm",
+    "Weight": "1.60 kg",
+    "Color": "Silver"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda61"
+  },
+  "id": 2,
+  "name": "Laptop MSI Summit E14 Evo A12M 211VN",
+  "type": "laptop",
+  "price": 25990000,
+  "discount": 13,
+  "img": "https://product.hstatic.net/200000722513/product/aptop-msi-summit-e14-evo-a12m-211vn-1_5fc0898020c44422b37c9293db1c3edb_d48b2ea8b32449e09f359198932f6f25_grande.png",
+  "description": {
+    "Producer": "MSI",
+    "CPU": "Intel Core i7-1280P (Up to 4.8GHz) 14 Cores 20 Threads 24MB",
+    "RAM": "16GB LPDDR5 4800Mhz Onboard (Không nâng cấp)",
+    "HDD": "512GB SSD M.2 PCIe NVMe Gen4 x4",
+    "GPU": "Intel Iris Xe Graphics",
+    "Screen": "14 Inch FHD (1920x1200) 16:10 IPS, 100% sRGB",
+    "Port": "1 x USB 3.2 Gen2 Type-A\\n2 x Type-C (USB / DP / Thunderbolt™) hỗ trợ Power Delivery\\n1 x HDMI\\n1 x Micro SD card reader\\n1 x Mic-in/ Headphone-out combo jack\\n1 x DC-in Jack",
+    "Keyboard": "Single Backlit Keyboard (White)",
+    "Wireless": "Intel® Killer™ AX Wi-Fi 6E",
+    "LAN": "Không có",
+    "Bluetooth": "Bluetooth 5.2",
+    "Webcam": "IR FHD type (30fps@1080p)",
+    "Pin": "4 cell, 72Whr",
+    "OS": "Windows 11 Home",
+    "Size": "314 x 227.5 x 17.9 mm",
+    "Weight": "1.6 kg",
+    "Color": "Đen",
+    "Security": "Vân tay"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda63"
+  },
+  "id": 4,
+  "name": "Laptop gaming Acer Nitro V ANV15 51 72VS",
+  "type": "laptop gaming",
+  "price": "25990000",
+  "discount": 8,
+  "img": "https://product.hstatic.net/200000722513/product/nitro-v_755588bd95514b6386940d73d3951e2d_1024x1024_8d56591164e04e73b4ed6be4c9c8e360_1024x1024.png",
+  "description": {
+    "Producer": "Acer",
+    "CPU": "Intel® Core™ i7-13620H (10 nhân, 16 luồng, 3.60 GHz up to 4.90 GHz, 24 MB Intel® Smart Cache)",
+    "RAM": "16GB (8x2) DDR5 5200MHz (2x SO-DIMM socket, up to 32GB SDRAM)",
+    "GPU": "NVIDIA® GeForce RTX™ 2050 4GB GDDR6",
+    "Screen": "15.6\" FHD (1920 x 1080) IPS, 144Hz, 3ms,  Acer ComfyView LED-backlit TFT LCD, 45% NTSC",
+    "Port": "1 x USB Type-C™ port supporting:\n• USB 3.2 Gen 2 (up to 10 Gbps)\n• DisplayPort over USB-C\n• Thunderbolt™ 4\n3 x USB Standard-A ports, supporting:\n• One port for USB 3.2 Gen 1 featuring power off USB charging\n• Two ports for USB 3.2 Gen 1\n1 x HDMI® 2.1 port with HDCP support\n1 x 3.5 mm headphone/speaker jack, supporting headsets with built-in\nmicrophone\n1 x Ethernet (RJ-45) port",
+    "Auido": "DTS® X:Ultra",
+    "Keyboard": "Led trắng",
+    "LAN": "Gigabit Ethernet",
+    "Wifi": "802.11a/b/g/n/ac+ax Wireless LAN\nDual Band (2.4 GHz and 5 GHz)",
+    "Bluetooth": "Bluetooth® 5.1",
+    "Webcam": "720p HD audio/video recording",
+    "OS": "Windows 11 Home",
+    "Pin": "4 Cell 57WHr",
+    "Weight": "2.1 kg",
+    "Color": "Obsidian Black",
+    "Material": "Vỏ nhựa",
+    "Size": "362.3 (W) x 239.89 (D) x 22.9/26.9 (H) mm"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda64"
+  },
+  "id": 5,
+  "name": "PC GVN x MSI PROJECT ZERO WHITE (Intel i5-14400F/ VGA RTX 4060)",
+  "type": "pc gvn",
+  "price": 32920000,
+  "discount": 15,
+  "img": "https://product.hstatic.net/200000722513/product/thumb_project_zero_c58860d9fa3a409294c17ab45f46f612_grande.png",
+  "description": {
+    "Producer": "MSI",
+    "Mainboard": "MSI B760M PROJECT ZERO",
+    "CPU": "Intel Core i5 14400F / Turbo up to 4.7GHz / 10 Nhân 16 Luồng / 20MB / LGA 1700",
+    "RAM": "Kingston Fury Beast RGB 16GB (2x8GB) bus 5600 DDR5",
+    "VGA": "MSI GeForce RTX 4060 VENTUS 2X WHITE 8G OC",
+    "SSD": "Tùy chọn nâng cấp",
+    "HDD": "Tùy chọn nâng cấp",
+    "PSU": "MSI MAG A750BN PCIE5 - 80 Plus Bronze (750W)",
+    "CASE": "MSI MAG PANO M100R PZ WHITE"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda65"
+  },
+  "id": 6,
+  "name": "PC GVN x MSI Dragon X (Intel i7-14700F/ VGA RTX 4070 Super)",
+  "type": "pc gvn",
+  "price": 59310000,
+  "discount": 16,
+  "img": "https://product.hstatic.net/200000722513/product/thumb_i7_msi_e8ebf152f4c448de8c39a8fc49aa31d7_grande.png",
+  "description": {
+    "Producer": "MSI",
+    "Mainboard": "MSI MAG Z790 TOMAHAWK MAX WIFI DDR5",
+    "CPU": "Intel Core i7 14700F / Turbo up to 5.4GHz / 20 Nhân 28 Luồng / 33MB / LGA 1700",
+    "RAM": "Corsair Vengeance RGB 32GB (2x16GB) 5600 DDR5",
+    "VGA": "MSI GeForce RTX 4070 SUPER 12G GAMING X SLIM",
+    "SSD": "MSI Spatium M450 1TB M.2 PCIe NVMe Gen 4.0",
+    "HDD": "Tùy chọn nâng cấp",
+    "PSU": "MSI MAG A850GL PCIE5 - 80 Plus Gold - Full Modular (850W)",
+    "CASE": "MSI MAG FORGE 320R AIRFLOW"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda66"
+  },
+  "id": 7,
+  "name": "PC GVN x Thermaltake PROJECT VERTICAL (Intel i7-14700K/ VGA RTX 4070 Ti Super)",
+  "type": "pc gvn",
+  "price": 70310000,
+  "discount": 13,
+  "img": "https://product.hstatic.net/200000722513/product/pc_gvn_-_i7_4070ti_sup_-_3_5b067243bc1f40308af972effb11172d_grande.png",
+  "description": {
+    "Producer": "ASUS",
+    "Mainboard": "ASUS ROG Strix Z790-A GAMING WIFI II DDR5",
+    "CPU": "Intel Core i7 14700K / Turbo up to 5.6GHz / 20 Nhân 28 Luồng / 33MB / LGA 1700",
+    "VGA": "ASUS TUF Gaming GeForce RTX 4070 Ti SUPER 16GB GDDR6X White OC Edition",
+    "SSD": "WD Blue SN580 1TB M.2 NVMe PCIe Gen4",
+    "HDD": "Tùy chọn nâng cấp",
+    "PSU": "Thermaltake TOUGHPOWER GF A3 750W - 80 Plus Gold - Full Modular (750W)",
+    "CASE": "Thermaltake CTE T500 TG ARGB Snow - Full Tower",
+    "FAN": "Bộ 3 quạt Cooler Master SICKLEFLOW 120 ARGB WHITE EDITION"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda67"
+  },
+  "id": 8,
+  "name": "Card màn hình MSI GeForce RTX 4080 SUPER 16G GAMING X SLIM",
+  "type": "vga",
+  "price": 36490000,
+  "discount": 7,
+  "img": "https://product.hstatic.net/200000722513/product/1024__5__397196e82239407b9542b6e90b18c670_grande.png",
+  "description": {
+    "Producer": "MSI",
+    "Kernel": "NVIDIA® GeForce RTX™ 4080 SUPER",
+    "Protocol": "PCI Express® Gen 4",
+    "Heartbeat": "Extreme Performance: 2625 MHz (MSI Center)",
+    "ClockSpeed": "2610 MHz",
+    "CUDA": "10240 đơn vị",
+    "MemorySpeed": "23 Gbps",
+    "Memory": "16GB GDDR6X",
+    "MemoryBus": "256-bit",
+    "Port": "DisplayPort x 2 (v1.4a)\nHDMI™ x 2 (Supports 4K@120Hz HDR, 8K@60Hz HDR, and Variable Refresh Rate as specified in HDMI 2.1a)",
+    "HDCP": "Có",
+    "Consumption": "320W",
+    "PowerConnection": "16-pin x 1",
+    "PSU": "850 W (MIN 750W)",
+    "Size": "322 x 136 x 62 mm",
+    "Weight": "1628 g / 2327 g",
+    "DirectX-Version": "12 Ultimate",
+    "OpenGL": "4.6",
+    "G-Sync": "Có",
+    "Resolution": "7680 x 4320"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda68"
+  },
+  "id": 9,
+  "name": "Card màn hình ASUS Dual GeForce RTX 4060 Ti OC Edition 16GB GDDR6 (DUAL-RTX4060TI-O16G)",
+  "type": "vga",
+  "price": 15990000,
+  "discount": 8,
+  "img": "https://product.hstatic.net/200000722513/product/asus-dual-geforce-rtx_-4060-ti-1_b43d80f7c128412485ef8d3759b9fa1c_grande.png",
+  "description": {
+    "Producer": "Asus",
+    "Kernel": "NVIDIA® GeForce RTX™ 4060 Ti",
+    "StandardBus": "PCI Express 4.0",
+    "ClockSpeed": "Chế độ OC: 2625 MHz\nChế độ mặc định: 2595 MHz (Boost)",
+    "CUDA": "4352",
+    "MemorySpeed": "18 Gbps",
+    "OpenGL": "OpenGL®4.6",
+    "VideoMemory": "8GB GDDR6",
+    "MemoryProtocol": "128-bit",
+    "Resolution": "Độ phân giải tối đa 7680 x 4320",
+    "Protocol": "Có x 1 (Native HDMI 2.1)\nCó x 3 (Native DisplayPort 1.4a)\nHỗ trợ HDCP (2.3)",
+    "Screens": "4",
+    "NVlink/Crossfire": "Không",
+    "Accessory": "1 x Thẻ sưu tập\n1 x Hướng dẫn nhanh\n1 x Thẻ cảm ơn",
+    "Software": "ASUS GPU Tweak III & GeForce Game Ready Driver & Studio Driver: vui lòng tải xuống tất cả phần mềm từ trang web hỗ trợ.",
+    "Size": "227.2 x 123.24 x 49.6 mm",
+    "PSU": "650W",
+    "PowerConnection": "1 x 8 pin",
+    "Slot": "2.5 khe"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda69"
+  },
+  "id": 10,
+  "name": "Bộ vi xử lý AMD Ryzen 7 5700X3D / 3.0GHz Boost 4.1GHz / 8 nhân 16 luồng / 100MB / AM4",
+  "type": "cpu",
+  "price": 6990000,
+  "discount": 5,
+  "img": "https://product.hstatic.net/200000722513/product/8ghz-boost-4-7ghz-8-nhan-16-luon_0a6b8aebafb3469f987ba5200d6833e9_grande.png",
+  "description": {
+    "Producer": "AMD",
+    "Architecture": "Zen 3",
+    "Cores": "8",
+    "Threads": "16",
+    "Speed": "3.0GHz Up to 4.1GHz",
+    "L2-Cache": "4MB",
+    "L3-Cache": "96MB",
+    "CoreTechnology": "TSMC 7nm FinFET",
+    "Socket": "AM4",
+    "PCI-Express": "PCIe® 4.0",
+    "Consumption": "105W",
+    "SupportiveMemory": "Loại: DDR4 - Tối đa 128GB\nKênh: 2\nTốc độ bộ nhớ tối đa: \n2x1R DDR4-3200\n2x2R DDR4-3200\n4x1R DDR4-2933\n4x2R DDR4-2667",
+    "GPU": "Không"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda6a"
+  },
+  "id": 11,
+  "name": "Bộ vi xử lý Intel Core i7 14700F / Turbo up to 5.4GHz / 20 Nhân 28 Luồng / 33MB / LGA 1700",
+  "type": "cpu",
+  "price": 11400000,
+  "discount": 8,
+  "img": "https://product.hstatic.net/200000722513/product/n22459-001-rpl-i7f-fhs-dva-bc-univ_png_21fc4faaaca646ae9804e8bcc729ae57_grande.png",
+  "description": {
+    "Producer": "Intel",
+    "Socket": "Intel® Core® i7-14700F (Raptor Lake)",
+    "Cores": "20 (8 Performance-cores/12 Efficient-cores)",
+    "Threads": "28",
+    "Intel-Turbo-Boost-Max": "5.4GHz",
+    "P-core": "5.3 GHz",
+    "E-core ": "4.2 GHz",
+    "Consumption": "65W - 219W",
+    "Cache": "33MB Intel® Smart Cache",
+    "CompatibleMainboards": "600 và 700 series",
+    "MaxCapacity": "192GB",
+    "MemoryType": "DDR5, DDR4",
+    "GPU-Kernel": "Không",
+    "PCI-Express": "5.0 and 4.0",
+    "PCIe-lanes": "20"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda6b"
+  },
+  "id": 12,
+  "name": "Bộ vi xử lý Intel Core i9 14900F / Turbo up to 5.8GHz / 24 Nhân 32 Luồng / 36MB / LGA 1700",
+  "type": "cpu",
+  "price": 17000000,
+  "discount": 12,
+  "img": "https://product.hstatic.net/200000722513/product/n22386-001-rpl-i9f-fhs-univ_f3fb9b4467824b389c8d7def9db8fb8e_grande.png",
+  "description": {
+    "Producer": "Intel",
+    "Socket": "FCLGA1700",
+    "CPU": "Intel® Core® i9-14900F (Raptor Lake)",
+    "Cores": "24 (8 Performance-cores/16 Efficient-cores)",
+    "Threads": "32",
+    "Turbo-Frequency": "5.8 GHz",
+    "Intel-Turbo-Boost-Max": "5.6 GHz",
+    "P-core": "5.4 GHz",
+    "E-core": "4.3 GHz",
+    "Consumption": "65W - 219W",
+    "Cache": "36MB Intel® Smart Cache",
+    "CompatibleMainboards": "600 và 700 series",
+    "MaxCapacity": "192GB",
+    "MemoryType": "DDR5, DDR4",
+    "GPU-Kernel": "Không",
+    "PCI-Express": "5.0 and 4.0",
+    "PCIe-lanes": "20"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda6c"
+  },
+  "id": 13,
+  "name": "Bo mạch chủ ASUS ProArt Z790 CREATOR WIFI D5",
+  "type": "mainboard",
+  "price": 13490000,
+  "discount": 11,
+  "img": "https://product.hstatic.net/200000722513/product/proart-z790-creator-wifi-01_975b6cb6e21c4f93a1de301b76b27821_grande.jpg",
+  "description": {
+    "Producer": "ASUS",
+    "CPU": "Intel® Socket LGA1700 cho Bộ xử lý Intel® Core ™ thế hệ thứ 13 & Bộ xử lý Intel® Core ™, Pentium® Gold và Celeron® thế hệ thứ 12 *\nHỗ trợ Công nghệ Intel® Turbo Boost 2.0 và Công nghệ Intel® Turbo Boost Max 3.0 **\nHỗ trợ Công nghệ Intel® Turbo Boost Max 3.0 tùy thuộc vào loại CPU.",
+    "Chipset": "ntel® Z790 Chipset",
+    "Memory": "4 x DIMM, Tối đa 128GB, DDR5 7200 (OC) / 7000 (OC) / 6800 (OC) / 6600 (OC) / 6400 (OC) / 6200 (OC) / 6000 (OC) / 5800 (OC) / 5600/5400/500/5000 / 4800MHz Non-ECC, Bộ nhớ không đệm *\nKiến trúc bộ nhớ kênh đôi\nHỗ trợ cấu hình bộ nhớ cao cấp Intel® (XMP)\nCác loại bộ nhớ được hỗ trợ, tốc độ dữ liệu (Tốc độ), và số lượng mô-đun DRAM khác nhau tùy thuộc vào cấu hình CPU và bộ nhớ.",
+    "GPU": "1 x cổng HDMI® **\n2 x Intel® Thunderbolt ™ 4 cổng (USB Type-C®) hỗ trợ đầu ra video DisplayPort 1.4 và Thunderbolt ™ ***\n* Thông số kỹ thuật đồ họa có thể khác nhau giữa các loại CPU.\n** Hỗ trợ 4K @ 60Hz như được chỉ định trong HDMI 2.1.\n** Hỗ trợ 8K @ 60Hz như được chỉ định trong DP 2.1\n*** Hỗ trợ độ phân giải VGA phụ thuộc vào độ phân giải của bộ vi xử lý hoặc card đồ họa.",
+    "Expansion-slot": "- Bộ xử lý Intel® thế hệ thứ 13 & 12\n2 x khe cắm PCIe 5.0 x16 (hỗ trợ chế độ x16 hoặc x8 / x8) **\n- Bộ chip Intel® Z790\n1 x khe cắm PCIe 4.0 x16 (hỗ trợ chế độ x4, x4 / x4)",
+    "Storage": "Tổng cộng hỗ trợ 4 khe cắm M.2 và 8 x cổng SATA 6Gb / s *\nBộ xử lý Intel® thế hệ thứ 13 & 12 *\nKhe cắm M.2_1 (Phím M), loại 2242/2260/2280/22110 (hỗ trợ chế độ PCIe 4.0 x4.)\nBộ chip Intel® Z790 **\nKhe cắm M.2_2 (Phím M), kiểu 2242/2260/2280 (hỗ trợ chế độ PCIe 4.0 x4)\nKhe cắm M.2_3 (Phím M), kiểu 2242/2260/2280 (hỗ trợ chế độ PCIe 4.0 x4 & SATA)\nKhe cắm M.2_4 (Phím M), kiểu 2242/2260/2280 (hỗ trợ chế độ PCIe 4.0 x4 & SATA)\nKhe cắm Hyper M.2_2 (Key M) qua thẻ ROG Hyper M.2, loại 2242/2260/2280/22110 (hỗ trợ chế độ PCIe 4.0 x4) ***\n8 x cổng SATA 6Gb / s ****\n* Công nghệ lưu trữ nhanh Intel® hỗ trợ PCIe RAID 0/1/5/10, SATA RAID 0/1/5/10.\n**** M.2_4 slot chia sẻ băng thông với SATA 6G_5~8. SATA6G5 sẽ bị tạm ngưng sau khi phát hiện thiết bị SATA hoặc NVMe tại M.2_4.",
+    "LAN": "1 x Intel® 2.5Gb Ethernet\n1 x Marvell® AQtion 10Gb Ethernet\nASUS LANGuard",
+    "Wireless": "Wi-Fi 6E\n2x2 Wi-Fi 6E (802.11 a / b / g / n / ac / ax)\nHỗ trợ dải tần 2,4/5/6GHz *\nBluetooth® v5.3**\n* Quy định của WiFi 6E 6GHz có thể khác nhau giữa quốc gia.\n** Phiên bản Bluetooth có thể khác nhau, vui lòng tham khảo trang web của nhà sản xuất mô-đun Wi-Fi để biết thông số kỹ thuật mới nhất.",
+    "USB": "USB phía sau (Tổng số 8 cổng)\n2 x Thunderbolt ™ 4 cổng (2 x USB Type-C®) với hỗ trợ sạc lên đến 5V / 3A, 15W\n6 x cổng USB 3.2 Gen 2 (6 x Tupe-A)\nUSB phía trước (Tổng số 7 cổng)\n1 x đầu nối USB 3.2 Gen 2x2 (hỗ trợ USB Type-C® với PD / QC4 + lên đến 60W)\n1 x đầu cắm USB 3.2 Gen 1\n2 đầu cắm USB 2.0 hỗ trợ thêm 4 cổng USB 2.0",
+    "Audio": "Realtek S1220A 7.1 Âm thanh vòm Âm thanh độ nét cao CODEC*\nCảm biến trở kháng cho đầu ra tai nghe phía trước và phía sau\nBộ khuyết đại âm thanh bên trong để tăng cường âm thanh chất lượng cao cho tai nghe và loa\nHỗ trợ: Jack-detection, Multi-streaming, Front Panel Jack-retasking\nĐầu ra phát lại âm thanh nổi SNR 120dB chất lượng cao và dầu ghi SNR 113 dB (Line-in)\nHỗ trợ phát lại lên đến 32-Bit / 129 kHz*\nTính năng âm thanh\nTụ âm thanh cao cấp\nCác lơp PCB âm thanh chuyên dụng\nBìa âm thanh\nMạch de-pop độc đáo\n* Do giới hạn về băng thông HDA, 32-Bit / 192 kHz không được hỗ trợ cho âm thanh vòm 7.\n** Cần có khung máy có mô dun âm thanh HD ở bảng điều khiển phía trước để hỗ trợ đầu ra âm thanh vòm 7.1.",
+    "I/O-port": "2 x Thunderbolt ™ 4 cổng USB Type-C®\n6 x cổng USB 3.2 Gen 2 (5 x Type-A + 1 x USB Type-C®)\n2 x cổng displayport (input only)\n1 x cổng HDMI®\n1 x Mô-đun Wi-Fi Asus\n1 x cổng Marvell®  AQtion 10Gb Ethernet \n1 x cổng Ethernet Intel® 2.5Gb\n5 x giắc cắm âm thanh.\n1 x nút BIOS FlashBack ™",
+    "Internal-I/O-connector": "Liên quan đến Quạt và Làm mát\n1 x 4 chân đầu cắm quạt CPU\n1 x 4 chân đầu cắm quạt CPU OPT\n1 x 4 chân đầu cắm bơm AIO\n4 x 4 chân đầu cắm Chassis Fan\nLiên quan đến nguồn\n1 x 24 chân đầu nối nguồn chính \n2 x 8 chân đầu nối nguồn + 12V\n1 x 4 chân đầu nối nguồn  + 12V\n1 x 6 chân đấu nối nguồn + 12V\nLiên quan đến lưu trữ=4\n3 x khe cắm M.2 (Phím M)\n8 x cổng SATA 6Gb/s\nUSB\n1 x đầu nối USB 3.2 Gen 2x2 (hỗ trợ USB Type-C®)\n1 x đầu cắm USB 3.2 Gen 1 hỗ trợ thêm 2 cổng USB 3.2 Gen 1\n2 đầu cắm USB 2.0 hỗ trợ thêm 4 cổng USB 2.0\nKết nối khác\n3 x đầu cắm Addressable Gen 2\n1 x đầu cắm AURA RGB\n1 x nút Clear CMOS\n1 x COM Port header\n1 x CPU Over Voltage jumper\n1 x Đầu cắm âm thanh bảng điều khiển phía trước (AAFP)\n1 x khe cắm M.2 (phím M)\n1 x SPI TPM header (14-1pin)\n1 x 20-3 pin System Panel header with Chassis intrude function\n1 x Thermal Sensor header",
+    "Special-features": "- ASUS 5X PROTECION III:\nDIGI+ VRM (- Digital power design with DrMOS)\nEnhanced DRAM Overcurrent Protection\nESD Guards\nLANGuard\nOvervoltage Protection\nSafeSlot\nStainless-Steel Back I/O\n- ASUS Q-Design:\nM.2 Q-Latch\nQ-Connector\nQ-DIMM\nQ-LED (CPU [red], DRAM [yellow], VGA [white], Boot Device [yellow green])\nQ-Slot\n- ASUS Q-Design:\nM.2 Q-Latch\nKhe cắm PCIe Q-Release\nMã Q\nQ-Connector\nQ-DIMM\nQ-LED (CPU [đỏ], DRAM [vàng], VGA [trắng], Thiết bị khởi động [vàng xanh])\nQ-Slot\n- Giải pháp tản nhiệt của ASUS:\nTản nhiệt M.2\nThiết kế tản nhiệt VRM\n- ASUS EZ DIY:\nNút BIOS FlashBack ™\nNút đèn led BIOS FlashBack ™ \nHộp \nProCool II\nTấm chắn I / O gắn sẵn\n- Đồng bộ hóa AURA: \n(Các) đầu cắm AURA RGB\n(Các) đầu cắm Addressable Gen 2",
+    "BIOS": "256 Mb",
+    "Manageability": "WOL by PME, PXE",
+    "OS": "Windows® 11, Windows® 10 64-bit",
+    "Form": "Hệ số hình thức ATX\n12 inch x 9,6 inch (30,5 cm x 24,4 cm)"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda6d"
+  },
+  "id": 14,
+  "name": "Bo mạch chủ ASUS TUF GAMING Z790-PLUS WIFI DDR5",
+  "type": "mainboard",
+  "price": 9990000,
+  "discount": 20,
+  "img": "https://product.hstatic.net/200000722513/product/gearvn-bo-mach-chu-asus-tuf-gaming-z790-plus-wifi-ddr5-1_48b01fb3e6dc431d99de8d46c3f3e8aa_grande.png",
+  "description": {
+    "Producer": "ASUS",
+    "CPU": "Intel® Socket LGA1700 cho Bộ xử lý Intel® Core ™ thế hệ thứ 14, 13 & Bộ xử lý Intel® Core ™, Pentium® Gold và Celeron® thế hệ thứ 12 *\nHỗ trợ Công nghệ Intel® Turbo Boost 2.0 và Công nghệ Intel® Turbo Boost Max 3.0 **\n** Hỗ trợ Công nghệ Intel® Turbo Boost Max 3.0 tùy thuộc vào loại CPU.",
+    "Chipset": "Intel® Z790 Chipset",
+    "Memory": "4 x DIMM, Tối đa 192GB, DDR5 7200(OC)/ 7000(OC)/ 6800(OC)/ 6600(OC)/ 6400(OC)/ 6200(OC)/ 6000(OC)/ 5800(OC)/ 5600/ 5400/ 5200/ 5000/ 4800 không phải ECC, bộ nhớ không đệm *\nKiến trúc bộ nhớ kênh đôi\nHỗ trợ cấu hình bộ nhớ cao cấp Intel® (XMP)\nOptiMem II\n* Các loại bộ nhớ được hỗ trợ, tốc độ dữ liệu (Tốc độ) và số lượng mô-đun DRAM khác nhau tùy thuộc vào cấu hình CPU và bộ nhớ.",
+    "GPU": "1 x DisplayPort **\n1 x cổng HDMI® ***\n** Hỗ trợ tối đa 4K @ 60Hz như được chỉ định trong DisplayPort 1.4.\n*** Hỗ trợ 4K @ 60Hz như được chỉ định trong HDMI 2.1.\n**** Hỗ trợ độ phân giải VGA phụ thuộc vào độ phân giải của bộ vi xử lý hoặc card đồ họa.",
+    "Expansion-slot": "- Bộ xử lý Intel® thế hệ thứ 13 & 12 *\n1 x khe cắm PCIe 5.0 x16\n- Bộ chip Intel® Z790\n1 x khe cắm PCIe 4.0 x16 (hỗ trợ chế độ x4)\n1 x khe cắm PCIe 4.0 x4\n2 x khe cắm PCIe 3.0 x1",
+    "Storage": "- Tổng cộng hỗ trợ 4 khe cắm x M.2 và 4 x cổng SATA 6Gb / s *\n- Bộ xử lý Intel® thế hệ thứ 13 & 12\nKhe cắm M.2_1 (Phím M), loại 2242/2260/2280/22110 - Bộ xử lý Intel® thế hệ thứ 13 & 12 hỗ trợ chế độ PCIe 4.0 x4\n- Bộ chip Intel® Z790\nKhe cắm M.2_2 (Phím M), kiểu 2242/2260/2280 (hỗ trợ chế độ PCIe 4.0 x4)\nKhe cắm M.2_3 (Phím M), loại 2242/2260/2280/22110 (hỗ trợ chế độ PCIe 4.0 x4)\nKhe cắm M.2_4 (Phím M), kiểu 2242/2260/2280 (hỗ trợ chế độ PCIe 4.0 x4 & SATA)\n4 x cổng SATA 6Gb / s\n* Công nghệ lưu trữ nhanh Intel® hỗ trợ PCIe RAID 0/1/5/10, SATA RAID 0/1/5/10.",
+    "Ethernet": "1 x Intel® 2.5Gb Ethernet\nTUF LANGuard",
+    "Wireless": "Wi-Fi 6E\n2x2 Wi-Fi 6E (802.11 a / b / g / n / ac / ax)\nHỗ trợ dải tần 2,4 / 5 / 6GHz\nBluetooth® v5.3 *\n* Phiên bản Bluetooth có thể khác nhau, vui lòng tham khảo trang web của nhà sản xuất mô-đun Wi-Fi để biết thông số kỹ thuật mới nhất.",
+    "USB": "USB phía sau: Tổng số 8 cổng\n1 x Cổng USB 3.2 Gen 2x2 (1 x USB Type-C®)\n3 x cổng USB 3.2 Gen 2 (2 x Type-A + 1 x USB Type-C®)\n4 x cổng USB 3.2 Gen 1 (4 x Type-A)\nUSB phía trước: Tổng số 7 cổng\n1 x đầu nối USB 3.2 Gen 2 (hỗ trợ USB Type-C®)\n1 x đầu cắm USB 3.2 Gen 1 hỗ trợ thêm 2 cổng USB 3.2 Gen 1\n2 đầu cắm USB 2.0 hỗ trợ thêm 4 cổng USB 2.0",
+    "Audio": "- Âm thanh vòm Realtek S1220A 7.1 CODEC Âm thanh độ nét cao *\nCảm biến trở kháng cho đầu ra tai nghe phía trước và phía sau\nBộ khuếch đại âm thanh bên trong để tăng cường âm thanh chất lượng cao nhất cho tai nghe và loa\nHỗ trợ: Phát hiện giắc cắm, Đa luồng, Thử lại giắc cắm ở bảng điều khiển phía trước\nĐầu ra phát lại âm thanh nổi 120 dB SNR chất lượng cao và đầu vào ghi âm 113 dB SNR (Đầu vào)\nHỗ trợ phát lại lên đến 32-Bit / 192 kHz * \n- Tính năng âm thanh\nAudio Shielding\nCổng ra S / PDIF quang học phía sau\nTụ âm thanh cao cấp\nCác lớp PCB âm thanh chuyên dụng\nAudio Cover\n* Do hạn chế về băng thông HDA, 32-Bit / 192 kHz không được hỗ trợ cho âm thanh vòm 7.1.",
+    "I/O-port": "1 x cổng USB 3.2 Gen 2x2 (1 x USB Type-C®)\n3 x cổng USB 3.2 Gen 2 (2 x Type-A + 1 x USB Type-C®)\n4 x cổng USB 3.2 Gen 1 (4 x Type-A)\n1 x DisplayPort\n1 x cổng HDMI®\n1 x Mô-đun Wi-Fi\n1 x cổng Ethernet Intel® 2.5Gb\n5 x giắc cắm âm thanh\n1 x cổng ra quang học S / PDIF",
+    "Internal-I/O-connector": "- Liên quan đến Quạt và Làm mát\n1 x 4 chân đầu cắm quạt CPU\n1 x 4 chân đầu cắm quạt OPT CPU\n1 x 4 chân đầu cắm bơm AIO\n4 x 4 chân đầu cắm Chassis Fan\n- Liên quan đến nguồn\n1 x 24 chân đầu nối nguồn chính \n1 x 8 chân đầu nối nguồn + 12V\n1 x 4 chân đầu nối nguồn + 12V\n- Liên quan đến lưu trữ\n4 x khe cắm M.2 (Phím M)\n4 x cổng SATA 6Gb / s\n- USB\n1 x đầu nối USB 3.2 Gen 2 (hỗ trợ USB Type-C®)\n1 x đầu cắm USB 3.2 Gen 1 hỗ trợ thêm 2 cổng USB 3.2 Gen 1\n2 đầu cắm USB 2.0 hỗ trợ thêm 4 cổng USB 2.0\n- Kết nối khác\n3 x đầu cắm Addressable Gen 2\n1 x đầu cắm AURA RGB\n1 x đầu cắm Xóa CMOS\n1 x đầu cắm Cổng COM\n1 x đầu cắm âm thanh bảng điều khiển phía trước (AAFP)\n1 x 20-3 chân đầu cắm bảng điều khiển hệ thống với chức năng xâm nhập khung\n1 x đầu cắm Thunderbolt ™",
+    "Special-features": "- ASUS TUF PROTECTION\nDIGI + VRM (- Thiết kế nguồn điện kỹ thuật số với DrMOS)\nESD Guards\nTUF LANGuard\nBảo vệ quá áp\nKét sắt\nI / O mặt sau bằng thép không gỉ\n- ASUS Q-Design\nM.2 Q-Latch\nKhe cắm PCle Q-Release\nQ-DIMM\nQ-LED (CPU [đỏ], DRAM [vàng], VGA [trắng], Thiết bị khởi động [vàng xanh])\nQ-Slot\n- Giải pháp tản nhiệt của ASUS\nTản nhiệt M.2\nThiết kế tản nhiệt VRM\n- ASUS EZ DIY\nBộ bảo vệ đòn bẩy ổ cắm CPU\nProCool\nTấm chắn I / O gắn sẵn\nSafeDIMM\nĐồng bộ hóa AURA\nĐầu cắm AURA RGB\nĐầu cắm Addressable Gen 2",
+    "BIOS": "192 (128 + 64) Mb Flash ROM, UEFI AMI BIOS",
+    "Manageability": "WOL by PME, PXE",
+    "Accessory": "- Cáp\n2 x cáp SATA 6Gb / s\n- Khác\n1 x ăng ten di chuyển Wi-Fi ASUS\n1 x hình dán TUF GAMING\n2 x gói cao su M.2\n1 x gói vít cho SSD M.2\n- Tài liệu\n1 x thẻ chứng nhận TUF\n1 x Hướng dẫn sử dụng",
+    "OS": "Windows® 11, Windows® 10 64-bit",
+    "FORM": "Hệ số hình thức ATX\n12 inch x 9,6 inch (30,5 cm x 24,4 cm)"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda6e"
+  },
+  "id": 15,
+  "name": "Vỏ máy tính Corsair 6500D Airflow TG Mid-Tower White (CC-9011260-WW)",
+  "type": "case",
+  "price": 4490000,
+  "discount": 0,
+  "img": "https://product.hstatic.net/200000722513/product/6500d_airflow_white_hero_01_aa_e273b71954d64f4282aa89bdfe49c45f_grande.png",
+  "description": {
+    "Producer": "Corsair",
+    "Size": "496 x 481 x 328 mm",
+    "Color": "Trắng",
+    "Weight": "16.9",
+    "MainBoard": "ITX, mATX, ATX , EATX",
+    "FAN": "Trước: 3 x 120mm / 2 x 140mm\nTrên: 3 x 120mm / 3 x 140mm\nDưới: 3 x 120mm / 3 x 140mm\nSau: 1 x 120mm / 1 x 140mm\nBên hông: 3 x 120mm",
+    "GPU-long": "400 mm",
+    "CPU": "190 mm",
+    "PSU": "225 mm",
+    "Power-standard": "ATX",
+    "Expansion-slot": "8 ngang + 3 dọc",
+    "Case-front-IO": "1 x USB 3.2 Gen 2 Type-C\n4 x USB 3.2 Gen 1 Type-A\n1 x Audio in/out",
+    "Sideface": "Kính cường lực"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda6f"
+  },
+  "id": 16,
+  "name": "Vỏ máy tính Xigmatek QUANTUM 3F",
+  "type": "case",
+  "price": 1190000,
+  "discount": 34,
+  "img": "https://product.hstatic.net/200000722513/product/quantum_3f_1_12a0184fbb24442894504c44e046bdac_grande.jpg",
+  "description": {
+    "Producer": "XIGMATEK",
+    "Model": "QUANTUM 3F",
+    "Color": "Đen",
+    "Material": "Thép",
+    "Size": "400 x 215 x 488 mm ",
+    "Supportive-HDD": "HDD Cage (Bottom): 3.5\"x1\nHDD Cage (Top): 3.5\" & 2.5\" combo x1\nSSD Bay: 2.5\"x2\nSSD Bracket: 2.5\"x1",
+    "Expansion-slot": "7 khe",
+    "Supportive-Mainboard": "E-ATX, ATX, M-ATX, Mini-ITX",
+    "Port": "USB 3.0 x 1\nUSB 2.0 x 2\nHD Audio",
+    "Air-Cooling": "165mm",
+    "GPU": "350mm",
+    "Power": "180mm",
+    "Glass": "Cường lực",
+    "FAN": "Trước: 120mm x 3 (lắp sẵn 3)\nSau: 120mm x 1 (tùy chọn)\nTrên: 120mm x 2 (tùy chọn)",
+    "Water-Cooling": "sau: 120mm\nTrên: 240mm\nTrước: 360mm"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda70"
+  },
+  "id": 17,
+  "name": "Nguồn máy tính Corsair HX1500i - 80 Plus Platinum - Full Modular (1500W) (CP-9020261-NA)",
+  "type": "power",
+  "price": 9990000,
+  "discount": 5,
+  "img": "https://product.hstatic.net/200000722513/product/gearvn-nguon-corsair-hx1500i-full-modular-80-plus-platinum-5_941b6db02f2a4848ac2503a49d00472f_grande.png",
+  "description": {
+    "Producer": "Corsair",
+    "ATX": "1",
+    "ATX12V-version": "3.0",
+    "Cable-type": "Loại 4",
+    "Productivity": "1500W",
+    "Port": "Full-Modular",
+    "Efficiency": "80 Plus Titanium",
+    "FAN": "140 mm",
+    "MTBF-hours": "100,000 hours",
+    "GPU": "Hỗ trợ nhiều GPU",
+    "SATA-port": "8",
+    "PATA-port": "8",
+    "PCIe-port": "11"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda71"
+  },
+  "id": 18,
+  "name": "Nguồn máy tính ASUS ROG Thor 1200P2 - 80 Plus Platinum - Full Modular (1200W)",
+  "type": "power",
+  "price": 9990000,
+  "discount": 10,
+  "img": "https://product.hstatic.net/200000722513/product/h732_d28f32102b2c4fb6ab2a5bfa31f95b41_30899e2f85eb4ecca967eee77a147ccc_grande.png",
+  "description": {
+    "Producer": "ASUS",
+    "Model": "ASUS ROG Thor 1200P2",
+    "Color": "Đen",
+    "Intel": "ATX 12V",
+    "Size": "190 x 150 x 86 mm",
+    "Efficiency": "80Plus Platinum",
+    "Protection": "OPP / OVP / UVP / SCP / OCP / OTP",
+    "DangerousItem": "ROHS",
+    "AC-input": "100-240Vac",
+    "Output": "+ 3.3V + 5V + 12V -12V + 5Vsb",
+    "Load": "125W 125W 996W 3.6W 15W",
+    "Productivity": "1000W",
+    "Accessory": "Dây nguồn x 1\nCáp nguồn bo mạch chủ x 1\nCáp CPU x 2\nCáp PCI-E 1-to-1 x 4\nCáp PCI-E 1-to-2 x 2\nCáp SATA 1-to-4 x 3\nThiết bị ngoại vi 1-to-3 x 2\nCáp RGB có địa chỉ x 1\nPhụ kiện ROG x EVA x 1\nĐầu cáp ROG x EVA x 3\nDây cáp sleeving (6 chân) x 4\nDây cáp sleeving (8 chân) x 10\nDây cáp (24 chân) x 2\nGói vít khung x 1\nHướng dẫn sử dụng x 1",
+    "Weight": "2,357 Kg",
+    "AURA-SYNC": "ARGB",
+    "Connection": "MB 24/20-pin x 1\nCPU 4+4-pin x 2\nPCI-E 16-pin x 1\nPCI-E 6+2-pin x 8\nSATA x 12\nPERIPHERAL x 6"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda72"
+  },
+  "id": 19,
+  "name": "Bộ 3 quạt Corsair iCUE Link RX120 RGB (CO-9051018-WW)",
+  "type": "fan",
+  "price": 2490000,
+  "discount": 0,
+  "img": "https://product.hstatic.net/200000722513/product/rx120_rgb_black_render_01_d6e53bf5443047ccb4b6cece56c0bee2_grande.png",
+  "description": {
+    "Producer": "Corsair",
+    "Size": "120mm x 25mm",
+    "LED": "RGB",
+    "PWM Control": "Có",
+    "Noise": "10 - 36 dBA",
+    "Static-pressure": "0.12 - 4.33 mm-H20",
+    "Blast": "10.4 - 73.5 CFM",
+    "Speed": "2100 RPM",
+    "Accessory": "4 x Đầu nối iCUE LINK\n1 x Trung tâm hệ thống iCUE LINK\n1 x Cáp iCUE LINK 600mm có đầu nối thẳng 90°\n1 x iCUE LINK"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda73"
+  },
+  "id": 20,
+  "name": "Quạt Máy Tính Lian Li UNI FAN SL V2 White Triple Pack",
+  "type": "fan",
+  "price": 2490000,
+  "discount": 0,
+  "img": "https://product.hstatic.net/200000722513/product/sl120v2_b07_53b415242d94461785bb808842d016b3_grande.jpg",
+  "description": {
+    "Producer": "Lian Li",
+    "Series": "UNI Fan SL V2 Triple White",
+    "Color": "Trắng",
+    "Size": "120 x120 x 28 mm",
+    "Type": "Ổ trục ướt",
+    "Speed": "0, 250~2000 RPM",
+    "Pressure": "2.59 mmH2O (Maximum)",
+    "Blast": "64.5 CFM (Maximum)",
+    "Noise": "29.2 dB(A) Max",
+    "Bearing-type": "Vòng bi động chất lỏng (FDB)",
+    "Operating": "DC12V & 5V",
+    "Starting": "≦5V",
+    "Input": "0.17A",
+    "Input-power": "2.04W"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda74"
+  },
+  "id": 21,
+  "name": "Bộ 3 quạt Cooler Master SICKLEFLOW 120 ARGB WHITE EDITION",
+  "type": "fan",
+  "price": 990000,
+  "discount": 30,
+  "img": "https://product.hstatic.net/200000722513/product/eflow-120-argb-white-edition-3-in-1-0_9946a1b4f56a4546ba664fe985ed3de4_91cb13faa1a5485eae55a57b7e74ceef_grande.jpg",
+  "description": {
+    "Producer": "CoolerMaster",
+    "Type": "Tản nhiệt vỏ máy tính",
+    "Voltage": "12 VDC",
+    "Size": "120 x 120 x 25 (mm)"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda75"
+  },
+  "id": 22,
+  "name": "Ram Corsair Vengeance RGB 32GB (2x16GB) 5200 DDR5 Black (CMH32GX5M2B5200C40)",
+  "type": "ram",
+  "price": 3990000,
+  "discount": 18,
+  "img": "https://product.hstatic.net/200000722513/product/gearvn-ram-corsair-vengeance-rgb-32gb-2x16gb-5200-ddr5-black-1_9b31c21ea23e43d1b077bb8dd61bb880_grande.png",
+  "description": {
+    "Producer": "Corsair",
+    "Series": "VENGEANCE RGB DDR5",
+    "Color": "Trắng",
+    "Type": "DDR5",
+    "Storage": "32GB ( 2 x 16Gb )",
+    "Bus": "5200MHz",
+    "Cooling": "Có",
+    "LED": "RGB",
+    "Delay": "40-40-40-77"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda76"
+  },
+  "id": 23,
+  "name": "Ram T-Group T-Force Delta 1x16GB 3600 RGB Black",
+  "type": "ram",
+  "price": 1690000,
+  "discount": 18,
+  "img": "https://product.hstatic.net/200000722513/product/eamgroup-t-force-delta-black-rgb_a85b8197156b4de59371cde1710933c4_grande.png",
+  "description": {
+    "Producer": "TeamGroup",
+    "Standard": "DDR4-3600",
+    "Cas-latency": "CL18",
+    "Voltage": "1.35V",
+    "Storage": "16GB",
+    "Size": "49(H) x 147(L) x 7(W) mm"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda77"
+  },
+  "id": 24,
+  "name": "Ram G.Skill Ripjaws V 1x8G 3200 (F4-3200C16S-8GVKB)",
+  "type": "ram",
+  "price": 890000,
+  "discount": 27,
+  "img": "https://product.hstatic.net/200000722513/product/thiet_ke_chua_co_ten_7f66ef0397ab411092c8db78f7a41326_1a48cc96c24f47e9805aaaa370b314aa_grande.png",
+  "description": {
+    "Producer": "GSKILL",
+    "Color": "Đen",
+    "Type": "DDR4",
+    "Storage": "8GB (8GBx1)",
+    "Bus": "3200MHz",
+    "Delay": "16-18-18-38",
+    "Voltage": "1.20V",
+    "Cooling": "Có",
+    "Height": "42 mm"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda78"
+  },
+  "id": 25,
+  "name": "Ổ Cứng HDD WD Red Plus 6TB 5400RPM",
+  "type": "hdd",
+  "price": 5190000,
+  "discount": 0,
+  "img": "https://product.hstatic.net/200000722513/product/-iii-128mb-cache-5400rpm-wd60efzx-c85c8373-881c-42e4-a1f7-34dc8b5f35a8_f78db0501c03449e871c9be8d73ff2c7_grande.png",
+  "description": {
+    "Producer": "Western Digital",
+    "Connection": "Sata III",
+    "Type": "HDD",
+    "Storage": "6 TB",
+    "Cache": "128M Cache",
+    "RPM": "5400 rpm",
+    "Size": "25.4 x147x101.6 mm (Cao x Dài x Rộng)",
+    "Weight": "0.45 kg"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda79"
+  },
+  "id": 26,
+  "name": "Ổ Cứng HDD Seagate IronWolf 4TB (ST4000VN008)",
+  "type": "hdd",
+  "price": 3490000,
+  "discount": 0,
+  "img": "https://product.hstatic.net/200000722513/product/st4000vn008_c7720afbb7a343db88802d81b636c893_dcc177fe25254ccdb48ecec378e85edc_grande.png",
+  "description": {
+    "Producer": "Seagate",
+    "Series/Model": "HDD Seagate Barracuda 4TB 5900rpm",
+    "Color": "Bạc",
+    "Type": "HDD",
+    "Connection": "Sata III",
+    "Storage": "4 TB",
+    "Size": "101.6 x 25.4 x 146 (mm)"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda7a"
+  },
+  "id": 27,
+  "name": "Ổ cứng SSD MSI SPATIUM M480 PRO PCIe 4.0 NVMe M.2 1TB",
+  "type": "hdd",
+  "price": 2990000,
+  "discount": 25,
+  "img": "https://product.hstatic.net/200000722513/product/71lv1cwfxpl._ac_uf1000_1000_ql80__f00d11081cf845a9be9b0936faf8fc27_grande.jpg",
+  "description": {
+    "Producer": "MSI",
+    "Controller": "",
+    "Flash-memory": "3D NAND",
+    "FORM": "M.2 2280",
+    "Interface": "PCIe Gen4x4, NVMe 1.4",
+    "Compatibility": "PCIe Gen4 / Gen3 / Gen2 / Gen1",
+    "Size": "80.40mm (L) x 24.00mm (W) x 10.70mm (H)",
+    "Operate-temperature": "0°C – 70°C",
+    "Save-temperature": "-40°C – 85°C",
+    "Read-speed": "7400 MB/s",
+    "Write-speed": "6000 MB/s"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda7b"
+  },
+  "id": 28,
+  "name": "Ổ Cứng SSD Samsung 870 EVO 500G Sata3",
+  "type": "hdd",
+  "price": 1790000,
+  "discount": 10,
+  "img": "https://product.hstatic.net/200000722513/product/870_evo_1_1c78686c947c458a849dd2d0b78b0d11_eb6139bc571246e49e272400f2a930bc_grande.jpg",
+  "description": {
+    "Producer": "Samsung",
+    "Model": "MZ-77E500BW",
+    "Size": "2.5\", 6,8mm",
+    "Connection": "Sata III 6Gbit/s",
+    "Storage": "500 GB",
+    "Read-speed": "560 MB/s",
+    "Write-speed": "530 MB/s",
+    "NAND-flash": "Samsung 512Gbit 128-layer 3D TLC V-NAND",
+    "TBW": "300 TB"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda7c"
+  },
+  "id": 29,
+  "name": "Loa Bluetooth Edifier MP85",
+  "type": "speaker",
+  "price": 280000,
+  "discount": 38,
+  "img": "https://product.hstatic.net/200000722513/product/1_bcef33871e754eb9b4f382fb3f51cf57_grande.png",
+  "description": {
+    "Producer": "Edifier",
+    "Size": "52mm × 63mm × 28",
+    "Signal-to-noise": "≥ 85dB (A)",
+    "Frequency-response": "230Hz – 17kHz",
+    "Bluetooth": "V5.3",
+    "Pin": "480mAh",
+    "Sensitivity": "550±50mFFS",
+    "Productivity": "2.2W",
+    "Weight": "0.7kg",
+    "Color": "Hồng"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda7d"
+  },
+  "id": 30,
+  "name": "Loa Razer Leviathan V2 X",
+  "type": "speaker",
+  "price": 3990000,
+  "discount": 40,
+  "img": "https://product.hstatic.net/200000722513/product/loa-razer-leviathan-v2-x_8c9429d436ba4352ab54847b92efc92b_ef157a75016c4946ad940e43b12dad0a_grande.jpg",
+  "description": {
+    "Producer": "Razer",
+    "Model": "Loa Razer Leviathan V2 X",
+    "frequency": "85 Hz – 20 kHz",
+    "Input": "USB-type-C",
+    "Driver": "Trình điều khiển toàn dải, bộ tản nhiệt thụ động",
+    "Weight": "1,9 lbs / 845 g",
+    "Full-range-controller": "2x 2.0 x 4.0 \"/ 48 x 95 mm",
+    "Compatibility": "Bluetooth 5.0\nUSB Type-C sang USB Type-C (Âm thanh, Nguồn)",
+    "SPL": "90dB Max",
+    "Size": "400 x 91,3 x 84mm (W x D x H)"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda7e"
+  },
+  "id": 31,
+  "name": "Màn hình Asus TUF GAMING VG249Q3A 24inch Fast IPS 180Hz Gsync chuyên game",
+  "type": "screen",
+  "price": 3990000,
+  "discount": 13,
+  "img": "https://product.hstatic.net/200000722513/product/download.png_1eb1cdf82aea4fcf9344d6652dcb071d_grande.jpg",
+  "description": {
+    "Producer": "ASUS",
+    "Warranty": "36 tháng",
+    "Size": "24 inch",
+    "Ratio": "16:9",
+    "screen": "527.04 x 296.46 mm",
+    "panel": "Fast IPS",
+    "angle": "178°/ 178°",
+    "Resolution": "1920x1080",
+    "bright": "250cd/㎡",
+    "screentype": "LED",
+    "color": "16.7 triệu màu sắc, sRGB 99%",
+    "time": "1ms(GTG)",
+    "frequency": "180Hz",
+    "noflicker": "Có",
+    "staticcontrast": "1000:1",
+    "dynamiccontrast": "10000000:1",
+    "plugs": "DisplayPort 1.2 x 1\nHDMI(v2.0) x 2\nEarphone Jack : Yes",
+    "electricity": "Power Consumption : <18W\nPower Saving Mode : <0.5W\nPower Off Mode : <0.3W\nVoltage : 100-240V, 50/60Hz",
+    "design": "Tilt : Yes (+23° ~ -5°)",
+    "wallmounted": "100 x 100mm",
+    "loudspeaker": "2W x 2",
+    "weight": "3.5 Kg (Có chân đế)\n2.9 Kg (Không chân đế)\n5.5 Kg (Đóng gói)",
+    "accessory": "DisplayPort cable\nHDMI cable\nL-shaped Screwdriver\nPower cord\nQuick start guide\nWarranty Card"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda7f"
+  },
+  "id": 32,
+  "name": "Màn hình AOC Q24G2 24inch IPS 2K 165Hz G-Sync chuyên game",
+  "type": "screen",
+  "price": 5990000,
+  "discount": 15,
+  "img": "https://product.hstatic.net/200000722513/product/121d2924a3581e9be47de263576_6fb825a51a744d3c82e4aa7eed9cc1d2_1024x1024_23db2166e8714c008b17744e32b1b190_grande.jpg",
+  "description": {
+    "Producer": "AOC",
+    "Warranty": "36 tháng",
+    "Size": "24 inch",
+    "Resolution": "1920x1080",
+    "panel": "IPS",
+    "Frequency": "165Hz",
+    "Weight": "Sản phẩm không có chân đế : 3.35 kg\nSản phẩm với chân đế : 4.72 kg",
+    "Ratio": "16:9",
+    "Screen": "527.04 x 296.46 mm",
+    "Angle": "178 ° (H) / 178 ° (V) (CR> 10)",
+    "Bright": "350cd/㎡",
+    "Screentype": "Phẳng ",
+    "Color": "16.7 triệu màu , NTSC 102% (CIE1976) / sRGB 108%\n(CIE1931) / DCI-P3 93% (CIE1976), Delta E < 2",
+    "Time": "1ms",
+    "Staticcontrast": "1000:1",
+    "Dynamiccontrast": "80M : 1 ",
+    "Plugs": "HDMI 2.0 x 1, DisplayPort 1.2 x 1",
+    "Design": "Tilt : Yes (+23° ~ -5°)",
+    "Wallmounted": "VESA Treo Tường 100x100",
+    "Electricity": "34W"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda80"
+  },
+  "id": 33,
+  "name": "Màn hình ViewSonic VA2215-H 22inch 100Hz FHD",
+  "type": "screen",
+  "price": 3600000,
+  "discount": 53,
+  "img": "https://product.hstatic.net/200000722513/product/viewsonic_va2215-h_gearvn_032d5d53effc48a2887c2879e6bc5cff_dec3d4588289443ca5c2a2b5ce995e02_grande.jpg",
+  "description": {
+    "Producer": "ViewSonic",
+    "Warranty": "36 tháng",
+    "Size": "22 inch",
+    "Ratio": "16:9",
+    "Screen": "527.04 x 296.46 mm",
+    "Panel": "VA",
+    "Contrast": "3,000:1 (typ)",
+    "Angle": "178º horizontal, 178º vertical",
+    "Resolution": "FHD 1920 x 1080",
+    "Bright": "250cd/㎡",
+    "Screentype": "LED",
+    "Color": "16.7 triệu màu sắc",
+    "Time": "5ms",
+    "Frequency": "100Hz",
+    "Plugs": "VGA: 1\n3.5mm Audio Out: 1\nHDMI 1.4: 1\nPower in: External power adapter",
+    "Electricity": "Eco Mode (Conserve): 13W\nEco Mode (optimized): 15W\nConsumption (typical): 20W\nConsumption (max): 21W\nVoltage: AC\n100-240V, 50/60 Hz\nStand-by: 0.5W\nPower Supply: External",
+    "Design": "VA2215-H",
+    "Wallmounted": "100 x 100mm",
+    "Loudspeaker": "2W x 2",
+    "Weight": "Net (kg): 2.4\nNet Without Stand (kg): 2\nGross (kg): 3.5",
+    "Accessory": "HDMI Cable (v1.4; Male-Male) x1, AC/DC Adapter x1,\nQuick Start Guide x1"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda81"
+  },
+  "id": 34,
+  "name": "Màn hình ViewSonic VX2428J 24inch Fast IPS 180Hz Gsync chuyên game",
+  "type": "screen",
+  "price": 4490000,
+  "discount": 24,
+  "img": "https://product.hstatic.net/200000722513/product/viewsonic_vx2428j_gearvn_60f31c4113114072b56e421577507e06_53fe3e1fa38d4845b222cb2d8497787f_grande.jpg",
+  "description": {
+    "Producer": "View Sonic",
+    "Warranty": "36 tháng",
+    "Size": "24 inch",
+    "Resolution": "1920x1080",
+    "Panel": "IPS",
+    "Frequency": "180Hz",
+    "Weight": "Khối lượng tịnh (kg): 3.8\nKhối lượng tịnh không có chân đế (kg): 2.8\nTổng (kg): 5.5",
+    "Ratio": "16:9",
+    "Screen": "527.04 x 296.46 mm",
+    "Angle": "178º horizontal, 178º vertical",
+    "Bright": "250 cd/m² (typ)",
+    "Screentype": "Phẳng",
+    "Color": "16.7M",
+    "Typecolor": "NTSC: 72% Size (Typ)\nsRGB: 104% Size (Typ)",
+    "Time": "0.5ms (MPRT)",
+    "Staticcontrast": "1000:1",
+    "Dynamiccontrast": "80M : 1 ",
+    "Plugs": "Đầu ra âm thanh 3,5 mm: 1\nHDMI 1.4: 2\nDisplayPort: 1\nCổng cắm nguồn: DC Socket (Center Positive)",
+    "Loudspeaker": "Loa trong: 2Watts x2",
+    "Design": "Tilt : Yes (+23° ~ -5°)",
+    "Wallmounted": "VESA Treo Tường 100x100",
+    "Electricity": "Chế độ Eco (giữ nguyên): 17W\nEco Mode (optimized): 20W\nTiêu thụ (điển hình): 24W\nMức tiêu thụ (tối đa): 25W\nVôn: AC 100-240V\nđứng gần: 0.3W\nNguồn cấp: External Power Adaptor"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda82"
+  },
+  "id": 35,
+  "name": "Bàn phím cơ E-Dra EK375 Alpha Blue Switch",
+  "type": "keyboard",
+  "price": 690000,
+  "discount": 25,
+  "img": "https://product.hstatic.net/200000722513/product/486_375a3_07d49b25229c41cab582d583c6962096_large_32983d8a416a4b08b4e41c90a61aa4e0_grande.jpg",
+  "description": {
+    "Producer": "E-Dra",
+    "Warranty": "24 tháng",
+    "Structure": "75%",
+    "Keycap": "PBT Double-Shot",
+    "Switch": "E-Dra Blue switch",
+    "Operating": "Windows",
+    "Led": "Rainbow",
+    "Features": "Núm xoay âm lượng"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda83"
+  },
+  "id": 36,
+  "name": "Bàn phím cơ AKKO MOD007 v3 HE Year of Dragon",
+  "type": "keyboard",
+  "price": 4990000,
+  "discount": 10,
+  "img": "https://product.hstatic.net/200000722513/product/ban-phim-co-akko-mod007v3-he-year-of-dragon__1__e06cec66dd14449e8e1eaa15988dcf14_grande.jpg",
+  "description": {
+    "Producer": "AKKO",
+    "Warranty": "12 tháng",
+    "Design": "Layout 75% 82 phím",
+    "RGB": "Có",
+    "Case": "Nhôm 3 lớp điện ly - Hoạ tiết rồng xanh",
+    "Plugs": "Có dây - USB Type-C 8k Hz",
+    "Structure": "Gasket mount (Poron case Foam)",
+    "Keycap": "Year of Dragon : (PBT Dye-Sub, Cherry profile)",
+    "Switch": "Akko Cream Yellow Magnetic Switch",
+    "Operating": "Windows / MacOS / Linux",
+    "Features": "NKRO / Multimedia / Macro / Khóa phím Win\nHotswap 5 pin",
+    "Accessory": "1 sách hướng dẫn sử dụng + 1 dây USB Type-C + 1 Che bụi bàn phím + 1 Bộ Keycap tặng thêm + 1 Bộ dụng cụ + 1 Plate Đồng."
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda84"
+  },
+  "id": 37,
+  "name": "Bàn phím cơ AKKO 3098B Plus White Akko Switch v3 Cream Yellow Pro",
+  "type": "keyboard",
+  "price": 2590000,
+  "discount": 50,
+  "img": "https://product.hstatic.net/200000722513/product/akko-3098b-plus-white-09_fec1778940934d8e818e4d3b32038e60_grande.jpg",
+  "description": {
+    "Producer": "AKKO",
+    "Warranty": "12 tháng",
+    "Design": "98 Phím",
+    "Plugs": "USB Type C, có thể tháo rời / Bluetooth 5.0 (tối đa 3 thiết bị)/ Wireless 2.4Ghz (1 trong 3)\n(NSX khuyến cáo chỉ nên cắm USB receiver 2.4ghz vào cổng USB 2.0 để được tín hiệu không dây tốt nhất)z",
+    "LED": "Nền RGB (Backlit, dạng SMT bottom không cấn switch) với nhiều chế độ",
+    "Structure": "AKKO 3098B Plus White",
+    "Size": "382 x 134 x 40 mm",
+    "Weight": "1.1kg",
+    "Keycap": "PBT Double-Shot, ASA profile",
+    "Switch": "Akko Cream Yellow Magnetic Switch",
+    "Operating": "Windows / MacOS / Linux",
+    "Features": "NKRO / Multimedia / Macro / Khóa phím Windows",
+    "Accessory": "1 sách hướng dẫn sử dụng + 1 keypuller + 1 cover che bụi + 1 dây cáp USB + USB Receiver 2.4Ghz"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda85"
+  },
+  "id": 38,
+  "name": "Bàn phím cơ AKKO 3087 v2 DS Ocean Star Akko V3 Switch Cream Yellow",
+  "type": "keyboard",
+  "price": 1399000,
+  "discount": 28,
+  "img": "https://product.hstatic.net/200000722513/product/thumbphim-recovered-recovered_267e97e1955a416ebc59d2aabcdf227e_943e2216bceb4b11904c6249de9c260a_grande.gif",
+  "description": {
+    "Producer": "AKKO",
+    "Warranty": "12 tháng",
+    "Design": "TKL",
+    "Plugs": "Có dây, có thể tháo rời",
+    "LED": "Xanh",
+    "Structure": "AKKO 3087 v2 DS Ocean Star",
+    "Size": "360 x 140 x 40 mm",
+    "Weight": "0.95 kg",
+    "eycap": "PBT Double-Shot, Cherry profile",
+    "Kswitch": "Akko V3 Switch Cream Yellow / Cream Blue",
+    "Operating": "Windows / MacOS / Linux",
+    "Features": "NKRO / Multimedia / Macro / Khóa phím Windows"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda86"
+  },
+  "id": 39,
+  "name": "Chuột Logitech G102 LightSync Black",
+  "type": "mouse",
+  "price": 599000,
+  "discount": 33,
+  "img": "https://product.hstatic.net/200000722513/product/logitech-g102-lightsync-rgb-black-1_bf4f5774229c4a0f81b8e8a2feebe4d8_aeb4ae49ee844c3e9d315883d4e482d4_grande.jpg",
+  "description": {
+    "Producer": "Logitech",
+    "Warranty": "24 tháng ",
+    "Design": "Đối xứng - Ambidextrous",
+    "Eyeread": "Mercury Sensor",
+    "Dpi": "8000",
+    "Ips": "200",
+    "Acceleration": "30g",
+    "Frequency": "1000Hz",
+    "Material": "plastic",
+    "Color": "black",
+    "Button": "6",
+    "Switch": "omron",
+    "Longevity": "50 triệu lần nhấn",
+    "Led": "RGB Lightsync",
+    "Connect": "USB",
+    "Long": "210cm",
+    "Size": "Dài 116.6 x Rộng 62.15 x Cao 38.2",
+    "Weight": "85g (không cable)",
+    "Software": "Logitech G-Hub"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda87"
+  },
+  "id": 40,
+  "name": "Chuột Logitech Pebble Mouse 2 M350S White",
+  "type": "mouse",
+  "price": 699000,
+  "discount": 34,
+  "img": "https://product.hstatic.net/200000722513/product/1_88b95fdc885c418f8bb63d7395219b75_grande.jpg",
+  "description": {
+    "Producer": "Logitech",
+    "Warranty": "12 tháng ",
+    "Design": "Logitech M350s",
+    "Dpi": "1000",
+    "Color": "white",
+    "Battery": "1 pin AA lắp sẵn",
+    "Led": "RGB Lightsync",
+    "Connect": "Công nghệ Bluetooth tiết kiệm năng lượng",
+    "Long": "Lên đến 10 m",
+    "Size": "Dài 106.7 x Rộng 58.7 x Cao 26.62",
+    "Weight": "76 gram"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda88"
+  },
+  "id": 41,
+  "name": "Chuột Razer Basilisk V3",
+  "type": "mouse",
+  "price": 1990000,
+  "discount": 50,
+  "img": "https://product.hstatic.net/200000722513/product/rtehosjd_7cf8331e76c04cb59e02a8f763ae3bb8_grande.png",
+  "description": {
+    "Producer": "Razer",
+    "Warranty": "24 tháng ",
+    "Design": "Công thái học",
+    "Dpi": "18000",
+    "Color": "black",
+    "Button": "7",
+    "Switch": "Razer Switch ( 50 triệu lần nhấn )",
+    "Longevity": "Lên đến 285h ( không dây )\nLên đến 450h ( bluetooth )",
+    "Connect": "Chuột Bluetooth / Không dây Hyperspeed",
+    "Size": "Dài 130 x Rộng 75 x Cao 42"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda89"
+  },
+  "id": 42,
+  "name": "Chuột Cooler Master MM310 SF6 Chun Li",
+  "type": "mouse",
+  "price": 1090000,
+  "discount": 28,
+  "img": "https://product.hstatic.net/200000722513/product/1_68d3bde76bd54c53a4345f3e5243520a_grande.jpg",
+  "description": {
+    "Producer": "COOLER MASTER",
+    "Warranty": "24 tháng ",
+    "Material": "Nhựa ABS, Cao su, PTFE",
+    "Led": "Có, RGB trên con cuộn và logo",
+    "Dpi": "400-800-1,200 (Mặc định)-1600-3200-6200-12000",
+    "Color": "Thiết kế đặc biệt cho SF6 Chun-Li",
+    "Button": "6",
+    "Switch": "Razer Switch ( 50 triệu lần nhấn )",
+    "Longevity": "60 triệu lần nhấn",
+    "Connect": "Chuột Bluetooth / Không dây Hyperspeed",
+    "Size": "125.5 x 71.0 x 40.5 mm",
+    "Long": "Cáp Ultraweave cố định, 1,8m",
+    "Software": "Có, Hỗ trợ Cooler Master MasterPlus+",
+    "Weight": "50g"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda8a"
+  },
+  "id": 43,
+  "name": "Tai nghe Edifier Không dây W820NB Plus Xanh Lá",
+  "type": "headphone",
+  "price": 1490000,
+  "discount": 27,
+  "img": "https://product.hstatic.net/200000722513/product/63d01bb21a039e50a6e33115aee07246_5afa890529f443388bede00a760d2ae2_grande.png",
+  "description": {
+    "Producer": "Edifier",
+    "Warranty": "12 tháng ",
+    "Audio": "Chống ồn chủ động ANC",
+    "Battery": "49 giờ",
+    "Charge": "1.5 giờ",
+    "Plugs": "Typer - C - Sạc nhanh",
+    "Typehead": "Over-ear",
+    "Connect": "USB Type-C, Bluetooth 5.0",
+    "Micro": "có",
+    "Long": "10m",
+    "Feature": "Chuyển bài\nĐiều chỉnh âm lượng\nTrả lời cuộc gọi\nChuyển đổi giữa các chế độ khác nhau"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda8b"
+  },
+  "id": 44,
+  "name": "Tai nghe Logitech G333 Black",
+  "type": "headphone",
+  "price": 1290000,
+  "discount": 31,
+  "img": "https://product.hstatic.net/200000722513/product/logitech-g333_e38d46257e63487c9d72d6d10b1722d3_89596760e3e7462bb9ab6b50d7739876_grande.jpg",
+  "description": {
+    "Producer": "Logitech",
+    "Warranty": "24 tháng ",
+    "Audio": "2 màng loa động kép",
+    "Frequency": "20 Hz ~ 20 KHz",
+    "Typehead": "In-Ear",
+    "Connect": "Jack 3.5mm / USB type C",
+    "Micro": "-42 dB",
+    "Software": "PC, mobile, Xbox, PlayStation, Nintendo, etc."
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda8c"
+  },
+  "id": 45,
+  "name": "Tai nghe E-Dra EH494W White",
+  "type": "headphone",
+  "price": 1390000,
+  "discount": 36,
+  "img": "https://product.hstatic.net/200000722513/product/gearvn-tai-nghe-e-dra-eh494w-white-1_46cdca3aaf3b448bbccc0d74c6d72782_603b4458b3b0406b891a4a63f0efe9ef_grande.png",
+  "description": {
+    "Producer": "E-Dra",
+    "Warranty": "24 tháng ",
+    "Audio": "2 màng loa động kép",
+    "Battery": "1000mAh",
+    "Frequency": "20 Hz ~ 20 KHz",
+    "Typehead": "In-Ear",
+    "Connect": "2.4Ghz / Bluetooth 5.0 / Có dây\nSạc pin qua cổng Type-C trên tai nghe",
+    "Micro": "Mic rời, -42DB",
+    "Long": "15m",
+    "Software": "PC, mobile, Xbox, PlayStation, Nintendo, etc."
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda8d"
+  },
+  "id": 46,
+  "name": "Tai nghe Steelseries Arctis Nova 7 Dragon Edition",
+  "type": "headphone",
+  "price": 6990000,
+  "discount": 21,
+  "img": "https://product.hstatic.net/200000722513/product/_edition_pdp_img_buy_01.png__1920x1080_crop-fit_optimize_subsampling-2_791d6a1f180442d89ab267c6591425de_grande.png",
+  "description": {
+    "Producer": "Steelseries",
+    "Warranty": "12 tháng",
+    "Audio": "Chống ồn chủ động ANC",
+    "Battery": "38 Giờ - 2.4GHz Quantum 2.0 Gaming Wireless\n26 Giờ - 2.4GHz Quantum 2.0 Gaming Wireless + BluetoothSạc nhanh USB-C15 phút cho 6 giờ chơi)",
+    "Charge": "Sạc nhanh USB-C15 phút cho 6 giờ chơi",
+    "Frequency": "Tai nghe:  20–22.000 Hz\nMicro: 100-6500 Hz",
+    "Plugs": "Typer - C - Sạc nhanh",
+    "Typehead": "Over-ear",
+    "Connect": "Wireless 2.4GHz / Bluetooth",
+    "Micro": "ClearCast Gen 2\nKhử tiếng ồn 2 chiều",
+    "Software": "PC /  Mac / PS4, 5 / Nitendo / Mobile / Oculus Quest 2"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda8e"
+  },
+  "id": 47,
+  "name": "Ghế Gaming E-Dra Yummy EGC232 V2 Black",
+  "type": "chair",
+  "price": 2090000,
+  "discount": 24,
+  "img": "https://product.hstatic.net/200000722513/product/ghe-gaming-e-dra-yummy-egc232-v2-black_fbec0d997e254cef874fe047d469cbae_grande.jpg",
+  "description": {
+    "Producer": "E-Dra",
+    "Warranty": "24 tháng ",
+    "Material": "da PU",
+    "Armrest": "gắn liền",
+    "Angle": "150 độ",
+    "Hydrauliclifter": "Class 2",
+    "Accessory": "Giấy HDSD",
+    "Color": "đen",
+    "Leg": "Khung, chân nhựa"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda8f"
+  },
+  "id": 48,
+  "name": "Ghế Gaming Cougar Armor AIR",
+  "type": "chair",
+  "price": 5490000,
+  "discount": 18,
+  "img": "https://product.hstatic.net/200000722513/product/1_411e118115df49ada626bf9a18e5c9f3_grande.jpg",
+  "description": {
+    "Producer": "Cougar",
+    "Warranty": "24 tháng ",
+    "Material": "Da PVC thoáng khí",
+    "Armrest": "2D",
+    "Angle": "150 độ",
+    "Leg": "thép",
+    "Weight": "20.4 kg",
+    "Leanback": "2 chiều - Có gối thắt lưng",
+    "Color": "cam, đen"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda90"
+  },
+  "id": 49,
+  "name": "Ghế DXRacer Gladiator-GB001-PVC-Black&Red-L (GC/LGB001LTC/NR)",
+  "type": "chair",
+  "price": 8880000,
+  "discount": 33,
+  "img": "https://product.hstatic.net/200000722513/product/thumbghea_05f21065b0404ac5880b2b64601108ac_grande.gif",
+  "description": {
+    "Producer": "DXRacer",
+    "Warranty": "24 tháng ",
+    "Material": "Da PVC",
+    "Armrest": "4D",
+    "Angle": "135 độ",
+    "Hydrauliclifter": "Class 4",
+    "Leg": "Nhôm to bản, 5 cánh hình sao, 5 bánh xe nhựa",
+    "Weight": "25 kg",
+    "Leanback": "có",
+    "Color": "đỏ, đen",
+    "Accessory": "Tool tháo lắp, HDSD"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda91"
+  },
+  "id": 50,
+  "name": "Ghế AKRacing Core Series LX Plus - Pink",
+  "type": "chair",
+  "price": 7990000,
+  "discount": 29,
+  "img": "https://product.hstatic.net/200000722513/product/e-akracing-core-series-lx-plus-pink-1_e44bd7f727cf4cbaabde7f7479f27a89_6088833aabd84238930fb97346c8070e_grande.jpeg",
+  "description": {
+    "Producer": "AKRacing",
+    "Warranty": "24 tháng ",
+    "Material": "Da PU cao cấp",
+    "Armrest": "3D (Up/Down, Front/Back, Swivel)",
+    "Angle": "90°-180°",
+    "Hydrauliclifter": "Class 4",
+    "Leg": "Kim loại",
+    "Weight": "27 kg",
+    "Leanback": "có, 71cm",
+    "Color": "hồng trắng",
+    "Accessory": "Tool tháo lắp, HDSD"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda92"
+  },
+  "id": 51,
+  "name": "Bộ định tuyến mở rộng ASUS RT-AX52 (AX1800) Dual Band WIFI 6",
+  "type": "network-software",
+  "price": 1590000,
+  "discount": 31,
+  "img": "https://product.hstatic.net/200000722513/product/gjjh316r_c4c9079e52c946249b55b01842bba0cb_grande.png",
+  "description": {
+    "Producer": "Asus",
+    "Warranty": "24 tháng ",
+    "Standard": "IEEE 802.11a\nIEEE 802.11\nIEEE 802.11g\nWiFi 4 (802.11n)\nWiFi 5 (802.11ac)\nWiFi 6 (802.11ax)\nIPv4\nIPv6",
+    "Segmentation": "AX1800 ultimate AX performance : 1201 Mbps+ 574 Mbps",
+    "Datarate": "802.11a : tối đa 54 Mbps\n802.11b : tối đa 11 Mbps\n802.11g : tối đa 54 Mbps\nWiFi 4 (802.11n) : tối đa 300 Mbps\nWiFi 5 (802.11ac) : tối đa 1734 Mbps\nWiFi 6 (802.11ax) (2.4GHz) : tối đa 574 Mbps\nWiFi 6 (802.11ax) (5GHz) : tối đa 2402 Mbps",
+    "Antenna": "Ăng-ten bên ngoài x 4",
+    "Frequency": "2.4GHz/5 GHz",
+    "Processor": "1.7GHz quad-core processor",
+    "Memory": "128 MB Flash\n256 MB RAM",
+    "Bootsspeed": "OFDMA (Orthogonal Frequency Division Multiple Access\nBeamforming: standard-based and universal 1024-QAM high data rate\n20/40/80 MHz bandwidth",
+    "Led": "Nguồn x 1\n2.4G x 1\n5G x 1\nLAN x 1\nWAN x 1",
+    "Power": "Đầu vào : 110V~240V(50~60Hz)\nĐầu ra : 12 V với dòng điện tối đa 1.5 A",
+    "Aimesh": "AiMesh\nPrimary AiMesh Router\nAiMesh Node",
+    "Router": "ASUS Router APP:Yes"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda93"
+  },
+  "id": 52,
+  "name": "Thiết bị định tuyến không dây TP-Link Archer TX55E PCI-E AX3000 WiFi6",
+  "type": "network-software",
+  "price": 890000,
+  "discount": 22,
+  "img": "https://product.hstatic.net/200000722513/product/archer_tx55e_overview_normal_20220511090800u_d2c10b0618364ff5b7e9ed5446358940_grande.jpg",
+  "description": {
+    "Producer": "TP-LINK",
+    "Warranty": "24 tháng ",
+    "Standard": "IEEE 802.11ax/ac/n/a 5 GHz\nIEEE 802.11ax/n/g/b 2.4 GHz\nBluetooth 5.2/5.0/4.2/4.0",
+    "Chipset": "Intel Wi-Fi 6 Chipset",
+    "Bluetooth": "Bluetooth 5.2, Bluetooth 5.0, Bluetooth 4.2, Bluetooth 4.0",
+    "Datarate": "5 GHz\n11ax: Up to 2402 Mbps(dynamic)\n11ac: Up to 1733 Mbps(dynamic)\n11n: Up to 300 Mbps(dynamic)\n11a: Up to 54 Mbps(dynamic)\n2.4 GHz\n11ax: Up to 574 Mbps(dynamic)\n11n: Up to 300 Mbps(dynamic)\n11g: Up to 54 Mbps(dynamic)\n11b: Up to 11 Mbps(dynamic)",
+    "Software": "Windows 10/11 (64-bit) only",
+    "Note": "Archer TX55E\nTwo High-Gain Antennas\nLow-Profile Bracket\nStandard Bluetooth Header Cable\nQuick Installation Guide\nResource CD"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda94"
+  },
+  "id": 53,
+  "name": "Thiết bị định tuyến Router TP-Link Wi-Fi Mesh AC1200 Deco M4 ( 3 Pack )",
+  "type": "network-software",
+  "price": 5790000,
+  "discount": 57,
+  "img": "https://product.hstatic.net/200000722513/product/et-bi-mang-tp-link-deco-m4-3-pack-666_b36d9602cae24631a0de3de5ad4a5a49_cd0846a0e8f04097a40b18565ba77be4_grande.jpg",
+  "description": {
+    "Producer": "TP-LINK",
+    "Warranty": "24 tháng ",
+    "Standard": "MESH, WIFI 5",
+    "Antenna": "2",
+    "Frequency": "2.4GHz/5GHz",
+    "Aimesh": "deco",
+    "Lan": "2 cổng/1Gbps",
+    "Wan": "1Gbps",
+    "MU-MIMO": "có"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda95"
+  },
+  "id": 54,
+  "name": "Thiết bị định tuyến Router TP-Link Wi-Fi Mesh AC1300 Deco M5 ( 2 Pack )",
+  "type": "network-software",
+  "price": 2390000,
+  "discount": 46,
+  "img": "https://product.hstatic.net/200000722513/product/nk-wi-fi-mesh-ac1300-deco-m5-2-pack-1_03ef7c90438b4fb49ea4656b9b011b59_45738604ace349bd983f2e1223994935_grande.jpg",
+  "description": {
+    "Producer": "TP-LINK",
+    "Warranty": "24 tháng ",
+    "Standard": "IEEE 802.11 ac/n/a 5 GHz, IEEE 802.11 b/g/n 2.4 GHz",
+    "Antenna": "4 ăng ten ngầm cho một thiết bị Deco",
+    "Bluetooth": "4.2 hoặc cao hơn",
+    "Frequency": "2.4GHz/5GHz",
+    "Aimesh": " MU-MIMO\nAuto Path Selection\nAP Steering\nBand Steering\nBeamforming",
+    "Power": "12 V/1.2 A",
+    "Processor": "Bộ xử lý 4 nhân"
+  }
+},
+{
+  "_id": {
+    "$oid": "662cf35aee07ad98d38eda96"
+  },
+  "id": 55,
+  "name": "Giá treo laptop North Bayou F80FP Trắng",
+  "type": "accessory",
+  "price": 640000,
+  "discount": 10,
+  "img": "https://product.hstatic.net/200000722513/product/z4948140694505_0746c731ebf813c40be1feecdfc5ed5d_63fda6d15e384caebf4990711cadc838_grande.jpg",
+  "description": {
+    "Producer": "North Bayou",
+    "Warranty": "24 tháng ",
+    "Scope": "Xoay: 360 °\nQuay: 180\nGóc nghiêng từ +35° tới -50 °",
+    "Distance": "280mm",
+    "Weight": "5kg",
+    "Feature": "Phù hợp với laptop từ 10-17 inch - Tải trọng 2 - 9kg"
+  }
+},
+{
+  "_id": {
+    "$oid": "662e42487a6a1281a83f8e51"
+  },
+  "id": 3,
+  "name": "Laptop gaming Gigabyte G5 KF E3VN333SH",
+  "type": "laptop gaming",
+  "price": 28990000,
+  "discount": 17,
+  "img": "https://product.hstatic.net/200000722513/product/top-gaming-gigabyte-g5-kf-e3vn333sh-1_8aff817b80a24809acb39e8db8b2f811_72f79966523348d9aecc90d1136edae9.png",
+  "description": {
+    "Producer": "GIGABYTE",
+    "CPU": "Intel® Core™ i5-12500H (2.5GHz~4.5GHz), 12 Cores, 16 Threads (4P + 8E), 18 MB Intel® Smart Cache",
+    "RAM": "8GB (1x8GB) DDR4-3200Mhz (2 khe ram, nâng cấp tối đa 64GB RAM)",
+    "HDD": "512GB SSD M.2 PCIE G4X4 (2 khe M.2, Còn trống 1 khe SSD M.2 PCIE G3x4)",
+    "GPU": "NVidia Geforce RTX 4060 8GB GDDR6 + Intel Iris Xe Graphics",
+    "Screen": "15.6 inch FHD (1920x1080), 144Hz, IPS-level, Thin Bezel, 45% NTSC",
+    "Port": "1x USB 2.0 (Type-A)\n1x USB3.2 Gen1 (Type-A)\n2x USB3.2 Gen2 (Type-C)\n1x Mini DisplayPort 1.4\n1x HDMI I™ Output port (with HDCP)\n1 x 2-in-1 Audio Jack(Headphone / Microphone)\n1x Microphone jack\n1x RJ-45 LAN port\n1x DC-in Jack\n1x MircoSD Card Reader",
+    "Keyboard": "Bàn phím fullsize, hỗ trợ LED 15 màu",
+    "LAN": "Gigabit Ethernet",
+    "Wifi": "Intel® Wi-Fi 6",
+    "Bluetooth": "Bluetooth V5.2",
+    "Audio": "2x 2W Speaker\nMicrophone\nDTS:X® Ultra Audio Technology",
+    "Webcam": "HD 720p",
+    "OS": "Windows 11 Home",
+    "Pin": "Lithium-Ion 54Wh",
+    "Weight": "1,9 kg",
+    "Color": "Đen",
+    "Size": "36.0 (W) x 23.8 (D) x 2.27(H) cm"
+  }
+},
+{
+  "_id": {
+    "$oid": "662e502d7a6a1281a83f8e52"
+  },
+  "id": 56,
+  "name": "Laptop gaming Lenovo LOQ 15IAX9 83GS001SVN",
+  "type": "laptop gaming",
+  "price": 17990000,
+  "discount": 1,
+  "img": "https://product.hstatic.net/200000722513/product/khung-laptop-23_fc6b74bf6c0e47209d09c4437ed57dd4_grande.png",
+  "description": {
+    "Producer": "Lenovo",
+    "Warranty": "24 tháng ",
+    "CPU": "Intel® Core™ i5-12450HX, 8C (4P + 4E) / 12T, P-core up to 4.4GHz, E-core up to 3.1GHz, 12MB",
+    "RAM": "12GB (4GB x 8GB) DDR5-4800 SO-DIMM (2x SO-DIMM socket, up to 32GB SDRAM)",
+    "HDD": "512GB SSD M.2 2242 PCIe 4.0x4 NVMe (2 Slots: M.2 2242/M.2 2280 PCIe 4.0 x4)",
+    "GPU": "NVIDIA® GeForce RTX™ 2050 4GB GDDR6, Boost Clock 1575MHz, TGP 65W",
+    "Screen": "15.6\" FHD (1920x1080) IPS 300nits Anti-glare, 100% sRGB, 144Hz, G-SYNC®",
+    "Port": "1x USB-C® (USB 10Gbps / USB 3.2 Gen 2), with PD 140W and DisplayPort™ 1.4\n3x USB-A (USB 5Gbps / USB 3.2 Gen 1)\n1x HDMI® 2.1, up to 8K/60Hz\n1x Ethernet (RJ-45)\n1x Headphone / microphone combo jack (3.5mm)\n1x Power connector",
+    "Keyboard": "White Backlit, English",
+    "Audio": "Stereo speakers, 2W x2, optimized with Nahimic Audio",
+    "LAN": "100/1000M",
+    "Wifi-Bluetooth": "Wi-Fi® 6, 11ax 2x2 + BT5.2",
+    "Webcam": "FHD 1080p with E-shutter",
+    "OS": "Windows® 11 Home Single Language, English",
+    "Pin": "Integrated 60Wh (3 Cell)",
+    "Weight": "2.38 kg",
+    "Color": "Luna Grey",
+    "Material": "PC-ABS (Top), PC-ABS (Bottom)",
+    "Size": "359.86 x 258.7 x 21.9-23.9 mm (14.17 x 10.19 x 0.86-0.94 inches)"
+  }
+},
+{
+  "_id": {
+    "$oid": "662e50447a6a1281a83f8e53"
+  },
+  "id": 57,
+  "name": "Laptop gaming ASUS ROG Zephyrus G14 GA403UV QS170W",
+  "type": "laptop gaming",
+  "price": 58990000,
+  "discount": 2,
+  "img": "https://product.hstatic.net/200000722513/product/ava_556d317224ff468ab3bdf74784f7e5a2_grande.png",
+  "description": {
+    "Producer": "ASUS",
+    "Warranty": "24 tháng ",
+    "CPU": "AMD Ryzen™ 9 8945HS (8 cores, 16 threads, 4.0GHz upto 5.2GHz, 16MB Cache)",
+    "RAM": "32GB (16x2) LPDDR5X 6400MHz Onboard (Không nâng cấp được)",
+    "HDD": "1TB PCIe® 4.0 NVMe™ M.2 SSD (1 slot, nâng cấp thay thế)",
+    "GPU": "NVIDIA® GeForce RTX™ 4060 Laptop GPU \nROG Boost: 1940MHz* at 90W (1890MHz Boost Clock+50MHz OC, 65W+25W Dynamic Boost)",
+    "Screen": "14\" 3K (2880 x 1800) 16:10, OLED, 120Hz/0.2ms, DCI-P3: 100%, Pantone Validated, Glossy display, 500nits, G-Sync / Adaptive-Sync, Dolby vision, ROG Nebula Display",
+    "Port": "1x Type C USB 4 support DisplayPort™ / power delivery\n1x USB 3.2 Gen 2 Type-C support DisplayPort™\n2x USB 3.2 Gen 2 Type-A\n1x HDMI 2.1 FRL\n1x 3.5mm Combo Audio Jack",
+    "Keyboard": "Backlit Chiclet Keyboard 1-Zone RGB",
+    "Audio": "4-speaker (dual force woofer) system with Smart Amplifier Technology, 2 Tweeters, Dolby Atmos Software",
+    "Card-Reader ": "(microSD) (UHS-II)",
+    "LAN": "None",
+    "Wifi": "Wi-Fi 6E(802.11ax) (Triple band) (2x2)",
+    "Bluetooth": "v5.3",
+    "Webcam": "1080P FHD IR Camera for Windows Hello",
+    "OS": "Windows 11 Home",
+    "Pin": "4 Cell 73WHr",
+    "Weight": "1.5 kg",
+    "Color": "Platinum White",
+    "Size": "31.1 x 22.0 x 1.59 ~ 1.63 (cm)"
+  }
+},
+{
+  "_id": {
+    "$oid": "662e505a7a6a1281a83f8e54"
+  },
+  "id": 58,
+  "name": "Laptop LG Gram 2023 14Z90R GAH75A5",
+  "type": "laptop",
+  "price": 38990000,
+  "discount": 31,
+  "img": "https://product.hstatic.net/200000722513/product/lg-gram-2023-fix_d774ec15d7614d1c835370947bee894d_grande.png",
+  "description": {
+    "Producer": "LG",
+    "Warranty": "24 tháng",
+    "CPU": "Intel Core i7-1360P (12 Cores: 4P + 8E, P: 2.2 up to 5.0 GHz / E: 1.6 up to 3.7 GHz) 18 MB Cache",
+    "RAM": "16GB LPDDR5 6000MHz (Dual Channel, Onboard, không nâng cấp)",
+    "HDD": "512GB PCIe NVMe M.2 SSD (2 slot, còn trống 1 khe M.2)",
+    "GPU": "Intel Iris Xe Graphics",
+    "Screen": "14 inch WUXGA (1920x1200), 16:10, IPS 60Hz, DCI-P3 99%, LGD, 350 nits, Anti-Glare",
+    "Port": "2x USB Type C (Thunderbolt 4, Display Port, Power Delivery)\n2x USB 3.2 Gen2\n1x HDMI\n1x DC in\n1x 3.5mm Combo Audio Jack",
+    "Keyboard": "LED trắng",
+    "Audio": "Dolby Atmos",
+    "Card-Reader ": "Micro SD",
+    "LAN": "None",
+    "Wifi": "Intel® Wireless-AX211 (802.11ax, 2x2, Dual Band, BT Combo)",
+    "Bluetooth": "v5.1",
+    "Webcam": "FHD IR Webcam (Nhận diện khuôn mặt Hello Windows)",
+    "OS": "Windows 11 Home",
+    "Pin": "72WHr ",
+    "Weight": "999 g",
+    "Color": "Đen",
+    "Size": "31.2 cm x 21.39 cm x 1.68  cm"
+  }
+},
+{
+  "_id": {
+    "$oid": "662e50707a6a1281a83f8e55"
+  },
+  "id": 59,
+  "name": "Laptop Lenovo IdeaPad 3 15IAU7 82RK001PVN",
+  "type": "laptop",
+  "price": 10990000,
+  "discount": 5,
+  "img": "https://product.hstatic.net/200000722513/product/ava_fafe339e4ea24a6392930423a867bcc0_grande.png",
+  "description": {
+    "Producer": "Lenovo",
+    "Warranty": "24 tháng",
+    "CPU": "Intel® Core™ i5-1235U, 10C (2P + 8E) / 12T, P-core 1.3 / 4.4GHz, E-core 0.9 / 3.3GHz, 12MB",
+    "RAM": "8GB Onboard DDR4-3200 (2 slots, nâng cấp tối đa 16GB)",
+    "SDD": "512GB SSD M.2 2242 PCIe® 4.0x4 NVMe (1 slot, nâng cấp tối đa 1TB)",
+    "GPU": "ntel Iris Xe Graphics (with dual channel memory)\nIntel® UHD Graphics",
+    "Screen": "15.6\" FHD (1920x1080) TN 250nits Anti-glare",
+    "Port": "1x USB 2.0\n1x USB 3.2 Gen 1\n1x USB-C® 3.2 Gen 1 (support data transfer, Power Delivery and DisplayPort™ 1.2)\n1x HDMI® 1.4b\n1x Headphone / microphone combo jack (3.5mm)\n1x Card reader",
+    "Keyboard": "Bàn phím tiêu chuẩn, Không LED",
+    "Audio": "Stereo speakers, 1.5W x2, Dolby® Audio™",
+    "Card-Reader ": "Micro SD",
+    "LAN": "None",
+    "Wifi": "11ac 2x2",
+    "Bluetooth": "Bluetooth® 5.0",
+    "Webcam": "HD 720p with Privacy Shutter",
+    "OS": "Windows 11 Home",
+    "Pin": "Integrated 45Wh",
+    "Weight": "1.63 kg",
+    "Color": "Arctic Grey",
+    "Material": "PC-ABS (Top), PC-ABS (Bottom)",
+    "Size": "359.2 x 236.5 x 19.9 mm"
+  }
+}]

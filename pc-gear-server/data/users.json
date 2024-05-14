@@ -1,0 +1,68 @@
+[{
+  "_id": {
+    "$oid": "663acfd6617eb93a25db6bab"
+  },
+  "username": "tuanhth95",
+  "email": "minhtuanhth811@gmail.com",
+  "phone": 972109973,
+  "address": "TPHCM",
+  "password": "$2b$10$Dq44ZpgUMkdcwaBDrEwdf.OT85XUF.4wMdDBtj3lPOUj/p7wCTwje",
+  "createdAt": {
+    "$date": "2024-05-08T01:05:26.165Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-09T04:31:00.492Z"
+  },
+  "__v": 4,
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2FjZmQ2NjE3ZWI5M2EyNWRiNmJhYiIsImlzc3VlZEF0IjoxNzE1MjI5MDYwNDY4LCJpYXQiOjE3MTUyMjkwNjAsImV4cCI6MTcxNTIzMjY2MH0.3LTpYXRY11TWkXqCDWGKPgKKVkg0XjnoeaF735jVdmA",
+  "createTokenAt": {
+    "$date": "2024-05-09T04:31:00.468Z"
+  },
+  "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2FjZmQ2NjE3ZWI5M2EyNWRiNmJhYiIsImlzc3VlZEF0IjoxNzE1MjI5MDYwNDY4LCJpYXQiOjE3MTUyMjkwNjAsImV4cCI6MTc0Njc2NTA2MH0.nCtOKOHrvKNKwbWQsnLWg7Pabmd_mm9373lxzl4cOOE",
+  "shippingAddress": [
+    {
+      "addressName": "KTX Khu A",
+      "addressPhone": "0123456789",
+      "addressProvince": "Tỉnh Bình Dương",
+      "addressDistrict": "Thị xã Dĩ An",
+      "addressWard": "Phường Đông Hòa",
+      "addressNumber": "01 Tạ Quang Bửu",
+      "_id": {
+        "$oid": "663b4df1914fa5001b43de9b"
+      }
+    },
+    {
+      "addressName": "KTX Khu A",
+      "addressPhone": "0123456789",
+      "addressProvince": "Tỉnh Bình Dương",
+      "addressDistrict": "Thị xã Dĩ An",
+      "addressWard": "Phường Đông Hòa",
+      "addressNumber": "01 Tạ Quang Bửu",
+      "_id": {
+        "$oid": "663b4e4ae243b1c7ccaa221a"
+      }
+    },
+    {
+      "addressName": "KTX Khu A",
+      "addressPhone": "0987654321",
+      "addressProvince": "Thành phố Hà Nội",
+      "addressDistrict": "Huyện Đan Phượng",
+      "addressWard": "Xã Hạ Mỗ",
+      "addressNumber": "123 hạ mỗ",
+      "_id": {
+        "$oid": "663b559ee243b1c7ccaa2334"
+      }
+    },
+    {
+      "addressName": "nhà",
+      "addressPhone": "0765432189",
+      "addressProvince": "Thành phố Hà Nội",
+      "addressDistrict": "Huyện Chương Mỹ",
+      "addressWard": "Xã Đại Yên",
+      "addressNumber": "123",
+      "_id": {
+        "$oid": "663b936ee243b1c7ccaa2342"
+      }
+    }
+  ]
+}]

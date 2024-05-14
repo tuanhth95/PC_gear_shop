@@ -1,0 +1,660 @@
+[{
+  "_id": {
+    "$oid": "66389a347cf1741101a0aa36"
+  },
+  "filename": "Laptop Dell Inspiron 15 N3530 I3U085W11BLU",
+  "data": "0.147 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/ava_450b62dbedc44663a3d7bf2bf0c735b3_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389a787cf1741101a0aa39"
+  },
+  "filename": "Laptop MSI Summit E14 Evo A12M 211VN",
+  "data": "0.095 MB",
+  "contentType": "png",
+  "size": "480x480",
+  "url": "https://product.hstatic.net/200000722513/product/aptop-msi-summit-e14-evo-a12m-211vn-1_5fc0898020c44422b37c9293db1c3edb_d48b2ea8b32449e09f359198932f6f25_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389af57cf1741101a0aa3e"
+  },
+  "filename": "Laptop gaming Acer Nitro V ANV15 51 72VS",
+  "data": "0.494 MB",
+  "contentType": "png",
+  "size": "1024x1024",
+  "url": "https://product.hstatic.net/200000722513/product/nitro-v_755588bd95514b6386940d73d3951e2d_1024x1024_8d56591164e04e73b4ed6be4c9c8e360_1024x1024.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389b137cf1741101a0aa41"
+  },
+  "filename": "PC GVN x MSI PROJECT ZERO WHITE (Intel i5-14400F/ VGA RTX 4060)",
+  "data": "0.216 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/thumb_project_zero_c58860d9fa3a409294c17ab45f46f612_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389b2c7cf1741101a0aa44"
+  },
+  "filename": "PC GVN x MSI Dragon X (Intel i7-14700F/ VGA RTX 4070 Super)",
+  "data": "0.263 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/thumb_i7_msi_e8ebf152f4c448de8c39a8fc49aa31d7_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389b487cf1741101a0aa47"
+  },
+  "filename": "PC GVN x Thermaltake PROJECT VERTICAL (Intel i7-14700K/ VGA RTX 4070 Ti Super)",
+  "data": "0.148 MB",
+  "contentType": "png",
+  "size": "600x500",
+  "url": "https://product.hstatic.net/200000722513/product/pc_gvn_-_i7_4070ti_sup_-_3_5b067243bc1f40308af972effb11172d_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389b657cf1741101a0aa4a"
+  },
+  "filename": "Card màn hình MSI GeForce RTX 4080 SUPER 16G GAMING X SLIM",
+  "data": "0.167 MB",
+  "contentType": "png",
+  "size": "600x480",
+  "url": "https://product.hstatic.net/200000722513/product/1024__5__397196e82239407b9542b6e90b18c670_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389b7f7cf1741101a0aa4d"
+  },
+  "filename": "Card màn hình ASUS Dual GeForce RTX 4060 Ti OC Edition 16GB GDDR6 (DUAL-RTX4060TI-O16G)",
+  "data": "0.066 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/asus-dual-geforce-rtx_-4060-ti-1_b43d80f7c128412485ef8d3759b9fa1c_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389b9b7cf1741101a0aa50"
+  },
+  "filename": "Bộ vi xử lý AMD Ryzen 7 5700X3D / 3.0GHz Boost 4.1GHz / 8 nhân 16 luồng / 100MB / AM4",
+  "data": "0.098 MB",
+  "contentType": "png",
+  "size": "480x480",
+  "url": "https://product.hstatic.net/200000722513/product/8ghz-boost-4-7ghz-8-nhan-16-luon_0a6b8aebafb3469f987ba5200d6833e9_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389bb37cf1741101a0aa53"
+  },
+  "filename": "Bộ vi xử lý Intel Core i7 14700F / Turbo up to 5.4GHz / 20 Nhân 28 Luồng / 33MB / LGA 1700",
+  "data": "0.170 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/n22459-001-rpl-i7f-fhs-dva-bc-univ_png_21fc4faaaca646ae9804e8bcc729ae57_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389bcd7cf1741101a0aa56"
+  },
+  "filename": "Bộ vi xử lý Intel Core i9 14900F / Turbo up to 5.8GHz / 24 Nhân 32 Luồng / 36MB / LGA 1700",
+  "data": "0.235 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/n22386-001-rpl-i9f-fhs-univ_f3fb9b4467824b389c8d7def9db8fb8e_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389be37cf1741101a0aa59"
+  },
+  "filename": "Bo mạch chủ ASUS ProArt Z790 CREATOR WIFI D5",
+  "data": "0.048 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/proart-z790-creator-wifi-01_975b6cb6e21c4f93a1de301b76b27821_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389bff7cf1741101a0aa5c"
+  },
+  "filename": "Bo mạch chủ ASUS TUF GAMING Z790-PLUS WIFI DDR5",
+  "data": "0.115 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/gearvn-bo-mach-chu-asus-tuf-gaming-z790-plus-wifi-ddr5-1_48b01fb3e6dc431d99de8d46c3f3e8aa_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389c187cf1741101a0aa5f"
+  },
+  "filename": "Vỏ máy tính Corsair 6500D Airflow TG Mid-Tower White (CC-9011260-WW)",
+  "data": "0.139 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/6500d_airflow_white_hero_01_aa_e273b71954d64f4282aa89bdfe49c45f_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389c2c7cf1741101a0aa62"
+  },
+  "filename": "Vỏ máy tính Xigmatek QUANTUM 3F",
+  "data": "0.025 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/quantum_3f_1_12a0184fbb24442894504c44e046bdac_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389c447cf1741101a0aa65"
+  },
+  "filename": "Nguồn máy tính Corsair HX1500i - 80 Plus Platinum - Full Modular (1500W) (CP-9020261-NA)",
+  "data": "0.052 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/gearvn-nguon-corsair-hx1500i-full-modular-80-plus-platinum-5_941b6db02f2a4848ac2503a49d00472f_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389c5a7cf1741101a0aa68"
+  },
+  "filename": "Nguồn máy tính ASUS ROG Thor 1200P2 - 80 Plus Platinum - Full Modular (1200W)",
+  "data": "0.260 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/h732_d28f32102b2c4fb6ab2a5bfa31f95b41_30899e2f85eb4ecca967eee77a147ccc_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389c747cf1741101a0aa6b"
+  },
+  "filename": "Bộ 3 quạt Corsair iCUE Link RX120 RGB (CO-9051018-WW)",
+  "data": "0.333 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/rx120_rgb_black_render_01_d6e53bf5443047ccb4b6cece56c0bee2_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389c8b7cf1741101a0aa6e"
+  },
+  "filename": "Quạt Máy Tính Lian Li UNI FAN SL V2 White Triple Pack",
+  "data": "0.016 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/sl120v2_b07_53b415242d94461785bb808842d016b3_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389ca27cf1741101a0aa71"
+  },
+  "filename": "Bộ 3 quạt Cooler Master SICKLEFLOW 120 ARGB WHITE EDITION",
+  "data": "0.022 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/eflow-120-argb-white-edition-3-in-1-0_9946a1b4f56a4546ba664fe985ed3de4_91cb13faa1a5485eae55a57b7e74ceef_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389cbf7cf1741101a0aa74"
+  },
+  "filename": "Ram Corsair Vengeance RGB 32GB (2x16GB) 5200 DDR5 Black (CMH32GX5M2B5200C40)",
+  "data": "0.047 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/gearvn-ram-corsair-vengeance-rgb-32gb-2x16gb-5200-ddr5-black-1_9b31c21ea23e43d1b077bb8dd61bb880_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389cd67cf1741101a0aa77"
+  },
+  "filename": "Ram T-Group T-Force Delta 1x16GB 3600 RGB Black",
+  "data": "0.057 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/eamgroup-t-force-delta-black-rgb_a85b8197156b4de59371cde1710933c4_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389cf07cf1741101a0aa7a"
+  },
+  "filename": "Ram G.Skill Ripjaws V 1x8G 3200 (F4-3200C16S-8GVKB)",
+  "data": "0.085 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/thiet_ke_chua_co_ten_7f66ef0397ab411092c8db78f7a41326_1a48cc96c24f47e9805aaaa370b314aa_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389d077cf1741101a0aa7d"
+  },
+  "filename": "Ổ Cứng HDD WD Red Plus 6TB 5400RPM",
+  "data": "0.107 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/-iii-128mb-cache-5400rpm-wd60efzx-c85c8373-881c-42e4-a1f7-34dc8b5f35a8_f78db0501c03449e871c9be8d73ff2c7_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389d1e7cf1741101a0aa80"
+  },
+  "filename": "Ổ Cứng HDD Seagate IronWolf 4TB (ST4000VN008)",
+  "data": "0.115 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/st4000vn008_c7720afbb7a343db88802d81b636c893_dcc177fe25254ccdb48ecec378e85edc_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389d377cf1741101a0aa83"
+  },
+  "filename": "Ổ cứng SSD MSI SPATIUM M480 PRO PCIe 4.0 NVMe M.2 1TB",
+  "data": "0.041 MB",
+  "contentType": "jpeg",
+  "size": "552x600",
+  "url": "https://product.hstatic.net/200000722513/product/71lv1cwfxpl._ac_uf1000_1000_ql80__f00d11081cf845a9be9b0936faf8fc27_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389d4e7cf1741101a0aa86"
+  },
+  "filename": "Ổ Cứng SSD Samsung 870 EVO 500G Sata3",
+  "data": "0.028 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/870_evo_1_1c78686c947c458a849dd2d0b78b0d11_eb6139bc571246e49e272400f2a930bc_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389d627cf1741101a0aa89"
+  },
+  "filename": "Loa Bluetooth Edifier MP85",
+  "data": "0.236 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/1_bcef33871e754eb9b4f382fb3f51cf57_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389d7c7cf1741101a0aa8c"
+  },
+  "filename": "Loa Razer Leviathan V2 X",
+  "data": "0.008 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/loa-razer-leviathan-v2-x_8c9429d436ba4352ab54847b92efc92b_ef157a75016c4946ad940e43b12dad0a_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389dac7cf1741101a0aa8f"
+  },
+  "filename": "Màn hình Asus TUF GAMING VG249Q3A 24inch Fast IPS 180Hz Gsync chuyên game",
+  "data": "0.025 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/download.png_1eb1cdf82aea4fcf9344d6652dcb071d_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389dc27cf1741101a0aa92"
+  },
+  "filename": "Màn hình AOC Q24G2 24inch IPS 2K 165Hz G-Sync chuyên game",
+  "data": "0.047 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/121d2924a3581e9be47de263576_6fb825a51a744d3c82e4aa7eed9cc1d2_1024x1024_23db2166e8714c008b17744e32b1b190_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389de07cf1741101a0aa95"
+  },
+  "filename": "Màn hình ViewSonic VA2215-H 22inch 100Hz FHD",
+  "data": "0.025 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/viewsonic_va2215-h_gearvn_032d5d53effc48a2887c2879e6bc5cff_dec3d4588289443ca5c2a2b5ce995e02_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389df97cf1741101a0aa98"
+  },
+  "filename": "Màn hình ViewSonic VX2428J 24inch Fast IPS 180Hz Gsync chuyên game",
+  "data": "0.030 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/viewsonic_vx2428j_gearvn_60f31c4113114072b56e421577507e06_53fe3e1fa38d4845b222cb2d8497787f_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389e117cf1741101a0aa9b"
+  },
+  "filename": "Bàn phím cơ E-Dra EK375 Alpha Blue Switch",
+  "data": "0.023 MB",
+  "contentType": "jpeg",
+  "size": "480x480",
+  "url": "https://product.hstatic.net/200000722513/product/486_375a3_07d49b25229c41cab582d583c6962096_large_32983d8a416a4b08b4e41c90a61aa4e0_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389e307cf1741101a0aa9e"
+  },
+  "filename": "Bàn phím cơ AKKO MOD007 v3 HE Year of Dragon",
+  "data": "0.039 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/ban-phim-co-akko-mod007v3-he-year-of-dragon__1__e06cec66dd14449e8e1eaa15988dcf14_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389e4c7cf1741101a0aaa1"
+  },
+  "filename": "Bàn phím cơ AKKO 3098B Plus White Akko Switch v3 Cream Yellow Pro",
+  "data": "0.034 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/akko-3098b-plus-white-09_fec1778940934d8e818e4d3b32038e60_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389e687cf1741101a0aaa4"
+  },
+  "filename": "Bàn phím cơ AKKO 3087 v2 DS Ocean Star Akko V3 Switch Cream Yellow",
+  "data": "0.073 MB",
+  "contentType": "gif",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/thumbphim-recovered-recovered_267e97e1955a416ebc59d2aabcdf227e_943e2216bceb4b11904c6249de9c260a_grande.gif",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389e7f7cf1741101a0aaa7"
+  },
+  "filename": "Chuột Logitech G102 LightSync Black",
+  "data": "0.012 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/logitech-g102-lightsync-rgb-black-1_bf4f5774229c4a0f81b8e8a2feebe4d8_aeb4ae49ee844c3e9d315883d4e482d4_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389e957cf1741101a0aaaa"
+  },
+  "filename": "Chuột Logitech Pebble Mouse 2 M350S White",
+  "data": "0.010 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/1_88b95fdc885c418f8bb63d7395219b75_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389eaf7cf1741101a0aaad"
+  },
+  "filename": "Chuột Razer Basilisk V3",
+  "data": "0.175 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/rtehosjd_7cf8331e76c04cb59e02a8f763ae3bb8_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389ec87cf1741101a0aab0"
+  },
+  "filename": "Chuột Cooler Master MM310 SF6 Chun Li",
+  "data": "0.012 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/1_68d3bde76bd54c53a4345f3e5243520a_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389edf7cf1741101a0aab3"
+  },
+  "filename": "Tai nghe Edifier Không dây W820NB Plus Xanh Lá",
+  "data": "0.136 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/63d01bb21a039e50a6e33115aee07246_5afa890529f443388bede00a760d2ae2_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389ef37cf1741101a0aab6"
+  },
+  "filename": "Tai nghe Logitech G333 Black",
+  "data": "0.015 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/logitech-g333_e38d46257e63487c9d72d6d10b1722d3_89596760e3e7462bb9ab6b50d7739876_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389f087cf1741101a0aab9"
+  },
+  "filename": "Tai nghe E-Dra EH494W White",
+  "data": "0.070 MB",
+  "contentType": "png",
+  "size": "480x480",
+  "url": "https://product.hstatic.net/200000722513/product/gearvn-tai-nghe-e-dra-eh494w-white-1_46cdca3aaf3b448bbccc0d74c6d72782_603b4458b3b0406b891a4a63f0efe9ef_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389f1d7cf1741101a0aabc"
+  },
+  "filename": "Tai nghe Steelseries Arctis Nova 7 Dragon Edition",
+  "data": "0.123 MB",
+  "contentType": "png",
+  "size": "600x480",
+  "url": "https://product.hstatic.net/200000722513/product/_edition_pdp_img_buy_01.png__1920x1080_crop-fit_optimize_subsampling-2_791d6a1f180442d89ab267c6591425de_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389f347cf1741101a0aabf"
+  },
+  "filename": "Ghế Gaming E-Dra Yummy EGC232 V2 Black",
+  "data": "0.016 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/ghe-gaming-e-dra-yummy-egc232-v2-black_fbec0d997e254cef874fe047d469cbae_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389f4b7cf1741101a0aac2"
+  },
+  "filename": "Ghế Gaming Cougar Armor AIR",
+  "data": "0.020 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/1_411e118115df49ada626bf9a18e5c9f3_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389f617cf1741101a0aac5"
+  },
+  "filename": "Ghế DXRacer Gladiator-GB001-PVC-Black&Red-L (GC/LGB001LTC/NR)",
+  "data": "0.060 MB",
+  "contentType": "gif",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/thumbghea_05f21065b0404ac5880b2b64601108ac_grande.gif",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389f827cf1741101a0aac8"
+  },
+  "filename": "Ghế AKRacing Core Series LX Plus - Pink",
+  "data": "0.013 MB",
+  "contentType": "jpeg",
+  "size": "480x480",
+  "url": "https://product.hstatic.net/200000722513/product/e-akracing-core-series-lx-plus-pink-1_e44bd7f727cf4cbaabde7f7479f27a89_6088833aabd84238930fb97346c8070e_grande.jpeg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389fd47cf1741101a0aacb"
+  },
+  "filename": "Bộ định tuyến mở rộng ASUS RT-AX52 (AX1800) Dual Band WIFI 6",
+  "data": "0.065 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/gjjh316r_c4c9079e52c946249b55b01842bba0cb_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66389fec7cf1741101a0aace"
+  },
+  "filename": "Thiết bị định tuyến không dây TP-Link Archer TX55E PCI-E AX3000 WiFi6",
+  "data": "0.016 MB",
+  "contentType": "jpeg",
+  "size": "590x590",
+  "url": "https://product.hstatic.net/200000722513/product/archer_tx55e_overview_normal_20220511090800u_d2c10b0618364ff5b7e9ed5446358940_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6638a0027cf1741101a0aad1"
+  },
+  "filename": "Thiết bị định tuyến Router TP-Link Wi-Fi Mesh AC1200 Deco M4 ( 3 Pack )",
+  "data": "0.017 MB",
+  "contentType": "jpeg",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/et-bi-mang-tp-link-deco-m4-3-pack-666_b36d9602cae24631a0de3de5ad4a5a49_cd0846a0e8f04097a40b18565ba77be4_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6638a01c7cf1741101a0aad4"
+  },
+  "filename": "Thiết bị định tuyến Router TP-Link Wi-Fi Mesh AC1300 Deco M5 ( 2 Pack )",
+  "data": "0.009 MB",
+  "contentType": "jpeg",
+  "size": "590x590",
+  "url": "https://product.hstatic.net/200000722513/product/nk-wi-fi-mesh-ac1300-deco-m5-2-pack-1_03ef7c90438b4fb49ea4656b9b011b59_45738604ace349bd983f2e1223994935_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6638a0317cf1741101a0aad7"
+  },
+  "filename": "Giá treo laptop North Bayou F80FP Trắng",
+  "data": "0.013 MB",
+  "contentType": "jpeg",
+  "size": "552x600",
+  "url": "https://product.hstatic.net/200000722513/product/z4948140694505_0746c731ebf813c40be1feecdfc5ed5d_63fda6d15e384caebf4990711cadc838_grande.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6638a0507cf1741101a0aada"
+  },
+  "filename": "Laptop gaming Gigabyte G5 KF E3VN333SH",
+  "data": "0.135 MB",
+  "contentType": "png",
+  "size": "480x480",
+  "url": "https://product.hstatic.net/200000722513/product/top-gaming-gigabyte-g5-kf-e3vn333sh-1_8aff817b80a24809acb39e8db8b2f811_72f79966523348d9aecc90d1136edae9.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6638a06d7cf1741101a0aadd"
+  },
+  "filename": "Laptop gaming Lenovo LOQ 15IAX9 83GS001SVN",
+  "data": "0.188 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/khung-laptop-23_fc6b74bf6c0e47209d09c4437ed57dd4_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6638a08a7cf1741101a0aae0"
+  },
+  "filename": "Laptop gaming ASUS ROG Zephyrus G14 GA403UV QS170W",
+  "data": "0.232 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/ava_556d317224ff468ab3bdf74784f7e5a2_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6638a09e7cf1741101a0aae3"
+  },
+  "filename": "Laptop LG Gram 2023 14Z90R GAH75A5",
+  "data": "0.119 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/lg-gram-2023-fix_d774ec15d7614d1c835370947bee894d_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6638a0b37cf1741101a0aae6"
+  },
+  "filename": "Laptop Lenovo IdeaPad 3 15IAU7 82RK001PVN",
+  "data": "0.140 MB",
+  "contentType": "png",
+  "size": "600x600",
+  "url": "https://product.hstatic.net/200000722513/product/ava_fafe339e4ea24a6392930423a867bcc0_grande.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6638a0cb7cf1741101a0aae9"
+  },
+  "filename": "PC GVN x ASUS ROG Hyperion Black (Intel i9-14900K/ VGA RTX 4090)",
+  "data": "0.031 MB",
+  "contentType": "jpeg",
+  "size": "600x500",
+  "url": "https://product.hstatic.net/200000722513/product/gr701_-_8_0b056843b17b4c078ba6ef8fc2bb9042_grande.jpg",
+  "__v": 0
+}]
