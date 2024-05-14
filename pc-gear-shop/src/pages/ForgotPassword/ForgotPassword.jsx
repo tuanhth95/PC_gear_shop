@@ -16,7 +16,7 @@ const ForgotPassword = () => {
         try {
             const values = await form.validateFields();
             setLoading(true);
-            const response = await fetch('http://localhost:3001/sendEmail', {
+            const response = await fetch('http://localhost:3001/api/sendEmail', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

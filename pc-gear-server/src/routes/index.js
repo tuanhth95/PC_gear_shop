@@ -20,7 +20,7 @@ const routes = (app) => {
   app.use("/api/categories", categoriesRouter);
   app.use('/api/product_detail', ProductDetailRouter);
   app.use('/api/OrderDetail', OrderDetailRouter);
-  app.use('/api/user', sendEmail)
+  app.use('/api/sendEmail', sendEmail)
   app.use('/api/img', ImgProduct)
   app.use('/api/carousel', Carousel)
   app.use('/api/main_carousel', MainCarouselRouter)
