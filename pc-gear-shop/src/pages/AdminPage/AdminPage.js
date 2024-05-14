@@ -2,7 +2,7 @@ import { Carousel, Menu, message } from "antd";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { getItem } from "../../utils";
-import { FormOutlined, ProductOutlined, FileImageOutlined, DeliveredProcedureOutlined, UserOutlined, MenuOutlined, GroupOutlined } from "@ant-design/icons";
+import { FormOutlined, ProductOutlined, FileImageOutlined, DeliveredProcedureOutlined, UserOutlined, MenuOutlined, GroupOutlined, WechatOutlined } from "@ant-design/icons";
 import AdminReview from "../../components/AdminReview/AdminReview";
 import AdminProduct from "../../components/AdminProduct/AdminProduct";
 import AdminMedia from "../../components/AdminMedia/AdminMedia";
@@ -12,6 +12,7 @@ import AdminUser from "../../components/AdminUser/AdminUser";
 import { useQueries } from "@tanstack/react-query";
 import AdminCollectionPage from "../../components/AdminCollection/AdminCollectionComponent/AdminCollectionComponent";
 import CategoryManager from "../../components/CategoryManager/CategoryManager"
+import AdminChatBox from "../../components/AdminChatbox/AdminChatBox";
 
 const AdminPage = () => {
   const [keySelected, setKeySelected] = useState("");
@@ -24,6 +25,7 @@ const AdminPage = () => {
     getItem("User", "users",<UserOutlined />),
     getItem("Danh mục", "categories",<MenuOutlined />),
     getItem("Collection", "collections",<GroupOutlined />),
+    getItem("Chatbox", "chat" ,<WechatOutlined />),
   ];
 
   const getAllReviews = async () => {
@@ -39,6 +41,15 @@ const AdminPage = () => {
       throw new Error("Failed to fetch reviews");
     }
   };
+  const getAllConversation = async () => {
+    try {
+      const response = await axios.get("http://localhost:3001/api/conversation/get-all");
+      return response.data.reverse();
+    } catch (error) {
+      console.error('Error fetching conversations:', error);
+      throw new Error('Failed to fetch conversations');
+    }
+  };
 
   // const { isLoading } = useQuery(['reviews'], getAllReviews, {
   //   staleTime: 60 * 1000,
@@ -47,6 +58,7 @@ const AdminPage = () => {
   const queries = useQueries({
     queries: [
       { queryKey: ["reviews"], queryFn: getAllReviews, staleTime: 1000 * 60 },
+      { queryKey: ['chat'], queryFn: getAllConversation, staleTime: 1000 * 60 }
     ],
   });
 
@@ -67,9 +79,11 @@ const AdminPage = () => {
       case "users":
         return <AdminUser />;
       case "collections": 
-        return <AdminCollectionPage />
+        return <AdminCollectionPage />;
       case "categories": 
-        return <CategoryManager/>
+        return <CategoryManager/>;
+      case "chat": 
+        return <AdminChatBox/>;
       default:
         return null;
     }

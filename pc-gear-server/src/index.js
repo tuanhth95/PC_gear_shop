@@ -57,7 +57,11 @@ app.use(express.urlencoded({ extended: true }));
 routes(app);
 
 mongoose
-  .connect(process.env.DB_PATH)
+  .connect(process.env.DB_PATH,{
+    useNewUrlParser: true, 
+    useUnifiedTopology: true,
+    family: 4,
+  })
   .then(() => console.log("Connect successful"))
   .catch((err) => console.log("error when connect to db: ", err));
 

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ButtonComponent from "../../components/ButtonComponent/ButtonComponent";
+import { Button, Modal } from 'antd';
 
 export const WrapperButtonMore = styled(ButtonComponent)`
     &:hover{

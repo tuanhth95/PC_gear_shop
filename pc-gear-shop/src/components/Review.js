@@ -51,6 +51,7 @@ const Review = ({productId}) =>{
     // const userId = localStorage.getItem('userID');
 
   const textRef = useRef();
+  const [textValue, setTextValue] = useState('');
   const [rating, setRating] = useState(5);
  
 
@@ -85,25 +86,24 @@ const Review = ({productId}) =>{
     } 
     const body = {
       rate: rating,
-      contentReview: textRef.current.value
+      // contentReview: textRef.current.value
+      contentReview: textValue
     }
 
     axios.post(`http://localhost:3001/api/review/create-review/${productId}/${userId}`, body)
       .then((res) => {
         console.log('Đăng đánh giá thành công');
-        if (res.data) {
+        if (res.data && res.data.review) {
           const newReview = res.data.review;
-          setData([newReview, ...data]); // Thêm đánh giá mới vào đầu mảng data
-          textRef.current.value = ''; // Xóa nội dung trong ô nhập liệu
-          fetchReviews();
+          setData([newReview, ...data]); 
+          textRef.current.value = ''; 
+          setTextValue('');
+          // fetchReviews(); 
         }
-        // window.location.reload();
-        // setLoading(true);
-        // setData([res.data.review, ...data]);
-        // window.location.reload();
-        // setLoading(true);
       })
-      .catch((err) => { console.log(err) })
+      .catch((err) => {
+        console.error('Lỗi tạo đánh giá', err);
+      });
   }
   const handleLogin = () => {
     window.location.href = '/signin';
@@ -132,6 +132,7 @@ const Review = ({productId}) =>{
   
 
   const textReplyRef = useRef();
+  const [textReplyValue, setTextReplyValue] = useState('');
   
 
   const handleReply = (reviewId) => {
@@ -141,7 +142,7 @@ const Review = ({productId}) =>{
     } 
     // setUserId(user.data._id);
     const body = {
-      content: textReplyRef.current.value,
+      content: textReplyValue,
     };
     
     // const userIdFromStorage = localStorage.getItem('userId')
@@ -170,6 +171,8 @@ const Review = ({productId}) =>{
   
           setReply(false);
           textReplyRef.current.value = '';
+          setTextReplyValue('');
+          
         } else {
           console.error('Không có dữ liệu phản hồi mới từ API');
         }
@@ -243,7 +246,9 @@ let roundedRating = roundRating(averageRating);
                     )}
                     {reply && replyTo === review._id && (
                       <div>
-                        <TextArea rows={2} ref={textReplyRef} placeholder="Nhập phản hồi của bạn" onChange={(e) => { textReplyRef.current.value = e.target.value; }}/>
+                        <TextArea rows={2} ref={textReplyRef} placeholder="Nhập phản hồi của bạn" 
+                        value={textReplyValue}
+                        onChange={(e) => setTextReplyValue(e.target.value)}/>
                         <div style={{display: 'table', marginLeft: 'auto', marginRight: 'auto',marginTop: '5px', }}>
                           <Button style={{backgroundColor: '#1A93FF', marginRight: '5px'}} 
                           onClick={() => handleReply(review._id)} >Gửi</Button>
@@ -277,7 +282,8 @@ let roundedRating = roundRating(averageRating);
               <Rate defaultValue={5} onChange={(value) => {setRating(value)}} />
             </div>
             <TextArea rows={4} ref={textRef} label="Nội dung" type='text' className="insert-review-text" maxLength={200} 
-            onChange={(e) => { textRef.current.value = e.target.value; }}/>
+            value={textValue}
+            onChange={(e) => setTextValue(e.target.value)}></TextArea>
             <Button type="primary" danger onClick={() => { handleCreateReview() }} style={{marginTop: '10px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}>
               Đăng đánh giá
             </Button>

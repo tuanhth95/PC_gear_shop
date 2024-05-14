@@ -11,7 +11,7 @@ const createUser = (newUser) =>{
                 email, 
                 phone, 
                 address, 
-                shippingAddress,
+                address,
                 password: hashPass, 
             });
             //console.log(result);
