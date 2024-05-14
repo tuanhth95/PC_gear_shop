@@ -2,10 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js', // Thay đổi đường dẫn đến file entry của bạn
+  entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'), // Thay đổi đường dẫn đến thư mục output của bạn
+    path: path.resolve(__dirname, 'dist'), 
   },
   resolve: {
     fallback: {
@@ -29,7 +29,6 @@ module.exports = {
           },
         },
       },
-      // Các loader khác nếu cần
     ],
   },
 };
