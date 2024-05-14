@@ -61,6 +61,10 @@ mongoose
   .then(() => console.log("Connect successful"))
   .catch((err) => console.log("error when connect to db: ", err));
 
+
+  console.log("Database path from .env:", process.env.DB_PATH);
+
+
 app.listen(port, () => {
   console.log("Server is running on port: ", port);
 });
