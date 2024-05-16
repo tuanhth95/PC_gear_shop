@@ -110,9 +110,5 @@ router.delete("/:categoryId/subcategories/:subId", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-<<<<<<< HEAD
 
 export default router;
-=======
-module.exports = router;
->>>>>>> 73416deb46d3ebc7ba4e027406c2ef0f972946bb
