@@ -4,6 +4,7 @@ import './chatstyle.css';
 import { useSelector } from 'react-redux';
 import { updateUser} from "../../redux/slices/userSlide";
 import * as UserService from "../../services/UserService";
+import { Button, Modal } from 'antd';
 
 
 const ChatBox = ({onClose }) => {
@@ -30,8 +31,20 @@ const ChatBox = ({onClose }) => {
       console.error('Lỗi khi lấy tin nhắn:', error);
     }
   };
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const handleLogin = () => {
+    window.location.href = '/signin';
+  };
+
+  const handleCloseModal = () => {
+    setShowLoginModal(false);
+  };
 
   const sendMessage = async () => {
+    if(!userID){
+      setShowLoginModal(true);
+      return;
+    }
     try {
       await axios.post(`http://localhost:3001/api/conversation/message/${userID}`, {
         senderID: userID,
@@ -73,6 +86,21 @@ const ChatBox = ({onClose }) => {
         />
         <button onClick={sendMessage}>Gửi</button>
       </div>
+      <Modal
+            title="Yêu cầu đăng nhập"
+            visible={showLoginModal}
+            onCancel={handleCloseModal}
+            footer={[
+              <Button key="cancel" onClick={handleCloseModal}>
+                OK
+              </Button>,
+              <Button key="login" type="primary" onClick={handleLogin}>
+                Đăng nhập
+              </Button>
+            ]}
+          >
+            Bạn cần đăng nhập để có thể gửi tin nhắn
+     </Modal>  
     </div>
   );
 };

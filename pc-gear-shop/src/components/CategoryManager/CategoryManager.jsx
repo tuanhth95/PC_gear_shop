@@ -37,12 +37,14 @@ const CategoryManager = () => {
 
   const handleDeleteSubCategory = async (categoryId, subId) => {
     try {
+      console.log(`Deleting subCategory with ID ${subId} from category ${categoryId}`);
       await axios.delete(`${process.env.REACT_APP_API_URL}/categories/${categoryId}/subcategories/${subId}`);
       fetchCategories();
     } catch (error) {
       console.error('Failed to delete subcategory:', error);
     }
   };
+   
 
   const showModal = (category = null) => {
     setEditingCategory(category);

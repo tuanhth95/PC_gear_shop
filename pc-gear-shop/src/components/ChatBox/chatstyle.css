@@ -87,12 +87,12 @@
   background-color: #0056b3;
 }
 .admin-message {
-  background-color: #cce6ff; /* Màu nền cho tin nhắn của quản trị viên */
+  background-color: #f0f0f0; /* Màu nền cho tin nhắn của quản trị viên */
   color: #000; /* Màu chữ cho tin nhắn của quản trị viên */
   margin-right: 15px;
 }
 .user-message {
-  background-color: #f0f0f0; /* Màu nền cho tin nhắn của người dùng */
+  background-color: #cce6ff; /* Màu nền cho tin nhắn của người dùng */
   color: #333; /* Màu chữ cho tin nhắn của người dùng */
   margin-left: 15px;
 }

@@ -31,7 +31,7 @@ const AppHeader = () => {
   const [loading, setLoading] = useState(false);
   const user = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
-  console.log("order from app header",cart.orderItems);
+  console.log("order from app header", cart.orderItems);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -94,20 +94,27 @@ const AppHeader = () => {
     setIsOpenPopup(false);
   };
 
-  // Navigate to sign-in page
-  const categoryMenu = (
-    <Menu>
-      {categories.map((category) => (
-        <Menu.SubMenu key={category._id} title={category.name}>
-          {category.subCategories.map((subCategory) => (
-            <Menu.Item key={subCategory._id}>
-              <a href={subCategory.href}>{subCategory.title}</a>
-            </Menu.Item>
-          ))}
-        </Menu.SubMenu>
-      ))}
-    </Menu>
-  );
+  const handleLogout = async () => {
+    setLoading(true);
+    // await UserService.logoutUser()
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+    dispatch(resetUser());
+    dispatch(resetCart());
+    setLoading(false);
+    navigate("/");
+  };
+
+  // Chuyển đổi categories thành mảng các item
+  const categoryItems = categories.map((category) => ({
+    label: category.name,
+    key: category._id,
+    children: category.subCategories.map((subCategory) => ({
+      label: <a href={subCategory.href}>{subCategory.title}</a>,
+      key: subCategory._id,
+    })),
+  }));
+
   const content = (
     <div>
       <WrapperContentPopup onClick={() => handleClickNavigate("UserPage")}>
@@ -118,24 +125,12 @@ const AppHeader = () => {
           Quản lí hệ thống
         </WrapperContentPopup>
       )}
-      {/* <WrapperContentPopup onClick={() => handleClickNavigate(`my-order`)}>
-        Đơn hàng của tôi
-      </WrapperContentPopup> */}
       <WrapperContentPopup onClick={() => handleClickNavigate()}>
         Đăng xuất
       </WrapperContentPopup>
     </div>
   );
-  const handleLogout = async () => {
-    setLoading(true);
-    //await UserService.logoutUser()
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken');
-    dispatch(resetUser());
-    dispatch(resetCart());
-    setLoading(false);
-    navigate("/");
-  };
+
   return (
     <Header
       className="header"
@@ -152,12 +147,9 @@ const AppHeader = () => {
           navigate("/");
         }}
       >
-        <img
-          src="/logo_with_text.png"
-          alt=""
-        />
+        <img src="/logo_with_text.png" alt="" />
       </div>
-      <Dropdown overlay={categoryMenu} trigger={["click"]} style={{ flex: 1 }}>
+      <Dropdown menu={{ items: categoryItems }} trigger={["click"]} style={{ flex: 1 }}>
         <Button style={{ display: "flex", alignItems: "center" }}>
           <MenuOutlined />
           Danh mục

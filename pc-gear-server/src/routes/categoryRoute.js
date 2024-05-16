@@ -87,15 +87,32 @@ router.put("/:categoryId/subcategories/:subId", async (req, res) => {
 // Xóa subCategory
 router.delete("/:categoryId/subcategories/:subId", async (req, res) => {
   try {
+    console.log(`Attempting to delete subCategory with ID ${req.params.subId} from category ${req.params.categoryId}`);
     const category = await Category.findById(req.params.categoryId);
-    if (!category) return res.status(404).json({ message: "Category not found" });
+    if (!category) {
+      console.error("Category not found");
+      return res.status(404).json({ message: "Category not found" });
+    }
 
-    category.subCategories.id(req.params.subId).remove();
+    const subCategory = category.subCategories.id(req.params.subId);
+    if (!subCategory) {
+      console.error("SubCategory not found");
+      return res.status(404).json({ message: "SubCategory not found" });
+    }
+
+    // Sử dụng phương thức pull để xóa subCategory
+    category.subCategories.pull({ _id: req.params.subId });
     await category.save();
+    console.log("SubCategory deleted successfully");
     res.json({ message: "SubCategory deleted successfully" });
   } catch (error) {
+    console.error("Error deleting subCategory:", error);
     res.status(500).json({ message: error.message });
   }
 });
+<<<<<<< HEAD
 
 export default router;
+=======
+module.exports = router;
+>>>>>>> 73416deb46d3ebc7ba4e027406c2ef0f972946bb
