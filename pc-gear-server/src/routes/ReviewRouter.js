@@ -1,6 +1,7 @@
-const express = require("express");
+import express from "express"
+import reviewController from '../controllers/ReviewController.js'
+
 const router = express.Router()
-const reviewController = require('../controllers/ReviewController')
 
 router.get('/get-all-review', reviewController.getReview)
 router.get('/product/:productID', reviewController.getReviewByProductID);
@@ -12,4 +13,4 @@ router.delete('/:reviewID', reviewController.deleteReview)
 router.post('/:reviewID/:userID/reply', reviewController.createReplyReview)
 router.delete('/:reviewID/reply/:replyID', reviewController.deleteReply)
 
-module.exports = router
+export default router

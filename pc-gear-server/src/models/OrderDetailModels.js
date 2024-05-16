@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
 const orderDetailSchema = new mongoose.Schema({
     orderItems: [
@@ -38,4 +38,4 @@ const orderDetailSchema = new mongoose.Schema({
 
 
 const OrderDetail = mongoose.model('OrderDetail', orderDetailSchema);
-module.exports = OrderDetail
+export default OrderDetail

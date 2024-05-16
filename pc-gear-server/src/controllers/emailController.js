@@ -1,6 +1,6 @@
-const sendEmailService = require('../services/emailService')
-const User = require("../models/UserModels");
-const bcrypt = require('bcrypt');
+import sendEmailService from '../services/emailService.js'
+import User from "../models/UserModels.js"
+import bcrypt from 'bcrypt'
 const sendEmail = async(req, res)=>{
     try{
         const {email} = req.body;
@@ -31,6 +31,6 @@ const sendEmail = async(req, res)=>{
     }
 }
 
-module.exports = {
+export default {
     sendEmail
 }

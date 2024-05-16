@@ -1,6 +1,6 @@
-const express = require("express");
+import express from "express"
+import Category from "../models/CategoryModel.js"
 const router = express.Router();
-const Category = require("../../models/categoryModel.jsx");
 
 // Lấy tất cả danh mục
 router.get("/", async (req, res) => {
@@ -98,4 +98,4 @@ router.delete("/:categoryId/subcategories/:subId", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

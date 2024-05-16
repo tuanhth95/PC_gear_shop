@@ -30,15 +30,14 @@
 // app.listen(port, () => {
 //   console.log("Server is running on port: ", port);
 // });
-
-const express = require("express");
-const dotenv = require("dotenv");
-const mongoose = require("mongoose");
-const routes = require("./routes");
-const cors = require('cors');
-const bodyParser = require("body-parser");
-const morgan = require('morgan');
-const cookieParser = require('cookie-parser')
+import express from "express"
+import dotenv from "dotenv"
+import routes from "./routes/index.js";
+import mongoose from "mongoose";
+import cors from "cors";
+import bodyParser from "body-parser";
+import morgan from "morgan";
+import cookieParser from "cookie-parser";
 dotenv.config();
 
 const app = express();

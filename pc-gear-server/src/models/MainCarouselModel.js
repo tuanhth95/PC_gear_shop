@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
 const mainCarouselSchema = new mongoose.Schema({
 
@@ -10,4 +10,4 @@ const mainCarouselSchema = new mongoose.Schema({
 })
 
 const MainCarousel = mongoose.model('MainCarousel', mainCarouselSchema)
-module.exports = MainCarousel
+export default MainCarousel

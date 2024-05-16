@@ -1,7 +1,8 @@
-const express = require("express")
+import express from "express"
+import ProductController from '../controllers/ProductController.js'
+import { authMiddleWare } from "../middleware/authMiddleware.js"
+
 const router = express.Router()
-const ProductController = require('../controllers/ProductController')
-const { authMiddleWare } = require("../middleware/authMiddleware")
 
 router.post('/create', ProductController.createProduct)
 router.put('/update/:id',authMiddleWare, ProductController.updateProduct)
@@ -12,4 +13,4 @@ router.post('/delete-many', authMiddleWare, ProductController.deleteMany)
 router.get('/get-all-type', ProductController.getAllType)
 router.get('/get-all-producer', ProductController.getAllProducer)
 
-module.exports = router
+export default router

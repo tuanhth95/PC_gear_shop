@@ -1,7 +1,7 @@
-const express = require('express')
+import express from 'express'
 const router = express.Router()
-const MainCarouselController = require('../controllers/MainCarouselController')
+import MainCarouselController from '../controllers/MainCarouselController.js'
 
 router.get('/get-slides', MainCarouselController.findSlides)
 
-module.exports = router
+export default router

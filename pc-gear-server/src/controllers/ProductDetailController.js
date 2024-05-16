@@ -1,4 +1,4 @@
-const ProductDetailService = require('../services/ProductDetailService')
+import ProductDetailService from '../services/ProductDetailService.js'
 
 // const createProduct = async (req, res) => {
 //     try {
@@ -95,7 +95,7 @@ const findProductsByKey = async (req, res) => {
     }
 }
 
-module.exports = {
+export default {
     // createProduct,
     findProductById,
     // findProductsByType,

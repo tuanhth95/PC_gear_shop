@@ -1,4 +1,4 @@
-const CollectionService = require('../services/CollectionService')
+import CollectionService from '../services/CollectionService.js'
 
 const createCollection = async (req, res) => {
     try {
@@ -100,7 +100,7 @@ const renameCollection = async (req, res) => {
     }
 }
 
-module.exports = {
+export default {
     createCollection,
     getAllCollections,
     deleteCollection,

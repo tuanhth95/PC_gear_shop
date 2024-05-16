@@ -1,4 +1,4 @@
-const Cart = require('../models/CartModel')
+import Cart from '../models/CartModel.js'
 
 const getItems = (req) => {
   return new Promise(async (resolve, reject) =>{
@@ -88,7 +88,7 @@ const deleteItems = (req) =>{
   )
 }
 
-module.exports = {
+export default {
   getItems,
   addItems,
   updateItems,

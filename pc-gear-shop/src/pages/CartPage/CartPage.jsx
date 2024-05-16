@@ -16,8 +16,12 @@ import {
   increaseProductAmount,
   decreaseProductAmount,
   removeCartProduct,
+  saveTempChecklist,
+  deleteTempChecklist,
+  saveTempOther,
+  deleteTempOther
 } from "../../redux/slices/cartSlide";
-import { resetUser, updateUser } from "../../redux/slices/userSlide";
+import { resetUser, updateUser, saveTempShipAddr, deleteTempShipAddr, saveTempShipAddrNone, deleteTempShipAddrNone } from "../../redux/slices/userSlide";
 import * as UserService from "../../services/UserService";
 import { convertPrice } from "../../utils";
 import {
@@ -35,7 +39,7 @@ import {
 } from "./style";
 import { useSelector } from "react-redux";
 import { useState, useEffect, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { Form, message, Radio, Space, Input } from "antd";
 import { useDispatch } from "react-redux";
 import * as OrderService from "../../services/OrderService";
@@ -46,6 +50,7 @@ const CartPage = () => {
 
   const [listChecked, setListChecked] = useState([]);
   const [isOpenModalUpdateInfo, setIsOpenModalUpdateInfo] = useState(false);
+  const [isPaying, setIsPaying] = useState(false);
   const [processState, setProcessState] = useState(0);
   const [getAtStore, setGetAtStore] = useState(false);
   const [shipAddress, setShipAddress] = useState(-1);
@@ -57,8 +62,10 @@ const CartPage = () => {
   const navigate = useNavigate();
   const [form] = Form.useForm();
   const dispatch = useDispatch();
+  const [searchParams, setSearchParams] = useSearchParams()
 
   const mutationAddOrder = useMutationHook((data) => {
+    console.log("data from mutation order: ", data)
     const { token, ...rest } = data;
     const res = OrderService.createOrder({ ...rest }, token);
     return res;
@@ -132,6 +139,17 @@ const CartPage = () => {
     }
   }, [orderSuccess]);
   useEffect(() => {
+    const queryParameters = new URLSearchParams(window.location.search)
+    let params = new URL(document.location.toString()).searchParams;
+    console.log("queryParameters: ",queryParameters.get("vnp_ResponseCode"))
+    console.log("useSearchParms: ",searchParams.get("vnp_ResponseCode"))
+    console.log("Parms: ",params.toString())
+    if(queryParameters.get("vnp_ResponseCode") == '00'){
+      console.log("create order after payment");
+      createOrder(true);
+    }
+  }, [])
+  useEffect(() => {
     // dispatch(selectedOrder({listChecked}))
   }, [listChecked]);
 
@@ -189,62 +207,110 @@ const CartPage = () => {
     );
   }, [priceMemo, priceDiscountMemo, deliveryPriceMemo]);
 
-  const checkAndCreateOrder = () => {
-    console.log(user);
+  const fetchPay = async () => {
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/payment/create_payment_url`,{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body:JSON.stringify({
+          "amount": totalPriceMemo,
+          "bankCode": "VNBANK",
+          "orderDescription": "Thanh toán đơn hàng",
+          "orderType": "other", 
+          "language": "vn",
+        }),
+    });
+      const data = await response.json()
+      return data.redirectLink;
+    } catch (error) {
+      console.error('Error call vnpay api:', error);
+    }
+  };
+
+  const checkAndCreateOrder = async () => {
+    if(paymentMethod == 3){
+      console.log("pay through vnpay");
+      setIsPaying(true);
+      let link = await fetchPay();
+      console.log("redirect link: ", link);
+      window.open(link, "_self");
+      return
+    }
+    console.log("create order without peyment vnpay")
+    createOrder(false);
+  };
+  const createOrder = async (isPaid) => {
+    const savedListCheck = cart?.tempChecklist;
+    console.log("after get from saved ship address: ", user?.tempShipAddr, "  -  ", shipAddress)    
+    console.log("saved temp other: ", cart?.tempOther.paymentMethod ,"  -  ", cart?.tempOther.shipmentMethod,"  -  ", cart?.tempOther.priceMemo,"  -  ", cart?.tempOther.deliveryPriceMemo,"  -  ", cart?.tempOther.totalPriceMemo);
+    const pay = (!cart?.tempOther.paymentMethod)? paymentMethod : cart?.tempOther.paymentMethod;
+    const ship = (!cart?.tempOther.shipmentMethod)? shipmentMethod : cart?.tempOther.shipmentMethod;
+    const price = (!cart?.tempOther.priceMemo)? priceMemo : cart?.tempOther.priceMemo;
+    const delivery = (!cart?.tempOther.deliveryPriceMemo)? shipmentMethod : cart?.tempOther.deliveryPriceMemo;
+    const total = (!cart?.tempOther.totalPriceMemo)? shipmentMethod : cart?.tempOther.totalPriceMemo;
+    const shippingAddressNone = (!user?.tempShipAddrNone)? {} : user?.tempShipAddrNone
+    console.log("shippingAddressNoneUser got: ",shippingAddressNone);
+    //if( Object.keys(shippingAddressNoneUser).length === 0 && Object.keys(shippingAddressNone).length !== 0) setShippingAddressNoneUser(shippingAddressNone);
+    let shippingAddressNoneUser = shippingAddressNone;
+    console.log("state shippingAddressNoneUser got: ",shippingAddressNoneUser);
     if (
-      user?.id &&
       user?.access_token &&
-      cart?.orderItems.filter((item) => listChecked.includes(item.id)) &&
-      priceMemo
+      cart?.orderItems.filter((item) => savedListCheck.includes(item.id))
     ) {
       console.log("check pass(with user) ");
+
+      const addr = user?.shippingAddress[user?.tempShipAddr];
+      console.log("addr shipaddress: ", user?.shippingAddress)
+      console.log("addr: ", addr)
       mutationAddOrder.mutate(
         {
           token: user?.access_token,
           orderItems: cart?.orderItems.filter((item) =>
-            listChecked.includes(item.id)
+            savedListCheck.includes(item.id)
           ),
-          fullname: user?.shippingAddress[shipAddress].addressName,
-          address:
-            user?.shippingAddress[shipAddress].addressNumber +
-            ", " +
-            user?.shippingAddress[shipAddress].addressWard +
-            ", " +
-            user?.shippingAddress[shipAddress].addressDistrict +
-            ", " +
-            user?.shippingAddress[shipAddress].addressProvince,
-          phone: user?.shippingAddress[shipAddress].addressPhone,
+          fullname: addr.addressName,
+          address: addr.addressNumber + ", " + addr.addressWard + ", " + addr.addressDistrict + ", " + addr.addressProvince,
+          phone: addr.addressPhone,
           city: user?.city,
           paymentMethod:
-            paymentMethod == 1 ? "COD" : paymentMethod == 2 ? "Bank" : "Momo",
+            pay == 1 ? "COD" : pay == 2 ? "Bank" : "Vnpay",
           shipmentMethod:
-            shipmentMethod == 1
+          ship == 1
               ? "standard"
-              : shipmentMethod == 2
+              : ship == 2
               ? "fast"
-              : shipmentMethod == 3
+              : ship == 3
               ? "inTPHCM"
               : "store",
-          itemsPrice: priceMemo,
-          shippingPrice: deliveryPriceMemo,
-          totalPrice: totalPriceMemo,
+          itemsPrice: price,
+          shippingPrice: delivery,
+          totalPrice: total,
           user: user?.id,
           email: user?.email,
+          isPaid: isPaid,
         },
         {
           onSuccess: (data) => {
             setOrderSuccess(true);
             setProcessState(2);
+            setIsPaying(false);
+            dispatch(deleteTempChecklist());
+            dispatch(deleteTempOther());
+            dispatch(deleteTempShipAddr());
+    
           },
         }
       );
     } else if (!user?.id) {
       console.log("check pass(without user) ");
+
       mutationAddOrder.mutate(
         {
           token: "none",
           orderItems: cart?.orderItems.filter((item) =>
-            listChecked.includes(item.id)
+            savedListCheck.includes(item.id)
           ),
           fullname: shippingAddressNoneUser?.addressName,
           address:
@@ -257,13 +323,13 @@ const CartPage = () => {
             shippingAddressNoneUser?.addressProvince,
           phone: shippingAddressNoneUser?.addressPhone,
           paymentMethod:
-            paymentMethod == 1 ? "COD" : paymentMethod == 2 ? "Bank" : "Momo",
+            cart?.tempOther.paymentMethod == 1 ? "COD" : cart?.tempOther.paymentMethod == 2 ? "Bank" : "VNPay",
           shipmentMethod:
-            shipmentMethod == 1
+            cart?.tempOther.shipmentMethod == 1
               ? "standard"
-              : shipmentMethod == 2
+              : cart?.tempOther.shipmentMethod == 2
               ? "fast"
-              : shipmentMethod == 3
+              : cart?.tempOther.shipmentMethod == 3
               ? "inTPHCM"
               : "store",
           itemsPrice: priceMemo,
@@ -271,29 +337,33 @@ const CartPage = () => {
           totalPrice: totalPriceMemo,
           user: "none",
           email: "none",
+          isPaid: isPaid,
         },
         {
           onSuccess: (data) => {
             setOrderSuccess(true);
             setProcessState(2);
+            setIsPaying(false);
             dispatch(resetUser());
+            dispatch(deleteTempChecklist());
+            dispatch(deleteTempOther());
+            dispatch(deleteTempShipAddr());
+    
           },
         }
       );
+      
     } else message.error("thiếu thông tin");
-  };
+  }
   const handleAddCard = () => {
     if (listChecked.length == 0) {
       message.error("Vui lòng chọn sản phẩm");
     } else if (processState == 1) {
-      console.log(
-        "state: ",
-        user?.id,
-        " - ",
-        shipmentMethod,
-        " - ",
-        shipAddress
-      );
+      console.log("state: ",user?.id," - ",shipmentMethod," - ",shipAddress);
+      dispatch(saveTempChecklist(listChecked));
+      dispatch(saveTempShipAddr(shipAddress));
+      dispatch(saveTempOther({paymentMethod, shipmentMethod, priceMemo, deliveryPriceMemo, totalPriceMemo}));
+
       if (!user?.id) {
         // khong co user
         if (shipmentMethod != 4) {
@@ -306,7 +376,10 @@ const CartPage = () => {
             !shippingAddressNoneUser?.addressProvince
           )
             handleChangeAddress();
-          else checkAndCreateOrder();
+          else{
+            dispatch(saveTempShipAddrNone(shippingAddressNoneUser));
+            checkAndCreateOrder();
+          } 
         } else {
           checkAndCreateOrder();
         }
@@ -575,7 +648,7 @@ const CartPage = () => {
                   <Space direction="vertical">
                     <Radio value={1}>Thanh toán COD</Radio>
                     <Radio value={2}>Thanh toán qua ngân hàng</Radio>
-                    <Radio value={3}>Thanh toán qua momo</Radio>
+                    <Radio value={3}>Thanh toán qua VNPay</Radio>
                   </Space>
                 </Radio.Group>
               </div>
@@ -725,6 +798,7 @@ const CartPage = () => {
               ></ButtonComponent>
             )}
             <ButtonComponent
+              isLoading = {isPaying}
               onClick={() => handleAddCard()}
               size={40}
               styleButton={{

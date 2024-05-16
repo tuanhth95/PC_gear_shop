@@ -1,31 +1,33 @@
-const MainCarouselRouter = require('./MainCarouselRouter')
-const CartRouter = require('./CartRouter')
-const userRouter = require('./userRouter')
-const apiProduct = require('./ProductRouter')
-const ReviewRouter = require('./ReviewRouter')
-const categoriesRouter = require('./categoryRoute')
-const ProductDetailRouter = require('./ProductDetailRouter')
-const OrderDetailRouter = require('./OrderDetailRouter')
-const sendEmail = require('./emailRouter')
-const ImgProduct = require('./ImgRouter')
-const Carousel = require('./CarouselRouter')
-const CollectionRouter = require('./CollectionRouter')
-const ConversationRouter = require('./ConversationRouter')
+import MainCarouselRouter from './MainCarouselRouter.js'
+import CartRouter from './CartRouter.js'
+import UserRouter from './UserRouter.js'
+import ProductRouter from './ProductRouter.js'
+import ReviewRouter from './ReviewRouter.js'
+import CategoriesRouter from './CategoryRoute.js'
+import ProductDetailRouter from './ProductDetailRouter.js'
+import OrderDetailRouter from './OrderDetailRouter.js'
+import SendEmailRouter from './EmailRouter.js'
+import ImgProductRouter from './ImgRouter.js'
+import CarouselRouter from './CarouselRouter.js'
+import CollectionRouter from './CollectionRouter.js'
+import ConversationRouter from './ConversationRouter.js'
+import PaymentRouter from './PaymentRouter.js'
 
 const routes = (app) => {
-  app.use('/cart', CartRouter)
-  app.use('/api/user', userRouter)
-  app.use('/api/product', apiProduct)
+  app.use('/api/cart', CartRouter)
+  app.use('/api/user', UserRouter)
+  app.use('/api/product', ProductRouter)
   app.use('/api/review', ReviewRouter)
-  app.use("/api/categories", categoriesRouter);
+  app.use("/api/categories", CategoriesRouter);
   app.use('/api/product_detail', ProductDetailRouter);
   app.use('/api/OrderDetail', OrderDetailRouter);
-  app.use('/api/sendEmail', sendEmail)
-  app.use('/api/img', ImgProduct)
-  app.use('/api/carousel', Carousel)
+  app.use('/api/sendEmail', SendEmailRouter)
+  app.use('/api/img', ImgProductRouter)
+  app.use('/api/carousel', CarouselRouter)
   app.use('/api/main_carousel', MainCarouselRouter)
   app.use('/api/collection', CollectionRouter);
   app.use('/api/conversation', ConversationRouter);
+  app.use('/api/payment', PaymentRouter);
 }
 
-module.exports = routes
+export default routes

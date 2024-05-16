@@ -1,5 +1,5 @@
-const Image = require('../models/ImgProduct');
-const imageService = require('../services/ImageService');
+import Image from  '../models/ImgProduct.js'
+import imageService from '../services/ImageService.js'
 
 async function createImages(req, res) {
   try{
@@ -69,7 +69,7 @@ async function deleteImage(req, res) {
     res.status(500).json({ message: error.message });
   }
 }
-module.exports = {
+export default {
   createImages,
   getAllImages,
   deleteAllImages,

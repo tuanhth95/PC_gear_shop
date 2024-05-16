@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose'
 
 const carouselSchema = new mongoose.Schema({
   filename: String, // Tên tệp hình ảnh
@@ -10,4 +10,4 @@ const carouselSchema = new mongoose.Schema({
 
 const Carousel = mongoose.model('Carousel', carouselSchema);
 
-module.exports = Carousel;
+export default Carousel;

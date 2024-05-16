@@ -1,4 +1,4 @@
-const MainCarousel = require('../models/MainCarouselModel')
+import MainCarousel from '../models/MainCarouselModel.js'
 
 const findSlides = () => {
     return new Promise( async (resolve, reject) => {
@@ -23,6 +23,4 @@ const findSlides = () => {
     })
 }
 
-module.exports = {
-    findSlides
-}
+export default {findSlides};

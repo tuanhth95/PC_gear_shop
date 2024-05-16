@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose"
 
 const subCategorySchema = new mongoose.Schema({
   title: {
@@ -19,4 +19,4 @@ const categorySchema = new mongoose.Schema({
   subCategories: [subCategorySchema],
 });
 
-module.exports = mongoose.model("Category", categorySchema);
+export default mongoose.model("Category", categorySchema);

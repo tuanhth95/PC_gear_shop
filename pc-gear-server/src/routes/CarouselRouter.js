@@ -1,9 +1,9 @@
-const express = require("express")
+import express from "express"
 const router = express.Router();
-const multer = require('multer');
-const CarouselController = require('../controllers/CarouselController')
-const { CloudinaryStorage } = require('multer-storage-cloudinary');
-const cloudinary = require('cloudinary').v2;
+import multer from 'multer'
+import CarouselController from '../controllers/CarouselController.js'
+import {CloudinaryStorage} from 'multer-storage-cloudinary'
+import { v2 as cloudinary } from 'cloudinary'
 
 cloudinary.config({ 
   cloud_name: 'dsesvbswd', 
@@ -37,4 +37,4 @@ router.delete('/del-all', CarouselController.deleteAllCarousel)
 router.put('/update/:id',CarouselController.updateCarousel)
 router.delete('/delete/:id', CarouselController.deleteCarousel)
 
-module.exports = router
+export default router

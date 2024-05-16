@@ -1,6 +1,6 @@
-const userService = require('../services/userService')
-const User = require("../models/UserModels");
-const JwtService = require('../services/JwtService');
+import userService from '../services/userService.js'
+import User from "../models/UserModels.js"
+
 const createUser = async(req, res)=>{
     try{
         const {username, email, phone, address, password, confirmPassword} = req.body;
@@ -165,7 +165,7 @@ const addShippingAddress = async(req, res) => {
     }
 }
 
-module.exports = {
+export default {
     createUser,
     loginUser,
     getAllUsers,

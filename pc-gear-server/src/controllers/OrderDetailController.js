@@ -1,11 +1,11 @@
-const OrderDetailService = require('../services/OrderDetailService')
-const OrderDetail = require("../models/OrderDetailModels")
+import OrderDetailService from '../services/OrderDetailService.js'
+import OrderDetail from "../models/OrderDetailModels.js"
 
 const creatOrderDetail = async(req,res)=>{
     try{
         console.log("createOrder id rec: ", req.params.id)
         console.log("createOrder data rec: ", req.body.paymentMethod);
-        userid = req.params.id;
+        let userid = req.params.id;
         const result = await OrderDetailService.createOrderDetail({userId:userid, ...req.body})
         return res.status(200).json(result)
     }
@@ -65,10 +65,9 @@ const getAllUserOrder = async (req, res) => {
 }
 
 
-module.exports = {
+export default {
     creatOrderDetail,
     getDetailsOrder,
     getAllOrders,
     getAllUserOrder
-    
 }

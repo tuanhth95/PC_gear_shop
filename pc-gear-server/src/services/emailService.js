@@ -1,5 +1,5 @@
-const nodemailer = require('nodemailer');
-const dotenv = require('dotenv')
+import nodemailer from 'nodemailer'
+import dotenv from 'dotenv'
 dotenv.config();
 const sendEmailService = async(email,newPassword ) =>{
     let transporter = nodemailer.createTransport({
@@ -19,6 +19,6 @@ const sendEmailService = async(email,newPassword ) =>{
     })
     return info
 }
-module.exports = {
+export default {
     sendEmailService
 }

@@ -1,52 +1,9 @@
-const Review = require('../models/ReviewModel');
-const User = require('../models/UserModels');
-const Product = require('../models/ProductModel');
-const reviewService = require('../services/reviewService');
-const userService = require('../services/userService');
+import Review from '../models/ReviewModel.js'
+import User from '../models/UserModels.js'
+import Product from '../models/ProductModel.js'
+import reviewService from '../services/reviewService.js'
+import userService from '../services/userService.js'
 
-// const dataProduct = [
-//   {
-//     id: 1,
-//     image: "https://hoanghapccdn.com/media/product/2906_cpu_intel_core_i9_12900k_1.jpg",
-//     name: "CPU Intel Core i9-12900K",
-//     price: "7.490.000",
-//     quantity: 100,
-//   },
-//   {
-//     id: 2,
-//     image: "https://nguyencongpc.vn/media/product/25654-250-4906-1.jpg",
-//     name: "CPU Intel Core i9-12900K",
-//     price: "7.490.000",
-//     quantity: 100,
-//   },
-//   {
-//     id: 3,
-//     image: "https://cdn.tgdd.vn/hoi-dap/1424201/ram-ddr5-la-gi-hieu-suat-cai-tien-ra-sao-co-nen-nang-cap-1.jpeg",
-//     name: "CPU Intel Core i9-12900K",
-//     price: "7.490.000",
-//     quantity: 100,
-//   },
-//   {
-//     id: 4,
-//     image: "https://product.hstatic.net/200000722513/product/aptop-msi-summit-e14-evo-a12m-211vn-1_5fc0898020c44422b37c9293db1c3edb_d48b2ea8b32449e09f359198932f6f25_grande.png",
-//     name: "Laptop MSI Summit E14 Evo A12M 211VN",
-//     price: "25990000",
-//     quantity: 100,
-//   },
-// ];
-
-const dataUser = [
-  {
-    id: 1,
-    image: "https://th.bing.com/th/id/OIP.G37tgeQqSNt7v2oPfj9ltQHaE7?rs=1&pid=ImgDetMain",
-    name: "Trinh",
-  },
-  {
-    id: 2,
-    image: "https://th.bing.com/th/id/OIP.hwJevYbZh-ebZyLC74Pj9gHaEh?rs=1&pid=ImgDetMain",
-    name: "Minh",
-  }
-];
 
 const getReview = async (req, res) => {
   try {
@@ -213,7 +170,7 @@ const deleteReply = async (req, res) => {
   }
 };
 
-module.exports = {
+export default {
   getReview,
   getReviewByProductID,
   createProductReview,

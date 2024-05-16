@@ -1,5 +1,5 @@
-const conversationService = require('../services/ConversationService');
-const userService = require('../services/userService');
+import conversationService from '../services/ConversationService.js'
+import userService from '../services/userService.js'
 
 const getAllConversation = async (req, res) => {
     try {
@@ -32,7 +32,7 @@ const createMessage = async (req, res) => {
     }
 };
 
-module.exports = {
+export default {
     getAllConversation,
     getConversationByUserID,
     createMessage

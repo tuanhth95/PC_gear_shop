@@ -1,9 +1,9 @@
-const express = require("express")
+import express from "express"
 const router = express.Router();
-const multer = require('multer');
-const ImgController = require('../controllers/ImgController')
-const { CloudinaryStorage } = require('multer-storage-cloudinary');
-const cloudinary = require('cloudinary').v2;
+import multer from 'multer'
+import ImgController from '../controllers/ImgController.js'
+import { v2 as cloudinary } from 'cloudinary'
+import { CloudinaryStorage } from 'multer-storage-cloudinary'
 
 cloudinary.config({ 
   cloud_name: 'dsesvbswd', 
@@ -37,4 +37,4 @@ router.delete('/del-all', ImgController.deleteAllImages)
 router.put('/update/:id',ImgController.updateImage)
 router.delete('/delete/:id', ImgController.deleteImage)
 
-module.exports = router
+export default router

@@ -45,7 +45,7 @@ const deleteReview = async (req, res) => {
   }
 };
 
-module.exports = {
+export default {
   getReview,
   getReviewByProductID,
   createProductReview,

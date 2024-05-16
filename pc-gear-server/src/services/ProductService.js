@@ -1,4 +1,4 @@
-const Product = require('../models/ProductModel')
+import Product from '../models/ProductModel.js'
 
 const createProduct = (newProductData) => {
     return new Promise(async(resolve, reject) => {
@@ -203,7 +203,7 @@ const getAllProducer = () => {
     })
 }
 
-module.exports = {
+export default {
     createProduct,
     getAllProduct,
     updateProduct,

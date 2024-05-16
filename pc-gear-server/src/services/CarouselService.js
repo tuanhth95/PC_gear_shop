@@ -1,6 +1,6 @@
-const sharp = require('sharp');
-const Carousel = require('../models/Carousel');
-const fetchPromise = import('node-fetch');
+import sharp from 'sharp'
+import Carousel from'../models/CarouselModel.js'
+import fetchPromise from 'node-fetch'
 
 async function uploadCarousel(newCarousel, id) {
   try {
@@ -47,7 +47,7 @@ async function deleteCarouselById(id) {
   await Carousel.findByIdAndDelete(id);
 }
 
-module.exports = {
+export default {
   uploadCarousel,
   deleteCarouselById
 };

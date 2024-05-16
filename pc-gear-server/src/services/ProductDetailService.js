@@ -1,4 +1,4 @@
-const ProductDetail = require('../models/ProductDetailModel')
+import ProductDetail from '../models/ProductDetailModel.js'
 
 // const createProduct = (newProduct) => {
 //     return new Promise( async (resolve, reject) => {
@@ -191,7 +191,7 @@ const findProductsByKey = (key) => {
     })
 }
 
-module.exports = {
+export default {
     // createProduct,
     findProductById,
     findProductByType,

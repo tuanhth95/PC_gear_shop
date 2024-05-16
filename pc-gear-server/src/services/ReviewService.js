@@ -1,5 +1,5 @@
-const Review = require('../models/ReviewModel');
-const mongoose = require('mongoose');
+import Review from '../models/ReviewModel.js'
+import mongoose from 'mongoose'
 
 
 const getAllReviews = async () => {
@@ -99,7 +99,7 @@ const deleteReply = async (reviewID, replyID) => {
   }
 };
 
-module.exports = {
+export default {
   getAllReviews,
   getReviewsByProductID,
   createReview,

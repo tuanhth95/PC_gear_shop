@@ -1,4 +1,4 @@
-const Collection = require("../models/CollectionModel")
+import Collection from "../models/CollectionModel.js"
 
 const createCollection = (newCollection) => {
     return new Promise( async (resolve, reject) => {
@@ -140,7 +140,7 @@ const renameCollection = (collectionId, newName) => {
     })
 }
 
-module.exports = {
+export default {
     createCollection,
     getAllCollections,
     deleteCollection,

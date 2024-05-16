@@ -1,4 +1,4 @@
-const MainCarouselService = require('../services/MainCarouselService')
+import MainCarouselService from '../services/MainCarouselService.js'
 
 const findSlides = async (req, res) => {
     try {
@@ -9,6 +9,4 @@ const findSlides = async (req, res) => {
     }
 }
 
-module.exports = {
-    findSlides
-}
+export default {findSlides};

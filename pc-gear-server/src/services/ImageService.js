@@ -1,6 +1,6 @@
-const sharp = require('sharp');
-const Image = require('../models/ImgProduct')
-const fetchPromise = import('node-fetch');
+import sharp  from 'sharp'
+import Image  from '../models/ImgProduct.js'
+import fetchPromise from 'node-fetch'
 
 async function uploadImage(newImg, id) {
   try {
@@ -47,7 +47,7 @@ async function deleteImageById(id) {
   await Image.findByIdAndDelete(id);
 }
 
-module.exports = {
+export default {
   uploadImage,
   deleteImageById
 };

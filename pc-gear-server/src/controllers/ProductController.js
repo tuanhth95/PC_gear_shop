@@ -1,4 +1,4 @@
-const ProductService = require('../services/ProductService')
+import ProductService from '../services/ProductService.js'
 
 const createProduct = async (req, res) => {
     try{
@@ -139,7 +139,7 @@ const getAllProducer = async (req, res) => {
     }
 }
 
-module.exports = {
+export default {
     createProduct,
     getAllProduct,
     updateProduct,

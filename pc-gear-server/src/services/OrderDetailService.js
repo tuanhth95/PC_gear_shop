@@ -1,12 +1,11 @@
-const OrderDetail = require("../models/OrderDetailModels")
-const User = require("../models/UserModels")
-
-const bcrypt = require("bcrypt")
+import OrderDetail from "../models/OrderDetailModels.js"
+import User from "../models/UserModels.js"
+import bcrypt from "bcrypt"
 
 
 const createOrderDetail = (newOrderDetail) =>{
     const {orderItems,fullname : fullName,address,phone,paymentMethod,itemsPrice,shippingPrice,shipmentMethod,totalPrice,userId,isPaid,isDelivered} = newOrderDetail
-        console.log(newOrderDetail.paymentMethod);
+        console.log(newOrderDetail);
         console.log(paymentMethod);
         return new Promise (async(resolve, reject) => {
 
@@ -114,7 +113,7 @@ const getAllUserOrder = (userInfo) => {
         }
     })
 }
-module.exports = {
+export default {
     createOrderDetail,
     getOrderDetails,
     getAllOrder,

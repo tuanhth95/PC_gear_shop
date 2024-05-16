@@ -1,6 +1,6 @@
-const express = require('express')
+import express from 'express'
 const router = express.Router()
-const CollectionController = require('../controllers/CollectionController')
+import CollectionController from '../controllers/CollectionController.js'
 
 router.post('/create', CollectionController.createCollection)
 router.get('/get_all', CollectionController.getAllCollections)
@@ -9,4 +9,4 @@ router.put('/remove_products/:id', CollectionController.removeProducts)
 router.put('/add_products/:id', CollectionController.addProducts)
 router.put('/rename/:id', CollectionController.renameCollection)
 
-module.exports = router
+export default router

@@ -1,5 +1,5 @@
-const Carousel = require('../models/Carousel');
-const CarouselService = require('../services/CarouselService');
+import Carousel from '../models/CarouselModel.js'
+import CarouselService from '../services/CarouselService.js'
 
 async function createCarousel(req, res) {
   try{
@@ -69,7 +69,7 @@ async function deleteCarousel(req, res) {
     res.status(500).json({ message: error.message });
   }
 }
-module.exports = {
+export default {
     createCarousel,
     getAllCarousel,
     deleteAllCarousel,

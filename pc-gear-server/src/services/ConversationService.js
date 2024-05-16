@@ -1,5 +1,5 @@
-const Conversation = require('../models/Conversation');
-const User = require('../models/UserModels');
+import Conversation from '../models/Conversation.js'
+import User from '../models/UserModels.js'
 
 const getAllConversation = async () => {
     try {
@@ -67,7 +67,7 @@ const createMessage = async (userID, senderID, messageContent) => {
     }
 };
 
-module.exports = {
+export default {
     getAllConversation,
     getConversationByUserID,
     createMessage
