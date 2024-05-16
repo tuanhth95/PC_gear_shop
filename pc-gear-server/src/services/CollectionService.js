@@ -140,11 +140,38 @@ const renameCollection = (collectionId, newName) => {
     })
 }
 
+const getByName = (name) => {
+    return new Promise(async (resolve, reject) => {
+        try{
+            const checkCollection = await Collection.findOne({
+                name: name
+            })
+            if(!checkCollection)
+            {
+                reject({
+                    status: 'ERR',
+                    message: 'Collection is not found'
+                })
+            } else {
+                resolve({
+                status: 'OK',
+                message: 'The collection find successfully',
+                data: checkCollection
+                })
+            }
+            
+        }catch(e){
+            reject(e)
+        }
+    })
+}
+
 export default {
     createCollection,
     getAllCollections,
     deleteCollection,
     removeProducts,
     addProducts,
-    renameCollection
+    renameCollection,
+    getByName
 }

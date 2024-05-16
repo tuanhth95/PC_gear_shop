@@ -120,7 +120,7 @@ const findProducts = () => {
     }
 
 const findProductsByName = (name) => {
-    const arr = name.split(' ').filter(Boolean)
+    const arr = name.split('-').filter(Boolean)
     const regex = arr.map(keyword => `(?=.*${keyword})`).join('|');
     return new Promise( async (resolve, reject) => {
         try {
@@ -156,7 +156,7 @@ const findProductsByName = (name) => {
 }
 
 const findProductsByKey = (key) => {
-    const arr = key.split(' ').filter(Boolean)
+    const arr = key.split('-').filter(Boolean)
     const regex = arr.map(keyword => `(?=.*${keyword})`).join('|');
     return new Promise( async (resolve, reject) => {
         try {

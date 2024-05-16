@@ -8,5 +8,6 @@ router.delete('/delete/:id', CollectionController.deleteCollection)
 router.put('/remove_products/:id', CollectionController.removeProducts)
 router.put('/add_products/:id', CollectionController.addProducts)
 router.put('/rename/:id', CollectionController.renameCollection)
+router.get('/get_by_name/:name', CollectionController.getByName)
 
 export default router

@@ -13,6 +13,7 @@ const AddProductsBtn = ({collectionId}) => {
 
   const showModal = () => {
     setIsModalOpen(true)
+    setProductList()
   }
   const handleOk = (e) => {
     setIsModalOpen(false)

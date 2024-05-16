@@ -100,11 +100,29 @@ const renameCollection = async (req, res) => {
     }
 }
 
+const getByName = async (req, res) => {
+    try {
+        const collectionName = req.params.name
+        if(!collectionName) {
+            return res.status(200).json({
+                status: 'ERR',
+                message: 'The collectionName is required'
+            })
+        }
+        const response = await CollectionService.getByName(collectionName)
+        return res.status(200).json(response)
+    } catch (e) {
+        return res.status(404).json({message: e})
+    }
+}
+
+
 export default {
     createCollection,
     getAllCollections,
     deleteCollection,
     removeProducts,
     addProducts,
-    renameCollection
+    renameCollection,
+    getByName
 }

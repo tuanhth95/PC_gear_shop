@@ -34,3 +34,8 @@ export const renameCollection = async (id, newName) => {
     })
     return response.data;
 }
+
+export const getByName = async (name) => {
+    const response = await axios.get(`http://localhost:3001/api/collection/get_by_name/${name}`)
+    return response.data;
+}

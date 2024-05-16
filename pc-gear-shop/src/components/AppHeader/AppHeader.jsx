@@ -105,12 +105,18 @@ const AppHeader = () => {
     navigate("/");
   };
 
+  const handleClickCategory = (name) => {
+    // console.log(name)
+    navigate(`/collection/${name}`)
+    window.location.reload();
+  }
+
   // Chuyển đổi categories thành mảng các item
   const categoryItems = categories.map((category) => ({
     label: category.name,
     key: category._id,
     children: category.subCategories.map((subCategory) => ({
-      label: <a href={subCategory.href}>{subCategory.title}</a>,
+      label: <a href="#" onClick = {() => handleClickCategory(subCategory.href)} >{subCategory.title}</a>,
       key: subCategory._id,
     })),
   }));

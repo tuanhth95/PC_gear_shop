@@ -10,6 +10,7 @@ import SearchResult from '../pages/SearchResult/SearchResult'
 import ForgotPassword from '../pages/ForgotPassword/ForgotPassword'
 import AdminPage from '../pages/AdminPage/AdminPage'
 import AdminUser from '../components/AdminUser/AdminUser'
+import CollectionPage from '../pages/CollectionPage/CollectionPage'
 
 export const routes = [
   {
@@ -66,5 +67,10 @@ export const routes = [
   {
     path: '/AdminUser',
     page: AdminUser
+  },
+  {
+    path: "/collection/:name",
+    page: CollectionPage,
+    isShowHeader: true,
   },
 ];
