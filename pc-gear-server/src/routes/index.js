@@ -12,6 +12,8 @@ import CarouselRouter from './CarouselRouter.js'
 import CollectionRouter from './CollectionRouter.js'
 import ConversationRouter from './ConversationRouter.js'
 import PaymentRouter from './PaymentRouter.js'
+import AdminOrderRouter from './AdminOrderRouter.js';
+
 
 const routes = (app) => {
   app.use('/api/cart', CartRouter)
@@ -28,6 +30,7 @@ const routes = (app) => {
   app.use('/api/collection', CollectionRouter);
   app.use('/api/conversation', ConversationRouter);
   app.use('/api/payment', PaymentRouter);
+  app.use('/api/admin/orders', AdminOrderRouter);
 }
 
 export default routes

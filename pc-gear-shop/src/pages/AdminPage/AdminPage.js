@@ -1,24 +1,23 @@
 import { Carousel, Menu, message } from "antd";
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import { getItem } from "../../utils";
-import { FormOutlined, ProductOutlined, FileImageOutlined, DeliveredProcedureOutlined, UserOutlined, MenuOutlined, GroupOutlined, WechatOutlined } from "@ant-design/icons";
+import { FormOutlined, ProductOutlined, FileImageOutlined, DeliveredProcedureOutlined, UserOutlined, MenuOutlined, GroupOutlined, WechatOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import AdminReview from "../../components/AdminReview/AdminReview";
 import AdminProduct from "../../components/AdminProduct/AdminProduct";
 import AdminMedia from "../../components/AdminMedia/AdminMedia";
 import AdminCarousel from "../../components/AdminCarousel/AdminCarousel";
 import CustomizedContent from "./components/CustomizedContent";
 import AdminUser from "../../components/AdminUser/AdminUser";
-import { useQueries } from "@tanstack/react-query";
 import AdminCollectionPage from "../../components/AdminCollection/AdminCollectionComponent/AdminCollectionComponent";
-import CategoryManager from "../../components/CategoryManager/CategoryManager"
+import CategoryManager from "../../components/CategoryManager/CategoryManager";
 import AdminChatBox from "../../components/AdminChatbox/AdminChatBox";
+import OrderHistory from "../../components/OrderHistory"; 
 
 const AdminPage = () => {
   const [keySelected, setKeySelected] = useState("");
 
   const items = [
-    getItem("Đánh giá", "reviews", <FormOutlined />),
+    getItem("Đánh giá", "reviews", <FormOutlined />),
     getItem("Sản phẩm", "products", <ProductOutlined />),
     getItem("Media", "medias", <FileImageOutlined />),
     getItem("Carousel", "carousels",<DeliveredProcedureOutlined />),
@@ -26,43 +25,10 @@ const AdminPage = () => {
     getItem("Danh mục", "categories",<MenuOutlined />),
     getItem("Collection", "collections",<GroupOutlined />),
     getItem("Chatbox", "chat" ,<WechatOutlined />),
+    getItem("Quản lý đơn hàng", "orders", <ShoppingCartOutlined />), 
   ];
 
-  const getAllReviews = async () => {
-    try {
-      const response = await axios.get(
-        `http://localhost:3001/api/review/get-all-review`
-      );
-      console.log("get review data received: ",response.data)
-      return response.data;
-    } catch (error) {
-      console.error("Error fetching reviews:", error);
-      message.error("Failed to fetch reviews. Please try again later.");
-      throw new Error("Failed to fetch reviews");
-    }
-  };
-  const getAllConversation = async () => {
-    try {
-      const response = await axios.get("http://localhost:3001/api/conversation/get-all");
-      return response.data.reverse();
-    } catch (error) {
-      console.error('Error fetching conversations:', error);
-      throw new Error('Failed to fetch conversations');
-    }
-  };
-
-  // const { isLoading } = useQuery(['reviews'], getAllReviews, {
-  //   staleTime: 60 * 1000,
-  // });
-
-  const queries = useQueries({
-    queries: [
-      { queryKey: ["reviews"], queryFn: getAllReviews, staleTime: 1000 * 60 },
-      { queryKey: ['chat'], queryFn: getAllConversation, staleTime: 1000 * 60 }
-    ],
-  });
-
-  const handleOnCLick = ({ key }) => {
+  const handleOnClick = ({ key }) => {
     setKeySelected(key);
   };
 
@@ -84,6 +50,8 @@ const AdminPage = () => {
         return <CategoryManager/>;
       case "chat": 
         return <AdminChatBox/>;
+      case "orders":
+        return <OrderHistory />; 
       default:
         return null;
     }
@@ -101,7 +69,7 @@ const AdminPage = () => {
           }}
           items={items}
           selectedKeys={[keySelected]}
-          onClick={handleOnCLick}
+          onClick={handleOnClick}
         />
         <div style={{ flex: 1, padding: "15px 0 15px 15px" }}>
           {!keySelected && (
