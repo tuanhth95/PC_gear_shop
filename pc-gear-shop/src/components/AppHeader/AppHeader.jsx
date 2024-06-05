@@ -64,6 +64,7 @@ const AppHeader = () => {
     if (!value.trim()) return;
     dispatch(searchProductAction(value));
     navigate(`/search-results?query=${encodeURIComponent(value)}`);
+    setSearch("");
   };
 
   // Navigate to cart page
